@@ -9,14 +9,27 @@
 import Foundation
 import CoreData
 import Just
-class ApiUtil{
+
+enum imageType: String{
+    case ads = "ads" //首頁廣告
+    case activitys = "activitys" //活動
+    case features = "features" //功能
+}
+
+enum opentype: String{
+    case WV = "WV" //WEBVIEW方式打開
+    case NA = "NA" //原生形式
+
+}
+
+open class ApiUtil{
     
     class func shareInstance()->ApiUtil{
         let apiUtil = ApiUtil();
         return apiUtil;
     }
     //服務鏈接
-    static var serverUrl = "http://192.168.90.52:8080"
+    static var serverUrl = "http://47.52.25.198"
     //公司代碼
     static var companyCode = "TaoHeung"
     //公司代碼
@@ -48,67 +61,7 @@ class ApiUtil{
     
     
     
-    //加載首頁的遠程資源
-    static func homeCache()  {
-        Just.post(ApiUtil.homeApi ,  data: ["company": ApiUtil.companyCode]) { (result) in
-            guard let json = result.json as? NSDictionary else{
-                return
-            }
-            let datas = DwHomeRootClass(fromDictionary: json).data!
-            
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            do{
-                let allData : [DwCache] = try appDelegate.persistentContainer.viewContext.fetch(DwCache.fetchRequest())
-                
-                for ad in allData {
-                   appDelegate.persistentContainer.viewContext.delete(ad)
-                   appDelegate.saveContext()
-                }
-               
-                
-                datas.ads.map({(ad)  in
-                    let ads  =  DwCache(context: appDelegate.persistentContainer.viewContext)
-                    ads.image = ad.image
-                    ads.briefing = ad.briefing
-                    ads.english = ad.english
-                    ads.name = ad.name
-                    ads.opentype = ad.opentype
-                    ads.simpChinese = ad.simpChinese
-                    ads.sort = Int64(ad.sort)
-                    ads.thumb = ad.thumb as! String
-                    ads.url = ad.url
-                    ads.type = "ads"
-                    appDelegate.saveContext()
-                    
-                    
-                })
-                
-                datas.activitys.map({(ad)  in
-                    let activitys  =  DwCache(context: appDelegate.persistentContainer.viewContext)
-                    activitys.image = ad.image
-                    activitys.briefing = ad.briefing
-                    activitys.english = ad.english
-                    activitys.name = ad.name
-                    activitys.opentype = ad.opentype
-                    activitys.simpChinese = ad.simpChinese
-                    activitys.sort = Int64(ad.sort)
-                    activitys.thumb = ad.thumb as! String
-                    activitys.url = ad.url
-                    activitys.type = "activitys"
-                    appDelegate.saveContext()
-                    
-                    
-                })
-            }catch{
-                print(error)
-            }
-            
-            
-            
-            
-            
-        }
-    }
+   
     
     
     

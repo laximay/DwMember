@@ -26,8 +26,10 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchHomeData()
-     
+        
+        
+        
+        homeCache()
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         tableView.backgroundColor = UIColor(white: 0.98, alpha: 1)//美化列表
@@ -36,12 +38,12 @@ class MainTableViewController: UITableViewController {
         
         tableView.estimatedRowHeight = 200 //自适应行高
         tableView.rowHeight = UITableViewAutomaticDimension //自适应行高 ，还需设置宽度约束，动态行数设为0，0代表动态行数
-        
-        addMainScrollView()
         createMenuBtn()    //创建功能按钮
     }
     
-  
+    
+    
+    
     
     
     
@@ -68,8 +70,83 @@ class MainTableViewController: UITableViewController {
         self.indexImageView.addSubview(self.mainScrollView!)
     }
     
+    func homeCache()  {
+        //先加載CORE的數據
+        fetchHomeData()
+        //異步請求會覆蓋上一步的數據，重新填充
+        Just.post(ApiUtil.homeApi ,  data: ["company": ApiUtil.companyCode]) { (result) in
+            guard let json = result.json as? NSDictionary else{
+                return
+            }
+            let datas = DwHomeRootClass(fromDictionary: json).data!
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            do{
+                let allData : [DwCache] = try appDelegate.persistentContainer.viewContext.fetch(DwCache.fetchRequest())
+                
+                for ad in allData {
+                    appDelegate.persistentContainer.viewContext.delete(ad)
+                    appDelegate.saveContext()
+                }
+                
+                self.scrollImageUrls = []
+                self.scrollImageUrls =  datas.ads.map({(ad) -> [String] in
+                    let ads  =  DwCache(context: appDelegate.persistentContainer.viewContext)
+                    ads.image = ad.image
+                    ads.briefing = ad.briefing
+                    ads.english = ad.english
+                    ads.name = ad.name
+                    ads.opentype = ad.opentype
+                    ads.simpChinese = ad.simpChinese
+                    ads.sort = Int64(ad.sort)
+                    ads.thumb = ad.thumb as! String
+                    ads.url = ad.url
+                    ads.type = "ads"
+                    appDelegate.saveContext()
+                    return [ad.image]
+                    
+                    
+                })
+                
+                self.activitys = []
+                self.activitys =  datas.activitys.map({(ad) -> DwCache in
+                    let activitys  =  DwCache(context: appDelegate.persistentContainer.viewContext)
+                    activitys.image = ad.image
+                    activitys.briefing = ad.briefing
+                    activitys.english = ad.english
+                    activitys.name = ad.name
+                    activitys.opentype = ad.opentype
+                    activitys.simpChinese = ad.simpChinese
+                    activitys.sort = Int64(ad.sort)
+                    activitys.thumb = ad.thumb as! String
+                    activitys.url = ad.url
+                    activitys.type = "activitys"
+                    return activitys
+                    
+                })
+                
+                appDelegate.saveContext()
+                OperationQueue.main.addOperation {
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                    self.addMainScrollView()
+                }
+                
+            }catch{
+                print(error)
+            }
+            
+            
+            
+            
+            
+        }
+        
+    }
     
     
+    
+    /*從COREDATA加載數據*/
     func fetchHomeData()  {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         //活動REUEST
@@ -83,13 +160,14 @@ class MainTableViewController: UITableViewController {
         do{
             activitys = try appDelegate.persistentContainer.viewContext.fetch(requestActivitys)
             ads = try appDelegate.persistentContainer.viewContext.fetch(requestAds)
-           
+            
             for ad in ads {
                 scrollImageUrls.append([ad.image!])
             }
         }catch {
             print(error)
         }
+        addMainScrollView()
     }
     
     

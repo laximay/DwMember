@@ -21,8 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         UINavigationBar.appearance().tintColor = UIColor.white
         
         ApiUtil.launchCache()
-        //首頁數據加載
-        ApiUtil.homeCache()
    
     
         //设置字体
@@ -64,14 +62,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         let homeVC = MyTabBarViewController()
-        let nav = UINavigationController.init(rootViewController: homeVC)
+        //let nav = UINavigationController.init(rootViewController: homeVC)
         
         
         if launchOptions != nil {
             
             /// 通过推送等启动
             /// ============================================
-            window?.rootViewController = nav
+            window?.rootViewController = homeVC
             
         } else {
             /// 正常点击icon启动页，加载广告
@@ -82,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
             
             let adVC = ZLaunchAdVC.init(defaultDuration: 3, completion: { [weak self] in
-                self?.window?.rootViewController = nav
+                self?.window?.rootViewController = homeVC
             })
             /// 延时模拟网络请求 如果存在啟動廣告，則啟動記載廣告
             /// ====================================================
@@ -90,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             let defaults = UserDefaults.standard
            
             if let url = defaults.string(forKey: "launchImageUrl")  {
-                print("啟動廣告", url)
+                dump(url)
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
                     
                     let adDuartion = 4
