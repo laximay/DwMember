@@ -19,13 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         // Override point for customization after application launch.
         UINavigationBar.appearance().barTintColor = UIColor(red: 158/255.0, green: 16/255.0, blue: 38/255.0, alpha: 1) //设置前景色
         UINavigationBar.appearance().tintColor = UIColor.white
-        //異步加載啟動數據
-        DispatchQueue.global().async {
-            print("开始执行异步任务")
-            let apiUtil = ApiUtil.shareInstance();
-            apiUtil.launchCache()
-            print("异步任务执行完毕")
-        }
+        
+        ApiUtil.launchCache()
+        //首頁數據加載
+        ApiUtil.homeCache()
    
     
         //设置字体
@@ -93,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             let defaults = UserDefaults.standard
            
             if let url = defaults.string(forKey: "launchImageUrl")  {
-                print("啟動廣告")
+                print("啟動廣告", url)
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
                     
                     let adDuartion = 4
@@ -152,7 +149,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSPersistentContainer(name: "DwMember")
+        let container = NSPersistentContainer(name: "DwEntitys")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
