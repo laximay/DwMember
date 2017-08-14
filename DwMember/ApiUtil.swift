@@ -16,7 +16,7 @@ class ApiUtil{
         return apiUtil;
     }
     //服務鏈接
-    static var serverUrl = "http://192.168.90.78:8080"
+    static var serverUrl = "http://192.168.90.52:8080"
     //公司代碼
     static var companyCode = "TaoHeung"
     //公司代碼
@@ -32,7 +32,7 @@ class ApiUtil{
     
     
     //加載引導頁的遠程資源
-    func launchCache()   {
+    static func launchCache()   {
         Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode]) { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
@@ -48,63 +48,90 @@ class ApiUtil{
     
     
     
-    
     //加載首頁的遠程資源
-    func homeCache()   {
+    static func homeCache()  {
         Just.post(ApiUtil.homeApi ,  data: ["company": ApiUtil.companyCode]) { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
             }
             let datas = DwHomeRootClass(fromDictionary: json).data!
             
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            do{
+                let allData : [DwCache] = try appDelegate.persistentContainer.viewContext.fetch(DwCache.fetchRequest())
+                
+                for ad in allData {
+                   appDelegate.persistentContainer.viewContext.delete(ad)
+                   appDelegate.saveContext()
+                }
+               
+                
+                datas.ads.map({(ad)  in
+                    let ads  =  DwCache(context: appDelegate.persistentContainer.viewContext)
+                    ads.image = ad.image
+                    ads.briefing = ad.briefing
+                    ads.english = ad.english
+                    ads.name = ad.name
+                    ads.opentype = ad.opentype
+                    ads.simpChinese = ad.simpChinese
+                    ads.sort = Int64(ad.sort)
+                    ads.thumb = ad.thumb as! String
+                    ads.url = ad.url
+                    ads.type = "ads"
+                    appDelegate.saveContext()
+                    
+                    
+                })
+                
+                datas.activitys.map({(ad)  in
+                    let activitys  =  DwCache(context: appDelegate.persistentContainer.viewContext)
+                    activitys.image = ad.image
+                    activitys.briefing = ad.briefing
+                    activitys.english = ad.english
+                    activitys.name = ad.name
+                    activitys.opentype = ad.opentype
+                    activitys.simpChinese = ad.simpChinese
+                    activitys.sort = Int64(ad.sort)
+                    activitys.thumb = ad.thumb as! String
+                    activitys.url = ad.url
+                    activitys.type = "activitys"
+                    appDelegate.saveContext()
+                    
+                    
+                })
+            }catch{
+                print(error)
+            }
             
             
-          
+            
+            
+            
         }
     }
     
-    func sign(data: [String: Any] = [:]) -> String {
+    
+    
+    func sign(data: [String: String] = [:]) -> String {
         var signStr = ""
-        
-       //排序并遍歷參數數據
-        for key in data.keys.sorted(by: <) {
-        let valueToSend: Any? = data[key] is NSNull ? "null" : data[key]
-           signStr.append("\(key))=\(valueToSend)&")
-        }
-       
         let defaults = UserDefaults.standard
-        
         if let sercet = defaults.string(forKey: "dwsercet"){
+            var data2 = data.sorted { (s1, s2) -> Bool in
+                return s1 < s2
+            }
+            signStr = data2.map{ "\($0)=\($1)" }.joined(separator: "&")
+            
             signStr.append("key=\(sercet)")
         }
-
-       
+        
         return signStr.md5().uppercased()
         
     }
     
-    func sign2(data: [String: Any] = [:]) -> String {
-        var signStr = ""
-        
-        signStr = data.map{ "\($0)=\($1)" }.joined(separator: "&")
-        
-        
-        let defaults = UserDefaults.standard
-        
-        if let sercet = defaults.string(forKey: "dwsercet"){
-            signStr.append("key=\(sercet)")
-        }
-        
-        
-        
-        return signStr.md5().uppercased()
-        
-    }
     
     
     
     
     
-
     
 }
