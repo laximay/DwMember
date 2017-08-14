@@ -20,6 +20,7 @@
 		3D16156F1F2F70F700E33F3D /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D16156E1F2F70F700E33F3D /* MainTableViewController.swift */; };
 		3D1615741F2F731200E33F3D /* IrregularityContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1615731F2F731200E33F3D /* IrregularityContentView.swift */; };
 		3D16157A1F2F765000E33F3D /* BouncesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1615781F2F765000E33F3D /* BouncesContentView.swift */; };
+		3D171BCD1F4095CC008BC06E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D171BCC1F4095CC008BC06E /* String.swift */; };
 		3D185BBD1F38B2CD00A89077 /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D185BBC1F38B2CD00A89077 /* CouponViewController.swift */; };
 		3D185BBF1F38B3DA00A89077 /* SegmentioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D185BBE1F38B3DA00A89077 /* SegmentioBuilder.swift */; };
 		3D1F008E1F37F89D0080957F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F008D1F37F89D0080957F /* WebViewController.swift */; };
@@ -65,6 +66,7 @@
 		3D1615731F2F731200E33F3D /* IrregularityContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IrregularityContentView.swift; sourceTree = "<group>"; };
 		3D1615781F2F765000E33F3D /* BouncesContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncesContentView.swift; sourceTree = "<group>"; };
 		3D1640BD1F39F969008F0819 /* DwMember.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DwMember.entitlements; sourceTree = "<group>"; };
+		3D171BCC1F4095CC008BC06E /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3D185BBC1F38B2CD00A89077 /* CouponViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
 		3D185BBE1F38B3DA00A89077 /* SegmentioBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentioBuilder.swift; sourceTree = "<group>"; };
 		3D1F008D1F37F89D0080957F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		3DD3E2591F2EC4C7001FC47E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DD885B11F2F3323007A1CE1 /* PodFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodFile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3DD885B31F2F3547007A1CE1 /* DwMember-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DwMember-Bridging-Header.h"; sourceTree = "<group>"; };
+		3DD9CA171F40A7BE002F8CE7 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		43F163E528729B10AFD69FD6 /* Pods-DwMember.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwMember.release.xcconfig"; path = "Pods/Target Support Files/Pods-DwMember/Pods-DwMember.release.xcconfig"; sourceTree = "<group>"; };
 		AC4CD4F2448D444F046254A9 /* Pods_DwMember.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DwMember.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AC6189F94F154D3B69D4C9 /* Pods-DwMember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwMember.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DwMember/Pods-DwMember.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				3D11B3981F30587D0031DD5C /* UIButton.swift */,
+				3D171BCC1F4095CC008BC06E /* String.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -232,6 +236,7 @@
 				3DD3E2561F2EC4C7001FC47E /* LaunchScreen.storyboard */,
 				3DD3E2591F2EC4C7001FC47E /* Info.plist */,
 				3D2569DC1F3D58A800E01816 /* DwEntitys.xcdatamodeld */,
+				3DD9CA171F40A7BE002F8CE7 /* MyPlayground.playground */,
 			);
 			path = DwMember;
 			sourceTree = "<group>";
@@ -411,6 +416,7 @@
 				3D31C4571F32324300988876 /* RegisterViewController.swift in Sources */,
 				3D493F881F3C2C2C00CEAD4B /* ContentViewController.swift in Sources */,
 				3D2569EE1F3DB28300E01816 /* DwHomeRootClass.swift in Sources */,
+				3D171BCD1F4095CC008BC06E /* String.swift in Sources */,
 				3D11B39C1F3067CA0031DD5C /* Activitys.swift in Sources */,
 				3D493FA71F3C51A800CEAD4B /* DwStartAd.swift in Sources */,
 				3D31C4531F322F2000988876 /* LoginViewController.swift in Sources */,

@@ -28,6 +28,7 @@ class ApiUtil{
     //首頁Api
     static var homeApi = serverUrl + "/api/home"
     
+    let encoding: String.Encoding = String.Encoding.utf8
     
     
     //加載引導頁的遠程資源
@@ -57,8 +58,53 @@ class ApiUtil{
             let datas = DwHomeRootClass(fromDictionary: json).data!
             
             
+            
           
         }
     }
+    
+    func sign(data: [String: Any] = [:]) -> String {
+        var signStr = ""
+        
+       //排序并遍歷參數數據
+        for key in data.keys.sorted(by: <) {
+        let valueToSend: Any? = data[key] is NSNull ? "null" : data[key]
+           signStr.append("\(key))=\(valueToSend)&")
+        }
+       
+        let defaults = UserDefaults.standard
+        
+        if let sercet = defaults.string(forKey: "dwsercet"){
+            signStr.append("key=\(sercet)")
+        }
+
+       
+        return signStr.md5().uppercased()
+        
+    }
+    
+    func sign2(data: [String: Any] = [:]) -> String {
+        var signStr = ""
+        
+        signStr = data.map{ "\($0)=\($1)" }.joined(separator: "&")
+        
+        
+        let defaults = UserDefaults.standard
+        
+        if let sercet = defaults.string(forKey: "dwsercet"){
+            signStr.append("key=\(sercet)")
+        }
+        
+        
+        
+        return signStr.md5().uppercased()
+        
+    }
+    
+    
+    
+    
+    
+
     
 }

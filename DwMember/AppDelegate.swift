@@ -26,9 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             apiUtil.launchCache()
             print("异步任务执行完毕")
         }
-        
-        
-        
+   
+    
         //设置字体
         if let barFont = UIFont(name: "Avenir-Light", size: 24){
             UINavigationBar.appearance().titleTextAttributes = [
