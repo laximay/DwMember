@@ -14,11 +14,20 @@ extension UIButton {
                    titlePosition: UIViewContentMode, additionalSpacing: CGFloat, state: UIControlState){
         //self.imageView?.contentMode = .scaleAspectFill
         let imgUrl = URL(string: anImage!)
-        //cell.thumbImage.kf.setImage(with: imgUrl)
-        
         self.kf.setImage(with: imgUrl, for: state)
+
+        positionLabelRespectToImage(title: title, position: titlePosition, spacing: additionalSpacing)
         
-        //self.setImage(anImage?.reSizeImage(reSize: reSize).withRenderingMode(.alwaysOriginal), for: state)
+        self.titleLabel?.contentMode = .center
+        self.setTitle(title, for: state)
+        
+        
+    }
+    
+    @objc func setLocal(image anImage: UIImage, title: String,
+                   titlePosition: UIViewContentMode, additionalSpacing: CGFloat, state: UIControlState){
+       
+        self.setImage(anImage.withRenderingMode(.alwaysOriginal), for: state)
         
         
         positionLabelRespectToImage(title: title, position: titlePosition, spacing: additionalSpacing)
@@ -28,6 +37,7 @@ extension UIButton {
         
         
     }
+
     
     private func positionLabelRespectToImage(title: String, position: UIViewContentMode,
                                              spacing: CGFloat) {

@@ -25,6 +25,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     var  features : [DwCache] = []
     var scrollImageUrls: [[String]] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCache()
@@ -36,7 +37,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         
         tableView.estimatedRowHeight = 200 //自适应行高
         tableView.rowHeight = UITableViewAutomaticDimension //自适应行高 ，还需设置宽度约束，动态行数设为0，0代表动态行数
-        createMenuBtn()    //创建功能按钮
+       
     }
     
     
@@ -235,32 +236,27 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         let btn2 : UIButton = menuView.arrangedSubviews[1] as! UIButton
         let btn3 : UIButton = menuView.arrangedSubviews[2] as! UIButton
         let btn4 : UIButton = menuView.arrangedSubviews[3] as! UIButton
+       
+        btn1.setLocal(image: UIImage(named: "thumb")!, title: "网", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
+         btn2.setLocal(image: UIImage(named: "thumb")!, title: "络", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
+         btn3.setLocal(image: UIImage(named: "thumb")!, title: "不", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
+         btn4.setLocal(image: UIImage(named: "thumb")!, title: "通", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
         if features.count == 4 {
-            //btn1.setImage(UIImage(named: "photoalbum")?.reSizeImage(reSize: reSize).withRenderingMode(.alwaysOriginal), for: .normal)
+            
             btn1.set(image: features[0].image!, title: features[0].name!, titlePosition: .bottom,
                      additionalSpacing: 10.0, state: .normal)
             btn1.tag = 0
-            print(features[0].opentype!)
+           
             
-            //            btn1.addTarget(self, action: #selector(self.presentNV), for: .touchUpInside)
-            
-            
-            
-            // btn2.setImage(UIImage(named: "photoalbum")?.reSizeImage(reSize: reSize).withRenderingMode(.alwaysOriginal), for: .normal)
             btn2.set(image: features[1].image!, title: features[1].name!, titlePosition: .bottom,
                      additionalSpacing: 10.0, state: .normal)
             
             btn2.tag = 1
-            
-            
-            // btn3.setImage(UIImage(named: "photoalbum")?.reSizeImage(reSize: reSize).withRenderingMode(.alwaysOriginal), for: .normal)
+ 
             btn3.set(image: features[2].image!, title: features[2].name!, titlePosition: .bottom,
                      additionalSpacing: 10.0, state: .normal)
             btn3.tag = 2
             
-            
-            
-            // btn4.setImage(UIImage(named: "photoalbum")?.reSizeImage(reSize: reSize).withRenderingMode(.alwaysOriginal), for: .normal)
             btn4.set(image: features[3].image!, title: features[3].name!, titlePosition: .bottom,
                      additionalSpacing: 10.0, state: .normal)
             btn4.tag = 3
@@ -269,25 +265,6 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         
     }
     
-    //創建功能按鈕,原生的滿足不了需求，擴展了一個
-    //    func createMenuBtn() {
-    //
-    //
-    //        features.map({(ft) in
-    //
-    //            let featureBtn : UIButton = UIButton()
-    //            featureBtn.setTitle("abc", for: .normal)
-    //            //let iconImg: UIImage = UIImage()
-    //
-    //            featureBtn.set(image: UIImage(named: "shop"), title: "abc", titlePosition: .bottom,
-    //                           additionalSpacing: 10.0, state: .normal)
-    //            self.menuView.addArrangedSubview(featureBtn)
-    //        })
-    //
-    //
-    //
-    //
-    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
