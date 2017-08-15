@@ -17,18 +17,16 @@ class MainTableViewController: UITableViewController {
     @IBOutlet weak var menuView: UIStackView! //放置功能按钮的VIEW
     var mainScrollView: SSCycleScrollView? //轮播图空间
     
-    //活动的LIST，需要读取网络接口
+    //活动的LIST
     var  activitys : [DwCache] = []
-    
-    //远程首页轮播图LIST，需要读取网络接口
+    //远程首页轮播图LIST
     var  ads : [DwCache] = []
+    //远程首页轮播图LIST
+    var  features : [DwCache] = []
     var scrollImageUrls: [[String]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         homeCache()
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -88,7 +86,7 @@ class MainTableViewController: UITableViewController {
                     appDelegate.persistentContainer.viewContext.delete(ad)
                     appDelegate.saveContext()
                 }
-                
+                //填充首頁輪播圖
                 self.scrollImageUrls = []
                 self.scrollImageUrls =  datas.ads.map({(ad) -> [String] in
                     let ads  =  DwCache(context: appDelegate.persistentContainer.viewContext)
@@ -99,7 +97,7 @@ class MainTableViewController: UITableViewController {
                     ads.opentype = ad.opentype
                     ads.simpChinese = ad.simpChinese
                     ads.sort = Int64(ad.sort)
-                    ads.thumb = ad.thumb as! String
+                    ads.thumb = ad.thumb
                     ads.url = ad.url
                     ads.type = "ads"
                     appDelegate.saveContext()
@@ -108,6 +106,7 @@ class MainTableViewController: UITableViewController {
                     
                 })
                 
+                //填充首頁活動圖
                 self.activitys = []
                 self.activitys =  datas.activitys.map({(ad) -> DwCache in
                     let activitys  =  DwCache(context: appDelegate.persistentContainer.viewContext)
@@ -118,18 +117,36 @@ class MainTableViewController: UITableViewController {
                     activitys.opentype = ad.opentype
                     activitys.simpChinese = ad.simpChinese
                     activitys.sort = Int64(ad.sort)
-                    activitys.thumb = ad.thumb as! String
+                    activitys.thumb = ad.thumb
                     activitys.url = ad.url
                     activitys.type = "activitys"
                     return activitys
                     
-                })
+                }).sorted(by: { $0.sort < $1.sort })
+                
+                self.features = []
+                self.features =  datas.features.map({(ad) -> DwCache in
+                    let features  =  DwCache(context: appDelegate.persistentContainer.viewContext)
+                    features.image = ad.image
+                    features.briefing = ad.briefing
+                    features.english = ad.english
+                    features.name = ad.name
+                    features.opentype = ad.opentype
+                    features.simpChinese = ad.simpChinese
+                    features.sort = Int64(ad.sort)
+                    features.thumb = ad.thumb
+                    features.url = ad.url
+                    features.type = "features"
+                    return features
+                    
+                }).sorted(by: { $0.sort < $1.sort })
                 
                 appDelegate.saveContext()
                 OperationQueue.main.addOperation {
                     self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
                     self.addMainScrollView()
+                    self.createMenuBtn()
                 }
                 
             }catch{
@@ -157,9 +174,14 @@ class MainTableViewController: UITableViewController {
         let requestAds : NSFetchRequest<DwCache> = DwCache.fetchRequest()
         let cateAds = NSPredicate.init(format: "type='ads'")
         requestAds.predicate = cateAds
+        //功能按鈕
+        let requestFeatures : NSFetchRequest<DwCache> = DwCache.fetchRequest()
+        let cateFeatures = NSPredicate.init(format: "type='features'")
+        requestFeatures.predicate = cateFeatures
         do{
             activitys = try appDelegate.persistentContainer.viewContext.fetch(requestActivitys)
             ads = try appDelegate.persistentContainer.viewContext.fetch(requestAds)
+            features = try appDelegate.persistentContainer.viewContext.fetch(requestFeatures)
             
             for ad in ads {
                 scrollImageUrls.append([ad.image!])
@@ -168,6 +190,7 @@ class MainTableViewController: UITableViewController {
             print(error)
         }
         addMainScrollView()
+        createMenuBtn()
     }
     
     
@@ -177,24 +200,69 @@ class MainTableViewController: UITableViewController {
     
     //創建功能按鈕,原生的滿足不了需求，擴展了一個
     func createMenuBtn() {
-        let btnBooking = menuView.arrangedSubviews[0] as! UIButton
-        btnBooking.set(image: UIImage(named: "home"), title: "訂座", titlePosition: .bottom,
-                       additionalSpacing: 10.0, state: .normal)
+        // let reSize = CGSize(width: 16 , height: 16) //初始化圖片大小
         
-        
-        
-        let btnQueue = menuView.arrangedSubviews[1] as! UIButton
-        btnQueue.set(image: UIImage(named: "find"), title: "取號", titlePosition: .bottom,
+        if let btn1 : UIButton = menuView.arrangedSubviews[0] as? UIButton {
+            
+            //btn1.setImage(UIImage(named: "photoalbum")?.reSizeImage(reSize: reSize).withRenderingMode(.alwaysOriginal), for: .normal)
+            btn1.set(image: features[0].image!, title: features[0].name!, titlePosition: .bottom,
                      additionalSpacing: 10.0, state: .normal)
+            
+            if  features[0].opentype as! String  == "NA" {
+                btn1.addTarget(self, action: #selector(MainTableViewController.presentNV), for: .touchUpInside)
+            }else{
+                btn1.addTarget(self, action: #selector(MainTableViewController.presentWV), for: .touchUpInside)
+            }
+            
+            
+        }
         
-        let btnIntgel = menuView.arrangedSubviews[2] as! UIButton
-        btnIntgel.set(image: UIImage(named: "favor"), title: "積分", titlePosition: .bottom,
-                      additionalSpacing: 10.0, state: .normal)
+        if let btn2 : UIButton = menuView.arrangedSubviews[1] as? UIButton {
+            // btn2.setImage(UIImage(named: "photoalbum")?.reSizeImage(reSize: reSize).withRenderingMode(.alwaysOriginal), for: .normal)
+            btn2.set(image: features[1].image!, title: features[1].name!, titlePosition: .bottom,
+                     additionalSpacing: 10.0, state: .normal)
+           
+        }
         
-        let btnCoupon = menuView.arrangedSubviews[3] as! UIButton
-        btnCoupon.set(image: UIImage(named: "shop"), title: "優惠券", titlePosition: .bottom,
-                      additionalSpacing: 10.0, state: .normal)
+        if  let btn3 : UIButton = menuView.arrangedSubviews[2] as? UIButton {
+            // btn3.setImage(UIImage(named: "photoalbum")?.reSizeImage(reSize: reSize).withRenderingMode(.alwaysOriginal), for: .normal)
+            btn3.set(image: features[2].image!, title: features[2].name!, titlePosition: .bottom,
+                     additionalSpacing: 10.0, state: .normal)
+            
+        }
+        
+        if let btn4 : UIButton = menuView.arrangedSubviews[3] as? UIButton {
+            // btn4.setImage(UIImage(named: "photoalbum")?.reSizeImage(reSize: reSize).withRenderingMode(.alwaysOriginal), for: .normal)
+            btn4.set(image: features[3].image!, title: features[3].name!, titlePosition: .bottom,
+                     additionalSpacing: 10.0, state: .normal)
+            print(features[3].opentype as! String)
+            if  features[3].opentype as! String  == "NA" {
+                btn4.addTarget(self, action: #selector(MainTableViewController.presentNV), for: .touchUpInside)
+            }else{
+                btn4.addTarget(self, action: #selector(MainTableViewController.presentWV), for: .touchUpInside)
+            }
+        }
     }
+    
+    //創建功能按鈕,原生的滿足不了需求，擴展了一個
+    //    func createMenuBtn() {
+    //
+    //
+    //        features.map({(ft) in
+    //
+    //            let featureBtn : UIButton = UIButton()
+    //            featureBtn.setTitle("abc", for: .normal)
+    //            //let iconImg: UIImage = UIImage()
+    //
+    //            featureBtn.set(image: UIImage(named: "shop"), title: "abc", titlePosition: .bottom,
+    //                           additionalSpacing: 10.0, state: .normal)
+    //            self.menuView.addArrangedSubview(featureBtn)
+    //        })
+    //
+    //
+    //
+    //
+    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -270,6 +338,38 @@ class MainTableViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    //跳轉原生的控制器
+    @objc public func presentNV() {
+        
+        let viewNv = storyboard?.instantiateViewController(withIdentifier: "CouponViewController")
+        if let navigationController = navigationController {
+            navigationController.pushViewController(viewNv!, animated: true)
+            return
+        }
+        present(viewNv!, animated: true, completion: nil)
+    }
+    //跳轉WEBVIEW的控制器
+    @objc public func presentWV() {
+        let viewNv = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController
+        viewNv?.url = "http://www.baidu.com"
+        
+        if let navigationController = navigationController {
+            navigationController.pushViewController(viewNv!, animated: true)
+            return
+        }
+        
+        present(viewNv!, animated: true, completion: nil)
+    }
+    
+    //退出登錄的控制器
+    @objc public func loginOut(url:String) {
+        let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+        if let navigationController = navigationController {
+            navigationController.pushViewController(loginVC!, animated: true)
+            return
+        }
+        present(loginVC!, animated: true, completion: nil)
+    }
     
     @IBAction func close(segue: UIStoryboardSegue){
     }

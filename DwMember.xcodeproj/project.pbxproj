@@ -43,6 +43,7 @@
 		3D493FA71F3C51A800CEAD4B /* DwStartAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493FA11F3C51A800CEAD4B /* DwStartAd.swift */; };
 		3D493FA81F3C51A800CEAD4B /* DwStartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493FA21F3C51A800CEAD4B /* DwStartData.swift */; };
 		3D493FA91F3C51A800CEAD4B /* DwStartRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493FA31F3C51A800CEAD4B /* DwStartRootClass.swift */; };
+		3D8274EC1F42B758009BB0C9 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274EB1F42B758009BB0C9 /* UIImage.swift */; };
 		3DA8FB371F30BCCD00C44ABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DA8FB361F30BCCD00C44ABD /* Assets.xcassets */; };
 		3DD3E24B1F2EC4C6001FC47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3E24A1F2EC4C6001FC47E /* AppDelegate.swift */; };
 		3DD3E2501F2EC4C6001FC47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD3E24E1F2EC4C6001FC47E /* Main.storyboard */; };
@@ -89,6 +90,7 @@
 		3D493FA11F3C51A800CEAD4B /* DwStartAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwStartAd.swift; sourceTree = "<group>"; };
 		3D493FA21F3C51A800CEAD4B /* DwStartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwStartData.swift; sourceTree = "<group>"; };
 		3D493FA31F3C51A800CEAD4B /* DwStartRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwStartRootClass.swift; sourceTree = "<group>"; };
+		3D8274EB1F42B758009BB0C9 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		3DA8FB361F30BCCD00C44ABD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DD3E2471F2EC4C6001FC47E /* DwMember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DwMember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD3E24A1F2EC4C6001FC47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				3D11B3981F30587D0031DD5C /* UIButton.swift */,
 				3D171BCC1F4095CC008BC06E /* String.swift */,
+				3D8274EB1F42B758009BB0C9 /* UIImage.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				3D493FA61F3C51A800CEAD4B /* DwGuideRootClass.swift in Sources */,
 				3D11B3991F30587D0031DD5C /* UIButton.swift in Sources */,
 				3D154EF21F31A63800A6E157 /* MyTabBarViewController.swift in Sources */,
+				3D8274EC1F42B758009BB0C9 /* UIImage.swift in Sources */,
 				3D31C4551F32315200988876 /* ForgetViewController.swift in Sources */,
 				3D2569E41F3D7B9800E01816 /* ZLaunchAdVC.swift in Sources */,
 			);

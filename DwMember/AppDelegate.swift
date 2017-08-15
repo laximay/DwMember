@@ -87,22 +87,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             /// ====================================================
             let defaults = UserDefaults.standard
            
-            if let url = defaults.string(forKey: "launchImageUrl")  {
-                dump(url)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                    
-                    let adDuartion = 4
-                    
-                    /// 设置参数 點擊圖片時候的跳轉
-                    adVC.setAdParams(url: url, adDuartion: adDuartion, skipBtnType: .circle, adViewBottomDistance: 100, transitionType: .filpFromLeft, adImgViewClick: {
-                        //                    let vc = UIViewController()
-                        //                    vc.view.backgroundColor = UIColor.yellow
-                        //                    homeVC.navigationController?.pushViewController(vc, animated: true)
-                        
-                    })
-                    
-                })
-            }
+//            if let url = defaults.string(forKey: "launchImageUrl")  {
+//                dump(url)
+//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+//                    
+//                    let adDuartion = 4
+//                    
+//                    /// 设置参数 點擊圖片時候的跳轉
+//                    adVC.setAdParams(url: url, adDuartion: adDuartion, skipBtnType: .circle, adViewBottomDistance: 100, transitionType: .filpFromLeft, adImgViewClick: {
+//                        //                    let vc = UIViewController()
+//                        //                    vc.view.backgroundColor = UIColor.yellow
+//                        //                    homeVC.navigationController?.pushViewController(vc, animated: true)
+//                        
+//                    })
+//                    
+//                })
+//            }
             window?.rootViewController = adVC
         }
         

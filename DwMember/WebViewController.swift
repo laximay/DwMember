@@ -12,6 +12,7 @@ class WebViewController: UIViewController {
 
    
     @IBOutlet weak var webView: UIWebView!
+    var url : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,7 @@ class WebViewController: UIViewController {
         //加入高度自适应，这样底部也不会缩进去
         wkWebView.autoresizingMask = [.flexibleHeight]
         
-        if let url = URL(string: "https://git.oschina.net/"){
+        if let url = URL(string: url){
             let request = URLRequest(url: url)
             // webView.loadRequest(request)
             wkWebView.load(request) //使用更快，内存占用更小的的WKWEBVIEW 使用wkwebview需要注意在所在VIEW里面不勾选under top bars，要不然顶部会缩进去导航条里面
