@@ -39,12 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
                 UNAuthorizationOptions.badge.rawValue |
                 UNAuthorizationOptions.sound.rawValue)
             JPUSHService.register(forRemoteNotificationConfig: entiity, delegate: self)
-        } else if #available(iOS 8.0, *) {
-            let types = UIUserNotificationType.badge.rawValue |
-                UIUserNotificationType.sound.rawValue |
-                UIUserNotificationType.alert.rawValue
-            JPUSHService.register(forRemoteNotificationTypes: types, categories: nil)
-        }else {
+        } else {
             let type = UIRemoteNotificationType.badge.rawValue |
                 UIRemoteNotificationType.sound.rawValue |
                 UIRemoteNotificationType.alert.rawValue
@@ -79,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             
             /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
             
-            let adVC = ZLaunchAdVC.init(defaultDuration: 3, completion: { [weak self] in
+            let adVC = ZLaunchAdVC.init(defaultDuration: 1, completion: { [weak self] in
                 self?.window?.rootViewController = homeVC
             })
             /// 延时模拟网络请求 如果存在啟動廣告，則啟動記載廣告
@@ -87,22 +82,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             /// ====================================================
             let defaults = UserDefaults.standard
            
-//            if let url = defaults.string(forKey: "launchImageUrl")  {
-//                dump(url)
-//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-//                    
-//                    let adDuartion = 4
-//                    
-//                    /// 设置参数 點擊圖片時候的跳轉
-//                    adVC.setAdParams(url: url, adDuartion: adDuartion, skipBtnType: .circle, adViewBottomDistance: 100, transitionType: .filpFromLeft, adImgViewClick: {
-//                        //                    let vc = UIViewController()
-//                        //                    vc.view.backgroundColor = UIColor.yellow
-//                        //                    homeVC.navigationController?.pushViewController(vc, animated: true)
-//                        
-//                    })
-//                    
-//                })
-//            }
+            if let url = defaults.string(forKey: "launchImageUrl")  {
+                dump(url)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                    
+                    let adDuartion = 4
+                    
+                    /// 设置参数 點擊圖片時候的跳轉
+                    adVC.setAdParams(url: url, adDuartion: adDuartion, skipBtnType: .circle, adViewBottomDistance: 100, transitionType: .filpFromLeft, adImgViewClick: {
+                        //                    let vc = UIViewController()
+                        //                    vc.view.backgroundColor = UIColor.yellow
+                        //                    homeVC.navigationController?.pushViewController(vc, animated: true)
+                        
+                    })
+                    
+                })
+            }
             window?.rootViewController = adVC
         }
         
@@ -126,6 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         application.applicationIconBadgeNumber = 0
         application.cancelAllLocalNotifications()
+        
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
