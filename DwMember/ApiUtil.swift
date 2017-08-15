@@ -17,8 +17,8 @@ enum imageType: String{
 }
 
 enum opentype: String{
-    case WV = "WV" //WEBVIEW方式打開
-    case NA = "NA" //原生形式
+    case WV , //WEBVIEW方式打開
+     NA  //原生形式
 
 }
 

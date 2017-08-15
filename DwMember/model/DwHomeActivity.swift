@@ -17,7 +17,7 @@ struct DwHomeActivity{
 	var opentype : String!
 	var simpChinese : String!
 	var sort : Int!
-	var thumb : AnyObject!
+	var thumb : String!
 	var url : String!
 
 
@@ -33,7 +33,7 @@ struct DwHomeActivity{
 		opentype = dictionary["opentype"] as? String
 		simpChinese = dictionary["simpChinese"] as? String
 		sort = dictionary["sort"] as? Int
-		thumb = dictionary["thumb"] as? AnyObject
+		thumb = dictionary["thumb"] as? String
 		url = dictionary["url"] as? String
 	}
 
