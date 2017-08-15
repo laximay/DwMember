@@ -24,16 +24,19 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentViewHeightConstraint.constant = 40
+        viewInit()
+        print("创建一次")
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+
+    
+    func viewInit()  {
         setupScrollView()
         
         SegmentioBuilder.buildSegmentioView(
@@ -54,17 +57,20 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
                 )
             }
         }
+        
     }
+    
+    
     
     // 子視圖 viewControllers
     
     fileprivate func preparedViewControllers() -> [CouponTableViewController] {
         let unusedController = CouponTableViewController.create() //未使用
-
+        
         let usedController = CouponTableViewController.create()//已使用
-
+        
         let expiredController = CouponTableViewController.create()//過期
-
+        
         let mallController = CouponTableViewController.create()//積分商城
         
         return [
@@ -75,7 +81,7 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
         ]
     }
     
-
+    
     
     // MARK: - Setup container view
     

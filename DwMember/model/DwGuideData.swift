@@ -30,7 +30,7 @@ struct DwGuideData{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if ads != nil{
 			var dictionaryElements = [NSDictionary]()
 			for adsElement in ads {

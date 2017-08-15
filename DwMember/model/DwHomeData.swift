@@ -46,7 +46,7 @@ struct DwHomeData{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if activitys != nil{
 			var dictionaryElements = [NSDictionary]()
 			for activitysElement in activitys {

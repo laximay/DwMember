@@ -10,7 +10,7 @@ import UIKit
 import SSCycleScrollView
 import Just
 import CoreData
-class MainTableViewController: UITableViewController {
+class MainTableViewController: UITableViewController, UIViewControllerTransitioningDelegate {
     
     
     @IBOutlet weak var indexImageView: UIView! //放置轮播图的VIEW
@@ -197,51 +197,76 @@ class MainTableViewController: UITableViewController {
     
     
     
+    @IBAction func featureTap(_ sender: UIButton) {
+        print("tab:\(sender.tag)")
+        var feature: DwCache
+        
+        feature = features[sender.tag]
+        dump(feature)
+        
+        if feature.opentype! == "WV" {
+            if let pageVC = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+                pageVC.url = feature.url!
+                self.navigationController?.pushViewController(pageVC, animated: true)
+            }
+        }else{
+            performSegue(withIdentifier: "couponMallSegue", sender: self)
+        }
+        //代码转场 方式一 Segue方式 一定要在目标页拖EXIT出口
+        //performSegue(withIdentifier: "couponMallSegue", sender: self)
+        //代码转场 方式二  present方式
+        //present(pageVC, animated: true, completion: nil)
+        //代码转场 方式三 导航方式-一定要在目标页拖EXIT出口
+        //self.navigationController?.pushViewController(pageVC, animated: true)
+        
+        
+        //        if let pageVC = storyboard?.instantiateViewController(withIdentifier: "CouponViewController") as? CouponViewController {
+        //            pageVC.selectIndex = 0
+        //            self.navigationController?.pushViewController(pageVC, animated: true)
+        //        }
+        
+    }
     
     //創建功能按鈕,原生的滿足不了需求，擴展了一個
     func createMenuBtn() {
-        // let reSize = CGSize(width: 16 , height: 16) //初始化圖片大小
         
-        if let btn1 : UIButton = menuView.arrangedSubviews[0] as? UIButton {
-            
+        
+        let btn1 : UIButton = menuView.arrangedSubviews[0] as! UIButton
+        let btn2 : UIButton = menuView.arrangedSubviews[1] as! UIButton
+        let btn3 : UIButton = menuView.arrangedSubviews[2] as! UIButton
+        let btn4 : UIButton = menuView.arrangedSubviews[3] as! UIButton
+        if features.count == 4 {
             //btn1.setImage(UIImage(named: "photoalbum")?.reSizeImage(reSize: reSize).withRenderingMode(.alwaysOriginal), for: .normal)
             btn1.set(image: features[0].image!, title: features[0].name!, titlePosition: .bottom,
                      additionalSpacing: 10.0, state: .normal)
+            btn1.tag = 0
+            print(features[0].opentype!)
             
-            if  features[0].opentype as! String  == "NA" {
-                btn1.addTarget(self, action: #selector(MainTableViewController.presentNV), for: .touchUpInside)
-            }else{
-                btn1.addTarget(self, action: #selector(MainTableViewController.presentWV), for: .touchUpInside)
-            }
+            //            btn1.addTarget(self, action: #selector(self.presentNV), for: .touchUpInside)
             
             
-        }
-        
-        if let btn2 : UIButton = menuView.arrangedSubviews[1] as? UIButton {
+            
             // btn2.setImage(UIImage(named: "photoalbum")?.reSizeImage(reSize: reSize).withRenderingMode(.alwaysOriginal), for: .normal)
             btn2.set(image: features[1].image!, title: features[1].name!, titlePosition: .bottom,
                      additionalSpacing: 10.0, state: .normal)
-           
-        }
-        
-        if  let btn3 : UIButton = menuView.arrangedSubviews[2] as? UIButton {
+            
+            btn2.tag = 1
+            
+            
             // btn3.setImage(UIImage(named: "photoalbum")?.reSizeImage(reSize: reSize).withRenderingMode(.alwaysOriginal), for: .normal)
             btn3.set(image: features[2].image!, title: features[2].name!, titlePosition: .bottom,
                      additionalSpacing: 10.0, state: .normal)
+            btn3.tag = 2
             
-        }
-        
-        if let btn4 : UIButton = menuView.arrangedSubviews[3] as? UIButton {
+            
+            
             // btn4.setImage(UIImage(named: "photoalbum")?.reSizeImage(reSize: reSize).withRenderingMode(.alwaysOriginal), for: .normal)
             btn4.set(image: features[3].image!, title: features[3].name!, titlePosition: .bottom,
                      additionalSpacing: 10.0, state: .normal)
-            print(features[3].opentype as! String)
-            if  features[3].opentype as! String  == "NA" {
-                btn4.addTarget(self, action: #selector(MainTableViewController.presentNV), for: .touchUpInside)
-            }else{
-                btn4.addTarget(self, action: #selector(MainTableViewController.presentWV), for: .touchUpInside)
-            }
+            btn4.tag = 3
+            
         }
+        
     }
     
     //創建功能按鈕,原生的滿足不了需求，擴展了一個
@@ -329,37 +354,21 @@ class MainTableViewController: UITableViewController {
      }
      */
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    //跳轉原生的控制器
-    @objc public func presentNV() {
+    
+    // MARK: - Navigation homeToWebSegue
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let viewNv = storyboard?.instantiateViewController(withIdentifier: "CouponViewController")
-        if let navigationController = navigationController {
-            navigationController.pushViewController(viewNv!, animated: true)
-            return
+        if segue.identifier == "couponMallSegue"{
+            let dest = segue.destination as! CouponViewController
+            dest.selectIndex = 0
         }
-        present(viewNv!, animated: true, completion: nil)
-    }
-    //跳轉WEBVIEW的控制器
-    @objc public func presentWV() {
-        let viewNv = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController
-        viewNv?.url = "http://www.baidu.com"
+        //隐藏底部导航条
+        segue.destination.hidesBottomBarWhenPushed = true
         
-        if let navigationController = navigationController {
-            navigationController.pushViewController(viewNv!, animated: true)
-            return
-        }
-        
-        present(viewNv!, animated: true, completion: nil)
     }
+    
     
     //退出登錄的控制器
     @objc public func loginOut(url:String) {
