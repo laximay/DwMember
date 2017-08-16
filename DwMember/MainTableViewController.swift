@@ -191,7 +191,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             print(error)
         }
         addMainScrollView()
-        createMenuBtn()
+        //createMenuBtn()
     }
     
     
@@ -237,10 +237,10 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         let btn3 : UIButton = menuView.arrangedSubviews[2] as! UIButton
         let btn4 : UIButton = menuView.arrangedSubviews[3] as! UIButton
        
-        btn1.setLocal(image: UIImage(named: "thumb")!, title: "网", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
-         btn2.setLocal(image: UIImage(named: "thumb")!, title: "络", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
-         btn3.setLocal(image: UIImage(named: "thumb")!, title: "不", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
-         btn4.setLocal(image: UIImage(named: "thumb")!, title: "通", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
+//        btn1.setLocal(image: UIImage(named: "thumb")!, title: "网", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
+//        btn2.setLocal(image: UIImage(named: "thumb")!, title: "络", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
+//        btn3.setLocal(image: UIImage(named: "thumb")!, title: "不", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
+//        btn4.setLocal(image: UIImage(named: "thumb")!, title: "通", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
         if features.count == 4 {
             
             btn1.set(image: features[0].image!, title: features[0].name!, titlePosition: .bottom,

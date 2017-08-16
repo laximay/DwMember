@@ -86,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
                 dump(url)
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
                     
-                    let adDuartion = 4
+                    let adDuartion = 3
                     
                     /// 设置参数 點擊圖片時候的跳轉
                     adVC.setAdParams(url: url, adDuartion: adDuartion, skipBtnType: .circle, adViewBottomDistance: 100, transitionType: .filpFromLeft, adImgViewClick: {

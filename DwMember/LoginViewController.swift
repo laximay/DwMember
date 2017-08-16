@@ -7,12 +7,19 @@
 //
 
 import UIKit
-
+import Just
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var imageLoginLogo: UIImageView!
+    @IBOutlet weak var cardNoLab: UITextField!
+    @IBOutlet weak var passwordLab: UITextField!
+    @IBOutlet weak var msgLab: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //每次打開這個頁面都要清空
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "dwsercet")
+        defaults.removeObject(forKey: "cardNo")
         
         
     }
@@ -21,6 +28,58 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func loginTap(_ sender: UIButton) {
+        login(cardNo: cardNoLab.text!, password: passwordLab.text!)
+    }
+    
+    @IBAction func registerTap(_ sender: Any) {
+        ApiUtil.webViewHandle(webCode: ApiUtil.BIND, sender: self)
+    }
+    //登錄
+    func login(cardNo: String, password: String )   {
+        //參數
+        var avgs = ApiUtil.frontFunc()
+        
+        avgs.updateValue(cardNo, forKey: "cardNo")
+        avgs.updateValue(password.md5().md5(), forKey: "password")
+        let defaults = UserDefaults.standard
+        //保存KEY，保存操作只在登錄的時候做一次，如果成功則會沿用，重新調用登錄方法會覆蓋
+        let key = "\(cardNo)#\(password.md5())"
+        defaults.set(key, forKey: "dwsercet")
+        defaults.set(cardNo, forKey: "cardNo")
+        let sign = ApiUtil.sign(data: avgs)
+        avgs.updateValue(sign, forKey: "sign")
+        Just.post(ApiUtil.loginApi ,  data: avgs) { (result) in
+            guard let json = result.json as? NSDictionary else{
+                return
+            }
+           // print(json)
+            if   DwLoginRootClass(fromDictionary: json).code == 1 {
+                //print("登錄成功")
+             
+                OperationQueue.main.addOperation {
+                  
+                   self.navigationController!.popViewController(animated: true)
+                }
+                
+            }else {
+                
+                OperationQueue.main.addOperation {
+                    self.msgLab.text = "賬號或密碼錯誤，請重試"
+                    self.msgLab.isHidden = false
+                }
+
+            }
+           
+            
+            
+        }
+    }
+    
+   
+
+    
     
     override func viewDidAppear(_ animated: Bool) {
         let startScale = CGAffineTransform(scaleX: 0, y: 0)
