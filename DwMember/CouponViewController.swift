@@ -25,7 +25,7 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         segmentViewHeightConstraint.constant = 40
         viewInit()
-        print("创建一次")
+       
         // Do any additional setup after loading the view.
     }
     
@@ -56,6 +56,7 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
                     animated: true
                 )
             }
+            print("選擇:\(segmentIndex)")
         }
         
     }
@@ -66,13 +67,13 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
     
     fileprivate func preparedViewControllers() -> [CouponTableViewController] {
         let unusedController = CouponTableViewController.create() //未使用
-        
+        unusedController.couponS = .unuse
         let usedController = CouponTableViewController.create()//已使用
-        
+        usedController.couponS = .use
         let expiredController = CouponTableViewController.create()//過期
-        
+        expiredController.couponS = .over
         let mallController = CouponTableViewController.create()//積分商城
-        
+        mallController.couponS = .mall
         return [
             unusedController,
             usedController,

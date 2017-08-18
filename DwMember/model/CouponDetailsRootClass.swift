@@ -1,5 +1,5 @@
 //
-//	DwWebViewBaseRootClass.swift
+//	CouponDetailsRootClass.swift
 //
 //	Create by 靖 温 on 17/8/2017
 //	Copyright © 2017. All rights reserved.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct DwWebViewBaseRootClass{
+struct CouponDetailsRootClass{
 
 	var apiVerify : Bool!
 	var code : Int!
-	var data : DwWebViewBaseData!
+	var data : CouponDetailsData!
 	var msg : String!
 	var result : String!
-	var sign : String!
+	var sign : AnyObject!
 	var singleLogin : Bool!
 
 
@@ -25,11 +25,11 @@ struct DwWebViewBaseRootClass{
 		apiVerify = dictionary["apiVerify"] as? Bool
 		code = dictionary["code"] as? Int
 		if let dataData = dictionary["data"] as? NSDictionary{
-				data = DwWebViewBaseData(fromDictionary: dataData)
+				data = CouponDetailsData(fromDictionary: dataData)
 			}
 		msg = dictionary["msg"] as? String
 		result = dictionary["result"] as? String
-		sign = dictionary["sign"] as? String
+		sign = dictionary["sign"] as? AnyObject
 		singleLogin = dictionary["singleLogin"] as? Bool
 	}
 

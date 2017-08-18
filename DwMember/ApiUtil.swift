@@ -21,6 +21,14 @@ enum imageType: String{
     case features = "features" //功能
 }
 
+enum couponStatus: String{
+    case unuse , //首頁廣告
+    use,  //活動
+    over, //功能
+    mall //商城
+}
+
+
 enum opentype: String{
     case WV , //WEBVIEW功能網頁方式打開
     NA,  //原生形式
@@ -42,7 +50,8 @@ open class ApiUtil{
         return apiUtil;
     }
     //服務鏈接
-    static var serverUrl = "http://47.52.25.198"
+    static var serverUrl = "https://members.mytaoheung.com/a"
+    //static var serverUrl = "http://192.168.90.93:8081"
     //公司代碼
     static var companyCode = "TaoHeung"
     //公司代碼
@@ -59,13 +68,32 @@ open class ApiUtil{
     static var cardinfoApi = serverUrl + "/api/member/card"
     //未讀消息數量Api
     static var msgcountApi = serverUrl + "/api/message/count"
+    //未用優惠券數量Api
+    static var couponcountApi = serverUrl + "/api/coupon/count"
+    //消息列表Api
+    static var msglistApi = serverUrl + "/api/message/list"
+    //已讀消息Api
+    static var msgupdateApi = serverUrl + "/api/message/update"
+    //未用優惠券Api
+    static var couponunuseApi = serverUrl + "/api/coupon/unuse"
+    //已用優惠券Api
+    static var couponuseApi = serverUrl + "/api/coupon/used"
+    //過期優惠券Api
+    static var couponoverApi = serverUrl + "/api/coupon/over"
+    //商城优惠券列表Api
+    static var couponlistApi = serverUrl + "/api/coupon/list"
+    //优惠券详情接口（未使用、已使用、已过期处调用）Api
+    static var couponbaseApi = serverUrl + "/api/coupon/base/view"
+    //优惠券详情接口（商城处调用）Api
+    static var coupoviewApi = serverUrl + "/api/coupon/view"
+    
     //webView統一接口Api
     static var webviewApi = serverUrl + "/api/url"
     //統一編碼
     let encoding: String.Encoding = String.Encoding.utf8
     static let BIND = webViewConfig(code : "BIND", verif: false)
     static let mainSB = UIStoryboard(name: "Main", bundle: Bundle.main)
-
+    
     
     static let idfv: String = "823676274628746"//UIDevice.current.identifierForVendor!.uuidString
     
@@ -91,7 +119,7 @@ open class ApiUtil{
         
         var avgs: [String: Any] = [:]
         if webCode.verif{
-        
+            
             let defaults = UserDefaults.standard
             let cardNo = defaults.string(forKey: "cardNo")
             avgs = ApiUtil.frontFunc()
@@ -108,22 +136,28 @@ open class ApiUtil{
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            print(json)
-            if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
-                let datas = DwWebViewBaseRootClass(fromDictionary: json).data
-                OperationQueue.main.addOperation {
-                    if let datas = datas {
-                        if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
-                            pageVC.url = datas.url
-                            pageVC.random = datas.random
-                            sender.navigationController?.pushViewController(pageVC, animated: true)
+            if result.ok {
+                if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
+                    let datas = DwWebViewBaseRootClass(fromDictionary: json).data
+                    OperationQueue.main.addOperation {
+                        if let datas = datas {
+                            if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+                                pageVC.url = datas.url
+                                pageVC.random = datas.random
+                                sender.navigationController?.pushViewController(pageVC, animated: true)
+                            }
                         }
                     }
+                    
+                }else {
+                    
+                    //異常處理
                 }
-                
-            }else {
-                
-                //異常處理
+            }else{
+                //處理接口系統錯誤
+                if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
+                    print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                }
             }
             
         }

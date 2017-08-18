@@ -20,6 +20,9 @@ class MeTableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(self.reloadAllData), for: .valueChanged)
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         tableView.backgroundColor = UIColor(white: 0.98, alpha: 1)//美化列表
         tableView.tableFooterView = UIView(frame: CGRect.zero)//去除页脚
@@ -27,9 +30,16 @@ class MeTableViewController: UITableViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("viewDidAppear")
         getCardInfo()
         getMsgCount()
+        getCouponCount()
+    }
+    
+    
+    func reloadAllData()  {
+        getCardInfo()
+        getMsgCount()
+        getCouponCount()
     }
     
     
@@ -42,33 +52,44 @@ class MeTableViewController: UITableViewController{
             let sign = ApiUtil.sign(data: avgs)
             avgs.updateValue(sign, forKey: "sign")
             
+            dump(avgs)
             
             Just.post(ApiUtil.cardinfoApi ,  data: avgs) { (result) in
+                
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print(json)
-                if  DwLoginRootClass(fromDictionary: json).code == 1 {
-                    
-                    let datas = DwLoginRootClass(fromDictionary: json).data
-                    
-                    OperationQueue.main.addOperation {
-                        if let integral = datas?.card.integral {
-                            self.integralLab.text = "\(integral)"
+                //print(json)
+                if result.ok {
+                    if  DwLoginRootClass(fromDictionary: json).code == 1 {
+                        
+                        let datas = DwLoginRootClass(fromDictionary: json).data
+                        
+                        OperationQueue.main.addOperation {
+                             self.refreshControl?.endRefreshing() //查询结果后关闭刷新
+                            if let integral = datas?.card.integral {
+                                self.integralLab.text = "\(integral)"
+                            }
+                            if let memberName = datas?.card.memberName {
+                                self.memberNameLab.text = memberName
+                                self.memberNameLab.isHidden = false
+                            }
+                            if let cardNo = datas?.card.cardno {
+                                self.cardNoLab.text = "NO:\(cardNo)"
+                                self.cardNoLab.isHidden = false
+                            }
+                           
                         }
-                        if let memberName = datas?.card.memberName {
-                            self.memberNameLab.text = memberName
-                            self.memberNameLab.isHidden = false
-                        }
-                        if let cardNo = datas?.card.cardno {
-                            self.cardNoLab.text = "NO:\(cardNo)"
-                            self.cardNoLab.isHidden = false
-                        }
+                        
+                    }else {
+                        
+                        //異常處理
                     }
-                    
-                }else {
-                    
-                    //異常處理
+                }else{
+                    //處理接口系統錯誤
+                    if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
+                        print("錯誤代碼\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    }
                 }
                 
             }}
@@ -89,21 +110,67 @@ class MeTableViewController: UITableViewController{
                     return
                 }
                 print(json)
-                if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
-                    let datas = DwCountBaseRootClass(fromDictionary: json).data
-                    OperationQueue.main.addOperation {
-                        if let msgCount = datas  {
-                            self.msgCountLab.text = "\(msgCount as! Int)"
+                if result.ok {
+                    if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
+                        let datas = DwCountBaseRootClass(fromDictionary: json).data
+                        OperationQueue.main.addOperation {
+                            if let msgCount = datas  {
+                                self.msgCountLab.text = "\(msgCount as! Int)"
+                            }
                         }
+                        
+                    }else {
+                        
+                        //異常處理
                     }
-                    
-                }else {
-                    
-                    //異常處理
+                }else{
+                    //處理接口系統錯誤
+                    if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
+                        print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    }
                 }
                 
             }}
     }
+    
+    //獲得優惠券未用數量
+    func getCouponCount() {
+        let defaults = UserDefaults.standard
+        if let cardNo = defaults.string(forKey: "cardNo"){
+            var avgs = ApiUtil.frontFunc()
+            avgs.updateValue(cardNo, forKey: "cardNo")
+            
+            let sign = ApiUtil.sign(data: avgs)
+            avgs.updateValue(sign, forKey: "sign")
+            
+            
+            Just.post(ApiUtil.couponcountApi ,  data: avgs) { (result) in
+                guard let json = result.json as? NSDictionary else{
+                    return
+                }
+                if result.ok {
+                    if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
+                        let datas = DwCountBaseRootClass(fromDictionary: json).data
+                        OperationQueue.main.addOperation {
+                            if let couponCount = datas  {
+                                self.couponCountLab.text = "\(couponCount as! Int)"
+                            }
+                        }
+                        
+                    }else {
+                        
+                        //異常處理
+                    }
+                }else{
+                    //處理接口系統錯誤
+                    if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
+                        print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    }
+                }
+                
+            }}
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -168,9 +235,9 @@ class MeTableViewController: UITableViewController{
      */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "logoutSegue"{
-//          
-//        }
+        //        if segue.identifier == "logoutSegue"{
+        //
+        //        }
         //隐藏底部导航条
         //segue.destination.hidesBottomBarWhenPushed = true
     }

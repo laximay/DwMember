@@ -46,6 +46,20 @@
 		3D6458631F442A72008220C3 /* DwCountBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458621F442A72008220C3 /* DwCountBaseRootClass.swift */; };
 		3D6458661F444D9C008220C3 /* DwWebViewBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */; };
 		3D6458671F444D9C008220C3 /* DwWebViewBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */; };
+		3D6458691F452623008220C3 /* DwErrorBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458681F452623008220C3 /* DwErrorBaseRootClass.swift */; };
+		3D6458A81F455D24008220C3 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458A71F455D24008220C3 /* MessageTableViewCell.swift */; };
+		3D6458AB1F455E0F008220C3 /* DwMsgListBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458A91F455E0F008220C3 /* DwMsgListBaseData.swift */; };
+		3D6458AC1F455E0F008220C3 /* DwMsgListBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458AA1F455E0F008220C3 /* DwMsgListBaseRootClass.swift */; };
+		3D6458AE1F4599F1008220C3 /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458AD1F4599F1008220C3 /* MessageDetailViewController.swift */; };
+		3D6458B71F45BEF6008220C3 /* CouponDetailsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458AF1F45BEF6008220C3 /* CouponDetailsData.swift */; };
+		3D6458B81F45BEF6008220C3 /* CouponDetailsRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B01F45BEF6008220C3 /* CouponDetailsRootClass.swift */; };
+		3D6458B91F45BEF6008220C3 /* CouponMallData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B11F45BEF6008220C3 /* CouponMallData.swift */; };
+		3D6458BA1F45BEF6008220C3 /* CouponMallDetailsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B21F45BEF6008220C3 /* CouponMallDetailsData.swift */; };
+		3D6458BB1F45BEF6008220C3 /* CouponMallDetailsRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B31F45BEF6008220C3 /* CouponMallDetailsRootClass.swift */; };
+		3D6458BC1F45BEF6008220C3 /* CouponMallRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B41F45BEF6008220C3 /* CouponMallRootClass.swift */; };
+		3D6458BD1F45BEF6008220C3 /* DwCouponBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B51F45BEF6008220C3 /* DwCouponBaseData.swift */; };
+		3D6458BE1F45BEF6008220C3 /* DwCouponBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B61F45BEF6008220C3 /* DwCouponBaseRootClass.swift */; };
+		3D6458C21F45CB61008220C3 /* CouponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C11F45CB61008220C3 /* CouponTableViewCell.swift */; };
 		3D8274F01F43DEC2009BB0C9 /* DwLoginCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274ED1F43DEC2009BB0C9 /* DwLoginCard.swift */; };
 		3D8274F11F43DEC2009BB0C9 /* DwLoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274EE1F43DEC2009BB0C9 /* DwLoginData.swift */; };
 		3D8274F21F43DEC2009BB0C9 /* DwLoginRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */; };
@@ -98,6 +112,20 @@
 		3D6458621F442A72008220C3 /* DwCountBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwCountBaseRootClass.swift; sourceTree = "<group>"; };
 		3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwWebViewBaseData.swift; sourceTree = "<group>"; };
 		3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwWebViewBaseRootClass.swift; sourceTree = "<group>"; };
+		3D6458681F452623008220C3 /* DwErrorBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwErrorBaseRootClass.swift; sourceTree = "<group>"; };
+		3D6458A71F455D24008220C3 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		3D6458A91F455E0F008220C3 /* DwMsgListBaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwMsgListBaseData.swift; sourceTree = "<group>"; };
+		3D6458AA1F455E0F008220C3 /* DwMsgListBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwMsgListBaseRootClass.swift; sourceTree = "<group>"; };
+		3D6458AD1F4599F1008220C3 /* MessageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
+		3D6458AF1F45BEF6008220C3 /* CouponDetailsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDetailsData.swift; sourceTree = "<group>"; };
+		3D6458B01F45BEF6008220C3 /* CouponDetailsRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDetailsRootClass.swift; sourceTree = "<group>"; };
+		3D6458B11F45BEF6008220C3 /* CouponMallData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponMallData.swift; sourceTree = "<group>"; };
+		3D6458B21F45BEF6008220C3 /* CouponMallDetailsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponMallDetailsData.swift; sourceTree = "<group>"; };
+		3D6458B31F45BEF6008220C3 /* CouponMallDetailsRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponMallDetailsRootClass.swift; sourceTree = "<group>"; };
+		3D6458B41F45BEF6008220C3 /* CouponMallRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponMallRootClass.swift; sourceTree = "<group>"; };
+		3D6458B51F45BEF6008220C3 /* DwCouponBaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwCouponBaseData.swift; sourceTree = "<group>"; };
+		3D6458B61F45BEF6008220C3 /* DwCouponBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwCouponBaseRootClass.swift; sourceTree = "<group>"; };
+		3D6458C11F45CB61008220C3 /* CouponTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponTableViewCell.swift; sourceTree = "<group>"; };
 		3D8274ED1F43DEC2009BB0C9 /* DwLoginCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginCard.swift; sourceTree = "<group>"; };
 		3D8274EE1F43DEC2009BB0C9 /* DwLoginData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginData.swift; sourceTree = "<group>"; };
 		3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginRootClass.swift; sourceTree = "<group>"; };
@@ -169,6 +197,9 @@
 				3D185BBC1F38B2CD00A89077 /* CouponViewController.swift */,
 				3D493F851F3C2BCF00CEAD4B /* GuiderViewController.swift */,
 				3D493F871F3C2C2C00CEAD4B /* ContentViewController.swift */,
+				3D6458A71F455D24008220C3 /* MessageTableViewCell.swift */,
+				3D6458AD1F4599F1008220C3 /* MessageDetailViewController.swift */,
+				3D6458C11F45CB61008220C3 /* CouponTableViewCell.swift */,
 			);
 			name = controll;
 			sourceTree = "<group>";
@@ -196,6 +227,17 @@
 		3D493F8B1F3C3DB800CEAD4B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				3D6458AF1F45BEF6008220C3 /* CouponDetailsData.swift */,
+				3D6458B01F45BEF6008220C3 /* CouponDetailsRootClass.swift */,
+				3D6458B11F45BEF6008220C3 /* CouponMallData.swift */,
+				3D6458B21F45BEF6008220C3 /* CouponMallDetailsData.swift */,
+				3D6458B31F45BEF6008220C3 /* CouponMallDetailsRootClass.swift */,
+				3D6458B41F45BEF6008220C3 /* CouponMallRootClass.swift */,
+				3D6458B51F45BEF6008220C3 /* DwCouponBaseData.swift */,
+				3D6458B61F45BEF6008220C3 /* DwCouponBaseRootClass.swift */,
+				3D6458A91F455E0F008220C3 /* DwMsgListBaseData.swift */,
+				3D6458AA1F455E0F008220C3 /* DwMsgListBaseRootClass.swift */,
+				3D6458681F452623008220C3 /* DwErrorBaseRootClass.swift */,
 				3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */,
 				3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */,
 				3D6458621F442A72008220C3 /* DwCountBaseRootClass.swift */,
@@ -407,12 +449,16 @@
 			files = (
 				3D1615671F2F700B00E33F3D /* MeTableViewController.swift in Sources */,
 				3D16156B1F2F704100E33F3D /* PayViewController.swift in Sources */,
+				3D6458BE1F45BEF6008220C3 /* DwCouponBaseRootClass.swift in Sources */,
 				3D185BBF1F38B3DA00A89077 /* SegmentioBuilder.swift in Sources */,
+				3D6458691F452623008220C3 /* DwErrorBaseRootClass.swift in Sources */,
 				3D1488991F3311A700E90270 /* MessageTableViewController.swift in Sources */,
 				3D16157A1F2F765000E33F3D /* BouncesContentView.swift in Sources */,
 				3D2569E31F3D7B9800E01816 /* UIImageView+Gif.swift in Sources */,
 				3D8274F01F43DEC2009BB0C9 /* DwLoginCard.swift in Sources */,
 				3D493FA41F3C51A800CEAD4B /* DwGuideAd.swift in Sources */,
+				3D6458BD1F45BEF6008220C3 /* DwCouponBaseData.swift in Sources */,
+				3D6458B91F45BEF6008220C3 /* CouponMallData.swift in Sources */,
 				3D1488971F3310C700E90270 /* CouponTableViewController.swift in Sources */,
 				3D493FA51F3C51A800CEAD4B /* DwGuideData.swift in Sources */,
 				3D2569EC1F3DB28300E01816 /* DwHomeData.swift in Sources */,
@@ -424,28 +470,38 @@
 				3D6458671F444D9C008220C3 /* DwWebViewBaseRootClass.swift in Sources */,
 				3D1615741F2F731200E33F3D /* IrregularityContentView.swift in Sources */,
 				3DD3E24B1F2EC4C6001FC47E /* AppDelegate.swift in Sources */,
+				3D6458B71F45BEF6008220C3 /* CouponDetailsData.swift in Sources */,
 				3D11B39E1F306D020031DD5C /* MainActivitysTableViewCell.swift in Sources */,
 				3D16156F1F2F70F700E33F3D /* MainTableViewController.swift in Sources */,
+				3D6458BA1F45BEF6008220C3 /* CouponMallDetailsData.swift in Sources */,
 				3D2569DE1F3D58A800E01816 /* DwEntitys.xcdatamodeld in Sources */,
 				3D16156D1F2F709800E33F3D /* FindTableViewController.swift in Sources */,
+				3D6458B81F45BEF6008220C3 /* CouponDetailsRootClass.swift in Sources */,
+				3D6458C21F45CB61008220C3 /* CouponTableViewCell.swift in Sources */,
 				3D493FA81F3C51A800CEAD4B /* DwStartData.swift in Sources */,
 				3D1F008E1F37F89D0080957F /* WebViewController.swift in Sources */,
 				3D6458631F442A72008220C3 /* DwCountBaseRootClass.swift in Sources */,
 				3D185BBD1F38B2CD00A89077 /* CouponViewController.swift in Sources */,
 				3D493FA91F3C51A800CEAD4B /* DwStartRootClass.swift in Sources */,
 				3D31C4571F32324300988876 /* RegisterViewController.swift in Sources */,
+				3D6458BB1F45BEF6008220C3 /* CouponMallDetailsRootClass.swift in Sources */,
 				3D493F881F3C2C2C00CEAD4B /* ContentViewController.swift in Sources */,
 				3D2569EE1F3DB28300E01816 /* DwHomeRootClass.swift in Sources */,
 				3D171BCD1F4095CC008BC06E /* String.swift in Sources */,
 				3D11B39C1F3067CA0031DD5C /* Activitys.swift in Sources */,
 				3D493FA71F3C51A800CEAD4B /* DwStartAd.swift in Sources */,
+				3D6458BC1F45BEF6008220C3 /* CouponMallRootClass.swift in Sources */,
 				3D31C4531F322F2000988876 /* LoginViewController.swift in Sources */,
+				3D6458AC1F455E0F008220C3 /* DwMsgListBaseRootClass.swift in Sources */,
 				3D2569EB1F3DB28300E01816 /* DwHomeActivity.swift in Sources */,
 				3D493FA61F3C51A800CEAD4B /* DwGuideRootClass.swift in Sources */,
+				3D6458A81F455D24008220C3 /* MessageTableViewCell.swift in Sources */,
 				3D11B3991F30587D0031DD5C /* UIButton.swift in Sources */,
+				3D6458AE1F4599F1008220C3 /* MessageDetailViewController.swift in Sources */,
 				3D154EF21F31A63800A6E157 /* MyTabBarViewController.swift in Sources */,
 				3D31C4551F32315200988876 /* ForgetViewController.swift in Sources */,
 				3D2569E41F3D7B9800E01816 /* ZLaunchAdVC.swift in Sources */,
+				3D6458AB1F455E0F008220C3 /* DwMsgListBaseData.swift in Sources */,
 				3D8274F11F43DEC2009BB0C9 /* DwLoginData.swift in Sources */,
 				3D8274F21F43DEC2009BB0C9 /* DwLoginRootClass.swift in Sources */,
 			);

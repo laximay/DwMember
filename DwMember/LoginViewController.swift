@@ -51,10 +51,13 @@ class LoginViewController: UIViewController {
         let sign = ApiUtil.sign(data: avgs)
         avgs.updateValue(sign, forKey: "sign")
         Just.post(ApiUtil.loginApi ,  data: avgs) { (result) in
+           
+           
             guard let json = result.json as? NSDictionary else{
                 return
             }
-           // print(json)
+            print(json)
+            if result.ok {
             if   DwLoginRootClass(fromDictionary: json).code == 1 {
                 //print("登錄成功")
              
@@ -71,7 +74,13 @@ class LoginViewController: UIViewController {
                 }
 
             }
-           
+                
+            }else{
+                //處理接口系統錯誤
+                if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
+                    print("錯誤代碼\(error.status);信息:\(error.message)原因:\(error.exception)")
+                }
+            }
             
             
         }

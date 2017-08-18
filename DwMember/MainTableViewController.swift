@@ -145,7 +145,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                 appDelegate.saveContext()
                 OperationQueue.main.addOperation {
                     self.tableView.reloadData()
-                    self.refreshControl?.endRefreshing()
+                    //self.refreshControl?.endRefreshing()
                     self.addMainScrollView()
                     self.createMenuBtn()
                 }
@@ -199,11 +199,10 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     
     @IBAction func featureTap(_ sender: UIButton) {
-        print("tab:\(sender.tag)")
+       // print("tab:\(sender.tag)")
         var feature: DwCache
         
         feature = features[sender.tag]
-        dump(feature)
         
         if feature.opentype! == "WV" {
             if let pageVC = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {

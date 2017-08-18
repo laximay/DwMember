@@ -1,5 +1,5 @@
 //
-//	DwWebViewBaseRootClass.swift
+//	CouponMallRootClass.swift
 //
 //	Create by 靖 温 on 17/8/2017
 //	Copyright © 2017. All rights reserved.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct DwWebViewBaseRootClass{
+struct CouponMallRootClass{
 
 	var apiVerify : Bool!
 	var code : Int!
-	var data : DwWebViewBaseData!
+	var data : [CouponMallData]!
 	var msg : String!
 	var result : String!
-	var sign : String!
+	var sign : AnyObject!
 	var singleLogin : Bool!
 
 
@@ -24,12 +24,16 @@ struct DwWebViewBaseRootClass{
 	init(fromDictionary dictionary: NSDictionary){
 		apiVerify = dictionary["apiVerify"] as? Bool
 		code = dictionary["code"] as? Int
-		if let dataData = dictionary["data"] as? NSDictionary{
-				data = DwWebViewBaseData(fromDictionary: dataData)
+		data = [CouponMallData]()
+		if let dataArray = dictionary["data"] as? [NSDictionary]{
+			for dic in dataArray{
+				let value = CouponMallData(fromDictionary: dic)
+				data.append(value)
 			}
+		}
 		msg = dictionary["msg"] as? String
 		result = dictionary["result"] as? String
-		sign = dictionary["sign"] as? String
+		sign = dictionary["sign"] as? AnyObject
 		singleLogin = dictionary["singleLogin"] as? Bool
 	}
 
@@ -46,7 +50,11 @@ struct DwWebViewBaseRootClass{
 			dictionary["code"] = code
 		}
 		if data != nil{
-			dictionary["data"] = data.toDictionary()
+			var dictionaryElements = [NSDictionary]()
+			for dataElement in data {
+				dictionaryElements.append(dataElement.toDictionary())
+			}
+			dictionary["data"] = dictionaryElements
 		}
 		if msg != nil{
 			dictionary["msg"] = msg
