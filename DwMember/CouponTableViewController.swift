@@ -10,7 +10,11 @@ import UIKit
 import Just
 class CouponTableViewController: UITableViewController {
     //基礎券列表:未用，已用，過期
-    var couponBaseList: [ DwCouponBaseData] = []
+    var couponunuseList: [ DwCouponBaseData] = []
+    //基礎券列表:未用，已用，過期
+    var couponuseList: [ DwCouponBaseData] = []
+    //基礎券列表:未用，已用，過期
+    var couponoverList: [ DwCouponBaseData] = []
     //商城券列表
     var couponMallList: [CouponMallData] = []
     
@@ -20,20 +24,19 @@ class CouponTableViewController: UITableViewController {
         super.viewDidLoad()
         switch couponS {
         case .unuse:
-            print("類型\(couponS.rawValue)")
-            couponunuseList()
+            //print("類型\(couponS.rawValue)")
+            getcouponunuseList()
         case .use:
-            print("類型\(couponS.rawValue)")
-            couponuseList()
+            //print("類型\(couponS.rawValue)")
+            getcouponuseList()
         case .over:
-            print("類型\(couponS.rawValue)")
-            couponoverList()
+            //print("類型\(couponS.rawValue)")
+            getcouponoverList()
         case .mall:
             print("類型\(couponS.rawValue)")
-            couponList()
+            getcouponList()
         default:()
         }
-        couponunuseList()
         tableView.backgroundColor = UIColor(white: 0.98, alpha: 1)//美化列表
         tableView.tableFooterView = UIView(frame: CGRect.zero)//去除页脚
         tableView.separatorColor = UIColor(white: 0.9, alpha: 1)//去除分割线
@@ -46,11 +49,11 @@ class CouponTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0
+        return 230.0
     }
     
     //加載未用優惠券列表
-    func couponunuseList() {
+    func getcouponunuseList() {
         let defaults = UserDefaults.standard
         if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
@@ -64,10 +67,10 @@ class CouponTableViewController: UITableViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print("未用",json)
+                // print("未用",json)
                 if result.ok {
                     if  DwCouponBaseRootClass(fromDictionary: json).code == 1 {
-                        self.couponBaseList = DwCouponBaseRootClass(fromDictionary: json).data
+                        self.couponunuseList = DwCouponBaseRootClass(fromDictionary: json).data
                         
                         OperationQueue.main.addOperation {
                             
@@ -87,7 +90,7 @@ class CouponTableViewController: UITableViewController {
             }}
     }
     //加載已用優惠券方法
-    func couponuseList() {
+    func getcouponuseList() {
         let defaults = UserDefaults.standard
         if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
@@ -101,10 +104,10 @@ class CouponTableViewController: UITableViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print("已用",json)
+                //print("已用",json)
                 if result.ok {
                     if  DwCouponBaseRootClass(fromDictionary: json).code == 1 {
-                        self.couponBaseList = DwCouponBaseRootClass(fromDictionary: json).data
+                        self.couponuseList = DwCouponBaseRootClass(fromDictionary: json).data
                         
                         OperationQueue.main.addOperation {
                             
@@ -124,7 +127,7 @@ class CouponTableViewController: UITableViewController {
             }}
     }
     //加載過期優惠券列表
-    func couponoverList() {
+    func getcouponoverList() {
         let defaults = UserDefaults.standard
         if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
@@ -138,10 +141,10 @@ class CouponTableViewController: UITableViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print("過期",json)
+                //print("過期",json)
                 if result.ok {
                     if  DwCouponBaseRootClass(fromDictionary: json).code == 1 {
-                        self.couponBaseList = DwCouponBaseRootClass(fromDictionary: json).data
+                        self.couponoverList = DwCouponBaseRootClass(fromDictionary: json).data
                         
                         OperationQueue.main.addOperation {
                             
@@ -162,7 +165,7 @@ class CouponTableViewController: UITableViewController {
     }
     
     //加載商城優惠券列表
-    func couponList() {
+    func getcouponList() {
         let defaults = UserDefaults.standard
         if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
@@ -176,7 +179,7 @@ class CouponTableViewController: UITableViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print("商城",json)
+                //print("商城",json)
                 if result.ok {
                     if  CouponMallRootClass(fromDictionary: json).code == 1 {
                         self.couponMallList = CouponMallRootClass(fromDictionary: json).data
@@ -215,25 +218,67 @@ class CouponTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return couponBaseList.count
+        var listCount = 0
+        switch couponS {
+        case .unuse:
+            listCount = couponunuseList.count
+        case .use:
+            listCount = couponuseList.count
+        case .over:
+            listCount = couponoverList.count
+        case .mall:
+            listCount = couponMallList.count
+        default:()
+        }
+        
+        return listCount
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "couponCell", for: indexPath) as! CouponTableViewCell
-        var coupon : AnyObject? = nil
-        if couponS == .mall {
-            coupon = couponMallList[indexPath.row] as AnyObject
-        }else{
-             coupon = couponBaseList[indexPath.row] as AnyObject
+        
+        switch couponS {
+        case .unuse:
+            let coupon  = couponunuseList[indexPath.row]
+            let imgUrl = URL(string: coupon.image)
+            cell.titleLab.text = coupon.title
+            cell.expiredLab.text = coupon.endTime
+            //print("未用imgUrl:\(imgUrl)")
+            cell.couponImg.image = #imageLiteral(resourceName: "photoalbum") //加載佔位符
+            cell.couponImg.kf.setImage(with: imgUrl)
+        case .use:
+            let coupon  = couponuseList[indexPath.row]
+            let imgUrl = URL(string: coupon.image)
+            cell.titleLab.text = coupon.title
+            cell.expiredLab.text = coupon.endTime
+            // print("已用imgUrl:\(imgUrl)")
+            cell.couponImg.image = #imageLiteral(resourceName: "photoalbum") //加載佔位符
+            cell.couponImg.kf.setImage(with: imgUrl)
+            
+        case .over:
+            let coupon  = couponoverList[indexPath.row]
+            let imgUrl = URL(string: coupon.image)
+            cell.titleLab.text = coupon.title
+            cell.expiredLab.text = coupon.endTime
+            //print("过期imgUrl:\(imgUrl)")
+            cell.couponImg.image = #imageLiteral(resourceName: "photoalbum") //加載佔位符
+            cell.couponImg.kf.setImage(with: imgUrl)
+            
+        case .mall:
+            let coupon  = couponMallList[indexPath.row]
+            let imgUrl = URL(string: coupon.image)
+            cell.titleLab.text = coupon.title
+            cell.expiredLab.text = coupon.endTime
+            cell.descLab.text = coupon.exchangeType
+            cell.descLab.isHidden = false
+            //print("商城imgUrl:\(imgUrl)")
+            cell.couponImg.image = #imageLiteral(resourceName: "photoalbum") //加載佔位符
+            cell.couponImg.kf.setImage(with: imgUrl)
+            
+        default:()
         }
         
-        let imgUrl = URL(string: coupon!.image as! String)
-        print("imgUrl:\(imgUrl)")
-        cell.couponImg.image = #imageLiteral(resourceName: "photoalbum") //加載佔位符
-        // cell.couponImg.kf.setImage(with: imgUrl)
-        // Configure the cell...
         
         return cell
     }
@@ -274,14 +319,32 @@ class CouponTableViewController: UITableViewController {
      }
      */
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        if segue.identifier == "showCouponDeatilsSegue" {
+            let dest = segue.destination as! CouponDeatilsViewController
+            dest.couponS = self.couponS
+            
+            switch couponS {
+            case .unuse:
+                dest.couponId = couponunuseList[tableView.indexPathForSelectedRow!.row].id
+            case .use:
+                 dest.couponId = couponuseList[tableView.indexPathForSelectedRow!.row].id
+            case .over:
+                 dest.couponId = couponoverList[tableView.indexPathForSelectedRow!.row].id
+            case .mall:
+                 dest.couponId = couponMallList[tableView.indexPathForSelectedRow!.row].id
+            default:()
+            }
+ 
+        }
      }
-     */
+    
+    @IBAction func close(segue: UIStoryboardSegue){
+    }
+ 
     
 }

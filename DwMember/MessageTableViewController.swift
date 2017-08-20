@@ -148,7 +148,7 @@ class MessageTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "showMsgDetailSegue"{
-            print("woshinibaba...")
+            
             let dest = segue.destination as! MessageDetailViewController
             dest.msg = msgList[tableView.indexPathForSelectedRow!.row]
         }

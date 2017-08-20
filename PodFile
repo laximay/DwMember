@@ -9,4 +9,5 @@ pod 'BubbleTransition', '~> 2.0.0'
 pod 'SSCycleScrollView', '~> 2.1.0'
 pod 'Segmentio', '~> 2.1'
 pod 'JPush'
+pod 'swiftScan', '~> 1.1.0'
 end

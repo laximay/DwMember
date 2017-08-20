@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func registerTap(_ sender: Any) {
-        ApiUtil.webViewHandle(webCode: ApiUtil.BIND, sender: self)
+        ApiUtil.webViewHandle(withIdentifier: webViewType.BIND.rawValue, sender: self)
     }
     //登錄
     func login(cardNo: String, password: String )   {

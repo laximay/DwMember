@@ -29,19 +29,18 @@ enum couponStatus: String{
 }
 
 
-enum opentype: String{
-    case WV , //WEBVIEW功能網頁方式打開
-    NA,  //原生形式
-    OV //外部第三方網頁
-    
-}
-
-enum webViewType{
-    case BIND(needFront : Bool,code : String)
+//内部WEBVIEW请求参数CODE
+enum webViewType: String{
+    case BIND
     
 }
 
 
+// [viewCode : Segue]
+let nativeViews: [String: String] = ["couponNav": "couponMallSegue"]
+
+// [viewCode : Segue]
+let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", verif: false) ]
 
 open class ApiUtil{
     
@@ -50,47 +49,49 @@ open class ApiUtil{
         return apiUtil;
     }
     //服務鏈接
-    static var serverUrl = "https://members.mytaoheung.com/a"
+    static let serverUrl = "https://members.mytaoheung.com/a"
     //static var serverUrl = "http://192.168.90.93:8081"
     //公司代碼
-    static var companyCode = "TaoHeung"
+    static let companyCode = "TaoHeung"
     //公司代碼
-    static var channel = "IOS"
+    static let channel = "IOS"
     //啟動頁Api
-    static var launchApi = serverUrl + "/api/app/start"
+    static let launchApi = serverUrl + "/api/app/start"
     //引導頁Api
-    static var guideApi = serverUrl + "/api/app/guide"
+    static let guideApi = serverUrl + "/api/app/guide"
     //首頁Api
-    static var homeApi = serverUrl + "/api/home"
+    static let homeApi = serverUrl + "/api/home"
     //登錄Api
-    static var loginApi = serverUrl + "/api/member/login"
+    static let loginApi = serverUrl + "/api/member/login"
     //會員卡信息Api
-    static var cardinfoApi = serverUrl + "/api/member/card"
+    static let cardinfoApi = serverUrl + "/api/member/card"
     //未讀消息數量Api
-    static var msgcountApi = serverUrl + "/api/message/count"
+    static let msgcountApi = serverUrl + "/api/message/count"
     //未用優惠券數量Api
-    static var couponcountApi = serverUrl + "/api/coupon/count"
+    static let couponcountApi = serverUrl + "/api/coupon/count"
     //消息列表Api
-    static var msglistApi = serverUrl + "/api/message/list"
+    static let msglistApi = serverUrl + "/api/message/list"
     //已讀消息Api
-    static var msgupdateApi = serverUrl + "/api/message/update"
+    static let msgupdateApi = serverUrl + "/api/message/update"
     //未用優惠券Api
-    static var couponunuseApi = serverUrl + "/api/coupon/unuse"
+    static let couponunuseApi = serverUrl + "/api/coupon/unuse"
     //已用優惠券Api
-    static var couponuseApi = serverUrl + "/api/coupon/used"
+    static let couponuseApi = serverUrl + "/api/coupon/used"
     //過期優惠券Api
-    static var couponoverApi = serverUrl + "/api/coupon/over"
+    static let couponoverApi = serverUrl + "/api/coupon/over"
     //商城优惠券列表Api
-    static var couponlistApi = serverUrl + "/api/coupon/list"
+    static let couponlistApi = serverUrl + "/api/coupon/list"
     //优惠券详情接口（未使用、已使用、已过期处调用）Api
-    static var couponbaseApi = serverUrl + "/api/coupon/base/view"
+    static let couponbaseApi = serverUrl + "/api/coupon/base/view"
     //优惠券详情接口（商城处调用）Api
-    static var coupoviewApi = serverUrl + "/api/coupon/view"
+    static let coupomallApi = serverUrl + "/api/coupon/view"
+    //付款码生成
+    static let paycodeApi = serverUrl + "/api/pay/code"
     
     //webView統一接口Api
-    static var webviewApi = serverUrl + "/api/url"
+    static let webviewApi = serverUrl + "/api/url"
     //統一編碼
-    let encoding: String.Encoding = String.Encoding.utf8
+    static let encoding: String.Encoding = String.Encoding.utf8
     static let BIND = webViewConfig(code : "BIND", verif: false)
     static let mainSB = UIStoryboard(name: "Main", bundle: Bundle.main)
     
@@ -114,9 +115,10 @@ open class ApiUtil{
     }
     
     //webView統一跳轉控制器
-    static func webViewHandle(webCode: webViewConfig, sender: UIViewController ) {
+    static func webViewHandle(withIdentifier: String, sender: UIViewController ) {
         
-        
+        let webCode = inrwebView[withIdentifier]!
+        //dump(webCode)
         var avgs: [String: Any] = [:]
         if webCode.verif{
             
@@ -130,7 +132,7 @@ open class ApiUtil{
             avgs.updateValue(ApiUtil.idfv, forKey: "imei")
         }
         avgs.updateValue(webCode.code, forKey: "type")
-        dump(avgs)
+        //dump(avgs)
         
         Just.post(ApiUtil.webviewApi ,  data: avgs) { (result) in
             guard let json = result.json as? NSDictionary else{
