@@ -89,6 +89,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                     case .OV:
                         //内部WEBVIEW跳转
                         print("OV")
+                        ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
                     case .WV:
                         //第三方WEBVIEW跳转
                         print("WV")
@@ -254,6 +255,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             case .OV:
                 //内部WEBVIEW跳转
                 print("OV")
+                ApiUtil.webViewHandle(withIdentifier: feature.url!, sender: self)
             case .WV:
                 //第三方WEBVIEW跳转
                 print("WV")
@@ -371,6 +373,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             case .OV:
                 //内部WEBVIEW跳转
                 print("OV")
+                 ApiUtil.webViewHandle(withIdentifier: activity.url!, sender: self)
             case .WV:
                 //第三方WEBVIEW跳转
                 print("WV")

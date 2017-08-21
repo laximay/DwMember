@@ -17,6 +17,8 @@ class MeTableViewController: UITableViewController{
     @IBOutlet weak var cardNoLab: UILabel!
     @IBOutlet weak var couponCountLab: UILabel!
     @IBOutlet weak var msgCountLab: UILabel!
+    
+    var userInfo: DwLoginData?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,33 +54,33 @@ class MeTableViewController: UITableViewController{
             let sign = ApiUtil.sign(data: avgs)
             avgs.updateValue(sign, forKey: "sign")
             
-            dump(avgs)
+            //dump(avgs)
             
             Just.post(ApiUtil.cardinfoApi ,  data: avgs) { (result) in
                 
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                //print(json)
+                print(json)
                 if result.ok {
                     if  DwLoginRootClass(fromDictionary: json).code == 1 {
                         
-                        let datas = DwLoginRootClass(fromDictionary: json).data
+                        self.userInfo = DwLoginRootClass(fromDictionary: json).data
                         
                         OperationQueue.main.addOperation {
-                             self.refreshControl?.endRefreshing() //查询结果后关闭刷新
-                            if let integral = datas?.card.integral {
+                            self.refreshControl?.endRefreshing() //查询结果后关闭刷新
+                            if let integral = self.userInfo?.card.integral {
                                 self.integralLab.text = "\(integral)"
                             }
-                            if let memberName = datas?.card.memberName {
+                            if let memberName = self.userInfo?.card.memberName {
                                 self.memberNameLab.text = memberName
                                 self.memberNameLab.isHidden = false
                             }
-                            if let cardNo = datas?.card.cardno {
+                            if let cardNo = self.userInfo?.card.cardno {
                                 self.cardNoLab.text = "NO:\(cardNo)"
                                 self.cardNoLab.isHidden = false
                             }
-                           
+                            
                         }
                         
                     }else {
@@ -109,7 +111,7 @@ class MeTableViewController: UITableViewController{
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print(json)
+                //print(json)
                 if result.ok {
                     if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
                         let datas = DwCountBaseRootClass(fromDictionary: json).data
@@ -170,7 +172,7 @@ class MeTableViewController: UITableViewController{
                 
             }}
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -235,14 +237,18 @@ class MeTableViewController: UITableViewController{
      */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                if segue.identifier == "meToMemberMallSegue"{
-                    let dest = segue.destination as! CouponViewController
-                    dest.selectIndex = 0
-                    segue.destination.hidesBottomBarWhenPushed = true
-                    
-                }
+        if segue.identifier == "meToMemberMallSegue"{
+            let dest = segue.destination as! CouponViewController
+            dest.selectIndex = 0
+            segue.destination.hidesBottomBarWhenPushed = true
+            
+        }else if segue.identifier == "memberinfoSegue"{
+            let dest = segue.destination as! MemberInfoTableViewController
+            dest.userInfo = self.userInfo
+            segue.destination.hidesBottomBarWhenPushed = true
+        }
         //隐藏底部导航条
-        //segue.destination.hidesBottomBarWhenPushed = true
+        
     }
     
     

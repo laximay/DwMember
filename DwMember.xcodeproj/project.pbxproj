@@ -33,8 +33,6 @@
 		3D2569ED1F3DB28300E01816 /* DwHomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569E91F3DB28300E01816 /* DwHomeFeature.swift */; };
 		3D2569EE1F3DB28300E01816 /* DwHomeRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569EA1F3DB28300E01816 /* DwHomeRootClass.swift */; };
 		3D31C4531F322F2000988876 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D31C4521F322F2000988876 /* LoginViewController.swift */; };
-		3D31C4551F32315200988876 /* ForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D31C4541F32315200988876 /* ForgetViewController.swift */; };
-		3D31C4571F32324300988876 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D31C4561F32324300988876 /* RegisterViewController.swift */; };
 		3D493F861F3C2BCF00CEAD4B /* GuiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493F851F3C2BCF00CEAD4B /* GuiderViewController.swift */; };
 		3D493F881F3C2C2C00CEAD4B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493F871F3C2C2C00CEAD4B /* ContentViewController.swift */; };
 		3D493F9B1F3C41F100CEAD4B /* ApiUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493F9A1F3C41F100CEAD4B /* ApiUtil.swift */; };
@@ -61,6 +59,18 @@
 		3D6458BD1F45BEF6008220C3 /* DwCouponBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B51F45BEF6008220C3 /* DwCouponBaseData.swift */; };
 		3D6458BE1F45BEF6008220C3 /* DwCouponBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B61F45BEF6008220C3 /* DwCouponBaseRootClass.swift */; };
 		3D6458C21F45CB61008220C3 /* CouponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C11F45CB61008220C3 /* CouponTableViewCell.swift */; };
+		3D6458CC1F4A89C0008220C3 /* DwReservationBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C31F4A89C0008220C3 /* DwReservationBranch.swift */; };
+		3D6458CD1F4A89C0008220C3 /* DwReservationCustDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C41F4A89C0008220C3 /* DwReservationCustDetail.swift */; };
+		3D6458CE1F4A89C0008220C3 /* DwReservationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C51F4A89C0008220C3 /* DwReservationData.swift */; };
+		3D6458CF1F4A89C0008220C3 /* DwReservationMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C61F4A89C0008220C3 /* DwReservationMeal.swift */; };
+		3D6458D01F4A89C0008220C3 /* DwReservationMemPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C71F4A89C0008220C3 /* DwReservationMemPeriod.swift */; };
+		3D6458D11F4A89C0008220C3 /* DwReservationReList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C81F4A89C0008220C3 /* DwReservationReList.swift */; };
+		3D6458D21F4A89C0008220C3 /* DwReservationRemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C91F4A89C0008220C3 /* DwReservationRemark.swift */; };
+		3D6458D31F4A89C0008220C3 /* DwReservationReservationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458CA1F4A89C0008220C3 /* DwReservationReservationType.swift */; };
+		3D6458D41F4A89C0008220C3 /* DwReservationRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458CB1F4A89C0008220C3 /* DwReservationRootClass.swift */; };
+		3D6458D81F4A9586008220C3 /* ReservationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458D71F4A9586008220C3 /* ReservationTableViewController.swift */; };
+		3D6458DA1F4AA0AC008220C3 /* ResTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458D91F4AA0AC008220C3 /* ResTableViewCell.swift */; };
+		3D6458DC1F4AB34C008220C3 /* MemberInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458DB1F4AB34C008220C3 /* MemberInfoTableViewController.swift */; };
 		3D8274F01F43DEC2009BB0C9 /* DwLoginCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274ED1F43DEC2009BB0C9 /* DwLoginCard.swift */; };
 		3D8274F11F43DEC2009BB0C9 /* DwLoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274EE1F43DEC2009BB0C9 /* DwLoginData.swift */; };
 		3D8274F21F43DEC2009BB0C9 /* DwLoginRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */; };
@@ -102,8 +112,6 @@
 		3D2569E91F3DB28300E01816 /* DwHomeFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwHomeFeature.swift; sourceTree = "<group>"; };
 		3D2569EA1F3DB28300E01816 /* DwHomeRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwHomeRootClass.swift; sourceTree = "<group>"; };
 		3D31C4521F322F2000988876 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3D31C4541F32315200988876 /* ForgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetViewController.swift; sourceTree = "<group>"; };
-		3D31C4561F32324300988876 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3D493F851F3C2BCF00CEAD4B /* GuiderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuiderViewController.swift; sourceTree = "<group>"; };
 		3D493F871F3C2C2C00CEAD4B /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		3D493F9A1F3C41F100CEAD4B /* ApiUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUtil.swift; sourceTree = "<group>"; };
@@ -130,6 +138,18 @@
 		3D6458B51F45BEF6008220C3 /* DwCouponBaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwCouponBaseData.swift; sourceTree = "<group>"; };
 		3D6458B61F45BEF6008220C3 /* DwCouponBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwCouponBaseRootClass.swift; sourceTree = "<group>"; };
 		3D6458C11F45CB61008220C3 /* CouponTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponTableViewCell.swift; sourceTree = "<group>"; };
+		3D6458C31F4A89C0008220C3 /* DwReservationBranch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationBranch.swift; sourceTree = "<group>"; };
+		3D6458C41F4A89C0008220C3 /* DwReservationCustDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationCustDetail.swift; sourceTree = "<group>"; };
+		3D6458C51F4A89C0008220C3 /* DwReservationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationData.swift; sourceTree = "<group>"; };
+		3D6458C61F4A89C0008220C3 /* DwReservationMeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationMeal.swift; sourceTree = "<group>"; };
+		3D6458C71F4A89C0008220C3 /* DwReservationMemPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationMemPeriod.swift; sourceTree = "<group>"; };
+		3D6458C81F4A89C0008220C3 /* DwReservationReList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationReList.swift; sourceTree = "<group>"; };
+		3D6458C91F4A89C0008220C3 /* DwReservationRemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationRemark.swift; sourceTree = "<group>"; };
+		3D6458CA1F4A89C0008220C3 /* DwReservationReservationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationReservationType.swift; sourceTree = "<group>"; };
+		3D6458CB1F4A89C0008220C3 /* DwReservationRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationRootClass.swift; sourceTree = "<group>"; };
+		3D6458D71F4A9586008220C3 /* ReservationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewController.swift; sourceTree = "<group>"; };
+		3D6458D91F4AA0AC008220C3 /* ResTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResTableViewCell.swift; sourceTree = "<group>"; };
+		3D6458DB1F4AB34C008220C3 /* MemberInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoTableViewController.swift; sourceTree = "<group>"; };
 		3D8274ED1F43DEC2009BB0C9 /* DwLoginCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginCard.swift; sourceTree = "<group>"; };
 		3D8274EE1F43DEC2009BB0C9 /* DwLoginData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginData.swift; sourceTree = "<group>"; };
 		3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginRootClass.swift; sourceTree = "<group>"; };
@@ -195,8 +215,6 @@
 				3D11B39D1F306D020031DD5C /* MainActivitysTableViewCell.swift */,
 				3D1F008D1F37F89D0080957F /* WebViewController.swift */,
 				3D31C4521F322F2000988876 /* LoginViewController.swift */,
-				3D31C4541F32315200988876 /* ForgetViewController.swift */,
-				3D31C4561F32324300988876 /* RegisterViewController.swift */,
 				3D1488941F33085900E90270 /* MallViewController.swift */,
 				3D493F851F3C2BCF00CEAD4B /* GuiderViewController.swift */,
 				3D493F871F3C2C2C00CEAD4B /* ContentViewController.swift */,
@@ -207,6 +225,9 @@
 				3D1488961F3310C700E90270 /* CouponTableViewController.swift */,
 				3D6458C11F45CB61008220C3 /* CouponTableViewCell.swift */,
 				3D0376191F484895003173FD /* CouponDeatilsViewController.swift */,
+				3D6458D71F4A9586008220C3 /* ReservationTableViewController.swift */,
+				3D6458D91F4AA0AC008220C3 /* ResTableViewCell.swift */,
+				3D6458DB1F4AB34C008220C3 /* MemberInfoTableViewController.swift */,
 			);
 			name = controll;
 			sourceTree = "<group>";
@@ -234,6 +255,15 @@
 		3D493F8B1F3C3DB800CEAD4B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				3D6458C31F4A89C0008220C3 /* DwReservationBranch.swift */,
+				3D6458C41F4A89C0008220C3 /* DwReservationCustDetail.swift */,
+				3D6458C51F4A89C0008220C3 /* DwReservationData.swift */,
+				3D6458C61F4A89C0008220C3 /* DwReservationMeal.swift */,
+				3D6458C71F4A89C0008220C3 /* DwReservationMemPeriod.swift */,
+				3D6458C81F4A89C0008220C3 /* DwReservationReList.swift */,
+				3D6458C91F4A89C0008220C3 /* DwReservationRemark.swift */,
+				3D6458CA1F4A89C0008220C3 /* DwReservationReservationType.swift */,
+				3D6458CB1F4A89C0008220C3 /* DwReservationRootClass.swift */,
 				3D91761B1F486BD500E855F6 /* DwPayCodeData.swift */,
 				3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */,
 				3D6458AF1F45BEF6008220C3 /* CouponDetailsData.swift */,
@@ -470,18 +500,24 @@
 				3D6458BD1F45BEF6008220C3 /* DwCouponBaseData.swift in Sources */,
 				3D6458B91F45BEF6008220C3 /* CouponMallData.swift in Sources */,
 				3D1488971F3310C700E90270 /* CouponTableViewController.swift in Sources */,
+				3D6458CE1F4A89C0008220C3 /* DwReservationData.swift in Sources */,
 				3D493FA51F3C51A800CEAD4B /* DwGuideData.swift in Sources */,
 				3D2569EC1F3DB28300E01816 /* DwHomeData.swift in Sources */,
 				3D6458661F444D9C008220C3 /* DwWebViewBaseData.swift in Sources */,
 				3D1488951F33085900E90270 /* MallViewController.swift in Sources */,
 				3D493F9B1F3C41F100CEAD4B /* ApiUtil.swift in Sources */,
 				3D493F861F3C2BCF00CEAD4B /* GuiderViewController.swift in Sources */,
+				3D6458D21F4A89C0008220C3 /* DwReservationRemark.swift in Sources */,
+				3D6458D31F4A89C0008220C3 /* DwReservationReservationType.swift in Sources */,
+				3D6458DA1F4AA0AC008220C3 /* ResTableViewCell.swift in Sources */,
 				3D2569ED1F3DB28300E01816 /* DwHomeFeature.swift in Sources */,
 				3D6458671F444D9C008220C3 /* DwWebViewBaseRootClass.swift in Sources */,
 				3D1615741F2F731200E33F3D /* IrregularityContentView.swift in Sources */,
+				3D6458D01F4A89C0008220C3 /* DwReservationMemPeriod.swift in Sources */,
 				3DD3E24B1F2EC4C6001FC47E /* AppDelegate.swift in Sources */,
 				3D6458B71F45BEF6008220C3 /* CouponDetailsData.swift in Sources */,
 				3D11B39E1F306D020031DD5C /* MainActivitysTableViewCell.swift in Sources */,
+				3D6458CC1F4A89C0008220C3 /* DwReservationBranch.swift in Sources */,
 				3D16156F1F2F70F700E33F3D /* MainTableViewController.swift in Sources */,
 				3D6458BA1F45BEF6008220C3 /* CouponMallDetailsData.swift in Sources */,
 				3D2569DE1F3D58A800E01816 /* DwEntitys.xcdatamodeld in Sources */,
@@ -490,20 +526,24 @@
 				3D6458C21F45CB61008220C3 /* CouponTableViewCell.swift in Sources */,
 				3D493FA81F3C51A800CEAD4B /* DwStartData.swift in Sources */,
 				3D1F008E1F37F89D0080957F /* WebViewController.swift in Sources */,
+				3D6458CD1F4A89C0008220C3 /* DwReservationCustDetail.swift in Sources */,
+				3D6458DC1F4AB34C008220C3 /* MemberInfoTableViewController.swift in Sources */,
 				3D6458631F442A72008220C3 /* DwCountBaseRootClass.swift in Sources */,
 				3D185BBD1F38B2CD00A89077 /* CouponViewController.swift in Sources */,
 				3D493FA91F3C51A800CEAD4B /* DwStartRootClass.swift in Sources */,
-				3D31C4571F32324300988876 /* RegisterViewController.swift in Sources */,
 				3D6458BB1F45BEF6008220C3 /* CouponMallDetailsRootClass.swift in Sources */,
 				3D493F881F3C2C2C00CEAD4B /* ContentViewController.swift in Sources */,
 				3D2569EE1F3DB28300E01816 /* DwHomeRootClass.swift in Sources */,
 				3D171BCD1F4095CC008BC06E /* String.swift in Sources */,
+				3D6458D11F4A89C0008220C3 /* DwReservationReList.swift in Sources */,
 				3D11B39C1F3067CA0031DD5C /* Activitys.swift in Sources */,
 				3D493FA71F3C51A800CEAD4B /* DwStartAd.swift in Sources */,
 				3D91761D1F486BD500E855F6 /* DwPayCodeData.swift in Sources */,
 				3D6458BC1F45BEF6008220C3 /* CouponMallRootClass.swift in Sources */,
 				3D31C4531F322F2000988876 /* LoginViewController.swift in Sources */,
 				3D6458AC1F455E0F008220C3 /* DwMsgListBaseRootClass.swift in Sources */,
+				3D6458D41F4A89C0008220C3 /* DwReservationRootClass.swift in Sources */,
+				3D6458D81F4A9586008220C3 /* ReservationTableViewController.swift in Sources */,
 				3D2569EB1F3DB28300E01816 /* DwHomeActivity.swift in Sources */,
 				3D493FA61F3C51A800CEAD4B /* DwGuideRootClass.swift in Sources */,
 				3D6458A81F455D24008220C3 /* MessageTableViewCell.swift in Sources */,
@@ -511,10 +551,10 @@
 				3D6458AE1F4599F1008220C3 /* MessageDetailViewController.swift in Sources */,
 				3D91761E1F486BD500E855F6 /* DwPayCodeRootClass.swift in Sources */,
 				3D154EF21F31A63800A6E157 /* MyTabBarViewController.swift in Sources */,
-				3D31C4551F32315200988876 /* ForgetViewController.swift in Sources */,
 				3D2569E41F3D7B9800E01816 /* ZLaunchAdVC.swift in Sources */,
 				3D6458AB1F455E0F008220C3 /* DwMsgListBaseData.swift in Sources */,
 				3D8274F11F43DEC2009BB0C9 /* DwLoginData.swift in Sources */,
+				3D6458CF1F4A89C0008220C3 /* DwReservationMeal.swift in Sources */,
 				3D8274F21F43DEC2009BB0C9 /* DwLoginRootClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

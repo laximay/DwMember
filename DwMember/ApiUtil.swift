@@ -32,6 +32,8 @@ enum couponStatus: String{
 //内部WEBVIEW请求参数CODE
 enum webViewType: String{
     case BIND
+    case MPWD
+    case DZXQ
     
 }
 
@@ -40,7 +42,9 @@ enum webViewType: String{
 let nativeViews: [String: String] = ["couponNav": "couponMallSegue"]
 
 // [viewCode : Segue]
-let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", verif: false) ]
+let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", verif: false),
+                                           "MPWD": webViewConfig(code : "MPWD", verif: false),
+                                           "DZXQ": webViewConfig(code: "DZXQ", verif: true)]
 
 open class ApiUtil{
     
@@ -50,7 +54,7 @@ open class ApiUtil{
     }
     //服務鏈接
     static let serverUrl = "https://members.mytaoheung.com/a"
-    //static var serverUrl = "http://192.168.90.93:8081"
+    //static var serverUrl = "http://192.168.90.220:8088"
     //公司代碼
     static let companyCode = "TaoHeung"
     //公司代碼
@@ -85,14 +89,17 @@ open class ApiUtil{
     static let couponbaseApi = serverUrl + "/api/coupon/base/view"
     //优惠券详情接口（商城处调用）Api
     static let coupomallApi = serverUrl + "/api/coupon/view"
-    //付款码生成
+    //付款码生成Ap
     static let paycodeApi = serverUrl + "/api/pay/code"
+    //订座列表Api
+    static let reservationApi = serverUrl + "/api/reservation/getMyReservation"
+    //會員信息修改Api
+    static let userinfoApi = serverUrl + "/api/member/update"
     
     //webView統一接口Api
     static let webviewApi = serverUrl + "/api/url"
     //統一編碼
     static let encoding: String.Encoding = String.Encoding.utf8
-    static let BIND = webViewConfig(code : "BIND", verif: false)
     static let mainSB = UIStoryboard(name: "Main", bundle: Bundle.main)
     
     
@@ -132,7 +139,7 @@ open class ApiUtil{
             avgs.updateValue(ApiUtil.idfv, forKey: "imei")
         }
         avgs.updateValue(webCode.code, forKey: "type")
-        //dump(avgs)
+        dump(avgs)
         
         Just.post(ApiUtil.webviewApi ,  data: avgs) { (result) in
             guard let json = result.json as? NSDictionary else{
