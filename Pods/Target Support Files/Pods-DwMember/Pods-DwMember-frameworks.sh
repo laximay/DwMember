@@ -98,6 +98,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Segmentio/Segmentio.framework"
   install_framework "$BUILT_PRODUCTS_DIR/libwebp/libwebp.framework"
   install_framework "$BUILT_PRODUCTS_DIR/pop/pop.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/swiftScan/swiftScan.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/BubbleTransition/BubbleTransition.framework"
@@ -109,6 +110,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Segmentio/Segmentio.framework"
   install_framework "$BUILT_PRODUCTS_DIR/libwebp/libwebp.framework"
   install_framework "$BUILT_PRODUCTS_DIR/pop/pop.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/swiftScan/swiftScan.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

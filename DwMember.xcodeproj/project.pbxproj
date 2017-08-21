@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D03761A1F484895003173FD /* CouponDeatilsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0376191F484895003173FD /* CouponDeatilsViewController.swift */; };
 		3D11B3991F30587D0031DD5C /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B3981F30587D0031DD5C /* UIButton.swift */; };
 		3D11B39C1F3067CA0031DD5C /* Activitys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B39B1F3067CA0031DD5C /* Activitys.swift */; };
 		3D11B39E1F306D020031DD5C /* MainActivitysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B39D1F306D020031DD5C /* MainActivitysTableViewCell.swift */; };
@@ -63,6 +64,8 @@
 		3D8274F01F43DEC2009BB0C9 /* DwLoginCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274ED1F43DEC2009BB0C9 /* DwLoginCard.swift */; };
 		3D8274F11F43DEC2009BB0C9 /* DwLoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274EE1F43DEC2009BB0C9 /* DwLoginData.swift */; };
 		3D8274F21F43DEC2009BB0C9 /* DwLoginRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */; };
+		3D91761D1F486BD500E855F6 /* DwPayCodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91761B1F486BD500E855F6 /* DwPayCodeData.swift */; };
+		3D91761E1F486BD500E855F6 /* DwPayCodeRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */; };
 		3DA8FB371F30BCCD00C44ABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DA8FB361F30BCCD00C44ABD /* Assets.xcassets */; };
 		3DD3E24B1F2EC4C6001FC47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3E24A1F2EC4C6001FC47E /* AppDelegate.swift */; };
 		3DD3E2501F2EC4C6001FC47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD3E24E1F2EC4C6001FC47E /* Main.storyboard */; };
@@ -72,6 +75,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D0376191F484895003173FD /* CouponDeatilsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDeatilsViewController.swift; sourceTree = "<group>"; };
 		3D11B3981F30587D0031DD5C /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		3D11B39B1F3067CA0031DD5C /* Activitys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activitys.swift; sourceTree = "<group>"; };
 		3D11B39D1F306D020031DD5C /* MainActivitysTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainActivitysTableViewCell.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 		3D8274ED1F43DEC2009BB0C9 /* DwLoginCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginCard.swift; sourceTree = "<group>"; };
 		3D8274EE1F43DEC2009BB0C9 /* DwLoginData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginData.swift; sourceTree = "<group>"; };
 		3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginRootClass.swift; sourceTree = "<group>"; };
+		3D91761B1F486BD500E855F6 /* DwPayCodeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPayCodeData.swift; sourceTree = "<group>"; };
+		3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPayCodeRootClass.swift; sourceTree = "<group>"; };
 		3DA8FB361F30BCCD00C44ABD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DD3E2471F2EC4C6001FC47E /* DwMember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DwMember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD3E24A1F2EC4C6001FC47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -192,14 +198,15 @@
 				3D31C4541F32315200988876 /* ForgetViewController.swift */,
 				3D31C4561F32324300988876 /* RegisterViewController.swift */,
 				3D1488941F33085900E90270 /* MallViewController.swift */,
-				3D1488961F3310C700E90270 /* CouponTableViewController.swift */,
-				3D1488981F3311A700E90270 /* MessageTableViewController.swift */,
-				3D185BBC1F38B2CD00A89077 /* CouponViewController.swift */,
 				3D493F851F3C2BCF00CEAD4B /* GuiderViewController.swift */,
 				3D493F871F3C2C2C00CEAD4B /* ContentViewController.swift */,
+				3D1488981F3311A700E90270 /* MessageTableViewController.swift */,
 				3D6458A71F455D24008220C3 /* MessageTableViewCell.swift */,
 				3D6458AD1F4599F1008220C3 /* MessageDetailViewController.swift */,
+				3D185BBC1F38B2CD00A89077 /* CouponViewController.swift */,
+				3D1488961F3310C700E90270 /* CouponTableViewController.swift */,
 				3D6458C11F45CB61008220C3 /* CouponTableViewCell.swift */,
+				3D0376191F484895003173FD /* CouponDeatilsViewController.swift */,
 			);
 			name = controll;
 			sourceTree = "<group>";
@@ -227,6 +234,8 @@
 		3D493F8B1F3C3DB800CEAD4B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				3D91761B1F486BD500E855F6 /* DwPayCodeData.swift */,
+				3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */,
 				3D6458AF1F45BEF6008220C3 /* CouponDetailsData.swift */,
 				3D6458B01F45BEF6008220C3 /* CouponDetailsRootClass.swift */,
 				3D6458B11F45BEF6008220C3 /* CouponMallData.swift */,
@@ -455,6 +464,7 @@
 				3D1488991F3311A700E90270 /* MessageTableViewController.swift in Sources */,
 				3D16157A1F2F765000E33F3D /* BouncesContentView.swift in Sources */,
 				3D2569E31F3D7B9800E01816 /* UIImageView+Gif.swift in Sources */,
+				3D03761A1F484895003173FD /* CouponDeatilsViewController.swift in Sources */,
 				3D8274F01F43DEC2009BB0C9 /* DwLoginCard.swift in Sources */,
 				3D493FA41F3C51A800CEAD4B /* DwGuideAd.swift in Sources */,
 				3D6458BD1F45BEF6008220C3 /* DwCouponBaseData.swift in Sources */,
@@ -490,6 +500,7 @@
 				3D171BCD1F4095CC008BC06E /* String.swift in Sources */,
 				3D11B39C1F3067CA0031DD5C /* Activitys.swift in Sources */,
 				3D493FA71F3C51A800CEAD4B /* DwStartAd.swift in Sources */,
+				3D91761D1F486BD500E855F6 /* DwPayCodeData.swift in Sources */,
 				3D6458BC1F45BEF6008220C3 /* CouponMallRootClass.swift in Sources */,
 				3D31C4531F322F2000988876 /* LoginViewController.swift in Sources */,
 				3D6458AC1F455E0F008220C3 /* DwMsgListBaseRootClass.swift in Sources */,
@@ -498,6 +509,7 @@
 				3D6458A81F455D24008220C3 /* MessageTableViewCell.swift in Sources */,
 				3D11B3991F30587D0031DD5C /* UIButton.swift in Sources */,
 				3D6458AE1F4599F1008220C3 /* MessageDetailViewController.swift in Sources */,
+				3D91761E1F486BD500E855F6 /* DwPayCodeRootClass.swift in Sources */,
 				3D154EF21F31A63800A6E157 /* MyTabBarViewController.swift in Sources */,
 				3D31C4551F32315200988876 /* ForgetViewController.swift in Sources */,
 				3D2569E41F3D7B9800E01816 /* ZLaunchAdVC.swift in Sources */,

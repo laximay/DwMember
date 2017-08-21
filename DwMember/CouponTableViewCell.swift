@@ -11,6 +11,9 @@ import UIKit
 class CouponTableViewCell: UITableViewCell {
 
    
+    @IBOutlet weak var titleLab: UILabel!
+    @IBOutlet weak var expiredLab: UILabel!
+    @IBOutlet weak var descLab: UILabel!
     @IBOutlet weak var couponImg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

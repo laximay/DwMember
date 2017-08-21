@@ -8,6 +8,7 @@
 
 import UIKit
 import Segmentio
+import Just
 class CouponViewController: UIViewController, UIScrollViewDelegate {
     //顯示的樣式
     let segmentioStyle = SegmentioStyle.onlyLabel
@@ -23,8 +24,10 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         segmentViewHeightConstraint.constant = 40
         viewInit()
+        getCouponCount()
        
         // Do any additional setup after loading the view.
     }
@@ -47,8 +50,13 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
         SegmentioBuilder.setupBadgeCountForIndex(segmentioView, index: 0)
         //默認選中的索引
         segmentioView.selectedSegmentioIndex = selectIndex
+        setSrollViewOffset(segmentIndex: selectIndex)
+        //goToControllerAtIndex(selectIndex)
+        
+        print("初始化：\(selectIndex)")
         
         segmentioView.valueDidChange = { [weak self] _, segmentIndex in
+            
             if let scrollViewWidth = self?.scrollView.frame.width {
                 let contentOffsetX = scrollViewWidth * CGFloat(segmentIndex)
                 self?.scrollView.setContentOffset(
@@ -102,6 +110,7 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
             addChildViewController(viewController)
             scrollView.addSubview(viewController.view, options: .useAutoresize) // module's extension
             viewController.didMove(toParentViewController: self)
+            
         }
     }
     
@@ -120,6 +129,59 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 0)
+    }
+    
+    func setSrollViewOffset(segmentIndex : Int)  {
+        if let scrollViewWidth: CGFloat = self.scrollView.frame.width {
+            let contentOffsetX = scrollViewWidth * CGFloat(segmentIndex)
+            self.scrollView.setContentOffset(
+                CGPoint(x: contentOffsetX, y: 0),
+                animated: true
+            )
+        }
+    }
+    
+    //獲得優惠券未用數量
+    func getCouponCount() {
+        let defaults = UserDefaults.standard
+        if let cardNo = defaults.string(forKey: "cardNo"){
+            var avgs = ApiUtil.frontFunc()
+            avgs.updateValue(cardNo, forKey: "cardNo")
+            
+            let sign = ApiUtil.sign(data: avgs)
+            avgs.updateValue(sign, forKey: "sign")
+            
+            
+            Just.post(ApiUtil.couponcountApi ,  data: avgs) { (result) in
+                guard let json = result.json as? NSDictionary else{
+                    return
+                }
+                if result.ok {
+                    if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
+                        let datas = DwCountBaseRootClass(fromDictionary: json).data
+                        OperationQueue.main.addOperation {
+                            //添加角标
+                            if let couponCount = datas  {
+                                self.segmentioView.addBadge(
+                                    at:  0,
+                                    count: couponCount as! Int,
+                                    color: #colorLiteral(red: 0.6581850052, green: 0.05978029221, blue: 0.1673380733, alpha: 1)
+                                )
+                            }
+                        }
+                        
+                    }else {
+                        
+                        //異常處理
+                    }
+                }else{
+                    //處理接口系統錯誤
+                    if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
+                        print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    }
+                }
+                
+            }}
     }
     
 }

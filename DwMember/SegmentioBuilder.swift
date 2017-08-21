@@ -17,6 +17,7 @@ struct SegmentioBuilder {
             count: 0,
             color: #colorLiteral(red: 0.6581850052, green: 0.05978029221, blue: 0.1673380733, alpha: 1)
         )
+        
     }
     
     static func buildSegmentioView(segmentioView: Segmentio, segmentioStyle: SegmentioStyle) {

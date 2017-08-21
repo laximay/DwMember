@@ -235,9 +235,12 @@ class MeTableViewController: UITableViewController{
      */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        if segue.identifier == "logoutSegue"{
-        //
-        //        }
+                if segue.identifier == "meToMemberMallSegue"{
+                    let dest = segue.destination as! CouponViewController
+                    dest.selectIndex = 0
+                    segue.destination.hidesBottomBarWhenPushed = true
+                    
+                }
         //隐藏底部导航条
         //segue.destination.hidesBottomBarWhenPushed = true
     }

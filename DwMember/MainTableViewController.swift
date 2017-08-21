@@ -10,6 +10,14 @@ import UIKit
 import SSCycleScrollView
 import Just
 import CoreData
+
+enum opentypeM: String{
+    case WV = "WV" , //WEBVIEW功能網頁方式打開
+    NA = "NA",  //原生形式
+    OV = "OV" //外部第三方網頁
+    
+}
+
 class MainTableViewController: UITableViewController, UIViewControllerTransitioningDelegate {
     
     
@@ -37,8 +45,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         
         tableView.estimatedRowHeight = 200 //自适应行高
         tableView.rowHeight = UITableViewAutomaticDimension //自适应行高 ，还需设置宽度约束，动态行数设为0，0代表动态行数
-       
-    }
+           }
     
     
     
@@ -59,15 +66,48 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     
     func addMainScrollView() {
+        
         let currentRect =  self.indexImageView.bounds
         self.mainScrollView = SSCycleScrollView.init(frame: currentRect, animationDuration: 3, inputImageUrls: self.scrollImageUrls)
         self.mainScrollView?.tapBlock = {index in
             //在这里处理点击轮播图的的事件
             print("tapped page\(index)")
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let requestAds : NSFetchRequest<DwCache> = DwCache.fetchRequest()
+            let cateAds = NSPredicate.init(format: "type='ads'")
+            requestAds.predicate = cateAds
+            do{
+                let ads = try appDelegate.persistentContainer.viewContext.fetch(requestAds)
+                if let ad: DwCache = ads[index]{
+                    let openType = opentypeM.init(rawValue: ad.opentype!).unsafelyUnwrapped
+                    
+                    switch openType {
+                    case .NA:
+                        //原生跳转处理
+                        print("NA")
+                        self.performSegue(withIdentifier: nativeViews[ad.url!]!, sender: self)
+                    case .OV:
+                        //内部WEBVIEW跳转
+                        print("OV")
+                    case .WV:
+                        //第三方WEBVIEW跳转
+                        print("WV")
+                        if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+                            pageVC.url = ad.url!
+                            self.navigationController?.pushViewController(pageVC, animated: true)
+                        }
+                    default:
+                        print("未知类型")
+                    }
+                }
+                
+            }catch{
+                print(error)
+            }
+            
         }
         //        self.mainScrollView?.autoScroll = false
-        self.indexImageView.addSubview(self.mainScrollView!)
-    }
+        self.indexImageView.addSubview(self.mainScrollView!)    }
     
     func homeCache()  {
         //先加載CORE的數據
@@ -191,7 +231,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             print(error)
         }
         addMainScrollView()
-        //createMenuBtn()
+        createMenuBtn()
     }
     
     
@@ -199,19 +239,43 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     
     @IBAction func featureTap(_ sender: UIButton) {
-       // print("tab:\(sender.tag)")
-        var feature: DwCache
-        
-        feature = features[sender.tag]
-        
-        if feature.opentype! == "WV" {
-            if let pageVC = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
-                pageVC.url = feature.url!
-                self.navigationController?.pushViewController(pageVC, animated: true)
+        // print("tab:\(sender.tag)")
+        if  let feature : DwCache = features[sender.tag] {
+            
+            
+            let openType = opentypeM.init(rawValue: feature.opentype!).unsafelyUnwrapped
+            
+            switch openType {
+            case .NA:
+                //原生跳转处理
+                print("NA")
+                
+                performSegue(withIdentifier: nativeViews[feature.url!]!, sender: self)
+            case .OV:
+                //内部WEBVIEW跳转
+                print("OV")
+            case .WV:
+                //第三方WEBVIEW跳转
+                print("WV")
+                if let pageVC = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+                    pageVC.url = feature.url!
+                    self.navigationController?.pushViewController(pageVC, animated: true)
+                }
+            default:
+                print("未知类型")
             }
-        }else{
-            performSegue(withIdentifier: "couponMallSegue", sender: self)
         }
+        
+        
+        
+        //        if feature.opentype! == "WV" {
+        //            if let pageVC = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+        //                pageVC.url = feature.url!
+        //                self.navigationController?.pushViewController(pageVC, animated: true)
+        //            }
+        //        }else{
+        //            performSegue(withIdentifier: "couponMallSegue", sender: self)
+        //        }
         //代码转场 方式一 Segue方式 一定要在目标页拖EXIT出口
         //performSegue(withIdentifier: "couponMallSegue", sender: self)
         //代码转场 方式二  present方式
@@ -235,23 +299,23 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         let btn2 : UIButton = menuView.arrangedSubviews[1] as! UIButton
         let btn3 : UIButton = menuView.arrangedSubviews[2] as! UIButton
         let btn4 : UIButton = menuView.arrangedSubviews[3] as! UIButton
-       
-//        btn1.setLocal(image: UIImage(named: "thumb")!, title: "网", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
-//        btn2.setLocal(image: UIImage(named: "thumb")!, title: "络", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
-//        btn3.setLocal(image: UIImage(named: "thumb")!, title: "不", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
-//        btn4.setLocal(image: UIImage(named: "thumb")!, title: "通", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
+        
+        //        btn1.setLocal(image: UIImage(named: "thumb")!, title: "网", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
+        //        btn2.setLocal(image: UIImage(named: "thumb")!, title: "络", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
+        //        btn3.setLocal(image: UIImage(named: "thumb")!, title: "不", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
+        //        btn4.setLocal(image: UIImage(named: "thumb")!, title: "通", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
         if features.count == 4 {
             
             btn1.set(image: features[0].image!, title: features[0].name!, titlePosition: .bottom,
                      additionalSpacing: 10.0, state: .normal)
             btn1.tag = 0
-           
+            
             
             btn2.set(image: features[1].image!, title: features[1].name!, titlePosition: .bottom,
                      additionalSpacing: 10.0, state: .normal)
             
             btn2.tag = 1
- 
+            
             btn3.set(image: features[2].image!, title: features[2].name!, titlePosition: .bottom,
                      additionalSpacing: 10.0, state: .normal)
             btn3.tag = 2
@@ -292,6 +356,36 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         // Configure the cell...
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let activity : DwCache = activitys[indexPath.row] {
+            let openType = opentypeM.init(rawValue: activity.opentype!).unsafelyUnwrapped
+            
+            switch openType {
+            case .NA:
+                //原生跳转处理
+                print("NA")
+                  performSegue(withIdentifier: nativeViews[activity.url!]!, sender: self)
+            case .OV:
+                //内部WEBVIEW跳转
+                print("OV")
+            case .WV:
+                //第三方WEBVIEW跳转
+                print("WV")
+                if let pageVC = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+                    pageVC.url = activity.url!
+                    self.navigationController?.pushViewController(pageVC, animated: true)
+                }
+            default:
+                print("未知类型")
+            }
+        }
+        
+        
+        
+        
     }
     
     
