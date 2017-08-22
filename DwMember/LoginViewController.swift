@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
         let key = "\(cardNo)#\(password.md5())"
         defaults.set(key, forKey: "dwsercet")
         defaults.set(cardNo, forKey: "cardNo")
-        let sign = ApiUtil.sign(data: avgs)
+        let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
         Just.post(ApiUtil.loginApi ,  data: avgs) { (result) in
            

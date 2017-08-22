@@ -36,7 +36,7 @@ class MessageDetailViewController: UIViewController {
             avgs.updateValue(cardNo, forKey: "cardNo")
             let msgId  = msg?.id!
             avgs.updateValue(msgId!, forKey: "msgId")
-            let sign = ApiUtil.sign(data: avgs)
+            let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             
             

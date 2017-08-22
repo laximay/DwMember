@@ -14,6 +14,7 @@ class WebViewController: UIViewController {
     @IBOutlet weak var webView: UIWebView!
     var url = ""
     var random = ""
+    var cardNo = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         //访问http协议的网址需要在info.plist里面打开限制
@@ -22,8 +23,8 @@ class WebViewController: UIViewController {
         view.addSubview(wkWebView)
         //加入高度自适应，这样底部也不会缩进去
         wkWebView.autoresizingMask = [.flexibleHeight]
-        print( "\(url)?code=\(random)")
-        if let url = URL(string: "\(url)?imei=\(ApiUtil.idfv)&code=\(random)"){
+        print( "\(url)?imei=\(ApiUtil.idfv)&code=\(random)")
+        if let url = URL(string: "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)"){
             let request = URLRequest(url: url)
             // webView.loadRequest(request)
             wkWebView.load(request) //使用更快，内存占用更小的的WKWEBVIEW 使用wkwebview需要注意在所在VIEW里面不勾选under top bars，要不然顶部会缩进去导航条里面

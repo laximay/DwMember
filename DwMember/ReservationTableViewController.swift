@@ -118,8 +118,9 @@ class ReservationTableViewController: UITableViewController {
         if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
             avgs.updateValue(cardNo, forKey: "cardNo")
+            avgs.updateValue("N", forKey: "isApp")
             
-            let sign = ApiUtil.sign(data: avgs)
+            let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             
             
@@ -139,7 +140,7 @@ class ReservationTableViewController: UITableViewController {
                                 
                             }
                         }else {
-                            print(result.error ?? "未知错误")
+                            print("數據為空")
                             //異常處理
                         }
                     }

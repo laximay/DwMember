@@ -47,7 +47,7 @@ class PayViewController: UIViewController {
         if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
             avgs.updateValue(cardNo, forKey: "cardNo")
-            let sign = ApiUtil.sign(data: avgs)
+            let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             //dump(avgs)
             
@@ -62,7 +62,7 @@ class PayViewController: UIViewController {
                       
                         let resignData :[String: Any] = ["cardNo": payData.cardNo, "code": payData.code, "timestamp": payData.timestamp ]
                         
-                        let resign = ApiUtil.sign(data: resignData)
+                        let resign = ApiUtil.sign(data: resignData, sender: self)
                       
                         if DwPayCodeRootClass(fromDictionary: json).sign != resign {
                             OperationQueue.main.addOperation {

@@ -10,10 +10,19 @@ import UIKit
 import Just
 class CouponDeatilsViewController: UIViewController {
     
-    @IBOutlet weak var testLab: UILabel!
     
+    @IBOutlet weak var bgImg: UIImageView!
+    @IBOutlet weak var titleLab: UILabel!
     
+    @IBOutlet weak var briefingLab: UILabel!
     
+    @IBOutlet weak var validperiod: UILabel!
+    
+    @IBOutlet weak var exchangeMsgLab: UILabel!
+   
+    @IBOutlet weak var closeBtn: UIButton!
+    @IBAction func exchangebtn(_ sender: Any) {
+    }
     //基礎券列表:未用，已用，過期
     var couponBase:  CouponDetailsData?
     //商城券列表
@@ -26,6 +35,7 @@ class CouponDeatilsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     
         getcouponbase()
         
         switch couponS {
@@ -55,7 +65,7 @@ class CouponDeatilsViewController: UIViewController {
             var avgs = ApiUtil.frontFunc()
             avgs.updateValue(cardNo, forKey: "cardNo")
             avgs.updateValue(couponId, forKey: "couponId")
-            let sign = ApiUtil.sign(data: avgs)
+            let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             dump(avgs)
             
@@ -70,7 +80,7 @@ class CouponDeatilsViewController: UIViewController {
                         let attribstr = try! NSAttributedString.init(data:(self.couponBase?.descriptionField.data(using: ApiUtil.encoding))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
                         OperationQueue.main.addOperation {
                             
-                            self.testLab.attributedText = attribstr
+                          self.exchangeMsgLab.attributedText = attribstr
                             
                         }
                     }else {
@@ -95,7 +105,7 @@ class CouponDeatilsViewController: UIViewController {
             var avgs = ApiUtil.frontFunc()
             avgs.updateValue(cardNo, forKey: "cardNo")
             avgs.updateValue(couponId, forKey: "couponId")
-            let sign = ApiUtil.sign(data: avgs)
+            let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             dump(avgs)
             
@@ -107,11 +117,18 @@ class CouponDeatilsViewController: UIViewController {
                 if result.ok {
                     if  CouponMallDetailsRootClass(fromDictionary: json).code == 1 {
                         self.couponMall = CouponMallDetailsRootClass(fromDictionary: json).data
-                        // let attribstr = try! NSAttributedString.init(data:(self.couponBase?.descriptionField.data(using: ApiUtil.encoding))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
+                         let attribstr = try! NSAttributedString.init(data:(self.couponMall?.exchangeMsg.data(using: String.Encoding.unicode))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
                         OperationQueue.main.addOperation {
+                             self.titleLab.text = self.couponMall?.title
+                             self.briefingLab.text = self.couponMall?.briefing
+                             self.validperiod.text = "使用期" + (self.couponMall?.starttime)! + "至" + (self.couponMall?.endtime)!
+                             self.exchangeMsgLab.attributedText = attribstr
                             
-                            self.testLab.text = self.couponMall?.exchangeMsg
-                            
+                            let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .prominent))
+                                blurEffectView.frame = self.bgImg.frame
+                            self.bgImg.addSubview(blurEffectView)
+                             let imgUrl = URL(string: (self.couponMall?.image)!)
+                            self.bgImg.kf.setImage(with: imgUrl)
                         }
                     }else {
                         print(result.error ?? "未知错误")

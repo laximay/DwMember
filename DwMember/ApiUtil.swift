@@ -34,6 +34,7 @@ enum webViewType: String{
     case BIND
     case MPWD
     case DZXQ
+    case FPWD
     
 }
 
@@ -44,7 +45,8 @@ let nativeViews: [String: String] = ["couponNav": "couponMallSegue"]
 // [viewCode : Segue]
 let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", verif: false),
                                            "MPWD": webViewConfig(code : "MPWD", verif: false),
-                                           "DZXQ": webViewConfig(code: "DZXQ", verif: true)]
+                                           "DZXQ": webViewConfig(code: "DZXQ", verif: true),
+                                           "FPWD": webViewConfig(code: "FPWD", verif: true)]
 
 open class ApiUtil{
     
@@ -98,6 +100,8 @@ open class ApiUtil{
     
     //webView統一接口Api
     static let webviewApi = serverUrl + "/api/url"
+    //webView統一接口Api
+    static let webviewverifApi = serverUrl + "/api/verify/url"
     //統一編碼
     static let encoding: String.Encoding = String.Encoding.utf8
     static let mainSB = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -127,24 +131,40 @@ open class ApiUtil{
         let webCode = inrwebView[withIdentifier]!
         //dump(webCode)
         var avgs: [String: Any] = [:]
+        var url = ""
+        var card = ""
         if webCode.verif{
             
             let defaults = UserDefaults.standard
-            let cardNo = defaults.string(forKey: "cardNo")
-            avgs = ApiUtil.frontFunc()
-            avgs.updateValue(cardNo!, forKey: "cardNo")
-            let sign = ApiUtil.sign(data: avgs)
-            avgs.updateValue(sign, forKey: "sign")
+            if let cardNo = defaults.string(forKey: "cardNo") {
+                card = cardNo
+                avgs = ApiUtil.frontFunc()
+                avgs.updateValue(cardNo, forKey: "cardNo")
+                avgs.updateValue(webCode.code, forKey: "type")
+                let sign = ApiUtil.sign(data: avgs, sender: sender)
+                avgs.updateValue(sign, forKey: "sign")
+                
+                url = ApiUtil.webviewverifApi
+            }else{
+                let menu = UIAlertController(title: "No login", message: "please sign in", preferredStyle: .alert)
+                let optionOK = UIAlertAction(title: "ok", style: .default, handler: nil)
+                menu.addAction(optionOK)
+                sender.present(menu, animated: true, completion: nil)
+            }
         }else{
+            
             avgs.updateValue(ApiUtil.idfv, forKey: "imei")
+            avgs.updateValue(webCode.code, forKey: "type")
+            url = ApiUtil.webviewApi
         }
-        avgs.updateValue(webCode.code, forKey: "type")
+        
         dump(avgs)
         
-        Just.post(ApiUtil.webviewApi ,  data: avgs) { (result) in
+        Just.post(url ,  data: avgs) { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
             }
+            // print(json)
             if result.ok {
                 if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
                     let datas = DwWebViewBaseRootClass(fromDictionary: json).data
@@ -153,13 +173,14 @@ open class ApiUtil{
                             if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                                 pageVC.url = datas.url
                                 pageVC.random = datas.random
+                                pageVC.cardNo = card
                                 sender.navigationController?.pushViewController(pageVC, animated: true)
                             }
                         }
                     }
                     
                 }else {
-                    
+                    print(DwCountBaseRootClass(fromDictionary: json).result)
                     //異常處理
                 }
             }else{
@@ -179,7 +200,7 @@ open class ApiUtil{
     }
     
     //簽名方法
-    static func sign(data: [String: Any] = [:]) -> String {
+    static func sign(data: [String: Any] = [:], sender: UIViewController) -> String {
         var signStr = ""
         let defaults = UserDefaults.standard
         if let sercet = defaults.string(forKey: "dwsercet"){
@@ -189,13 +210,21 @@ open class ApiUtil{
             signStr = data2.map{ "\($0)=\($1)" }.joined(separator: "&")
             
             signStr.append("&key=\(sercet)")
+        }else{
+            let menu = UIAlertController(title: "No login", message: "please sign in", preferredStyle: .alert)
+            let optionOK = UIAlertAction(title: "ok", style: .default, handler: nil)
+            menu.addAction(optionOK)
+            sender.present(menu, animated: true, completion: nil)
         }
         
-        // dump(signStr)
+        //dump(signStr)
         
         return signStr.md5().uppercased()
         
     }
+    
+    
+    
     
     
     

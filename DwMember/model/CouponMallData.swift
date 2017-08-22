@@ -12,6 +12,7 @@ struct CouponMallData{
 	var endTime : String!
 	var exchangeFactor : Int!
 	var exchangeType : String!
+    var exchangeMsg : String!
 	var id : String!
 	var image : String!
 	var title : String!
@@ -24,6 +25,7 @@ struct CouponMallData{
 		endTime = dictionary["endTime"] as? String
 		exchangeFactor = dictionary["exchangeFactor"] as? Int
 		exchangeType = dictionary["exchangeType"] as? String
+        exchangeMsg = dictionary["exchangeMsg"] as? String
 		id = dictionary["id"] as? String
 		image = dictionary["image"] as? String
 		title = dictionary["title"] as? String
@@ -44,6 +46,9 @@ struct CouponMallData{
 		if exchangeType != nil{
 			dictionary["exchangeType"] = exchangeType
 		}
+        if exchangeMsg != nil{
+            dictionary["exchangeMsg"] = exchangeMsg
+        }
 		if id != nil{
 			dictionary["id"] = id
 		}

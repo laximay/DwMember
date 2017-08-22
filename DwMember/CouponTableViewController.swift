@@ -59,7 +59,7 @@ class CouponTableViewController: UITableViewController {
             var avgs = ApiUtil.frontFunc()
             avgs.updateValue(cardNo, forKey: "cardNo")
             
-            let sign = ApiUtil.sign(data: avgs)
+            let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             
             
@@ -96,7 +96,7 @@ class CouponTableViewController: UITableViewController {
             var avgs = ApiUtil.frontFunc()
             avgs.updateValue(cardNo, forKey: "cardNo")
             
-            let sign = ApiUtil.sign(data: avgs)
+            let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             
             
@@ -133,7 +133,7 @@ class CouponTableViewController: UITableViewController {
             var avgs = ApiUtil.frontFunc()
             avgs.updateValue(cardNo, forKey: "cardNo")
             
-            let sign = ApiUtil.sign(data: avgs)
+            let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             
             
@@ -171,7 +171,7 @@ class CouponTableViewController: UITableViewController {
             var avgs = ApiUtil.frontFunc()
             avgs.updateValue(cardNo, forKey: "cardNo")
             
-            let sign = ApiUtil.sign(data: avgs)
+            let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             
             
@@ -270,7 +270,7 @@ class CouponTableViewController: UITableViewController {
             let imgUrl = URL(string: coupon.image)
             cell.titleLab.text = coupon.title
             cell.expiredLab.text = coupon.endTime
-            cell.descLab.text = coupon.exchangeType
+            cell.descLab.text = coupon.exchangeMsg
             cell.descLab.isHidden = false
             //print("商城imgUrl:\(imgUrl)")
             cell.couponImg.image = #imageLiteral(resourceName: "photoalbum") //加載佔位符

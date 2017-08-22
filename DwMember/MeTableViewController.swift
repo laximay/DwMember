@@ -37,6 +37,16 @@ class MeTableViewController: UITableViewController{
         getCouponCount()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         print("索引是:\(indexPath.section) \(indexPath.row  )")
+        
+        if indexPath == [4, 0] {
+             ApiUtil.webViewHandle(withIdentifier: webViewType.FPWD.rawValue, sender: self)
+        }
+        
+      
+    }
+    
     
     func reloadAllData()  {
         getCardInfo()
@@ -51,7 +61,7 @@ class MeTableViewController: UITableViewController{
             var avgs = ApiUtil.frontFunc()
             avgs.updateValue(cardNo, forKey: "cardNo")
             
-            let sign = ApiUtil.sign(data: avgs)
+            let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             
             //dump(avgs)
@@ -103,7 +113,7 @@ class MeTableViewController: UITableViewController{
             var avgs = ApiUtil.frontFunc()
             avgs.updateValue(cardNo, forKey: "cardNo")
             
-            let sign = ApiUtil.sign(data: avgs)
+            let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             
             
@@ -142,7 +152,7 @@ class MeTableViewController: UITableViewController{
             var avgs = ApiUtil.frontFunc()
             avgs.updateValue(cardNo, forKey: "cardNo")
             
-            let sign = ApiUtil.sign(data: avgs)
+            let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             
             

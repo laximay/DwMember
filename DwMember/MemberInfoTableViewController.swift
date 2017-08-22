@@ -122,7 +122,7 @@ class MemberInfoTableViewController: UITableViewController {
             avgs.updateValue(memberName, forKey: "memberName")
             avgs.updateValue(email, forKey: "email")
             
-            let sign = ApiUtil.sign(data: avgs)
+            let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             
             
