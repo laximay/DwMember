@@ -39,6 +39,8 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
     
 
     
+
+    
     func viewInit()  {
         setupScrollView()
         

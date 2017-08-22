@@ -12,6 +12,7 @@ struct CouponDetailsData{
 	var branchs : String!
 	var couponConfig : String!
 	var couponType : String!
+    var couponNo : String!
 	var descriptionField : String!
 	var externalNum : String!
 	var id : String!
@@ -26,6 +27,7 @@ struct CouponDetailsData{
 		branchs = dictionary["branchs"] as? String
 		couponConfig = dictionary["couponConfig"] as? String
 		couponType = dictionary["couponType"] as? String
+        couponNo = dictionary["couponNo"] as? String
 		descriptionField = dictionary["description"] as? String
 		externalNum = dictionary["externalNum"] as? String
 		id = dictionary["id"] as? String
@@ -48,6 +50,9 @@ struct CouponDetailsData{
 		if couponType != nil{
 			dictionary["couponType"] = couponType
 		}
+        if couponNo != nil{
+            dictionary["couponNo"] = couponNo
+        }
 		if descriptionField != nil{
 			dictionary["description"] = descriptionField
 		}

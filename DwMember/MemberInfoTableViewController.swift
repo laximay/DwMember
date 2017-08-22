@@ -134,7 +134,7 @@ class MemberInfoTableViewController: UITableViewController {
                 if result.ok {
                     if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
                         OperationQueue.main.addOperation {
-                           self.openAlert()
+                            self.openAlert()
                         }
                     }
                 }else{
@@ -148,16 +148,16 @@ class MemberInfoTableViewController: UITableViewController {
     }
     
     func openAlert()  {
-    let menu = UIAlertController(title: "prompt", message: "update completed", preferredStyle: .alert)
-     let optionOK = UIAlertAction(title: "OK", style: .default) { (_) in
+        let menu = UIAlertController(title: "prompt", message: "update completed", preferredStyle: .alert)
+        let optionOK = UIAlertAction(title: "OK", style: .default) { (_) in
             self.navigationController!.popViewController(animated: true)
         }
-    
-  
-    
-    
-    menu.addAction(optionOK)
-    self.present(menu, animated: true, completion: nil)
+        
+        
+        
+        
+        menu.addAction(optionOK)
+        self.present(menu, animated: true, completion: nil)
     }
     
     

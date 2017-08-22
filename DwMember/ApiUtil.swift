@@ -91,6 +91,8 @@ open class ApiUtil{
     static let couponbaseApi = serverUrl + "/api/coupon/base/view"
     //优惠券详情接口（商城处调用）Api
     static let coupomallApi = serverUrl + "/api/coupon/view"
+    //優惠券兌換Api
+    static let coupongetApi = serverUrl + "/api/coupon/get"
     //付款码生成Ap
     static let paycodeApi = serverUrl + "/api/pay/code"
     //订座列表Api
@@ -102,8 +104,10 @@ open class ApiUtil{
     static let webviewApi = serverUrl + "/api/url"
     //webView統一接口Api
     static let webviewverifApi = serverUrl + "/api/verify/url"
+ 
     //統一編碼
     static let encoding: String.Encoding = String.Encoding.utf8
+
     static let mainSB = UIStoryboard(name: "Main", bundle: Bundle.main)
     
     

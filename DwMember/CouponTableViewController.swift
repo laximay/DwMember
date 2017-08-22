@@ -52,6 +52,8 @@ class CouponTableViewController: UITableViewController {
         return 230.0
     }
     
+  
+    
     //加載未用優惠券列表
     func getcouponunuseList() {
         let defaults = UserDefaults.standard
@@ -344,6 +346,7 @@ class CouponTableViewController: UITableViewController {
      }
     
     @IBAction func close(segue: UIStoryboardSegue){
+        
     }
  
     

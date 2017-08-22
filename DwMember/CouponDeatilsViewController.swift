@@ -8,6 +8,7 @@
 
 import UIKit
 import Just
+import swiftScan
 class CouponDeatilsViewController: UIViewController {
     
     
@@ -19,10 +20,15 @@ class CouponDeatilsViewController: UIViewController {
     @IBOutlet weak var validperiod: UILabel!
     
     @IBOutlet weak var exchangeMsgLab: UILabel!
-   
+    
+    @IBOutlet weak var couponNumImg: UIImageView!
+    
+    @IBOutlet weak var submitView: UIView!
+    @IBOutlet weak var couponNumView: UIView!
     @IBOutlet weak var closeBtn: UIButton!
-    @IBAction func exchangebtn(_ sender: Any) {
-    }
+    @IBOutlet weak var branchs: UILabel!
+    @IBOutlet weak var branchsView: UIView!
+    
     //基礎券列表:未用，已用，過期
     var couponBase:  CouponDetailsData?
     //商城券列表
@@ -35,13 +41,17 @@ class CouponDeatilsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
         getcouponbase()
         
         switch couponS {
         case .mall:
+            
             getcouponMall()
         default:
+            self.couponNumView.isHidden = false
+            self.branchsView.isHidden = false
+            self.submitView.isHidden = true
             getcouponbase()
         }
         // Uncomment the following line to preserve selection between presentations
@@ -56,6 +66,9 @@ class CouponDeatilsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func exchangebtn(_ sender: Any) {
+        exchange()
+    }
     
     
     //加載未用優惠券列表
@@ -64,7 +77,7 @@ class CouponDeatilsViewController: UIViewController {
         if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
             avgs.updateValue(cardNo, forKey: "cardNo")
-            avgs.updateValue(couponId, forKey: "couponId")
+            avgs.updateValue(couponId, forKey: "id")
             let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             dump(avgs)
@@ -77,10 +90,26 @@ class CouponDeatilsViewController: UIViewController {
                 if result.ok {
                     if  CouponDetailsRootClass(fromDictionary: json).code == 1 {
                         self.couponBase = CouponDetailsRootClass(fromDictionary: json).data
-                        let attribstr = try! NSAttributedString.init(data:(self.couponBase?.descriptionField.data(using: ApiUtil.encoding))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
+                        let attribstr = try! NSAttributedString.init(data:(self.couponBase?.descriptionField.data(using: String.Encoding.unicode))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
+                        let barImg: UIImage = LBXScanWrapper.createCode128(codeString: (self.couponBase?.couponNo)!, size: self.couponNumImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white)!
                         OperationQueue.main.addOperation {
                             
-                          self.exchangeMsgLab.attributedText = attribstr
+                            self.exchangeMsgLab.attributedText = attribstr
+                            self.titleLab.text = self.couponBase?.title
+                            self.briefingLab.text = self.couponBase?.couponNo
+                            
+                            //                            self.validperiod.text = "使用期" + (self.couponMall?.starttime)! + "至" + (self.couponMall?.endtime)!
+                            
+                            let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+                            blurEffectView.frame = self.bgImg.frame
+                            self.bgImg.addSubview(blurEffectView)
+                            let imgUrl = URL(string: (self.couponBase?.image)!)
+                            self.bgImg.kf.setImage(with: imgUrl)
+                            self.couponNumImg.image = barImg
+                            self.branchs.text = "适用分店:" + (self.couponBase?.branchs)!
+                            
+                            
+                            
                             
                         }
                     }else {
@@ -117,17 +146,17 @@ class CouponDeatilsViewController: UIViewController {
                 if result.ok {
                     if  CouponMallDetailsRootClass(fromDictionary: json).code == 1 {
                         self.couponMall = CouponMallDetailsRootClass(fromDictionary: json).data
-                         let attribstr = try! NSAttributedString.init(data:(self.couponMall?.exchangeMsg.data(using: String.Encoding.unicode))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
+                        let attribstr = try! NSAttributedString.init(data:(self.couponMall?.exchangeMsg.data(using: String.Encoding.unicode))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
                         OperationQueue.main.addOperation {
-                             self.titleLab.text = self.couponMall?.title
-                             self.briefingLab.text = self.couponMall?.briefing
-                             self.validperiod.text = "使用期" + (self.couponMall?.starttime)! + "至" + (self.couponMall?.endtime)!
-                             self.exchangeMsgLab.attributedText = attribstr
+                            self.titleLab.text = self.couponMall?.title
+                            self.briefingLab.text = self.couponMall?.briefing
+                            self.validperiod.text = "使用期" + (self.couponMall?.starttime)! + "至" + (self.couponMall?.endtime)!
+                            self.exchangeMsgLab.attributedText = attribstr
                             
-                            let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .prominent))
-                                blurEffectView.frame = self.bgImg.frame
+                            let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+                            blurEffectView.frame = self.bgImg.frame
                             self.bgImg.addSubview(blurEffectView)
-                             let imgUrl = URL(string: (self.couponMall?.image)!)
+                            let imgUrl = URL(string: (self.couponMall?.image)!)
                             self.bgImg.kf.setImage(with: imgUrl)
                         }
                     }else {
@@ -142,6 +171,58 @@ class CouponDeatilsViewController: UIViewController {
                 }
                 
             }}
+    }
+    
+    func exchange() {
+        let defaults = UserDefaults.standard
+        if let cardNo = defaults.string(forKey: "cardNo"){
+            var avgs = ApiUtil.frontFunc()
+            avgs.updateValue(cardNo, forKey: "cardNo")
+            avgs.updateValue(couponId, forKey: "couponId")
+            let sign = ApiUtil.sign(data: avgs, sender: self)
+            avgs.updateValue(sign, forKey: "sign")
+            dump(avgs)
+            
+            Just.post(ApiUtil.coupongetApi ,  data: avgs) { (result) in
+                guard let json = result.json as? NSDictionary else{
+                    return
+                }
+                print("详情：",json)
+                if result.ok {
+                    if  DwCountBaseRootClass(fromDictionary: json).code == -1 {
+                        OperationQueue.main.addOperation {
+                            self.openAlert()
+                        }
+                    }
+                }else{
+                    //處理接口系統錯誤
+                    if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
+                        print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    }
+                }
+                
+            }}
+    }
+    
+    func openAlert()  {
+        let menu = UIAlertController(title: "prompt", message: "exchange success", preferredStyle: .alert)
+        let optionOK = UIAlertAction(title: "OK", style: .default) { (_) in
+            //self.performSegue(withIdentifier: "couponMallSegue", sender: self)
+            
+//            if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "CouponViewController") as? CouponViewController {
+//                pageVC.selectIndex = 0
+//                //self.navigationController?.pushViewController(pageVC, animated: true)
+//                self.present(pageVC, animated: true, completion: nil)
+//            }
+            self.performSegue(withIdentifier: "unwindToCouponList", sender: self)
+            // self.dismiss(animated: true, completion: nil)
+        }
+        
+        
+        
+        
+        menu.addAction(optionOK)
+        self.present(menu, animated: true, completion: nil)
     }
     
     
