@@ -29,7 +29,7 @@ class ReservationTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180.0
+        return 150.0
     }
     
     override func didReceiveMemoryWarning() {

@@ -18,6 +18,9 @@ struct CouponDetailsData{
 	var id : String!
 	var image : String!
 	var title : String!
+    var useDaysMsg : String!
+    var useEndTime : String!
+    var useStartTime : String!
 
 
 	/**
@@ -33,6 +36,9 @@ struct CouponDetailsData{
 		id = dictionary["id"] as? String
 		image = dictionary["image"] as? String
 		title = dictionary["title"] as? String
+        useDaysMsg = dictionary["useDaysMsg"] as? String
+        useEndTime = dictionary["useEndTime"] as? String
+        useStartTime = dictionary["useStartTime"] as? String
 	}
 
 	/**
@@ -68,6 +74,15 @@ struct CouponDetailsData{
 		if title != nil{
 			dictionary["title"] = title
 		}
+        if useDaysMsg != nil{
+            dictionary["useDaysMsg"] = useDaysMsg
+        }
+        if useEndTime != nil{
+            dictionary["useEndTime"] = useEndTime
+        }
+        if useStartTime != nil{
+            dictionary["useStartTime"] = useStartTime
+        }
 		return dictionary
 	}
 

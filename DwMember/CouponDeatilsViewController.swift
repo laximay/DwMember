@@ -84,22 +84,23 @@ class CouponDeatilsViewController: UIViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                //print("基礎详情：",json)
+                print("基礎详情：",json)
                 if result.ok {
                     if  CouponDetailsRootClass(fromDictionary: json).code == 1 {
                         self.couponBase = CouponDetailsRootClass(fromDictionary: json).data
                         let attribstr = try! NSAttributedString.init(data:(self.couponBase?.descriptionField.data(using: String.Encoding.unicode))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
                         let barImg: UIImage = LBXScanWrapper.createCode128(codeString: (self.couponBase?.couponNo)!, size: self.couponNumImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white)!
+                        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+                        blurEffectView.frame = self.bgImg.frame
+                        
                         OperationQueue.main.addOperation {
                             
                             self.exchangeMsgLab.attributedText = attribstr
                             self.titleLab.text = self.couponBase?.title
                             self.briefingLab.text = self.couponBase?.couponNo
                             
-                            //                            self.validperiod.text = "使用期" + (self.couponMall?.starttime)! + "至" + (self.couponMall?.endtime)!
+                            self.validperiod.text = "使用期" + (self.couponBase?.useStartTime)! + "至" + (self.couponBase?.useEndTime)! + " " + (self.couponBase?.useDaysMsg)!
                             
-                            let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-                            blurEffectView.frame = self.bgImg.frame
                             self.bgImg.addSubview(blurEffectView)
                             let imgUrl = URL(string: (self.couponBase?.image)!)
                             self.bgImg.kf.setImage(with: imgUrl)
@@ -143,7 +144,7 @@ class CouponDeatilsViewController: UIViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                //print("详情：",json)
+                print("详情：",json)
                 if result.ok {
                     if  CouponMallDetailsRootClass(fromDictionary: json).code == 1 {
                         self.couponMall = CouponMallDetailsRootClass(fromDictionary: json).data

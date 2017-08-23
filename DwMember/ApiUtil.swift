@@ -31,10 +31,11 @@ enum couponStatus: String{
 
 //内部WEBVIEW请求参数CODE
 enum webViewType: String{
-    case BIND
-    case MPWD
-    case DZXQ
-    case FPWD
+    case BIND //註冊
+    case MPWD //忘記密碼
+    case DZXQ //訂座
+    case FPWD //修改密碼
+    
     
 }
 
@@ -55,8 +56,8 @@ open class ApiUtil{
         return apiUtil;
     }
     //服務鏈接
-    //static let serverUrl = "https://members.mytaoheung.com/a"
-    static var serverUrl = "http://192.168.90.93:8081"
+    static let serverUrl = "https://members.mytaoheung.com/a"
+    //static var serverUrl = "http://192.168.90.93:8081"
     //公司代碼
     static let companyCode = "TaoHeung"
     //公司代碼
@@ -117,7 +118,7 @@ open class ApiUtil{
     //加載引導頁的遠程資源-下次緩存
     static func launchCache()   {
         Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode]) { (result) in
-            
+             if result.ok {
             guard let json = result.json as? NSDictionary else{
                 return
             }
@@ -126,6 +127,8 @@ open class ApiUtil{
             let defaults = UserDefaults.standard
             //如果点击了则把点过的动作标志保存到存储空间，以便启动时候检查
             defaults.set(datas.ads.image, forKey: "launchImageUrl")
+            }
+            
         }
     }
     
