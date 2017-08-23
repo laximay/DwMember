@@ -30,10 +30,7 @@ class MessageDetailViewController: UIViewController {
     
     
     func msgView() {
-        let defaults = UserDefaults.standard
-        if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
-            avgs.updateValue(cardNo, forKey: "cardNo")
             let msgId  = msg?.id!
             avgs.updateValue(msgId!, forKey: "msgId")
             let sign = ApiUtil.sign(data: avgs, sender: self)
@@ -46,11 +43,14 @@ class MessageDetailViewController: UIViewController {
                 }
                 print(json)
                 if result.ok {
-                    if  DwMsgListBaseRootClass(fromDictionary: json).code == 1 {
-                        print("已讀消息成功")
-                    }else {
-                        print(result.error ?? "未知错误")
+                    if  DwMsgListBaseRootClass(fromDictionary: json).code != 1 {
                         //異常處理
+                        if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                            print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                            OperationQueue.main.addOperation {
+                                ApiUtil.openAlert(msg: error.msg, sender: self)
+                            }
+                        }
                     }
                 }else{
                     //處理接口系統錯誤
@@ -59,7 +59,7 @@ class MessageDetailViewController: UIViewController {
                     }
                 }
                 
-            }}
+            }
     }
     
     

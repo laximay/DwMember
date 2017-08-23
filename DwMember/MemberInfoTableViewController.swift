@@ -114,10 +114,7 @@ class MemberInfoTableViewController: UITableViewController {
      */
     
     func updatauserInfo(memberName: String, email: String) {
-        let defaults = UserDefaults.standard
-        if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
-            avgs.updateValue(cardNo, forKey: "cardNo")
             
             avgs.updateValue(memberName, forKey: "memberName")
             avgs.updateValue(email, forKey: "email")
@@ -136,6 +133,14 @@ class MemberInfoTableViewController: UITableViewController {
                         OperationQueue.main.addOperation {
                             self.openAlert()
                         }
+                    }else{
+                        if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                            print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                            OperationQueue.main.addOperation {
+                                ApiUtil.openAlert(msg: error.msg, sender: self)
+                            }
+                        }
+
                     }
                 }else{
                     //處理接口系統錯誤
@@ -144,11 +149,11 @@ class MemberInfoTableViewController: UITableViewController {
                     }
                 }
                 
-            }}
+            }
     }
     
     func openAlert()  {
-        let menu = UIAlertController(title: "prompt", message: "update completed", preferredStyle: .alert)
+        let menu = UIAlertController(title: nil, message: "update completed", preferredStyle: .alert)
         let optionOK = UIAlertAction(title: "OK", style: .default) { (_) in
             self.navigationController!.popViewController(animated: true)
         }

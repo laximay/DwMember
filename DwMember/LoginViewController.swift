@@ -9,7 +9,7 @@
 import UIKit
 import Just
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var imageLoginLogo: UIImageView!
     @IBOutlet weak var cardNoLab: UITextField!
     @IBOutlet weak var passwordLab: UITextField!
@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
         
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,29 +54,29 @@ class LoginViewController: UIViewController {
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
         Just.post(ApiUtil.loginApi ,  data: avgs) { (result) in
-           
-           
+            
+            
             guard let json = result.json as? NSDictionary else{
                 return
             }
             print(json)
             if result.ok {
-            if   DwLoginRootClass(fromDictionary: json).code == 1 {
-                //print("登錄成功")
-             
-                OperationQueue.main.addOperation {
-                  
-                   self.navigationController!.popViewController(animated: true)
+                if   DwLoginRootClass(fromDictionary: json).code == 1 {
+                    //print("登錄成功")
+                    
+                    OperationQueue.main.addOperation {
+                        
+                        self.navigationController!.popViewController(animated: true)
+                    }
+                    
+                }else {
+                    
+                    OperationQueue.main.addOperation {
+                        self.msgLab.text = "賬號或密碼錯誤，請重試"
+                        self.msgLab.isHidden = false
+                    }
+                    
                 }
-                
-            }else {
-                
-                OperationQueue.main.addOperation {
-                    self.msgLab.text = "賬號或密碼錯誤，請重試"
-                    self.msgLab.isHidden = false
-                }
-
-            }
                 
             }else{
                 //處理接口系統錯誤
@@ -89,8 +89,8 @@ class LoginViewController: UIViewController {
         }
     }
     
-   
-
+    
+    
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -103,18 +103,18 @@ class LoginViewController: UIViewController {
             let endPos = CGAffineTransform(translationX: 0, y: 0)
             self.imageLoginLogo.transform = endPos.concatenating(endScale)
         }, completion: nil)
-
+        
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
