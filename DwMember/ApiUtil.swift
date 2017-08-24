@@ -35,6 +35,7 @@ enum webViewType: String{
     case MPWD //忘記密碼
     case DZXQ //訂座
     case FPWD //修改密碼
+    case JFCX //積分記錄
     
     
 }
@@ -47,7 +48,8 @@ let nativeViews: [String: String] = ["couponNav": "couponMallSegue"]
 let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", verif: false),
                                            "MPWD": webViewConfig(code : "MPWD", verif: false),
                                            "DZXQ": webViewConfig(code: "DZXQ", verif: true),
-                                           "FPWD": webViewConfig(code: "FPWD", verif: true)]
+                                           "FPWD": webViewConfig(code: "FPWD", verif: true),
+                                           "JFCX": webViewConfig(code: "JFCX", verif: true)]
 
 open class ApiUtil{
     
@@ -118,15 +120,15 @@ open class ApiUtil{
     //加載引導頁的遠程資源-下次緩存
     static func launchCache()   {
         Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode]) { (result) in
-             if result.ok {
-            guard let json = result.json as? NSDictionary else{
-                return
-            }
-            let datas = DwStartRootClass(fromDictionary: json).data!
-            
-            let defaults = UserDefaults.standard
-            //如果点击了则把点过的动作标志保存到存储空间，以便启动时候检查
-            defaults.set(datas.ads.image, forKey: "launchImageUrl")
+            if result.ok {
+                guard let json = result.json as? NSDictionary else{
+                    return
+                }
+                let datas = DwStartRootClass(fromDictionary: json).data!
+                
+                let defaults = UserDefaults.standard
+                //如果点击了则把点过的动作标志保存到存储空间，以便启动时候检查
+                defaults.set(datas.ads.image, forKey: "launchImageUrl")
             }
             
         }
@@ -140,11 +142,11 @@ open class ApiUtil{
         var avgs: [String: Any] = [:]
         var url = ""
         if webCode.verif{
-                avgs = ApiUtil.frontFunc()
-                avgs.updateValue(webCode.code, forKey: "type")
-                let sign = ApiUtil.sign(data: avgs, sender: sender)
-                avgs.updateValue(sign, forKey: "sign")
-                url = ApiUtil.webviewverifApi
+            avgs = ApiUtil.frontFunc()
+            avgs.updateValue(webCode.code, forKey: "type")
+            let sign = ApiUtil.sign(data: avgs, sender: sender)
+            avgs.updateValue(sign, forKey: "sign")
+            url = ApiUtil.webviewverifApi
             
         }else{
             
@@ -182,7 +184,7 @@ open class ApiUtil{
                             ApiUtil.openAlert(msg: error.msg, sender: sender)
                         }
                     }
-
+                    
                 }
             }else{
                 //處理接口系統錯誤
@@ -254,13 +256,13 @@ open class ApiUtil{
     
     
     static func openAlert(msg: String ,sender: UIViewController){
-      
-            let menu = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
         
-            let optionOK = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            menu.addAction(optionOK)
-            
-            sender.present(menu, animated: true, completion: nil)
+        let menu = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
+        
+        let optionOK = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        menu.addAction(optionOK)
+        
+        sender.present(menu, animated: true, completion: nil)
         
     }
     

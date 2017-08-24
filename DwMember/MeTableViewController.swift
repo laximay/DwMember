@@ -43,6 +43,12 @@ class MeTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("索引是:\(indexPath.section) \(indexPath.row  )")
         
+        
+        if indexPath == [0, 0] {
+            ApiUtil.webViewHandle(withIdentifier: webViewType.JFCX.rawValue, sender: self)
+        }
+        
+        
         if indexPath == [4, 0] {
             ApiUtil.webViewHandle(withIdentifier: webViewType.FPWD.rawValue, sender: self)
         }
