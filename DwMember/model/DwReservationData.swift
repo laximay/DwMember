@@ -30,7 +30,7 @@ struct DwReservationData{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if reList != nil{
 			var dictionaryElements = [NSDictionary]()
 			for reListElement in reList {

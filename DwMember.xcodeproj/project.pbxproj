@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3D03761A1F484895003173FD /* CouponDeatilsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0376191F484895003173FD /* CouponDeatilsViewController.swift */; };
 		3D11B3991F30587D0031DD5C /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B3981F30587D0031DD5C /* UIButton.swift */; };
-		3D11B39C1F3067CA0031DD5C /* Activitys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B39B1F3067CA0031DD5C /* Activitys.swift */; };
 		3D11B39E1F306D020031DD5C /* MainActivitysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B39D1F306D020031DD5C /* MainActivitysTableViewCell.swift */; };
 		3D1488951F33085900E90270 /* MallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1488941F33085900E90270 /* MallViewController.swift */; };
 		3D1488971F3310C700E90270 /* CouponTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1488961F3310C700E90270 /* CouponTableViewController.swift */; };
@@ -42,6 +41,9 @@
 		3D493FA71F3C51A800CEAD4B /* DwStartAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493FA11F3C51A800CEAD4B /* DwStartAd.swift */; };
 		3D493FA81F3C51A800CEAD4B /* DwStartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493FA21F3C51A800CEAD4B /* DwStartData.swift */; };
 		3D493FA91F3C51A800CEAD4B /* DwStartRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493FA31F3C51A800CEAD4B /* DwStartRootClass.swift */; };
+		3D5182481F53F87B00361E3F /* DwBranchsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5182461F53F87B00361E3F /* DwBranchsData.swift */; };
+		3D5182491F53F87B00361E3F /* DwBranchsRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5182471F53F87B00361E3F /* DwBranchsRootClass.swift */; };
+		3D51824B1F53F9F700361E3F /* FindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51824A1F53F9F700361E3F /* FindTableViewCell.swift */; };
 		3D6458631F442A72008220C3 /* DwCountBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458621F442A72008220C3 /* DwCountBaseRootClass.swift */; };
 		3D6458661F444D9C008220C3 /* DwWebViewBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */; };
 		3D6458671F444D9C008220C3 /* DwWebViewBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */; };
@@ -87,7 +89,6 @@
 /* Begin PBXFileReference section */
 		3D0376191F484895003173FD /* CouponDeatilsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDeatilsViewController.swift; sourceTree = "<group>"; };
 		3D11B3981F30587D0031DD5C /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		3D11B39B1F3067CA0031DD5C /* Activitys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activitys.swift; sourceTree = "<group>"; };
 		3D11B39D1F306D020031DD5C /* MainActivitysTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainActivitysTableViewCell.swift; sourceTree = "<group>"; };
 		3D1488941F33085900E90270 /* MallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MallViewController.swift; sourceTree = "<group>"; };
 		3D1488961F3310C700E90270 /* CouponTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponTableViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +122,9 @@
 		3D493FA11F3C51A800CEAD4B /* DwStartAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwStartAd.swift; sourceTree = "<group>"; };
 		3D493FA21F3C51A800CEAD4B /* DwStartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwStartData.swift; sourceTree = "<group>"; };
 		3D493FA31F3C51A800CEAD4B /* DwStartRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwStartRootClass.swift; sourceTree = "<group>"; };
+		3D5182461F53F87B00361E3F /* DwBranchsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwBranchsData.swift; sourceTree = "<group>"; };
+		3D5182471F53F87B00361E3F /* DwBranchsRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwBranchsRootClass.swift; sourceTree = "<group>"; };
+		3D51824A1F53F9F700361E3F /* FindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewCell.swift; sourceTree = "<group>"; };
 		3D6458621F442A72008220C3 /* DwCountBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwCountBaseRootClass.swift; sourceTree = "<group>"; };
 		3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwWebViewBaseData.swift; sourceTree = "<group>"; };
 		3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwWebViewBaseRootClass.swift; sourceTree = "<group>"; };
@@ -197,14 +201,6 @@
 			name = extension;
 			sourceTree = "<group>";
 		};
-		3D11B39A1F3067B30031DD5C /* tempModel */ = {
-			isa = PBXGroup;
-			children = (
-				3D11B39B1F3067CA0031DD5C /* Activitys.swift */,
-			);
-			name = tempModel;
-			sourceTree = "<group>";
-		};
 		3D1615651F2F6FE400E33F3D /* controll */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +224,7 @@
 				3D6458D71F4A9586008220C3 /* ReservationTableViewController.swift */,
 				3D6458D91F4AA0AC008220C3 /* ResTableViewCell.swift */,
 				3D6458DB1F4AB34C008220C3 /* MemberInfoTableViewController.swift */,
+				3D51824A1F53F9F700361E3F /* FindTableViewCell.swift */,
 			);
 			name = controll;
 			sourceTree = "<group>";
@@ -255,6 +252,8 @@
 		3D493F8B1F3C3DB800CEAD4B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				3D5182461F53F87B00361E3F /* DwBranchsData.swift */,
+				3D5182471F53F87B00361E3F /* DwBranchsRootClass.swift */,
 				3D6458C31F4A89C0008220C3 /* DwReservationBranch.swift */,
 				3D6458C41F4A89C0008220C3 /* DwReservationCustDetail.swift */,
 				3D6458C51F4A89C0008220C3 /* DwReservationData.swift */,
@@ -324,7 +323,6 @@
 				3D493F8B1F3C3DB800CEAD4B /* model */,
 				3D1640BD1F39F969008F0819 /* DwMember.entitlements */,
 				3DA8FB361F30BCCD00C44ABD /* Assets.xcassets */,
-				3D11B39A1F3067B30031DD5C /* tempModel */,
 				3D11B3971F30582D0031DD5C /* extension */,
 				3D1615701F2F727B00E33F3D /* content */,
 				3D1615651F2F6FE400E33F3D /* controll */,
@@ -523,10 +521,12 @@
 				3D2569DE1F3D58A800E01816 /* DwEntitys.xcdatamodeld in Sources */,
 				3D16156D1F2F709800E33F3D /* FindTableViewController.swift in Sources */,
 				3D6458B81F45BEF6008220C3 /* CouponDetailsRootClass.swift in Sources */,
+				3D51824B1F53F9F700361E3F /* FindTableViewCell.swift in Sources */,
 				3D6458C21F45CB61008220C3 /* CouponTableViewCell.swift in Sources */,
 				3D493FA81F3C51A800CEAD4B /* DwStartData.swift in Sources */,
 				3D1F008E1F37F89D0080957F /* WebViewController.swift in Sources */,
 				3D6458CD1F4A89C0008220C3 /* DwReservationCustDetail.swift in Sources */,
+				3D5182491F53F87B00361E3F /* DwBranchsRootClass.swift in Sources */,
 				3D6458DC1F4AB34C008220C3 /* MemberInfoTableViewController.swift in Sources */,
 				3D6458631F442A72008220C3 /* DwCountBaseRootClass.swift in Sources */,
 				3D185BBD1F38B2CD00A89077 /* CouponViewController.swift in Sources */,
@@ -536,7 +536,6 @@
 				3D2569EE1F3DB28300E01816 /* DwHomeRootClass.swift in Sources */,
 				3D171BCD1F4095CC008BC06E /* String.swift in Sources */,
 				3D6458D11F4A89C0008220C3 /* DwReservationReList.swift in Sources */,
-				3D11B39C1F3067CA0031DD5C /* Activitys.swift in Sources */,
 				3D493FA71F3C51A800CEAD4B /* DwStartAd.swift in Sources */,
 				3D91761D1F486BD500E855F6 /* DwPayCodeData.swift in Sources */,
 				3D6458BC1F45BEF6008220C3 /* CouponMallRootClass.swift in Sources */,
@@ -554,6 +553,7 @@
 				3D2569E41F3D7B9800E01816 /* ZLaunchAdVC.swift in Sources */,
 				3D6458AB1F455E0F008220C3 /* DwMsgListBaseData.swift in Sources */,
 				3D8274F11F43DEC2009BB0C9 /* DwLoginData.swift in Sources */,
+				3D5182481F53F87B00361E3F /* DwBranchsData.swift in Sources */,
 				3D6458CF1F4A89C0008220C3 /* DwReservationMeal.swift in Sources */,
 				3D8274F21F43DEC2009BB0C9 /* DwLoginRootClass.swift in Sources */,
 			);

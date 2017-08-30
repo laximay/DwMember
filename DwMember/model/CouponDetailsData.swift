@@ -46,7 +46,7 @@ struct CouponDetailsData{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if branchs != nil{
 			dictionary["branchs"] = branchs
 		}

@@ -26,7 +26,7 @@ struct DwStartData{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if ads != nil{
 			dictionary["ads"] = ads.toDictionary()
 		}

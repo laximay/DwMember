@@ -34,7 +34,7 @@ struct DwCouponBaseData{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if endTime != nil{
 			dictionary["endTime"] = endTime
 		}

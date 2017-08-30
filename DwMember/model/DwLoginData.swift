@@ -26,7 +26,7 @@ struct DwLoginData{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if card != nil{
 			dictionary["card"] = card.toDictionary()
 		}

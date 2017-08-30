@@ -34,7 +34,7 @@ struct DwReservationMeal{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if cardno != nil{
 			dictionary["cardno"] = cardno
 		}

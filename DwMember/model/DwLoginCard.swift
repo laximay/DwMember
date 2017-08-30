@@ -46,7 +46,7 @@ struct DwLoginCard{
      */
     func toDictionary() -> NSDictionary
     {
-        var dictionary = NSMutableDictionary()
+        let dictionary = NSMutableDictionary()
         if address != nil{
             dictionary["address"] = address
         }
