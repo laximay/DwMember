@@ -22,7 +22,7 @@ class MeTableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+       
         
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(self.reloadAllData), for: .valueChanged)
@@ -32,9 +32,11 @@ class MeTableViewController: UITableViewController{
         tableView.tableFooterView = UIView(frame: CGRect.zero)//去除页脚
         tableView.separatorColor = UIColor(white: 0.9, alpha: 1)//去除分割线
     }
+
     
     override func viewDidAppear(_ animated: Bool) {
-        ApiUtil.checklogin(sender: self)
+       
+        ApiUtil.checklogin_me(sender: self)
         getCardInfo()
         getMsgCount()
         getCouponCount()

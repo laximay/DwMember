@@ -33,7 +33,7 @@ class CouponTableViewController: UITableViewController {
             //print("類型\(couponS.rawValue)")
             getcouponoverList()
         case .mall:
-            print("類型\(couponS.rawValue)")
+            //print("類型\(couponS.rawValue)")
             getcouponList()
         default:()
         }
