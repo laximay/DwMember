@@ -45,7 +45,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         
         tableView.estimatedRowHeight = 200 //自适应行高
         tableView.rowHeight = UITableViewAutomaticDimension //自适应行高 ，还需设置宽度约束，动态行数设为0，0代表动态行数
-           }
+    }
     
     
     
@@ -118,83 +118,93 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            let datas = DwHomeRootClass(fromDictionary: json).data!
-            
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            do{
-                let allData : [DwCache] = try appDelegate.persistentContainer.viewContext.fetch(DwCache.fetchRequest())
+            print("index:",json)
+            if(result.ok){
+                let datas = DwHomeRootClass(fromDictionary: json).data!
                 
-                for ad in allData {
-                    appDelegate.persistentContainer.viewContext.delete(ad)
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                do{
+                    let allData : [DwCache] = try appDelegate.persistentContainer.viewContext.fetch(DwCache.fetchRequest())
+                    
+                    for ad in allData {
+                        appDelegate.persistentContainer.viewContext.delete(ad)
+                        appDelegate.saveContext()
+                    }
+                    //填充首頁輪播圖
+                    self.scrollImageUrls = []
+                    self.scrollImageUrls =  datas.ads.map({(ad) -> [String] in
+                        let ads  =  DwCache(context: appDelegate.persistentContainer.viewContext)
+                        ads.image = ad.image
+                        ads.briefing = ad.briefing
+                        ads.english = ad.english
+                        ads.name = ad.name
+                        ads.opentype = ad.opentype
+                        ads.simpChinese = ad.simpChinese
+                        ads.sort = Int64(ad.sort)
+                        ads.thumb = ad.thumb
+                        ads.url = ad.url
+                        ads.type = "ads"
+                        appDelegate.saveContext()
+                        return [ad.image]
+                        
+                        
+                    })
+                    
+                    //填充首頁活動圖
+                    self.activitys = []
+                    self.activitys =  datas.activitys.map({(ad) -> DwCache in
+                        let activitys  =  DwCache(context: appDelegate.persistentContainer.viewContext)
+                        activitys.image = ad.image
+                        activitys.briefing = ad.briefing
+                        activitys.english = ad.english
+                        activitys.name = ad.name
+                        activitys.opentype = ad.opentype
+                        activitys.simpChinese = ad.simpChinese
+                        activitys.sort = Int64(ad.sort)
+                        activitys.thumb = ad.thumb
+                        activitys.url = ad.url
+                        activitys.type = "activitys"
+                        return activitys
+                        
+                    }).sorted(by: { $0.sort < $1.sort })
+                    
+                    self.features = []
+                    self.features =  datas.features.map({(ad) -> DwCache in
+                        let features  =  DwCache(context: appDelegate.persistentContainer.viewContext)
+                        features.image = ad.image
+                        features.briefing = ad.briefing
+                        features.english = ad.english
+                        features.name = ad.name
+                        features.opentype = ad.opentype
+                        features.simpChinese = ad.simpChinese
+                        features.sort = Int64(ad.sort)
+                        features.thumb = ad.thumb
+                        features.url = ad.url
+                        features.type = "features"
+                        return features
+                        
+                    }).sorted(by: { $0.sort < $1.sort })
+                    
                     appDelegate.saveContext()
+                    OperationQueue.main.addOperation {
+                        self.tableView.reloadData()
+                        //self.refreshControl?.endRefreshing()
+                        self.addMainScrollView()
+                        self.createMenuBtn()
+                    }
+                    
+                }catch{
+                    if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                        print("錯誤代碼:\(error.code as Int);信息:\(error)原因:\(error.result)")
+                        ApiUtil.openAlert(msg: error.msg, sender: self)
+                    }
                 }
-                //填充首頁輪播圖
-                self.scrollImageUrls = []
-                self.scrollImageUrls =  datas.ads.map({(ad) -> [String] in
-                    let ads  =  DwCache(context: appDelegate.persistentContainer.viewContext)
-                    ads.image = ad.image
-                    ads.briefing = ad.briefing
-                    ads.english = ad.english
-                    ads.name = ad.name
-                    ads.opentype = ad.opentype
-                    ads.simpChinese = ad.simpChinese
-                    ads.sort = Int64(ad.sort)
-                    ads.thumb = ad.thumb
-                    ads.url = ad.url
-                    ads.type = "ads"
-                    appDelegate.saveContext()
-                    return [ad.image]
-                    
-                    
-                })
-                
-                //填充首頁活動圖
-                self.activitys = []
-                self.activitys =  datas.activitys.map({(ad) -> DwCache in
-                    let activitys  =  DwCache(context: appDelegate.persistentContainer.viewContext)
-                    activitys.image = ad.image
-                    activitys.briefing = ad.briefing
-                    activitys.english = ad.english
-                    activitys.name = ad.name
-                    activitys.opentype = ad.opentype
-                    activitys.simpChinese = ad.simpChinese
-                    activitys.sort = Int64(ad.sort)
-                    activitys.thumb = ad.thumb
-                    activitys.url = ad.url
-                    activitys.type = "activitys"
-                    return activitys
-                    
-                }).sorted(by: { $0.sort < $1.sort })
-                
-                self.features = []
-                self.features =  datas.features.map({(ad) -> DwCache in
-                    let features  =  DwCache(context: appDelegate.persistentContainer.viewContext)
-                    features.image = ad.image
-                    features.briefing = ad.briefing
-                    features.english = ad.english
-                    features.name = ad.name
-                    features.opentype = ad.opentype
-                    features.simpChinese = ad.simpChinese
-                    features.sort = Int64(ad.sort)
-                    features.thumb = ad.thumb
-                    features.url = ad.url
-                    features.type = "features"
-                    return features
-                    
-                }).sorted(by: { $0.sort < $1.sort })
-                
-                appDelegate.saveContext()
-                OperationQueue.main.addOperation {
-                    self.tableView.reloadData()
-                    //self.refreshControl?.endRefreshing()
-                    self.addMainScrollView()
-                    self.createMenuBtn()
+            }else{
+                //處理接口系統錯誤
+                if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
+                    print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
                 }
-                
-            }catch{
-                print(error)
             }
-            
             
             
             
@@ -369,11 +379,11 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             case .NA:
                 //原生跳转处理
                 print("NA")
-                  performSegue(withIdentifier: nativeViews[activity.url!]!, sender: self)
+                performSegue(withIdentifier: nativeViews[activity.url!]!, sender: self)
             case .OV:
                 //内部WEBVIEW跳转
                 print("OV")
-                 ApiUtil.webViewHandle(withIdentifier: activity.url!, sender: self)
+                ApiUtil.webViewHandle(withIdentifier: activity.url!, sender: self)
             case .WV:
                 //第三方WEBVIEW跳转
                 print("WV")

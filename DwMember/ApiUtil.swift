@@ -31,10 +31,12 @@ enum couponStatus: String{
 
 //内部WEBVIEW请求参数CODE
 enum webViewType: String{
-    case BIND
-    case MPWD
-    case DZXQ
-    case FPWD
+    case BIND //註冊
+    case MPWD //忘記密碼
+    case DZXQ //訂座
+    case FPWD //修改密碼
+    case JFCX //積分記錄
+    
     
 }
 
@@ -46,7 +48,8 @@ let nativeViews: [String: String] = ["couponNav": "couponMallSegue"]
 let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", verif: false),
                                            "MPWD": webViewConfig(code : "MPWD", verif: false),
                                            "DZXQ": webViewConfig(code: "DZXQ", verif: true),
-                                           "FPWD": webViewConfig(code: "FPWD", verif: true)]
+                                           "FPWD": webViewConfig(code: "FPWD", verif: true),
+                                           "JFCX": webViewConfig(code: "JFCX", verif: true)]
 
 open class ApiUtil{
     
@@ -56,7 +59,7 @@ open class ApiUtil{
     }
     //服務鏈接
     static let serverUrl = "https://members.mytaoheung.com/a"
-    //static var serverUrl = "http://192.168.90.220:8088"
+    //static var serverUrl = "http://192.168.90.93:8081"
     //公司代碼
     static let companyCode = "TaoHeung"
     //公司代碼
@@ -104,10 +107,10 @@ open class ApiUtil{
     static let webviewApi = serverUrl + "/api/url"
     //webView統一接口Api
     static let webviewverifApi = serverUrl + "/api/verify/url"
- 
+    
     //統一編碼
     static let encoding: String.Encoding = String.Encoding.utf8
-
+    
     static let mainSB = UIStoryboard(name: "Main", bundle: Bundle.main)
     
     
@@ -117,15 +120,17 @@ open class ApiUtil{
     //加載引導頁的遠程資源-下次緩存
     static func launchCache()   {
         Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode]) { (result) in
-            
-            guard let json = result.json as? NSDictionary else{
-                return
+            if result.ok {
+                guard let json = result.json as? NSDictionary else{
+                    return
+                }
+                let datas = DwStartRootClass(fromDictionary: json).data!
+                
+                let defaults = UserDefaults.standard
+                //如果点击了则把点过的动作标志保存到存储空间，以便启动时候检查
+                defaults.set(datas.ads.image, forKey: "launchImageUrl")
             }
-            let datas = DwStartRootClass(fromDictionary: json).data!
             
-            let defaults = UserDefaults.standard
-            //如果点击了则把点过的动作标志保存到存储空间，以便启动时候检查
-            defaults.set(datas.ads.image, forKey: "launchImageUrl")
         }
     }
     
@@ -136,25 +141,13 @@ open class ApiUtil{
         //dump(webCode)
         var avgs: [String: Any] = [:]
         var url = ""
-        var card = ""
         if webCode.verif{
+            avgs = ApiUtil.frontFunc()
+            avgs.updateValue(webCode.code, forKey: "type")
+            let sign = ApiUtil.sign(data: avgs, sender: sender)
+            avgs.updateValue(sign, forKey: "sign")
+            url = ApiUtil.webviewverifApi
             
-            let defaults = UserDefaults.standard
-            if let cardNo = defaults.string(forKey: "cardNo") {
-                card = cardNo
-                avgs = ApiUtil.frontFunc()
-                avgs.updateValue(cardNo, forKey: "cardNo")
-                avgs.updateValue(webCode.code, forKey: "type")
-                let sign = ApiUtil.sign(data: avgs, sender: sender)
-                avgs.updateValue(sign, forKey: "sign")
-                
-                url = ApiUtil.webviewverifApi
-            }else{
-                let menu = UIAlertController(title: "No login", message: "please sign in", preferredStyle: .alert)
-                let optionOK = UIAlertAction(title: "ok", style: .default, handler: nil)
-                menu.addAction(optionOK)
-                sender.present(menu, animated: true, completion: nil)
-            }
         }else{
             
             avgs.updateValue(ApiUtil.idfv, forKey: "imei")
@@ -177,15 +170,21 @@ open class ApiUtil{
                             if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                                 pageVC.url = datas.url
                                 pageVC.random = datas.random
-                                pageVC.cardNo = card
+                                pageVC.cardNo = avgs["cardNo"] as! String
                                 sender.navigationController?.pushViewController(pageVC, animated: true)
                             }
                         }
                     }
                     
                 }else {
-                    print(DwCountBaseRootClass(fromDictionary: json).result)
                     //異常處理
+                    if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                        print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                        OperationQueue.main.addOperation {
+                            ApiUtil.openAlert(msg: error.msg, sender: sender)
+                        }
+                    }
+                    
                 }
             }else{
                 //處理接口系統錯誤
@@ -200,7 +199,15 @@ open class ApiUtil{
     //前置參數
     static func frontFunc()->[String: Any]{
         let timeInterval =  Int(NSDate().timeIntervalSince1970*1000)
-        return  ["channel": ApiUtil.channel, "imei": ApiUtil.idfv, "timestamp": timeInterval]
+        let defaults = UserDefaults.standard
+        
+        
+        guard (defaults.string(forKey: "cardNo") != nil) else {
+            return  ["channel": ApiUtil.channel, "imei": ApiUtil.idfv, "timestamp": timeInterval]
+        }
+        let cardNo: String = defaults.string(forKey: "cardNo")!
+        return  ["channel": ApiUtil.channel, "imei": ApiUtil.idfv, "timestamp": timeInterval, "cardNo" : cardNo]
+        
     }
     
     //簽名方法
@@ -214,18 +221,52 @@ open class ApiUtil{
             signStr = data2.map{ "\($0)=\($1)" }.joined(separator: "&")
             
             signStr.append("&key=\(sercet)")
-        }else{
-            let menu = UIAlertController(title: "No login", message: "please sign in", preferredStyle: .alert)
-            let optionOK = UIAlertAction(title: "ok", style: .default, handler: nil)
-            menu.addAction(optionOK)
-            sender.present(menu, animated: true, completion: nil)
+        }else {
+            checklogin(sender: sender)
         }
         
-        //dump(signStr)
+        
         
         return signStr.md5().uppercased()
         
     }
+    
+    static func checklogin( sender: UIViewController){
+        let defaults = UserDefaults.standard
+        guard (defaults.string(forKey: "dwsercet") != nil) else{
+            let menu = UIAlertController(title: nil, message: "please sign in", preferredStyle: .alert)
+            let optionOK = UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                
+                if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+                    
+                    sender.self.navigationController?.pushViewController(pageVC, animated: true)
+                    //sender.present(pageVC, animated: true, completion: nil)
+                }
+            })
+            let optionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            menu.addAction(optionOK)
+            menu.addAction(optionCancel)
+            
+            sender.present(menu, animated: true, completion: nil)
+            
+            return
+        }
+        
+    }
+    
+    
+    static func openAlert(msg: String ,sender: UIViewController){
+        
+        let menu = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
+        
+        let optionOK = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        menu.addAction(optionOK)
+        
+        sender.present(menu, animated: true, completion: nil)
+        
+    }
+    
+    
     
     
     

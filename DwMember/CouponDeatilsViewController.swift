@@ -42,11 +42,12 @@ class CouponDeatilsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getcouponbase()
         
         switch couponS {
         case .mall:
-            
+            self.couponNumView.isHidden = true
+            self.branchsView.isHidden = true
+            self.submitView.isHidden = false
             getcouponMall()
         default:
             self.couponNumView.isHidden = false
@@ -73,10 +74,7 @@ class CouponDeatilsViewController: UIViewController {
     
     //加載未用優惠券列表
     func getcouponbase() {
-        let defaults = UserDefaults.standard
-        if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
-            avgs.updateValue(cardNo, forKey: "cardNo")
             avgs.updateValue(couponId, forKey: "id")
             let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
@@ -86,22 +84,23 @@ class CouponDeatilsViewController: UIViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print("详情：",json)
+                print("基礎详情：",json)
                 if result.ok {
                     if  CouponDetailsRootClass(fromDictionary: json).code == 1 {
                         self.couponBase = CouponDetailsRootClass(fromDictionary: json).data
                         let attribstr = try! NSAttributedString.init(data:(self.couponBase?.descriptionField.data(using: String.Encoding.unicode))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
                         let barImg: UIImage = LBXScanWrapper.createCode128(codeString: (self.couponBase?.couponNo)!, size: self.couponNumImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white)!
+                        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+                        blurEffectView.frame = self.bgImg.frame
+                        
                         OperationQueue.main.addOperation {
                             
                             self.exchangeMsgLab.attributedText = attribstr
                             self.titleLab.text = self.couponBase?.title
                             self.briefingLab.text = self.couponBase?.couponNo
                             
-                            //                            self.validperiod.text = "使用期" + (self.couponMall?.starttime)! + "至" + (self.couponMall?.endtime)!
+                            self.validperiod.text = "使用期" + (self.couponBase?.useStartTime)! + "至" + (self.couponBase?.useEndTime)! + " " + (self.couponBase?.useDaysMsg)!
                             
-                            let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-                            blurEffectView.frame = self.bgImg.frame
                             self.bgImg.addSubview(blurEffectView)
                             let imgUrl = URL(string: (self.couponBase?.image)!)
                             self.bgImg.kf.setImage(with: imgUrl)
@@ -113,8 +112,14 @@ class CouponDeatilsViewController: UIViewController {
                             
                         }
                     }else {
-                        print(result.error ?? "未知错误")
                         //異常處理
+                        if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                            print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                            OperationQueue.main.addOperation {
+                                ApiUtil.openAlert(msg: error.msg, sender: self)
+                            }
+                        }
+
                     }
                 }else{
                     //處理接口系統錯誤
@@ -123,16 +128,13 @@ class CouponDeatilsViewController: UIViewController {
                     }
                 }
                 
-            }}
+            }
     }
     
     
     //加載未用優惠券列表
     func getcouponMall() {
-        let defaults = UserDefaults.standard
-        if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
-            avgs.updateValue(cardNo, forKey: "cardNo")
             avgs.updateValue(couponId, forKey: "couponId")
             let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
@@ -160,8 +162,14 @@ class CouponDeatilsViewController: UIViewController {
                             self.bgImg.kf.setImage(with: imgUrl)
                         }
                     }else {
-                        print(result.error ?? "未知错误")
                         //異常處理
+                        if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                            print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                            OperationQueue.main.addOperation {
+                                ApiUtil.openAlert(msg: error.msg, sender: self)
+                            }
+                        }
+
                     }
                 }else{
                     //處理接口系統錯誤
@@ -170,14 +178,11 @@ class CouponDeatilsViewController: UIViewController {
                     }
                 }
                 
-            }}
+            }
     }
     
     func exchange() {
-        let defaults = UserDefaults.standard
-        if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
-            avgs.updateValue(cardNo, forKey: "cardNo")
             avgs.updateValue(couponId, forKey: "couponId")
             let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
@@ -187,12 +192,20 @@ class CouponDeatilsViewController: UIViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print("详情：",json)
+                print("商城详情：",json)
                 if result.ok {
-                    if  DwCountBaseRootClass(fromDictionary: json).code == -1 {
+                    if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
                         OperationQueue.main.addOperation {
                             self.openAlert()
                         }
+                    }else{
+                        if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                            print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                            OperationQueue.main.addOperation {
+                                ApiUtil.openAlert(msg: error.msg, sender: self)
+                            }
+                        }
+
                     }
                 }else{
                     //處理接口系統錯誤
@@ -201,7 +214,7 @@ class CouponDeatilsViewController: UIViewController {
                     }
                 }
                 
-            }}
+            }
     }
     
     func openAlert()  {

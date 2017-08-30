@@ -29,7 +29,7 @@ class ReservationTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180.0
+        return 150.0
     }
     
     override func didReceiveMemoryWarning() {
@@ -114,10 +114,7 @@ class ReservationTableViewController: UITableViewController {
      */
     
     func getResList() {
-        let defaults = UserDefaults.standard
-        if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
-            avgs.updateValue(cardNo, forKey: "cardNo")
             avgs.updateValue("N", forKey: "isApp")
             
             let sign = ApiUtil.sign(data: avgs, sender: self)
@@ -128,7 +125,6 @@ class ReservationTableViewController: UITableViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print(json)
                 if result.ok {
                     if  DwReservationRootClass(fromDictionary: json).code == 1 {
                         if let resData   = DwReservationRootClass(fromDictionary: json).data {
@@ -140,8 +136,14 @@ class ReservationTableViewController: UITableViewController {
                                 
                             }
                         }else {
-                            print("數據為空")
                             //異常處理
+                            if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                                print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                                OperationQueue.main.addOperation {
+                                    ApiUtil.openAlert(msg: error.msg, sender: self)
+                                }
+                            }
+
                         }
                     }
                 }else{
@@ -151,7 +153,7 @@ class ReservationTableViewController: UITableViewController {
                     }
                 }
                 
-            }}
+            }
     }
     
     

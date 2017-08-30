@@ -37,7 +37,9 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+          ApiUtil.checklogin(sender: self)
+    }
     
 
     
@@ -145,11 +147,7 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
     
     //獲得優惠券未用數量
     func getCouponCount() {
-        let defaults = UserDefaults.standard
-        if let cardNo = defaults.string(forKey: "cardNo"){
             var avgs = ApiUtil.frontFunc()
-            avgs.updateValue(cardNo, forKey: "cardNo")
-            
             let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             
@@ -173,8 +171,14 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
                         }
                         
                     }else {
-                        
                         //異常處理
+                        if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                            print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                            OperationQueue.main.addOperation {
+                                ApiUtil.openAlert(msg: error.msg, sender: self)
+                            }
+                        }
+
                     }
                 }else{
                     //處理接口系統錯誤
@@ -183,7 +187,7 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
                     }
                 }
                 
-            }}
+            }
     }
     
 }

@@ -23,7 +23,7 @@ class WebViewController: UIViewController {
         view.addSubview(wkWebView)
         //加入高度自适应，这样底部也不会缩进去
         wkWebView.autoresizingMask = [.flexibleHeight]
-        print( "\(url)?imei=\(ApiUtil.idfv)&code=\(random)")
+        print( "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)")
         if let url = URL(string: "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)"){
             let request = URLRequest(url: url)
             // webView.loadRequest(request)
