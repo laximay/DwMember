@@ -34,7 +34,7 @@ struct DwErrorBaseRootClass{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if error != nil{
 			dictionary["error"] = error
 		}

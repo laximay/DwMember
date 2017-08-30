@@ -38,7 +38,7 @@ struct DwPayCodeRootClass{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if apiVerify != nil{
 			dictionary["apiVerify"] = apiVerify
 		}

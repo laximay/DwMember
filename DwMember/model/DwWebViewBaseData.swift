@@ -26,7 +26,7 @@ struct DwWebViewBaseData{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if random != nil{
 			dictionary["random"] = random
 		}

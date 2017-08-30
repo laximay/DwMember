@@ -102,6 +102,8 @@ open class ApiUtil{
     static let reservationApi = serverUrl + "/api/reservation/getMyReservation"
     //會員信息修改Api
     static let userinfoApi = serverUrl + "/api/member/update"
+    //分店信息列表接口Api
+    static let outletApi = serverUrl + "/api/outlet/list"
     
     //webView統一接口Api
     static let webviewApi = serverUrl + "/api/url"
@@ -170,7 +172,9 @@ open class ApiUtil{
                             if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                                 pageVC.url = datas.url
                                 pageVC.random = datas.random
-                                pageVC.cardNo = avgs["cardNo"] as! String
+                                if let cardNo: String = avgs["cardNo"] as? String {
+                                pageVC.cardNo = cardNo
+                                }
                                 sender.navigationController?.pushViewController(pageVC, animated: true)
                             }
                         }

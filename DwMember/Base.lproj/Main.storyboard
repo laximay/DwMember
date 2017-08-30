@@ -240,7 +240,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="td6-0U-Xh7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FindCell" id="td6-0U-Xh7" customClass="FindTableViewCell" customModule="DwMember" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="td6-0U-Xh7" id="8zz-1h-C1u">
@@ -1109,40 +1109,40 @@
                                                     <rect key="frame" x="0.0" y="35" width="375" height="115"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="address" translatesAutoresizingMaskIntoConstraints="NO" id="nan-Uw-fTf">
-                                                            <rect key="frame" x="24.5" y="17" width="20" height="20"/>
+                                                            <rect key="frame" x="25" y="17" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="0on-El-bRA"/>
                                                                 <constraint firstAttribute="height" constant="20" id="NTY-HY-C6d"/>
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="XiD-TK-SGE">
-                                                            <rect key="frame" x="24.5" y="54" width="20" height="20"/>
+                                                            <rect key="frame" x="25" y="54" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="74y-b8-DS3"/>
                                                                 <constraint firstAttribute="width" constant="20" id="tpW-AR-58k"/>
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="users" translatesAutoresizingMaskIntoConstraints="NO" id="foU-jB-TXo">
-                                                            <rect key="frame" x="24.5" y="89" width="20" height="20"/>
+                                                            <rect key="frame" x="25" y="89" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="TOO-B8-kbb"/>
                                                                 <constraint firstAttribute="width" constant="20" id="tzs-oi-jVQ"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bti-hF-9Jh">
-                                                            <rect key="frame" x="60.5" y="17" width="287.5" height="20"/>
+                                                            <rect key="frame" x="61" y="17" width="287" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cs-Cz-b0k">
-                                                            <rect key="frame" x="61.5" y="54" width="286.5" height="20"/>
+                                                            <rect key="frame" x="62" y="54" width="286" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uI-PT-bci">
-                                                            <rect key="frame" x="61.5" y="89" width="99" height="18"/>
+                                                            <rect key="frame" x="62" y="89" width="99" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="99" id="S8I-tr-rAb"/>
                                                             </constraints>
@@ -1151,7 +1151,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for confirmation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKy-j9-QBJ">
-                                                            <rect key="frame" x="202" y="89" width="165" height="18"/>
+                                                            <rect key="frame" x="202.5" y="89" width="164.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" red="0.95873731374740601" green="0.34801191091537476" blue="0.2183380126953125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>

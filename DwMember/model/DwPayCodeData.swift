@@ -28,7 +28,7 @@ struct DwPayCodeData{
      */
     func toDictionary() -> NSDictionary
     {
-        var dictionary = NSMutableDictionary()
+        let dictionary = NSMutableDictionary()
         if cardNo != nil{
             dictionary["cardNo"] = cardNo
         }

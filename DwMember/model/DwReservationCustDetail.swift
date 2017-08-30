@@ -76,7 +76,7 @@ struct DwReservationCustDetail{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if addr != nil{
 			dictionary["addr"] = addr
 		}

@@ -7,18 +7,69 @@
 //
 
 import UIKit
-
+import Just
 class FindTableViewController: UITableViewController {
+    
+    var outletList: [DwBranchsData] = [] 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        getOutletList()
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(self.getOutletList), for: .valueChanged)
+        
+        
+        tableView.backgroundColor = UIColor(white: 0.98, alpha: 1)//美化列表
+        tableView.tableFooterView = UIView(frame: CGRect.zero)//去除页脚
+        tableView.separatorColor = UIColor(white: 0.9, alpha: 1)//去除分割线
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
+    
+    func getOutletList() {
+        var avgs = ApiUtil.frontFunc()
+        
+        let sign = ApiUtil.sign(data: avgs, sender: self)
+        avgs.updateValue(sign, forKey: "sign")
+        avgs.updateValue(ApiUtil.companyCode, forKey: "company")
+        
+        
+        Just.post(ApiUtil.outletApi ,  data: avgs) { (result) in
+            guard let json = result.json as? NSDictionary else{
+                return
+            }
+            print(json)
+            if result.ok {
+                if  DwBranchsRootClass(fromDictionary: json).code == 1 {
+                    self.outletList = DwBranchsRootClass(fromDictionary: json).data
+                    
+                    OperationQueue.main.addOperation {
+                        self.refreshControl?.endRefreshing() //查询结果后关闭刷新效果
+                        self.tableView.reloadData()
+                        
+                    }
+                }else {
+                    //異常處理
+                    if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                        print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                        OperationQueue.main.addOperation {
+                            ApiUtil.openAlert(msg: error.msg, sender: self)
+                        }
+                    }
+                }
+            }else{
+                //處理接口系統錯誤
+                if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
+                    print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                }
+            }
+            
+        }
+    }
+
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,23 +80,23 @@ class FindTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return outletList.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FindCell", for: indexPath) as! FindTableViewCell
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

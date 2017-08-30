@@ -39,6 +39,9 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         homeCache()
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(self.homeCache), for: .valueChanged)
+        
         tableView.backgroundColor = UIColor(white: 0.98, alpha: 1)//美化列表
         tableView.tableFooterView = UIView(frame: CGRect.zero)//去除页脚
         tableView.separatorColor = UIColor(white: 0.9, alpha: 1)//去除分割线
@@ -89,14 +92,15 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                     case .OV:
                         //内部WEBVIEW跳转
                         print("OV")
-                        ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
-                    case .WV:
-                        //第三方WEBVIEW跳转
-                        print("WV")
                         if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                             pageVC.url = ad.url!
                             self.navigationController?.pushViewController(pageVC, animated: true)
                         }
+                    case .WV:
+                        //第三方WEBVIEW跳转
+                        print("WV")
+                        ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
+                        
                     default:
                         print("未知类型")
                     }
@@ -188,7 +192,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                     appDelegate.saveContext()
                     OperationQueue.main.addOperation {
                         self.tableView.reloadData()
-                        //self.refreshControl?.endRefreshing()
+                        self.refreshControl?.endRefreshing()
                         self.addMainScrollView()
                         self.createMenuBtn()
                     }
@@ -265,14 +269,15 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             case .OV:
                 //内部WEBVIEW跳转
                 print("OV")
-                ApiUtil.webViewHandle(withIdentifier: feature.url!, sender: self)
-            case .WV:
-                //第三方WEBVIEW跳转
-                print("WV")
                 if let pageVC = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                     pageVC.url = feature.url!
                     self.navigationController?.pushViewController(pageVC, animated: true)
                 }
+            case .WV:
+                //第三方WEBVIEW跳转
+                print("WV")
+                ApiUtil.webViewHandle(withIdentifier: feature.url!, sender: self)
+                
             default:
                 print("未知类型")
             }
@@ -383,14 +388,14 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             case .OV:
                 //内部WEBVIEW跳转
                 print("OV")
-                ApiUtil.webViewHandle(withIdentifier: activity.url!, sender: self)
-            case .WV:
-                //第三方WEBVIEW跳转
-                print("WV")
                 if let pageVC = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                     pageVC.url = activity.url!
                     self.navigationController?.pushViewController(pageVC, animated: true)
                 }
+            case .WV:
+                //第三方WEBVIEW跳转
+                print("WV")
+                ApiUtil.webViewHandle(withIdentifier: activity.url!, sender: self)
             default:
                 print("未知类型")
             }

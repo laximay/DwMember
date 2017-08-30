@@ -42,7 +42,7 @@ struct DwHomeActivity{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if briefing != nil{
 			dictionary["briefing"] = briefing
 		}

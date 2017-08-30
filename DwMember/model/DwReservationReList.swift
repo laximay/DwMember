@@ -94,7 +94,7 @@ struct DwReservationReList{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+		let dictionary = NSMutableDictionary()
 		if branch != nil{
 			dictionary["branch"] = branch.toDictionary()
 		}
