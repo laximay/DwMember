@@ -12,10 +12,15 @@ class MessageTableViewController: UITableViewController {
     
     var msgList: [DwMsgListBaseData] = []
     
-    @IBOutlet var spinner: UIActivityIndicatorView!
+     let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        spinner.center = view.center
+        view.addSubview(spinner)
+        spinner.startAnimating()
         getMsgList()
+        
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(self.getMsgList), for: .valueChanged)
         
@@ -32,44 +37,45 @@ class MessageTableViewController: UITableViewController {
     
     
     func getMsgList() {
-            var avgs = ApiUtil.frontFunc()
-            
-            let sign = ApiUtil.sign(data: avgs, sender: self)
-            avgs.updateValue(sign, forKey: "sign")
-            
-            
-            Just.post(ApiUtil.msglistApi ,  data: avgs) { (result) in
-                guard let json = result.json as? NSDictionary else{
-                    return
-                }
-                print(json)
-                if result.ok {
-                    if  DwMsgListBaseRootClass(fromDictionary: json).code == 1 {
-                        self.msgList = DwMsgListBaseRootClass(fromDictionary: json).data
-                        
+        var avgs = ApiUtil.frontFunc()
+        
+        let sign = ApiUtil.sign(data: avgs, sender: self)
+        avgs.updateValue(sign, forKey: "sign")
+        
+        
+        Just.post(ApiUtil.msglistApi ,  data: avgs) { (result) in
+            guard let json = result.json as? NSDictionary else{
+                return
+            }
+            print(json)
+            if result.ok {
+                if  DwMsgListBaseRootClass(fromDictionary: json).code == 1 {
+                    self.msgList = DwMsgListBaseRootClass(fromDictionary: json).data
+                    
+                }else {
+                    //異常處理
+                    if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                        print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                         OperationQueue.main.addOperation {
-                            self.refreshControl?.endRefreshing() //查询结果后关闭刷新效果
-                            self.spinner.stopAnimating()//关闭加载效果
-                            self.tableView.reloadData()
-                            
+                            ApiUtil.openAlert(msg: error.msg, sender: self)
                         }
-                    }else {
-                        //異常處理
-                        if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                            print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
-                            OperationQueue.main.addOperation {
-                                ApiUtil.openAlert(msg: error.msg, sender: self)
-                            }
-                        }
-                    }
-                }else{
-                    //處理接口系統錯誤
-                    if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                        print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
                     }
                 }
+            }else{
+                //處理接口系統錯誤
+                if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
+                    print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                }
+            }
+            OperationQueue.main.addOperation {
+                self.refreshControl?.endRefreshing() //查询结果后关闭刷新效果
+                self.spinner.stopAnimating()//关闭加载效果
+                 self.tableView.reloadData()
+                
                 
             }
+            
+        }
     }
     
     

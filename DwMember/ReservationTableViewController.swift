@@ -12,7 +12,7 @@ class ReservationTableViewController: UITableViewController {
     
     
     
-    @IBOutlet var spinner: UIActivityIndicatorView!
+     let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     var resList: [DwReservationReList] = []
     
     override func viewDidLoad() {
@@ -21,7 +21,8 @@ class ReservationTableViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(self.getResList), for: .valueChanged)
         
-        
+        spinner.center = view.center
+        view.addSubview(spinner)
         tableView.backgroundColor = UIColor(white: 0.98, alpha: 1)//美化列表
         tableView.tableFooterView = UIView(frame: CGRect.zero)//去除页脚
         tableView.separatorColor = UIColor(white: 0.9, alpha: 1)//去除分割线

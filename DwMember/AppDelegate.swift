@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         }
         
         JPUSHService.setup(withOption: launchOptions,
-                           appKey: "116a28c4d4cbce2f55610675",
+                           appKey: "116a28c4d4cbce2f55610675", //這條是測試的KEY，生成版本需要更換
                            channel: "app store",
                            apsForProduction: false)
         
@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             
             /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
             
-            let adVC = ZLaunchAdVC.init(defaultDuration: 3, completion: { [weak self] in
+            let adVC = ZLaunchAdVC.init(defaultDuration: 2, completion: { [weak self] in
                 self?.window?.rootViewController = homeVC
             })
             /// 延时模拟网络请求 如果存在啟動廣告，則啟動記載廣告
@@ -183,8 +183,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         JPUSHService.registerDeviceToken(deviceToken)
-        //设置tags,后台可以根据这个来推送（本处用的是账号）
-        JPUSHService.setTags(["cardno"], aliasInbackground: "0005897088")
+        //设置tags,后台可以根据这个来推送
+        JPUSHService.setTags(["imei"], aliasInbackground: ApiUtil.idfv)
     }
     //注册失败方法
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

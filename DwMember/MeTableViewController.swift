@@ -36,10 +36,24 @@ class MeTableViewController: UITableViewController{
     
     override func viewDidAppear(_ animated: Bool) {
        
-        ApiUtil.checklogin_me(sender: self)
-        getCardInfo()
-        getMsgCount()
-        getCouponCount()
+        let defaults = UserDefaults.standard
+        if (defaults.string(forKey: "dwsercet") != nil){
+            getCardInfo()
+            getMsgCount()
+            getCouponCount()
+        } else{
+            if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+                
+                self.navigationController?.pushViewController(pageVC, animated: true)
+                //sender.present(pageVC, animated: true, completion: nil)
+            }
+            
+            return
+        }
+
+        
+        
+      
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
