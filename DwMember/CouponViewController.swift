@@ -38,6 +38,7 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
           ApiUtil.checklogin(sender: self)
     }
     

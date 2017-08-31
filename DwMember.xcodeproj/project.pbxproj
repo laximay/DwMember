@@ -73,12 +73,12 @@
 		3D6458D81F4A9586008220C3 /* ReservationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458D71F4A9586008220C3 /* ReservationTableViewController.swift */; };
 		3D6458DA1F4AA0AC008220C3 /* ResTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458D91F4AA0AC008220C3 /* ResTableViewCell.swift */; };
 		3D6458DC1F4AB34C008220C3 /* MemberInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458DB1F4AB34C008220C3 /* MemberInfoTableViewController.swift */; };
+		3D73230C1F56FA4C002DBFC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D73230B1F56FA4C002DBFC1 /* Assets.xcassets */; };
 		3D8274F01F43DEC2009BB0C9 /* DwLoginCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274ED1F43DEC2009BB0C9 /* DwLoginCard.swift */; };
 		3D8274F11F43DEC2009BB0C9 /* DwLoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274EE1F43DEC2009BB0C9 /* DwLoginData.swift */; };
 		3D8274F21F43DEC2009BB0C9 /* DwLoginRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */; };
 		3D91761D1F486BD500E855F6 /* DwPayCodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91761B1F486BD500E855F6 /* DwPayCodeData.swift */; };
 		3D91761E1F486BD500E855F6 /* DwPayCodeRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */; };
-		3DA8FB371F30BCCD00C44ABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DA8FB361F30BCCD00C44ABD /* Assets.xcassets */; };
 		3DD3E24B1F2EC4C6001FC47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3E24A1F2EC4C6001FC47E /* AppDelegate.swift */; };
 		3DD3E2501F2EC4C6001FC47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD3E24E1F2EC4C6001FC47E /* Main.storyboard */; };
 		3DD3E2581F2EC4C7001FC47E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD3E2561F2EC4C7001FC47E /* LaunchScreen.storyboard */; };
@@ -154,12 +154,12 @@
 		3D6458D71F4A9586008220C3 /* ReservationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewController.swift; sourceTree = "<group>"; };
 		3D6458D91F4AA0AC008220C3 /* ResTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResTableViewCell.swift; sourceTree = "<group>"; };
 		3D6458DB1F4AB34C008220C3 /* MemberInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoTableViewController.swift; sourceTree = "<group>"; };
+		3D73230B1F56FA4C002DBFC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D8274ED1F43DEC2009BB0C9 /* DwLoginCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginCard.swift; sourceTree = "<group>"; };
 		3D8274EE1F43DEC2009BB0C9 /* DwLoginData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginData.swift; sourceTree = "<group>"; };
 		3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginRootClass.swift; sourceTree = "<group>"; };
 		3D91761B1F486BD500E855F6 /* DwPayCodeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPayCodeData.swift; sourceTree = "<group>"; };
 		3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPayCodeRootClass.swift; sourceTree = "<group>"; };
-		3DA8FB361F30BCCD00C44ABD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DD3E2471F2EC4C6001FC47E /* DwMember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DwMember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD3E24A1F2EC4C6001FC47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DD3E24F1F2EC4C6001FC47E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -319,10 +319,10 @@
 		3DD3E2491F2EC4C6001FC47E /* DwMember */ = {
 			isa = PBXGroup;
 			children = (
+				3D73230B1F56FA4C002DBFC1 /* Assets.xcassets */,
 				3D2569E01F3D7B9800E01816 /* ZLaunchAd */,
 				3D493F8B1F3C3DB800CEAD4B /* model */,
 				3D1640BD1F39F969008F0819 /* DwMember.entitlements */,
-				3DA8FB361F30BCCD00C44ABD /* Assets.xcassets */,
 				3D11B3971F30582D0031DD5C /* extension */,
 				3D1615701F2F727B00E33F3D /* content */,
 				3D1615651F2F6FE400E33F3D /* controll */,
@@ -424,8 +424,8 @@
 			files = (
 				3DD3E2581F2EC4C7001FC47E /* LaunchScreen.storyboard in Resources */,
 				3DD3E2501F2EC4C6001FC47E /* Main.storyboard in Resources */,
+				3D73230C1F56FA4C002DBFC1 /* Assets.xcassets in Resources */,
 				3DD885B21F2F3323007A1CE1 /* PodFile in Resources */,
-				3DA8FB371F30BCCD00C44ABD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -63,9 +63,9 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     
     //隐藏NavigationBar
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        navigationController?.setNavigationBarHidden(true, animated: true)
-    //    }
+//        override func viewWillAppear(_ animated: Bool) {
+//            navigationController?.setNavigationBarHidden(true, animated: true)
+//        }
     
     
     func addMainScrollView() {
@@ -458,15 +458,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     }
     
     
-    //退出登錄的控制器
-    @objc public func loginOut(url:String) {
-        let loginVC = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
-        if let navigationController = navigationController {
-            navigationController.pushViewController(loginVC!, animated: true)
-            return
-        }
-        present(loginVC!, animated: true, completion: nil)
-    }
+
     
     @IBAction func close(segue: UIStoryboardSegue){
     }

@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WechatIMG80" translatesAutoresizingMaskIntoConstraints="NO" id="0OT-Ef-Irn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thlogo" translatesAutoresizingMaskIntoConstraints="NO" id="0OT-Ef-Irn">
                                 <rect key="frame" x="0.0" y="587" width="375" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="CTC-Ob-tzK"/>
@@ -42,6 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="WechatIMG80" width="816" height="258"/>
+        <image name="thlogo" width="816" height="258"/>
     </resources>
 </document>

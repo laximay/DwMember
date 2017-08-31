@@ -17,6 +17,7 @@ class WebViewController: UIViewController {
     var cardNo = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //访问http协议的网址需要在info.plist里面打开限制
         webView.isHidden = true
         let wkWebView = WKWebView(frame: view.frame)
