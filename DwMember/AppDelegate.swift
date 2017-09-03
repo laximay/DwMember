@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             
             /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
             
-            let adVC = ZLaunchAdVC.init(defaultDuration: 2, completion: { [weak self] in
+            let adVC = ZLaunchAdVC.init(defaultDuration: 3, completion: { [weak self] in
                 self?.window?.rootViewController = homeVC
             })
             /// 延时模拟网络请求 如果存在啟動廣告，則啟動記載廣告

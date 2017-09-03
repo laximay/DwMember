@@ -36,6 +36,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         homeCache()
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -62,10 +63,10 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     }
     
     
-    //隐藏NavigationBar
-//        override func viewWillAppear(_ animated: Bool) {
-//            navigationController?.setNavigationBarHidden(true, animated: true)
-//        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        ApiUtil.checkUpdata(sender: self)
+    }
     
     
     func addMainScrollView() {
@@ -458,7 +459,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     }
     
     
-
+    
     
     @IBAction func close(segue: UIStoryboardSegue){
     }

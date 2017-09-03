@@ -17,12 +17,18 @@ class MeTableViewController: UITableViewController{
     @IBOutlet weak var cardNoLab: UILabel!
     @IBOutlet weak var couponCountLab: UILabel!
     @IBOutlet weak var msgCountLab: UILabel!
+    @IBOutlet weak var localVersion: UILabel!
     
     var userInfo: DwLoginData?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        let defaults = UserDefaults.standard
+        if let version = defaults.string(forKey: "localVersion"){
+            localVersion.text = "當前版本:\(version)"
+        }else{
+            localVersion.text = "當前版本:1.0.0.1"
+        }
         
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(self.reloadAllData), for: .valueChanged)
