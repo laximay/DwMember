@@ -27,8 +27,7 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         appdelegate.couponView = self
         segmentViewHeightConstraint.constant = 40
-        viewInit()
-        getCouponCount()
+      
        
         // Do any additional setup after loading the view.
     }
@@ -41,6 +40,8 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         
           ApiUtil.checklogin(sender: self)
+        viewInit()
+        getCouponCount()
     }
     
    

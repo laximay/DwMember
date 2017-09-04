@@ -221,8 +221,8 @@ class CouponDeatilsViewController: UIViewController {
         let menu = UIAlertController(title: "prompt", message: "exchange success", preferredStyle: .alert)
         let optionOK = UIAlertAction(title: "OK", style: .default) { (_) in
             let appdelegate = UIApplication.shared.delegate as! AppDelegate
-           // appdelegate.couponView.getCouponCount() //更新数目
-            appdelegate.couponView.viewDidLoad()
+            appdelegate.couponView.getCouponCount() //更新数目
+            //appdelegate.couponView.segmentioView.reloadSegmentio()
             self.performSegue(withIdentifier: "unwindToCouponList", sender: self)
             // self.dismiss(animated: true, completion: nil)
         }

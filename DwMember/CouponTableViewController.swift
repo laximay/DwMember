@@ -50,6 +50,8 @@ class CouponTableViewController: UITableViewController {
         
     }
     
+    
+    
 
     
     class func create() -> CouponTableViewController {

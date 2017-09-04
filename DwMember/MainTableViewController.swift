@@ -69,51 +69,6 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     
     func addMainScrollView() {
-//        let kScreenWidth = UIScreen.main.bounds.size.width
-//        let currentRect =  CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 155)
-//
-//        print("首頁：\(currentRect)" )
-//        self.mainScrollView = SSCycleScrollView.init(frame: currentRect, animationDuration: 3, inputImageUrls: self.scrollImageUrls)
-//        self.mainScrollView?.tapBlock = {index in
-//            //在这里处理点击轮播图的的事件
-//            print("tapped page\(index)")
-//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//            let requestAds : NSFetchRequest<DwCache> = DwCache.fetchRequest()
-//            let cateAds = NSPredicate.init(format: "type='ads'")
-//            requestAds.predicate = cateAds
-//            do{
-//                let ads = try appDelegate.persistentContainer.viewContext.fetch(requestAds)
-//                if let ad: DwCache = ads[index]{
-//                    let openType = opentypeM.init(rawValue: ad.opentype!).unsafelyUnwrapped
-//                    
-//                    switch openType {
-//                    case .NA:
-//                        //原生跳转处理
-//                        print("NA")
-//                        self.performSegue(withIdentifier: nativeViews[ad.url!]!, sender: self)
-//                    case .OV:
-//                        //内部WEBVIEW跳转
-//                        print("OV")
-//                        if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
-//                            pageVC.url = ad.url!
-//                            self.navigationController?.pushViewController(pageVC, animated: true)
-//                        }
-//                    case .WV:
-//                        //第三方WEBVIEW跳转
-//                        print("WV")
-//                        ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
-//                        
-//                    default:
-//                        print("未知类型")
-//                    }
-//                }
-//                
-//            }catch{
-//                print(error)
-//            }
-//            
-//        }
-        //        self.mainScrollView?.autoScroll = false
          let w = UIScreen.main.bounds.width
         let mainScrollView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect.init(x: 0, y:0, width: w, height: 155), imageURLPaths: self.scrollImageUrls, didSelectItemAtIndex: { index in
             print("当前点击图片的位置为:\(index)")
@@ -130,7 +85,11 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                                 case .NA:
                                     //原生跳转处理
                                     print("NA")
-                                    self.performSegue(withIdentifier: nativeViews[ad.url!]!, sender: self)
+                                    if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: nativeViews[ad.url!]!)  {
+                                        
+                                        self.navigationController?.pushViewController(pageVC, animated: true)
+                                    }
+//                                    self.performSegue(withIdentifier: nativeViews[ad.url!]!, sender: self)
                                 case .OV:
                                     //内部WEBVIEW跳转
                                     print("OV")
@@ -316,8 +275,11 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             case .NA:
                 //原生跳转处理
                 print("NA")
-                
-                performSegue(withIdentifier: nativeViews[feature.url!]!, sender: self)
+                        if let pageVC = storyboard?.instantiateViewController(withIdentifier: nativeViews[feature.url!]!)  {
+                            
+                            self.navigationController?.pushViewController(pageVC, animated: true)
+                        }
+               // performSegue(withIdentifier: nativeViews[feature.url!]!, sender: self)
             case .OV:
                 //内部WEBVIEW跳转
                 print("OV")
@@ -436,7 +398,11 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             case .NA:
                 //原生跳转处理
                 print("NA")
-                performSegue(withIdentifier: nativeViews[activity.url!]!, sender: self)
+                if let pageVC = storyboard?.instantiateViewController(withIdentifier: nativeViews[activity.url!]!)  {
+                    
+                    self.navigationController?.pushViewController(pageVC, animated: true)
+                }
+                //performSegue(withIdentifier: nativeViews[activity.url!]!, sender: self)
             case .OV:
                 //内部WEBVIEW跳转
                 print("OV")

@@ -52,7 +52,7 @@ enum articleType: String{
 
 
 // [viewCode : Segue]
-let nativeViews: [String: String] = ["couponNav": "couponMallSegue"]
+let nativeViews: [String: String] = ["couponNav": "CouponViewController"]
 
 // [viewCode : Segue]
 let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", verif: false),

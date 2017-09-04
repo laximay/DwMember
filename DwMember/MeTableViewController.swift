@@ -414,6 +414,9 @@ class MeTableViewController: UITableViewController{
             let dest = segue.destination as! MemberInfoTableViewController
             dest.userInfo = self.userInfo
             segue.destination.hidesBottomBarWhenPushed = true
+        }else if segue.identifier == "logoutSegue"{
+           
+            segue.destination.hidesBottomBarWhenPushed = true
         }
         //隐藏底部导航条
         
