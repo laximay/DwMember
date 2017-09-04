@@ -13,12 +13,18 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     
     var window: UIWindow?
+    var couponView = CouponViewController()
+    var couponTable = CouponTableViewController()
+    
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UINavigationBar.appearance().barTintColor = UIColor(red: 158/255.0, green: 16/255.0, blue: 38/255.0, alpha: 1) //设置前景色
         UINavigationBar.appearance().tintColor = UIColor.white
+        let mainSB = UIStoryboard(name: "Main", bundle: nil)
+        self.couponView = mainSB.instantiateViewController(withIdentifier: "CouponViewController") as! CouponViewController
+        self.couponTable = mainSB.instantiateViewController(withIdentifier: "CouponTableViewController") as! CouponTableViewController
         
         ApiUtil.launchCache()
    

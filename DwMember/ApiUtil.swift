@@ -41,6 +41,16 @@ enum webViewType: String{
 }
 
 
+enum articleType: String{
+    case MEMINFO //會員須知
+    case INTERULE //積分規則
+    case COUPONRULE //優惠券規則
+    case MEMTERMS //會員條款
+    case ABOUTUS //關於我們
+    case OTHERS //其他
+}
+
+
 // [viewCode : Segue]
 let nativeViews: [String: String] = ["couponNav": "couponMallSegue"]
 
@@ -112,6 +122,8 @@ open class ApiUtil{
     static let webviewverifApi = serverUrl + "/api/verify/url"
     //版本更新Api
     static let updataApi = serverUrl + "/api/app/version"
+    //文章獲取Api
+    static let articleApi = serverUrl + "/api/app/article"
     
     //統一編碼
     static let encoding: String.Encoding = String.Encoding.utf8
@@ -138,6 +150,9 @@ open class ApiUtil{
             
         }
     }
+    
+ 
+    
     
     //檢測更新
     static func checkUpdata(sender: UIViewController)   {

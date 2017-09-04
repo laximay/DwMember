@@ -20,8 +20,15 @@ class CouponTableViewController: UITableViewController {
     
     var couponS: couponStatus = .unuse
     
+     let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        appdelegate.couponTable = self
+        spinner.center = view.center
+        view.addSubview(spinner)
+        spinner.startAnimating()
+        
         switch couponS {
         case .unuse:
             //print("類型\(couponS.rawValue)")
@@ -42,6 +49,8 @@ class CouponTableViewController: UITableViewController {
         tableView.separatorColor = UIColor(white: 0.9, alpha: 1)//去除分割线
         
     }
+    
+
     
     class func create() -> CouponTableViewController {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -65,7 +74,7 @@ class CouponTableViewController: UITableViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                // print("未用",json)
+                 print("未用",json)
                 if result.ok {
                     if  DwCouponBaseRootClass(fromDictionary: json).code == 1 {
                         self.couponunuseList = DwCouponBaseRootClass(fromDictionary: json).data
@@ -90,6 +99,10 @@ class CouponTableViewController: UITableViewController {
                         print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
                     }
                 }
+                OperationQueue.main.addOperation {
+                    self.spinner.stopAnimating()//关闭加载效果
+                }
+
                 
             }
     }
@@ -126,6 +139,9 @@ class CouponTableViewController: UITableViewController {
                     if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
                         print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
                     }
+                }
+                OperationQueue.main.addOperation {
+                    self.spinner.stopAnimating()//关闭加载效果
                 }
                 
             }}
@@ -167,7 +183,9 @@ class CouponTableViewController: UITableViewController {
                         print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
                     }
                 }
-                
+                OperationQueue.main.addOperation {
+                    self.spinner.stopAnimating()//关闭加载效果
+                }
             }
     }
     
@@ -208,7 +226,9 @@ class CouponTableViewController: UITableViewController {
                         print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
                     }
                 }
-                
+                OperationQueue.main.addOperation {
+                    self.spinner.stopAnimating()//关闭加载效果
+                }
             }
     }
     
