@@ -1,18 +1,17 @@
 //
-//  FindTableViewCell.swift
+//  BranchDetailTableViewCell.swift
 //  DwMember
 //
-//  Created by wenjing on 2017/8/28.
+//  Created by Wen Jing on 2017/9/3.
 //  Copyright © 2017年 Wen Jing. All rights reserved.
 //
 
 import UIKit
 
-class FindTableViewCell: UITableViewCell {
+class BranchDetailTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var bgImg: UIImageView!
-    @IBOutlet weak var titleLab: UILabel!
-    @IBOutlet weak var distance: UILabel!
+    @IBOutlet weak var nameLab: UILabel!
+    @IBOutlet weak var valueLab: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

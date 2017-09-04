@@ -15,7 +15,7 @@ class FindTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        getOutletList()
+        
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(self.getOutletList), for: .valueChanged)
         
@@ -25,6 +25,14 @@ class FindTableViewController: UITableViewController {
         tableView.separatorColor = UIColor(white: 0.9, alpha: 1)//去除分割线
 
         
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150.0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getOutletList()
     }
     
     func getOutletList() {
@@ -91,8 +99,11 @@ class FindTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FindCell", for: indexPath) as! FindTableViewCell
-
-        // Configure the cell...
+        let outlet = self.outletList[indexPath.row]
+        let imgUrl = URL(string: outlet.image)
+        cell.bgImg.kf.setImage(with: imgUrl)
+        cell.titleLab.text = outlet.name1
+        cell.distance.text =  "\(outlet.distance as Int)km"
 
         return cell
     }
@@ -133,14 +144,14 @@ class FindTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showBranchDetailSegue"{
+            
+            let dest = segue.destination as! BranchDetailTableViewController
+            dest.branch = self.outletList[tableView.indexPathForSelectedRow!.row]
+        }
     }
-    */
+    
 
 }

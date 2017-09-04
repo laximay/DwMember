@@ -57,6 +57,7 @@ open class ApiUtil{
         let apiUtil = ApiUtil();
         return apiUtil;
     }
+    
     //服務鏈接
     static let serverUrl = "https://members.mytaoheung.com/a"
     //static var serverUrl = "http://192.168.90.93:8081"
@@ -109,6 +110,8 @@ open class ApiUtil{
     static let webviewApi = serverUrl + "/api/url"
     //webView統一接口Api
     static let webviewverifApi = serverUrl + "/api/verify/url"
+    //版本更新Api
+    static let updataApi = serverUrl + "/api/app/version"
     
     //統一編碼
     static let encoding: String.Encoding = String.Encoding.utf8
@@ -131,6 +134,63 @@ open class ApiUtil{
                 let defaults = UserDefaults.standard
                 //如果点击了则把点过的动作标志保存到存储空间，以便启动时候检查
                 defaults.set(datas.ads.image, forKey: "launchImageUrl")
+            }
+            
+        }
+    }
+    
+    //檢測更新
+    static func checkUpdata(sender: UIViewController)   {
+        Just.post(ApiUtil.updataApi ,  data: ["company": ApiUtil.companyCode, "channel" : ApiUtil.channel]) { (result) in
+            if result.ok {
+                guard let json = result.json as? NSDictionary else{
+                    return
+                }
+                //print(json)
+                if let datas = DwUpdataRootClass(fromDictionary: json).data {
+                    let cluodVersion = datas.versions
+                    let defaults = UserDefaults.standard
+                    if let localVersion = defaults.string(forKey: "localVersion"){
+                        if localVersion != cluodVersion {
+                            OperationQueue.main.addOperation {
+                                
+                                let menu = UIAlertController(title: nil, message: "please updata your apps", preferredStyle: .alert)
+                                let optionOK = UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                                    
+                                    if let url = URL(string: datas.downloadUrl) {
+                                        //根据iOS系统版本，分别处理
+                                        if #available(iOS 10, *) {
+                                            UIApplication.shared.open(url, options: [:],
+                                                                      completionHandler: {
+                                                                        (success) in
+                                            })
+                                        } else {
+                                            UIApplication.shared.openURL(url)
+                                        }
+                                    }
+                                    
+                                })
+                                if !datas.isMust {
+                                    let optionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                                    menu.addAction(optionCancel)
+                                    
+                                }
+                                
+                                menu.addAction(optionOK)
+                                sender.present(menu, animated: true, completion: nil)
+                                
+                            }
+                        }
+                    }else {
+                        defaults.set(cluodVersion, forKey: "localVersion")
+                    }
+                    //如果点击了则把点过的动作标志保存到存储空间，以便启动时候检查
+                    
+                    
+                }
+                
+                
+                
             }
             
         }
@@ -173,7 +233,7 @@ open class ApiUtil{
                                 pageVC.url = datas.url
                                 pageVC.random = datas.random
                                 if let cardNo: String = avgs["cardNo"] as? String {
-                                pageVC.cardNo = cardNo
+                                    pageVC.cardNo = cardNo
                                 }
                                 sender.navigationController?.pushViewController(pageVC, animated: true)
                             }

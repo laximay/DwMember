@@ -18,6 +18,11 @@ struct DwBranchsData{
 	var name2 : String!
 	var regionName : String!
 	var telphone : String!
+    var image : String!
+    var latitude :  String!
+    var longitude :  String!
+    var distance :  Int!
+
 
 
 	/**
@@ -33,6 +38,10 @@ struct DwBranchsData{
 		name2 = dictionary["name2"] as? String
 		regionName = dictionary["regionName"] as? String
 		telphone = dictionary["telphone"] as? String
+        distance = dictionary["distance"] as? Int
+        image = dictionary["image"] as? String
+        latitude = dictionary["latitude"] as? String
+        longitude = dictionary["longitude"] as? String
 	}
 
 	/**
@@ -68,6 +77,18 @@ struct DwBranchsData{
 		if telphone != nil{
 			dictionary["telphone"] = telphone
 		}
+        if image != nil{
+            dictionary["image"] = image
+        }
+        if latitude != nil{
+            dictionary["latitude"] = latitude
+        }
+        if longitude != nil{
+            dictionary["longitude"] = longitude
+        }
+        if distance != nil{
+            dictionary["distance"] = distance
+        }
 		return dictionary
 	}
 
