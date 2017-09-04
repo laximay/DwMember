@@ -38,10 +38,10 @@ class MeTableViewController: UITableViewController{
         tableView.tableFooterView = UIView(frame: CGRect.zero)//去除页脚
         tableView.separatorColor = UIColor(white: 0.9, alpha: 1)//去除分割线
     }
-
+    
     
     override func viewDidAppear(_ animated: Bool) {
-       
+        
         let defaults = UserDefaults.standard
         if (defaults.string(forKey: "dwsercet") != nil){
             getCardInfo()
@@ -56,10 +56,10 @@ class MeTableViewController: UITableViewController{
             
             return
         }
-
         
         
-      
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -70,15 +70,49 @@ class MeTableViewController: UITableViewController{
             ApiUtil.webViewHandle(withIdentifier: webViewType.JFCX.rawValue, sender: self)
         }
         
+        if indexPath == [1, 0] {
+            ApiUtil.webViewHandle(withIdentifier: webViewType.DZXQ.rawValue, sender: self)
+        }
+        
+        if indexPath == [3, 0] {
+            if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
+                pageVC.type = .MEMTERMS
+                self.navigationController?.pushViewController(pageVC, animated: true)
+            }
+        }
+        
+        if indexPath == [3, 1] {
+            if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
+                pageVC.type = .ABOUTUS
+                self.navigationController?.pushViewController(pageVC, animated: true)
+            }
+        }
+        if indexPath == [3, 2] {
+            if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
+                pageVC.type = .INTERULE
+                self.navigationController?.pushViewController(pageVC, animated: true)
+            }
+        }
+        if indexPath == [3, 3] {
+            if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
+                pageVC.type = .MEMINFO
+                self.navigationController?.pushViewController(pageVC, animated: true)
+            }
+        }
+        
+        
+        
         
         if indexPath == [4, 0] {
             ApiUtil.webViewHandle(withIdentifier: webViewType.FPWD.rawValue, sender: self)
         }
         
-        
-        if indexPath == [1, 0] {
-            ApiUtil.webViewHandle(withIdentifier: webViewType.DZXQ.rawValue, sender: self)
+        if indexPath == [4, 3] {
+            clearCacheBtnClick()
         }
+        
+        
+        
         
         
         
@@ -174,7 +208,7 @@ class MeTableViewController: UITableViewController{
                     if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
                         print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                         OperationQueue.main.addOperation {
-                        ApiUtil.openAlert(msg: error.msg, sender: self)
+                            ApiUtil.openAlert(msg: error.msg, sender: self)
                         }
                     }
                 }
@@ -227,6 +261,85 @@ class MeTableViewController: UITableViewController{
             
         }
     }
+    
+    //開始清除緩存
+    func clearCacheBtnClick(){
+  
+        //提示框
+        let message = self.cacheSize
+        let alert = UIAlertController(title: "清除缓存", message: message, preferredStyle:UIAlertControllerStyle.alert)
+        let alertConfirm = UIAlertAction(title: "确定", style:UIAlertActionStyle.default) { (alertConfirm) ->Void in
+            self.clearCache()
+        }
+        alert.addAction(alertConfirm)
+        let cancle = UIAlertAction(title: "取消", style:UIAlertActionStyle.cancel) { (cancle) ->Void in
+        }
+        alert.addAction(cancle)
+        //提示框弹出
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    var cacheSize: String{
+        get{
+            // 路径
+            let basePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
+            let fileManager = FileManager.default
+            // 遍历出所有缓存文件加起来的大小
+            func caculateCache() -> Float{
+                var total: Float = 0
+                if fileManager.fileExists(atPath: basePath!){
+                    let childrenPath = fileManager.subpaths(atPath: basePath!)
+                    if childrenPath != nil{
+                        for path in childrenPath!{
+                            let childPath = basePath!.appending("/").appending(path)
+                            do{
+                                let attr:NSDictionary = try fileManager.attributesOfItem(atPath: childPath) as NSDictionary
+                                let fileSize = attr["NSFileSize"] as! Float
+                                total += fileSize
+                                
+                            }catch _{
+                                
+                            }
+                        }
+                    }
+                }
+                // 缓存文件大小
+                return total
+            }
+            // 调用函数
+            let totalCache = caculateCache()
+            return NSString(format: "%.2f MB", totalCache / 1024.0 / 1024.0 ) as String
+        }
+    }
+    
+    /// 清除缓存
+    ///
+    /// - returns: 是否清理成功
+     func clearCache()  {
+        var result = true
+        // 取出cache文件夹目录 缓存文件都在这个目录下
+        let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
+        // 取出文件夹下所有文件数组
+        let fileArr = FileManager.default.subpaths(atPath: cachePath!)
+        // 遍历删除
+        for file in fileArr! {
+            // 拼接文件路径
+            let path = cachePath?.appending("/\(file)")
+            if FileManager.default.fileExists(atPath: path!) {
+                // 循环删除
+                do {
+                    try FileManager.default.removeItem(atPath: path!)
+                } catch {
+                    // 删除失败
+                    result = false
+                }
+            }
+        }
+       // return result
+    }
+    
+    
+   
     
     
     override func didReceiveMemoryWarning() {

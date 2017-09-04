@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import SSCycleScrollView
 import Just
 import CoreData
-
+import LLCycleScrollView
 enum opentypeM: String{
     case WV = "WV" , //WEBVIEW功能網頁方式打開
     NA = "NA",  //原生形式
@@ -23,7 +22,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     @IBOutlet weak var indexImageView: UIView! //放置轮播图的VIEW
     @IBOutlet weak var menuView: UIStackView! //放置功能按钮的VIEW
-    var mainScrollView: SSCycleScrollView? //轮播图空间
+    //var mainScrollView: SSCycleScrollView? //轮播图空间
     
     //活动的LIST
     var  activitys : [DwCache] = []
@@ -31,7 +30,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     var  ads : [DwCache] = []
     //远程首页轮播图LIST
     var  features : [DwCache] = []
-    var scrollImageUrls: [[String]] = []
+    var scrollImageUrls: [String] = []
     
     
     override func viewDidLoad() {
@@ -70,50 +69,102 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     
     func addMainScrollView() {
-        
-        let currentRect =  self.indexImageView.bounds
-        self.mainScrollView = SSCycleScrollView.init(frame: currentRect, animationDuration: 3, inputImageUrls: self.scrollImageUrls)
-        self.mainScrollView?.tapBlock = {index in
-            //在这里处理点击轮播图的的事件
-            print("tapped page\(index)")
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let requestAds : NSFetchRequest<DwCache> = DwCache.fetchRequest()
-            let cateAds = NSPredicate.init(format: "type='ads'")
-            requestAds.predicate = cateAds
-            do{
-                let ads = try appDelegate.persistentContainer.viewContext.fetch(requestAds)
-                if let ad: DwCache = ads[index]{
-                    let openType = opentypeM.init(rawValue: ad.opentype!).unsafelyUnwrapped
-                    
-                    switch openType {
-                    case .NA:
-                        //原生跳转处理
-                        print("NA")
-                        self.performSegue(withIdentifier: nativeViews[ad.url!]!, sender: self)
-                    case .OV:
-                        //内部WEBVIEW跳转
-                        print("OV")
-                        if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
-                            pageVC.url = ad.url!
-                            self.navigationController?.pushViewController(pageVC, animated: true)
-                        }
-                    case .WV:
-                        //第三方WEBVIEW跳转
-                        print("WV")
-                        ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
-                        
-                    default:
-                        print("未知类型")
-                    }
-                }
-                
-            }catch{
-                print(error)
-            }
-            
-        }
+//        let kScreenWidth = UIScreen.main.bounds.size.width
+//        let currentRect =  CGRect.init(x: 0, y: 0, width: kScreenWidth, height: 155)
+//
+//        print("首頁：\(currentRect)" )
+//        self.mainScrollView = SSCycleScrollView.init(frame: currentRect, animationDuration: 3, inputImageUrls: self.scrollImageUrls)
+//        self.mainScrollView?.tapBlock = {index in
+//            //在这里处理点击轮播图的的事件
+//            print("tapped page\(index)")
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            let requestAds : NSFetchRequest<DwCache> = DwCache.fetchRequest()
+//            let cateAds = NSPredicate.init(format: "type='ads'")
+//            requestAds.predicate = cateAds
+//            do{
+//                let ads = try appDelegate.persistentContainer.viewContext.fetch(requestAds)
+//                if let ad: DwCache = ads[index]{
+//                    let openType = opentypeM.init(rawValue: ad.opentype!).unsafelyUnwrapped
+//                    
+//                    switch openType {
+//                    case .NA:
+//                        //原生跳转处理
+//                        print("NA")
+//                        self.performSegue(withIdentifier: nativeViews[ad.url!]!, sender: self)
+//                    case .OV:
+//                        //内部WEBVIEW跳转
+//                        print("OV")
+//                        if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+//                            pageVC.url = ad.url!
+//                            self.navigationController?.pushViewController(pageVC, animated: true)
+//                        }
+//                    case .WV:
+//                        //第三方WEBVIEW跳转
+//                        print("WV")
+//                        ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
+//                        
+//                    default:
+//                        print("未知类型")
+//                    }
+//                }
+//                
+//            }catch{
+//                print(error)
+//            }
+//            
+//        }
         //        self.mainScrollView?.autoScroll = false
-        self.indexImageView.addSubview(self.mainScrollView!)    }
+         let w = UIScreen.main.bounds.width
+        let mainScrollView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect.init(x: 0, y:0, width: w, height: 155), imageURLPaths: self.scrollImageUrls, didSelectItemAtIndex: { index in
+            print("当前点击图片的位置为:\(index)")
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                        let requestAds : NSFetchRequest<DwCache> = DwCache.fetchRequest()
+                        let cateAds = NSPredicate.init(format: "type='ads'")
+                        requestAds.predicate = cateAds
+                        do{
+                           if let ads: [DwCache] = try appDelegate.persistentContainer.viewContext.fetch(requestAds){
+                             let ad = ads[index]
+                                let openType = opentypeM.init(rawValue: ad.opentype!).unsafelyUnwrapped
+            
+                                switch openType {
+                                case .NA:
+                                    //原生跳转处理
+                                    print("NA")
+                                    self.performSegue(withIdentifier: nativeViews[ad.url!]!, sender: self)
+                                case .OV:
+                                    //内部WEBVIEW跳转
+                                    print("OV")
+                                    if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+                                        pageVC.url = ad.url!
+                                        self.navigationController?.pushViewController(pageVC, animated: true)
+                                    }
+                                case .WV:
+                                    //第三方WEBVIEW跳转
+                                    print("WV")
+                                    ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
+                                    
+                                default:
+                                    print("未知类型")
+                                }
+                            }
+                            
+                        }catch{
+                            print(error)
+                        }
+
+        })
+        
+    
+        mainScrollView.customPageControlStyle = .none
+        mainScrollView.customPageControlInActiveTintColor = UIColor.red
+        mainScrollView.pageControlPosition = .left
+        mainScrollView.pageControlLeadingOrTrialingContact = 28
+        mainScrollView.placeHolderImage = #imageLiteral(resourceName: "thlogo")
+        mainScrollView.coverImage = #imageLiteral(resourceName: "photoalbum")
+        
+        // 下边约束
+        mainScrollView.pageControlBottom = 15
+        self.indexImageView.addSubview(mainScrollView)    }
     
     func homeCache()  {
         //先加載CORE的數據
@@ -137,7 +188,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                     }
                     //填充首頁輪播圖
                     self.scrollImageUrls = []
-                    self.scrollImageUrls =  datas.ads.map({(ad) -> [String] in
+                    self.scrollImageUrls =  datas.ads.map({(ad) -> String in
                         let ads  =  DwCache(context: appDelegate.persistentContainer.viewContext)
                         ads.image = ad.image
                         ads.briefing = ad.briefing
@@ -150,7 +201,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                         ads.url = ad.url
                         ads.type = "ads"
                         appDelegate.saveContext()
-                        return [ad.image]
+                        return ad.image
                         
                         
                     })
@@ -241,7 +292,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             features = try appDelegate.persistentContainer.viewContext.fetch(requestFeatures)
             
             for ad in ads {
-                scrollImageUrls.append([ad.image!])
+                scrollImageUrls.append(ad.image!)
             }
         }catch {
             print(error)

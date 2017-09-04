@@ -93,10 +93,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ESTabBarController-swift/ESTabBarController_swift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Just/Just.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kingfisher/Kingfisher.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SSCycleScrollView/SSCycleScrollView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LLCycleScrollView/LLCycleScrollView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Segmentio/Segmentio.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/libwebp/libwebp.framework"
   install_framework "$BUILT_PRODUCTS_DIR/pop/pop.framework"
   install_framework "$BUILT_PRODUCTS_DIR/swiftScan/swiftScan.framework"
 fi
@@ -105,10 +103,8 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ESTabBarController-swift/ESTabBarController_swift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Just/Just.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kingfisher/Kingfisher.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SSCycleScrollView/SSCycleScrollView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/LLCycleScrollView/LLCycleScrollView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Segmentio/Segmentio.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/libwebp/libwebp.framework"
   install_framework "$BUILT_PRODUCTS_DIR/pop/pop.framework"
   install_framework "$BUILT_PRODUCTS_DIR/swiftScan/swiftScan.framework"
 fi
