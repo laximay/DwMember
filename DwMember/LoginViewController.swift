@@ -96,6 +96,7 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let startScale = CGAffineTransform(scaleX: 0, y: 0)
         let startPos = CGAffineTransform(translationX: 0, y: 0)
+        imageLoginLogo.isHidden = false
         imageLoginLogo.transform = startScale.concatenating(startPos)
         
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: {

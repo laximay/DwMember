@@ -125,6 +125,7 @@ class ZLaunchAdVC: UIViewController {
         let imgView = UIImageView.init(frame: CGRect(x: 0, y: 0, width: Z_SCREEN_WIDTH, height: height))
         imgView.isUserInteractionEnabled = true
         imgView.alpha = 0.2
+        imgView.contentMode = .scaleAspectFill
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(launchAdTapAction(sender:)))
         imgView.addGestureRecognizer(tap)
         return imgView

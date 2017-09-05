@@ -23,11 +23,11 @@ class CouponTableViewController: UITableViewController {
      let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        appdelegate.couponTable = self
         spinner.center = view.center
         view.addSubview(spinner)
         spinner.startAnimating()
+        
+        print("我是你爸爸")
         
         switch couponS {
         case .unuse:
@@ -48,6 +48,10 @@ class CouponTableViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: CGRect.zero)//去除页脚
         tableView.separatorColor = UIColor(white: 0.9, alpha: 1)//去除分割线
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("我是你爸爸2号")
     }
     
     

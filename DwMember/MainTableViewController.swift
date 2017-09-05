@@ -35,9 +35,8 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         homeCache()
-        
+       
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(self.homeCache), for: .valueChanged)
@@ -50,11 +49,18 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         tableView.rowHeight = UITableViewAutomaticDimension //自适应行高 ，还需设置宽度约束，动态行数设为0，0代表动态行数
     }
     
+        override func viewWillAppear(_ animated: Bool) {
+            navigationController?.setNavigationBarHidden(true, animated: true)
+             ApiUtil.checkUpdata(sender: self)
+        }
     
+
+  
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
     
-    
-    
-    
+
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -63,57 +69,50 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        ApiUtil.checkUpdata(sender: self)
-    }
-    
     
     func addMainScrollView() {
-         let w = UIScreen.main.bounds.width
+        let w = UIScreen.main.bounds.width
         let mainScrollView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect.init(x: 0, y:0, width: w, height: 155), imageURLPaths: self.scrollImageUrls, didSelectItemAtIndex: { index in
             print("当前点击图片的位置为:\(index)")
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                        let requestAds : NSFetchRequest<DwCache> = DwCache.fetchRequest()
-                        let cateAds = NSPredicate.init(format: "type='ads'")
-                        requestAds.predicate = cateAds
-                        do{
-                           if let ads: [DwCache] = try appDelegate.persistentContainer.viewContext.fetch(requestAds){
-                             let ad = ads[index]
-                                let openType = opentypeM.init(rawValue: ad.opentype!).unsafelyUnwrapped
-            
-                                switch openType {
-                                case .NA:
-                                    //原生跳转处理
-                                    print("NA")
-                                    if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: nativeViews[ad.url!]!)  {
-                                        
-                                        self.navigationController?.pushViewController(pageVC, animated: true)
-                                    }
-//                                    self.performSegue(withIdentifier: nativeViews[ad.url!]!, sender: self)
-                                case .OV:
-                                    //内部WEBVIEW跳转
-                                    print("OV")
-                                    if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
-                                        pageVC.url = ad.url!
-                                        self.navigationController?.pushViewController(pageVC, animated: true)
-                                    }
-                                case .WV:
-                                    //第三方WEBVIEW跳转
-                                    print("WV")
-                                    ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
-                                    
-                                default:
-                                    print("未知类型")
-                                }
-                            }
-                            
-                        }catch{
-                            print(error)
+            let requestAds : NSFetchRequest<DwCache> = DwCache.fetchRequest()
+            let cateAds = NSPredicate.init(format: "type='ads'")
+            requestAds.predicate = cateAds
+            do{
+                if let ads: [DwCache] = try appDelegate.persistentContainer.viewContext.fetch(requestAds){
+                    let ad = ads[index]
+                    let openType = opentypeM.init(rawValue: ad.opentype!).unsafelyUnwrapped
+                    
+                    switch openType {
+                    case .NA:
+                        //原生跳转处理
+                        print("NA")
+                        
+                        self.performSegue(withIdentifier: nativeViews[ad.url!]!, sender: self)
+                    case .OV:
+                        //内部WEBVIEW跳转
+                        print("OV")
+                        if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+                            pageVC.url = ad.url!
+                            self.navigationController?.pushViewController(pageVC, animated: true)
                         }
-
+                    case .WV:
+                        //第三方WEBVIEW跳转
+                        print("WV")
+                        ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
+                        
+                    default:
+                        print("未知类型")
+                    }
+                }
+                
+            }catch{
+                print(error)
+            }
+            
         })
         
-    
+        
         mainScrollView.customPageControlStyle = .none
         mainScrollView.customPageControlInActiveTintColor = UIColor.red
         mainScrollView.pageControlPosition = .left
@@ -146,8 +145,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                         appDelegate.saveContext()
                     }
                     //填充首頁輪播圖
-                    self.scrollImageUrls = []
-                    self.scrollImageUrls =  datas.ads.map({(ad) -> String in
+                    guard  let  scrollImageUrls_m : [String] =  datas.ads.map({(ad) -> String in
                         let ads  =  DwCache(context: appDelegate.persistentContainer.viewContext)
                         ads.image = ad.image
                         ads.briefing = ad.briefing
@@ -163,42 +161,54 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                         return ad.image
                         
                         
-                    })
+                    })else {
+                       return
+                        
+                    }
+                     self.scrollImageUrls = scrollImageUrls_m
+                    
                     
                     //填充首頁活動圖
-                    self.activitys = []
-                    self.activitys =  datas.activitys.map({(ad) -> DwCache in
-                        let activitys  =  DwCache(context: appDelegate.persistentContainer.viewContext)
-                        activitys.image = ad.image
-                        activitys.briefing = ad.briefing
-                        activitys.english = ad.english
-                        activitys.name = ad.name
-                        activitys.opentype = ad.opentype
-                        activitys.simpChinese = ad.simpChinese
-                        activitys.sort = Int64(ad.sort)
-                        activitys.thumb = ad.thumb
-                        activitys.url = ad.url
-                        activitys.type = "activitys"
-                        return activitys
-                        
-                    }).sorted(by: { $0.sort < $1.sort })
                     
-                    self.features = []
-                    self.features =  datas.features.map({(ad) -> DwCache in
-                        let features  =  DwCache(context: appDelegate.persistentContainer.viewContext)
-                        features.image = ad.image
-                        features.briefing = ad.briefing
-                        features.english = ad.english
-                        features.name = ad.name
-                        features.opentype = ad.opentype
-                        features.simpChinese = ad.simpChinese
-                        features.sort = Int64(ad.sort)
-                        features.thumb = ad.thumb
-                        features.url = ad.url
-                        features.type = "features"
-                        return features
+                    guard  let activitys_m : [DwCache] =   datas.activitys.map({(ad) -> DwCache in
+                        let at  =  DwCache(context: appDelegate.persistentContainer.viewContext)
+                        at.image = ad.image
+                        at.briefing = ad.briefing
+                        at.english = ad.english
+                        at.name = ad.name
+                        at.opentype = ad.opentype
+                        at.simpChinese = ad.simpChinese
+                        at.sort = Int64(ad.sort)
+                        at.thumb = ad.thumb
+                        at.url = ad.url
+                        at.type = "activitys"
+                        return at
                         
-                    }).sorted(by: { $0.sort < $1.sort })
+                    }).sorted(by: { $0.sort < $1.sort })else {
+                        return
+                    }
+                    
+                    self.activitys = activitys_m
+                    
+                    
+                    guard  let features_m : [DwCache] =  datas.features.map({(ad) -> DwCache in
+                        let fs  =  DwCache(context: appDelegate.persistentContainer.viewContext)
+                        fs.image = ad.image
+                        fs.briefing = ad.briefing
+                        fs.english = ad.english
+                        fs.name = ad.name
+                        fs.opentype = ad.opentype
+                        fs.simpChinese = ad.simpChinese
+                        fs.sort = Int64(ad.sort)
+                        fs.thumb = ad.thumb
+                        fs.url = ad.url
+                        fs.type = "features"
+                        return fs
+                        
+                    }).sorted(by: { $0.sort < $1.sort })else {
+                      return
+                    }
+                      self.features = features_m
                     
                     appDelegate.saveContext()
                     OperationQueue.main.addOperation {
@@ -226,6 +236,9 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             
         }
         
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+        
     }
     
     
@@ -249,7 +262,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             activitys = try appDelegate.persistentContainer.viewContext.fetch(requestActivitys)
             ads = try appDelegate.persistentContainer.viewContext.fetch(requestAds)
             features = try appDelegate.persistentContainer.viewContext.fetch(requestFeatures)
-            
+            // dump(ads)
             for ad in ads {
                 scrollImageUrls.append(ad.image!)
             }
@@ -275,11 +288,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             case .NA:
                 //原生跳转处理
                 print("NA")
-                        if let pageVC = storyboard?.instantiateViewController(withIdentifier: nativeViews[feature.url!]!)  {
-                            
-                            self.navigationController?.pushViewController(pageVC, animated: true)
-                        }
-               // performSegue(withIdentifier: nativeViews[feature.url!]!, sender: self)
+                performSegue(withIdentifier: nativeViews[feature.url!]!, sender: self)
             case .OV:
                 //内部WEBVIEW跳转
                 print("OV")
@@ -398,11 +407,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             case .NA:
                 //原生跳转处理
                 print("NA")
-                if let pageVC = storyboard?.instantiateViewController(withIdentifier: nativeViews[activity.url!]!)  {
-                    
-                    self.navigationController?.pushViewController(pageVC, animated: true)
-                }
-                //performSegue(withIdentifier: nativeViews[activity.url!]!, sender: self)
+                performSegue(withIdentifier: nativeViews[activity.url!]!, sender: self)
             case .OV:
                 //内部WEBVIEW跳转
                 print("OV")
@@ -469,6 +474,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         if segue.identifier == "couponMallSegue"{
             let dest = segue.destination as! CouponViewController
             dest.selectIndex = 0
+            dest.indexFlag = true
         }
         //隐藏底部导航条
         segue.destination.hidesBottomBarWhenPushed = true

@@ -28,6 +28,10 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         return self.progressView
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

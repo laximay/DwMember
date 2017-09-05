@@ -30,7 +30,7 @@ struct SegmentioBuilder {
     
     private static func segmentioContent() -> [SegmentioItem] {
         return [
-            SegmentioItem(title: "Unused", image: nil),
+            SegmentioItem(title: "Unuse", image: nil),
             SegmentioItem(title: "Used", image: nil),
             SegmentioItem(title: "Expired", image: nil),
             SegmentioItem(title: "Mall", image: nil)

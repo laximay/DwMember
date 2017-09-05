@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     
     var window: UIWindow?
     var couponView = CouponViewController()
-    var couponTable = CouponTableViewController()
+
     
     
     
@@ -24,8 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         UINavigationBar.appearance().tintColor = UIColor.white
         let mainSB = UIStoryboard(name: "Main", bundle: nil)
         self.couponView = mainSB.instantiateViewController(withIdentifier: "CouponViewController") as! CouponViewController
-        self.couponTable = mainSB.instantiateViewController(withIdentifier: "CouponTableViewController") as! CouponTableViewController
-        
+
         ApiUtil.launchCache()
    
     
@@ -89,8 +88,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             let defaults = UserDefaults.standard
            
             if let url = defaults.string(forKey: "launchImageUrl")  {
-                dump(url)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                //dump(url)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() , execute: {
                     
                     let adDuartion = 3
                     

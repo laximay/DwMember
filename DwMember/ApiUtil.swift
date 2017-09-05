@@ -52,7 +52,7 @@ enum articleType: String{
 
 
 // [viewCode : Segue]
-let nativeViews: [String: String] = ["couponNav": "CouponViewController"]
+let nativeViews: [String: String] = ["couponNav": "couponMallSegue"]
 
 // [viewCode : Segue]
 let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", verif: false),
@@ -70,7 +70,7 @@ open class ApiUtil{
     
     //服務鏈接
     static let serverUrl = "https://members.mytaoheung.com/a"
-    //static var serverUrl = "http://192.168.90.93:8081"
+    // static var serverUrl = "http://192.168.90.93:8081"
     //公司代碼
     static let companyCode = "TaoHeung"
     //公司代碼
@@ -151,7 +151,7 @@ open class ApiUtil{
         }
     }
     
- 
+    
     
     
     //檢測更新

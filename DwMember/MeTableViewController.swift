@@ -48,11 +48,13 @@ class MeTableViewController: UITableViewController{
             getMsgCount()
             getCouponCount()
         } else{
-            if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-                
-                self.navigationController?.pushViewController(pageVC, animated: true)
-                //sender.present(pageVC, animated: true, completion: nil)
-            }
+//            if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+//                
+//                self.navigationController?.pushViewController(pageVC, animated: true)
+//                //sender.present(pageVC, animated: true, completion: nil)
+//            }
+            
+            self.performSegue(withIdentifier: "logoutSegue", sender: self)
             
             return
         }
