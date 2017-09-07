@@ -70,7 +70,7 @@ open class ApiUtil{
     
     //服務鏈接
     static let serverUrl = "https://members.mytaoheung.com/a"
-    // static var serverUrl = "http://192.168.90.93:8081"
+    //static var serverUrl = "http://192.168.90.93:8081"
     //公司代碼
     static let companyCode = "TaoHeung"
     //公司代碼

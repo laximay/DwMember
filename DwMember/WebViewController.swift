@@ -27,10 +27,10 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         self.progressView.trackTintColor = UIColor.white // 进度条背景色
         return self.progressView
     }()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
+    //如果首頁隱藏了導航欄一定要加上這句
+    //    override func viewWillAppear(_ animated: Bool) {
+    //        navigationController?.setNavigationBarHidden(false, animated: true)
+    //    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         //print("加载完成")
-      
+        
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {

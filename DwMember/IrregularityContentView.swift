@@ -34,6 +34,7 @@ class IrregularityContentView: ESTabBarItemContentView {
         let transform = CGAffineTransform.identity
         self.imageView.transform = transform
         
+        
 
         self.superview?.bringSubview(toFront: self)
                //自定義中間元素的字體大小

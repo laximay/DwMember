@@ -29,7 +29,7 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         appdelegate.couponView = self
         segmentViewHeightConstraint.constant = 40
-        print("我是你爸爸初号机")
+      
         if indexFlag {
             viewInit()
             getCouponCount(isupdata: false)
@@ -42,11 +42,11 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        navigationController?.setNavigationBarHidden(false, animated: true)
+//    }
     override func viewDidAppear(_ animated: Bool) {
-        print("我是你爸爸一号机")
+        
         ApiUtil.checklogin(sender: self)
         viewInit()
         getCouponCount(isupdata: true)
@@ -69,7 +69,7 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
         setSrollViewOffset(segmentIndex: selectIndex)
         //goToControllerAtIndex(selectIndex)
         
-        print("初始化：\(selectIndex)")
+       // print("初始化：\(selectIndex)")
         
         segmentioView.valueDidChange = { [weak self] _, segmentIndex in
             
@@ -80,7 +80,7 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
                     animated: true
                 )
             }
-            print("選擇:\(segmentIndex)")
+            //print("選擇:\(segmentIndex)")
             self?.getCouponCount(isupdata: false)
             switch segmentIndex {
             case 0:

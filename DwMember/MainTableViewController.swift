@@ -50,18 +50,14 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     }
     
         override func viewWillAppear(_ animated: Bool) {
-            navigationController?.setNavigationBarHidden(true, animated: true)
+            //隱藏導航條
+            //navigationController?.setNavigationBarHidden(true, animated: true)
              ApiUtil.checkUpdata(sender: self)
         }
     
-
-  
-    override var prefersStatusBarHidden: Bool{
-        return true
-    }
-    
-
-    
+//    override var prefersStatusBarHidden: Bool{
+//        return true
+//    }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200.0

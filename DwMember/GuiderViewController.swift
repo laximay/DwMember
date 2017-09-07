@@ -9,19 +9,25 @@
 import UIKit
 import Just
 class GuiderViewController: UIPageViewController, UIPageViewControllerDataSource {
-
-    var headings = ["會員登記", "查詢信息", "積分商城"]
+    
+    var headings = [NSLocalizedString("Fill in simple information", comment: "引導頁-頭部1")
+        , NSLocalizedString("Receive offers", comment: "引導頁-頭部2"), NSLocalizedString("Integral courtesy", comment: "引導頁-頭部3")]
     var images = ["card", "card", "card"]
-    var footers = ["填寫簡單信息", "輕鬆查新積分及跟人信息", "兌換禮品"]
+    var footers = [NSLocalizedString("Membership registration", comment: "引導頁-底部1") , NSLocalizedString("More offers", comment: "引導頁-底部2") , NSLocalizedString("Integral Mall", comment: "引導頁-底部3")]
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         dataSource = self
         
         if let startVC = self.vc(atIndex: 0){
             self.setViewControllers([startVC], direction: .forward, animated: true, completion: nil)
         }
-
+        
         
     }
     
@@ -65,5 +71,5 @@ class GuiderViewController: UIPageViewController, UIPageViewControllerDataSource
         }
         return nil
     }
-
+    
 }

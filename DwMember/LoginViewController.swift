@@ -72,8 +72,9 @@ class LoginViewController: UIViewController {
                 }else {
                     
                     OperationQueue.main.addOperation {
-                        self.msgLab.text = "賬號或密碼錯誤，請重試"
+                        self.msgLab.text = NSLocalizedString("Login failed", comment: "密碼錯誤提示語")
                         self.msgLab.isHidden = false
+                        
                     }
                     
                 }
