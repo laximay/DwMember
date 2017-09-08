@@ -880,11 +880,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/MeTableViewController.swift"
-            timestampString = "526270895.156725"
+            timestampString = "526551196.041126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -896,11 +896,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/MeTableViewController.swift"
-            timestampString = "526270895.156725"
+            timestampString = "526551196.041126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "getCardInfo()"
             landmarkType = "7">
          </BreakpointContent>
@@ -960,11 +960,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/MeTableViewController.swift"
-            timestampString = "526270895.156725"
+            timestampString = "526551196.041126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "getCardInfo()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1280,11 +1280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/MeTableViewController.swift"
-            timestampString = "526097577.041204"
+            timestampString = "526551196.041126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1525,6 +1525,102 @@
                   startingLineNumber = "147"
                   endingLineNumber = "147"
                   offsetFromSymbolStart = "843">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DwMember/ResDetailTableViewController.swift"
+            timestampString = "526529892.988229"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ResDetailTableViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DwMember/ResDetailTableViewController.swift"
+            timestampString = "526532145.465312"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DwMember/ResDetailTableViewController.swift"
+            timestampString = "526533609.64403"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DwMember/MeTableViewController.swift"
+            timestampString = "526551394.618852"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "getCardInfo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DwMember.MeTableViewController.(getCardInfo () -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "DwMember"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wenjing/swiftProject/DwMember/DwMember/MeTableViewController.swift"
+                  timestampString = "526551395.325753"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
+                  offsetFromSymbolStart = "9335">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DwMember.MeTableViewController.(getCardInfo () -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "DwMember"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wenjing/swiftProject/DwMember/DwMember/MeTableViewController.swift"
+                  timestampString = "526551395.328086"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
+                  offsetFromSymbolStart = "11758">
                </Location>
             </Locations>
          </BreakpointContent>

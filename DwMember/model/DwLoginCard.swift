@@ -21,6 +21,7 @@ struct DwLoginCard{
     var mobile : String!
     var sex : String!
     var stat : String!
+    var isCustBirthMonth : Bool!
     
     
     /**
@@ -39,6 +40,7 @@ struct DwLoginCard{
         mobile = dictionary["mobile"] as? String
         sex = dictionary["sex"] as? String
         stat = dictionary["stat"] as? String
+        isCustBirthMonth = dictionary["isCustBirthMonth"] as? Bool
     }
     
     /**
@@ -82,6 +84,9 @@ struct DwLoginCard{
         }
         if stat != nil{
             dictionary["stat"] = stat
+        }
+        if isCustBirthMonth != nil{
+            dictionary["isCustBirthMonth"] = isCustBirthMonth
         }
         return dictionary
     }

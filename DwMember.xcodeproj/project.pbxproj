@@ -34,6 +34,8 @@
 		3D19864D1F60DEAD00385DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D19864C1F60DEAD00385DAD /* Assets.xcassets */; };
 		3D1986541F60F12B00385DAD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D1986561F60F12B00385DAD /* Localizable.strings */; };
 		3D1986591F60F12D00385DAD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D19865B1F60F12D00385DAD /* InfoPlist.strings */; };
+		3D19865F1F6233B600385DAD /* ResDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19865E1F6233B600385DAD /* ResDetailTableViewController.swift */; };
+		3D1986611F62367200385DAD /* ResDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1986601F62367200385DAD /* ResDetailTableViewCell.swift */; };
 		3D1F008E1F37F89D0080957F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F008D1F37F89D0080957F /* WebViewController.swift */; };
 		3D2569DE1F3D58A800E01816 /* DwEntitys.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569DC1F3D58A800E01816 /* DwEntitys.xcdatamodeld */; };
 		3D2569E31F3D7B9800E01816 /* UIImageView+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569E11F3D7B9800E01816 /* UIImageView+Gif.swift */; };
@@ -131,6 +133,8 @@
 		3D19865A1F60F12D00385DAD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		3D19865C1F60F16E00385DAD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3D19865D1F60F16F00385DAD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		3D19865E1F6233B600385DAD /* ResDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResDetailTableViewController.swift; sourceTree = "<group>"; };
+		3D1986601F62367200385DAD /* ResDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3D1F008D1F37F89D0080957F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3D2569DD1F3D58A800E01816 /* DwEntitys.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DwEntitys.xcdatamodel; sourceTree = "<group>"; };
 		3D2569E11F3D7B9800E01816 /* UIImageView+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Gif.swift"; sourceTree = "<group>"; };
@@ -256,6 +260,8 @@
 				3D1428FB1F5BC8EE004116EB /* BranchDetailTableViewController.swift */,
 				3D1428FD1F5BCEDD004116EB /* BranchDetailTableViewCell.swift */,
 				3D1986441F5CE1FC00385DAD /* ArticleViewController.swift */,
+				3D19865E1F6233B600385DAD /* ResDetailTableViewController.swift */,
+				3D1986601F62367200385DAD /* ResDetailTableViewCell.swift */,
 			);
 			name = controll;
 			sourceTree = "<group>";
@@ -531,6 +537,7 @@
 				3D6458BE1F45BEF6008220C3 /* DwCouponBaseRootClass.swift in Sources */,
 				3D185BBF1F38B3DA00A89077 /* SegmentioBuilder.swift in Sources */,
 				3D6458691F452623008220C3 /* DwErrorBaseRootClass.swift in Sources */,
+				3D19865F1F6233B600385DAD /* ResDetailTableViewController.swift in Sources */,
 				3D1488991F3311A700E90270 /* MessageTableViewController.swift in Sources */,
 				3D16157A1F2F765000E33F3D /* BouncesContentView.swift in Sources */,
 				3D2569E31F3D7B9800E01816 /* UIImageView+Gif.swift in Sources */,
@@ -595,6 +602,7 @@
 				3D493FA61F3C51A800CEAD4B /* DwGuideRootClass.swift in Sources */,
 				3D6458A81F455D24008220C3 /* MessageTableViewCell.swift in Sources */,
 				3D11B3991F30587D0031DD5C /* UIButton.swift in Sources */,
+				3D1986611F62367200385DAD /* ResDetailTableViewCell.swift in Sources */,
 				3D6458AE1F4599F1008220C3 /* MessageDetailViewController.swift in Sources */,
 				3D91761E1F486BD500E855F6 /* DwPayCodeRootClass.swift in Sources */,
 				3D154EF21F31A63800A6E157 /* MyTabBarViewController.swift in Sources */,
@@ -754,6 +762,7 @@
 			baseConfigurationReference = F4AC6189F94F154D3B69D4C9 /* Pods-DwMember.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DwMember/DwMember.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -774,6 +783,7 @@
 			baseConfigurationReference = 43F163E528729B10AFD69FD6 /* Pods-DwMember.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = DwMember/DwMember.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

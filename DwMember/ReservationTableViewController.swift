@@ -157,5 +157,18 @@ class ReservationTableViewController: UITableViewController {
             }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "reservationDetailSegue"{
+            let dest = segue.destination as! ResDetailTableViewController
+            dest.resDetail = resList[tableView.indexPathForSelectedRow!.row]
+            
+        }
+        //隐藏底部导航条
+        segue.destination.hidesBottomBarWhenPushed = true
+        
+    }
+
+    
     
 }
