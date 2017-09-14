@@ -40,7 +40,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         webview.autoresizingMask = [.flexibleHeight]
         webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         //webview.load(URLRequest.init(url: URL.init(string: "https://www.baidu.com/")!))
-        print( "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)")
+       
         if let url = URL(string: "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)"){
             let request = URLRequest(url: url)
             // webView.loadRequest(request)
