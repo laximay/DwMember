@@ -386,9 +386,9 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as! MainActivitysTableViewCell
         let activity = activitys[indexPath.row]
-        let imgUrl = URL(string: activity.image!)
+        if  let imgUrl = URL(string: activity.image!){
         cell.thumbImage.kf.setImage(with: imgUrl)
-        
+        }
         // Configure the cell...
         
         return cell
