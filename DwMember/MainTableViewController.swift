@@ -86,14 +86,15 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                         
                         self.performSegue(withIdentifier: nativeViews[ad.url!]!, sender: self)
                     case .OV:
-                        //内部WEBVIEW跳转
+                        //第三方WEBVIEW跳转
                         print("OV")
                         if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                             pageVC.url = ad.url!
+                            pageVC.type = "OV"
                             self.navigationController?.pushViewController(pageVC, animated: true)
                         }
                     case .WV:
-                        //第三方WEBVIEW跳转
+                        //内部WEBVIEW跳转
                         print("WV")
                         ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
                         
@@ -286,14 +287,15 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                 print("NA")
                 performSegue(withIdentifier: nativeViews[feature.url!]!, sender: self)
             case .OV:
-                //内部WEBVIEW跳转
+                //第三方WEBVIEW跳转
                 print("OV")
                 if let pageVC = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                     pageVC.url = feature.url!
+                    pageVC.type = "OV"
                     self.navigationController?.pushViewController(pageVC, animated: true)
                 }
             case .WV:
-                //第三方WEBVIEW跳转
+                //内部WEBVIEW跳转
                 print("WV")
                 ApiUtil.webViewHandle(withIdentifier: feature.url!, sender: self)
                 
@@ -386,6 +388,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as! MainActivitysTableViewCell
         let activity = activitys[indexPath.row]
+        //error
         if  let imgUrl = URL(string: activity.image!){
         cell.thumbImage.kf.setImage(with: imgUrl)
         }
@@ -405,14 +408,15 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                 print("NA")
                 performSegue(withIdentifier: nativeViews[activity.url!]!, sender: self)
             case .OV:
-                //内部WEBVIEW跳转
+                //第三方WEBVIEW跳转
                 print("OV")
                 if let pageVC = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                     pageVC.url = activity.url!
+                    pageVC.type = "OV"
                     self.navigationController?.pushViewController(pageVC, animated: true)
                 }
             case .WV:
-                //第三方WEBVIEW跳转
+                //内部WEBVIEW跳转
                 print("WV")
                 ApiUtil.webViewHandle(withIdentifier: activity.url!, sender: self)
             default:

@@ -13,6 +13,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     var url = ""
     var random = ""
     var cardNo = ""
+    var type = ""
     
     lazy private var webview: WKWebView = {
         self.webview = WKWebView.init(frame: self.view.bounds)
@@ -41,10 +42,15 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         //webview.load(URLRequest.init(url: URL.init(string: "https://www.baidu.com/")!))
        
-        if let url = URL(string: "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)"){
-            let request = URLRequest(url: url)
-            // webView.loadRequest(request)
-            webview.load(request) //使用更快，内存占用更小的的WKWEBVIEW 使用wkwebview需要注意在所在VIEW里面不勾选under top bars，要不然顶部会缩进去导航条里面
+        if type == "OV" {
+            webview.load(URLRequest.init(url: URL.init(string: url)!))
+        }else {
+        
+            if let url = URL(string: "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)"){
+                let request = URLRequest(url: url)
+                // webView.loadRequest(request)
+                webview.load(request) //使用更快，内存占用更小的的WKWEBVIEW 使用wkwebview需要注意在所在VIEW里面不勾选under top bars，要不然顶部会缩进去导航条里面
+            }
         }
     }
     
