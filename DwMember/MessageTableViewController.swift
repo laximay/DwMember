@@ -105,7 +105,7 @@ class MessageTableViewController: UITableViewController {
         cell.titleLab.text = msg.title
         cell.briefingLab.text = msg.briefing
         cell.dataTimeLab.text = msg.dateTime
-        cell.isreadLab.text =  msg.isread  ? "已讀" : "未讀"
+        cell.isreadLab.text =  msg.isread  ? NSLocalizedString("read", comment: "已讀")  : NSLocalizedString("unread", comment: "未讀")
         let imgUrl = URL(string: msg.image)
         cell.msgImg.kf.setImage(with: imgUrl)
         

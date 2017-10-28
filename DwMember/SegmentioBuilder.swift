@@ -30,10 +30,10 @@ struct SegmentioBuilder {
     
     private static func segmentioContent() -> [SegmentioItem] {
         return [
-            SegmentioItem(title: "Unused", image: nil),
-            SegmentioItem(title: "Used", image: nil),
-            SegmentioItem(title: "Expired", image: nil),
-            SegmentioItem(title: "Mall", image: nil)
+            SegmentioItem(title: NSLocalizedString("Unuse", comment: "未用") , image: nil),
+            SegmentioItem(title: NSLocalizedString("Used", comment: "已用") , image: nil),
+            SegmentioItem(title: NSLocalizedString("Expired", comment: "已過期"), image: nil),
+            SegmentioItem(title: NSLocalizedString("Mall", comment: "商城") , image: nil)
         ]
     }
     

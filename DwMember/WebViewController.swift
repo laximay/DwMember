@@ -13,6 +13,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     var url = ""
     var random = ""
     var cardNo = ""
+    var type = ""
     
     lazy private var webview: WKWebView = {
         self.webview = WKWebView.init(frame: self.view.bounds)
@@ -27,6 +28,10 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         self.progressView.trackTintColor = UIColor.white // 进度条背景色
         return self.progressView
     }()
+    //如果首頁隱藏了導航欄一定要加上這句
+    //    override func viewWillAppear(_ animated: Bool) {
+    //        navigationController?.setNavigationBarHidden(false, animated: true)
+    //    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +41,16 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         webview.autoresizingMask = [.flexibleHeight]
         webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         //webview.load(URLRequest.init(url: URL.init(string: "https://www.baidu.com/")!))
-        print( "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)")
-        if let url = URL(string: "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)"){
-            let request = URLRequest(url: url)
-            // webView.loadRequest(request)
-            webview.load(request) //使用更快，内存占用更小的的WKWEBVIEW 使用wkwebview需要注意在所在VIEW里面不勾选under top bars，要不然顶部会缩进去导航条里面
+       
+        if type == "OV" {
+            webview.load(URLRequest.init(url: URL.init(string: url)!))
+        }else {
+        
+            if let url = URL(string: "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)"){
+                let request = URLRequest(url: url)
+                // webView.loadRequest(request)
+                webview.load(request) //使用更快，内存占用更小的的WKWEBVIEW 使用wkwebview需要注意在所在VIEW里面不勾选under top bars，要不然顶部会缩进去导航条里面
+            }
         }
     }
     
@@ -69,7 +79,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         //print("加载完成")
-      
+        
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {

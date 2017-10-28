@@ -19,6 +19,8 @@ class MeTableViewController: UITableViewController{
     @IBOutlet weak var msgCountLab: UILabel!
     @IBOutlet weak var localVersion: UILabel!
     
+    @IBOutlet weak var validperiodLab: UILabel!
+    @IBOutlet weak var birthImg: UIImageView!
     var userInfo: DwLoginData?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,11 +50,13 @@ class MeTableViewController: UITableViewController{
             getMsgCount()
             getCouponCount()
         } else{
-            if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-                
-                self.navigationController?.pushViewController(pageVC, animated: true)
-                //sender.present(pageVC, animated: true, completion: nil)
-            }
+//            if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+//                
+//                self.navigationController?.pushViewController(pageVC, animated: true)
+//                //sender.present(pageVC, animated: true, completion: nil)
+//            }
+            
+            self.performSegue(withIdentifier: "logoutSegue", sender: self)
             
             return
         }
@@ -161,6 +165,32 @@ class MeTableViewController: UITableViewController{
                             self.cardNoLab.text = "NO:\(cardNo)"
                             self.cardNoLab.isHidden = false
                         }
+                        
+                        if let validperiod = self.userInfo?.card.closedt {
+                            self.validperiodLab.text = "有效期:\(validperiod)"
+                            self.validperiodLab.isHidden = false
+                        }
+                        
+                        
+                        if let isBir = self.userInfo?.card.isCustBirthMonth {
+                            if isBir {
+                                let startScale = CGAffineTransform(scaleX: 0, y: 0)
+                                let startPos = CGAffineTransform(translationX: 0, y: 0)
+                                self.birthImg.image = #imageLiteral(resourceName: "birthdaycake")
+                                self.birthImg.isHidden = false
+                                self.birthImg.transform = startScale.concatenating(startPos)
+                                
+                                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: {
+                                    let endScale = CGAffineTransform.identity
+                                    let endPos = CGAffineTransform(translationX: 0, y: 0)
+                                    self.birthImg.transform = endPos.concatenating(endScale)
+                                }, completion: nil)
+
+                            }
+                        }
+                        
+                    
+                        
                         
                     }
                     

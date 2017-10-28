@@ -24,10 +24,19 @@
 * 支持纯文本
 
 ## Update
+<<<<<<< HEAD
 请使用最新版本 1.3.0
 
 版本信息 | 更新描述
 ----    |  ------
+=======
+请使用最新版本 1.3.1
+
+版本信息 | 更新描述
+----    |  ------
+1.3.2   | * 由于IBDesignable问题，临时取消，后续会检查更新
+1.3.1   | * 修复图placeHolder显示问题
+>>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
 1.3.0   | * 修复StoryBoard在部分设备显示问题
 1.2.9   | * 增加支持文本Leading约束属性titleLeading<br>* PageControl的Bottom约束属性pageControlBottom
 1.2.8   | * 支持纯文本部分属性修改，没有开放Label

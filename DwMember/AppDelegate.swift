@@ -14,26 +14,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     
     var window: UIWindow?
     var couponView = CouponViewController()
-    var couponTable = CouponTableViewController()
+
     
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UINavigationBar.appearance().barTintColor = UIColor(red: 158/255.0, green: 16/255.0, blue: 38/255.0, alpha: 1) //设置前景色
-        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().barTintColor =  UIColor.white //设置前景色
+        UINavigationBar.appearance().tintColor = UIColor(red: 158/255.0, green: 16/255.0, blue: 38/255.0, alpha: 1)
         let mainSB = UIStoryboard(name: "Main", bundle: nil)
         self.couponView = mainSB.instantiateViewController(withIdentifier: "CouponViewController") as! CouponViewController
-        self.couponTable = mainSB.instantiateViewController(withIdentifier: "CouponTableViewController") as! CouponTableViewController
-        
+
         ApiUtil.launchCache()
    
     
-        //设置字体
+        //导航栏设置字体
         if let barFont = UIFont(name: "Avenir-Light", size: 24){
             UINavigationBar.appearance().titleTextAttributes = [
                 NSFontAttributeName: barFont,
-                NSForegroundColorAttributeName:UIColor.white,
+                NSForegroundColorAttributeName:UIColor(red: 158/255.0, green: 16/255.0, blue: 38/255.0, alpha: 1),
                 
             ]
         }
@@ -89,8 +88,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             let defaults = UserDefaults.standard
            
             if let url = defaults.string(forKey: "launchImageUrl")  {
-                dump(url)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                //dump(url)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() , execute: {
                     
                     let adDuartion = 3
                     

@@ -1,0 +1,90 @@
+/* 地址 */
+"Address" = "地址";
+
+/* 品牌 */
+"Band" = "品牌";
+
+/* 已確認 */
+"Confirmed" = "已確認";
+
+/* 已過期 */
+"Expired" = "已过期";
+
+/* 引導頁-頭部1 */
+"Fill in simple information" = "填寫簡單信息";
+
+/* 發現 */
+"Find" = "发现";
+
+/* 主頁 */
+"Home" = "主页";
+
+/* 引導頁-底部3 */
+"Integral Mall" = "積分商城";
+
+/* 引導頁-頭部3 */
+"Integral courtesy" = "積分禮遇";
+
+/* 密碼錯誤提示語 */
+"Login failed" = "登陸失敗";
+
+/* 商城 */
+"Mall" = "商城";
+
+/* 我的 */
+"Me" = "我的";
+
+/* 引導頁-底部1 */
+"Membership registration" = "會員註冊";
+
+/* 引導頁-底部2 */
+"More offers" = "更多優惠";
+
+/* 引導頁-頭部2 */
+"Receive offers" = "接收優惠訊息";
+
+/* 全稱 */
+"Shop Name" = "店鋪名稱";
+
+/* 電話 */
+"Tel No." = "電話";
+
+/* 至 */
+"To" = "至";
+
+/* 未用 */
+"Unuse" = "未用";
+
+/* 已用 */
+"Used" = "已用";
+
+/* 有效期 */
+"Valid period" = "有效期";
+
+/* 待確認 */
+"Waiting for confirmation" = "待確認";
+
+/* 已讀 */
+"read" = "已讀";
+
+/* 未讀 */
+"unread" = "未讀";
+
+/* 訂座狀態 */
+"status" = "訂座狀態";
+
+/* 卡號 */
+"CardNo" = "卡號";
+
+/* 預訂時間 */
+"Booking Time" = "預訂時間";
+
+/* 預訂位數 */
+"Person" = "位數";
+
+/* 備註 */
+"Remark" = "備註";
+
+/* 預留食品 */
+"Reserved food" = "預留食品";
+

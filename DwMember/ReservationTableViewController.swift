@@ -61,7 +61,7 @@ class ReservationTableViewController: UITableViewController {
         cell.addLab.text = res.branch.addr
         cell.personLab.text = res.person
         cell.timeLab.text = res.indate! + " " + res.intime!
-        cell.statusLab.text = res.iscomfrim == "0" ? "Waiting for confirmation" : "Confirmed"
+        cell.statusLab.text = res.iscomfrim == "0" ? NSLocalizedString("Waiting for confirmation", comment: "待確認") : NSLocalizedString("Confirmed", comment: "已確認")
         
         // Configure the cell...
         
@@ -156,6 +156,19 @@ class ReservationTableViewController: UITableViewController {
                 
             }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "reservationDetailSegue"{
+            let dest = segue.destination as! ResDetailTableViewController
+            dest.resDetail = resList[tableView.indexPathForSelectedRow!.row]
+            
+        }
+        //隐藏底部导航条
+        segue.destination.hidesBottomBarWhenPushed = true
+        
+    }
+
     
     
 }

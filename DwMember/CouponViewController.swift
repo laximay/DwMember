@@ -14,6 +14,7 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
     let segmentioStyle = SegmentioStyle.onlyLabel
     //默認選中的索引 可設置
     var selectIndex = 3
+    var indexFlag = false
     @IBOutlet weak var segmentioView: Segmentio!
     @IBOutlet weak var segmentViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
@@ -24,11 +25,16 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let appdelegate = UIApplication.shared.delegate as! AppDelegate
         appdelegate.couponView = self
         segmentViewHeightConstraint.constant = 40
       
-       
+        if indexFlag {
+            viewInit()
+            getCouponCount(isupdata: false)
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -36,16 +42,18 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+//    override func viewWillAppear(_ animated: Bool) {
+//        navigationController?.setNavigationBarHidden(false, animated: true)
+//    }
     override func viewDidAppear(_ animated: Bool) {
         
-          ApiUtil.checklogin(sender: self)
+        ApiUtil.checklogin(sender: self)
         viewInit()
-        getCouponCount()
+        getCouponCount(isupdata: true)
     }
     
-   
-
+    
+    
     
     func viewInit()  {
         setupScrollView()
@@ -61,7 +69,7 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
         setSrollViewOffset(segmentIndex: selectIndex)
         //goToControllerAtIndex(selectIndex)
         
-        print("初始化：\(selectIndex)")
+       // print("初始化：\(selectIndex)")
         
         segmentioView.valueDidChange = { [weak self] _, segmentIndex in
             
@@ -72,7 +80,20 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
                     animated: true
                 )
             }
-            print("選擇:\(segmentIndex)")
+            //print("選擇:\(segmentIndex)")
+            self?.getCouponCount(isupdata: false)
+            switch segmentIndex {
+            case 0:
+                self?.viewControllers[0].viewDidLoad()
+            case 1:
+                self?.viewControllers[1].viewDidLoad()
+            case 2:
+                self?.viewControllers[2].viewDidLoad()
+            case 3:
+                self?.viewControllers[3].viewDidLoad()
+            default:()
+            }
+            
         }
         
     }
@@ -150,22 +171,26 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
     }
     
     //獲得優惠券未用數量
-    func getCouponCount() {
-            var avgs = ApiUtil.frontFunc()
-            let sign = ApiUtil.sign(data: avgs, sender: self)
-            avgs.updateValue(sign, forKey: "sign")
-            
-            
-            Just.post(ApiUtil.couponcountApi ,  data: avgs) { (result) in
-                guard let json = result.json as? NSDictionary else{
-                    return
-                }
-                if result.ok {
-                    if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
-                        let datas = DwCountBaseRootClass(fromDictionary: json).data
-                        OperationQueue.main.addOperation {
-                            //添加角标
-                            if let couponCount = datas  {
+    func getCouponCount(isupdata: Bool) {
+        var avgs = ApiUtil.frontFunc()
+        let sign = ApiUtil.sign(data: avgs, sender: self)
+        avgs.updateValue(sign, forKey: "sign")
+        
+        
+        Just.post(ApiUtil.couponcountApi ,  data: avgs) { (result) in
+            guard let json = result.json as? NSDictionary else{
+                return
+            }
+            if result.ok {
+                if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
+                    let datas = DwCountBaseRootClass(fromDictionary: json).data
+                    OperationQueue.main.addOperation {
+                        //添加角标
+                        
+                        
+                        
+                        if let couponCount = datas  {
+                            if   self.segmentioView.segmentioItems[0].badgeCount != couponCount as! Int {
                                 self.segmentioView.addBadge(
                                     at:  0,
                                     count: couponCount as! Int,
@@ -174,24 +199,29 @@ class CouponViewController: UIViewController, UIScrollViewDelegate {
                             }
                         }
                         
-                    }else {
-                        //異常處理
-                        if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                            print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
-                            OperationQueue.main.addOperation {
-                                ApiUtil.openAlert(msg: error.msg, sender: self)
-                            }
+                        if isupdata {
+                            self.viewControllers[0].viewDidLoad()
                         }
-
                     }
-                }else{
-                    //處理接口系統錯誤
-                    if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                        print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    
+                }else {
+                    //異常處理
+                    if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                        print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                        OperationQueue.main.addOperation {
+                            ApiUtil.openAlert(msg: error.msg, sender: self)
+                        }
                     }
+                    
                 }
-                
+            }else{
+                //處理接口系統錯誤
+                if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
+                    print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                }
             }
+            
+        }
     }
     
 }

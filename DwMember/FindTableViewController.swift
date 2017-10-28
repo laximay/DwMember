@@ -100,8 +100,11 @@ class FindTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FindCell", for: indexPath) as! FindTableViewCell
         let outlet = self.outletList[indexPath.row]
-        let imgUrl = URL(string: outlet.image)
-        cell.bgImg.kf.setImage(with: imgUrl)
+        if let imgUrlStr = outlet.image {
+            let imgUrl = URL(string: imgUrlStr)
+            cell.bgImg.kf.setImage(with: imgUrl)
+        }
+   
         cell.titleLab.text = outlet.name1
         cell.distance.text =  "\(outlet.distance as Int)km"
 

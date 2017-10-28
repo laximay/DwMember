@@ -187,6 +187,8 @@ open class Segmentio: UIView {
         segmentioCollectionView?.reloadData()
     }
     
+   
+    
     open func removeBadge(at index: Int) {
         segmentioItems[index].removeBadge()
         segmentioCollectionView?.reloadData()

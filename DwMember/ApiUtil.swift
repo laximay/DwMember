@@ -51,10 +51,10 @@ enum articleType: String{
 }
 
 
-// [viewCode : Segue]
-let nativeViews: [String: String] = ["couponNav": "CouponViewController"]
+// 原生跳轉映射[viewCode : Segue]
+let nativeViews: [String: String] = ["couponNav": "couponMallSegue"]
 
-// [viewCode : Segue]
+// 內部H5配置[viewCode : Segue]
 let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", verif: false),
                                            "MPWD": webViewConfig(code : "MPWD", verif: false),
                                            "DZXQ": webViewConfig(code: "DZXQ", verif: true),
@@ -151,7 +151,7 @@ open class ApiUtil{
         }
     }
     
- 
+    
     
     
     //檢測更新

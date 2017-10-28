@@ -24,10 +24,17 @@ public enum PageControlPosition {
 }
 
 public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
+<<<<<<< HEAD
 @IBDesignable open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     // MARK: 控制参数
     // 是否自动滚动，默认true
     @IBInspectable open var autoScroll: Bool? = true {
+=======
+open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
+    // MARK: 控制参数
+    // 是否自动滚动，默认true
+    open var autoScroll: Bool? = true {
+>>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
         didSet {
             invalidateTimer()
             if autoScroll! {
@@ -37,12 +44,20 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
     }
     
     // 无限循环，默认true 此属性修改了就不存在轮播的意义了
+<<<<<<< HEAD
     @IBInspectable open var infiniteLoop: Bool? = true {
+=======
+    open var infiniteLoop: Bool? = true {
+>>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
         didSet {
             if imagePaths.count > 0 {
                 let temp = imagePaths
                 imagePaths = temp
+<<<<<<< HEAD
             }
+=======
+            }   
+>>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
         }
     }
     
@@ -59,14 +74,22 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
     }
     
     // 滚动间隔时间,默认2s
+<<<<<<< HEAD
     @IBInspectable open var autoScrollTimeInterval: Double = 2.0 {
+=======
+    open var autoScrollTimeInterval: Double = 2.0 {
+>>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
         didSet {
             autoScroll = true
         }
     }
     
     // 加载状态图 -- 这个是有数据，等待加载的占位图
+<<<<<<< HEAD
     @IBInspectable open var placeHolderImage: UIImage? = nil {
+=======
+    open var placeHolderImage: UIImage? = nil {
+>>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
         didSet {
             if placeHolderImage != nil {
                 placeHolderViewImage = placeHolderImage
@@ -75,7 +98,11 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
     }
     
     // 空数据页面显示占位图 -- 这个是没有数据，整个轮播器的占位图
+<<<<<<< HEAD
     @IBInspectable open var coverImage: UIImage? = nil {
+=======
+    open var coverImage: UIImage? = nil {
+>>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
         didSet {
             if coverImage != nil {
                 coverViewImage = coverImage
@@ -84,7 +111,11 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
     }
     
     // 背景色
+<<<<<<< HEAD
     @IBInspectable open var collectionViewBackgroundColor: UIColor! = UIColor.clear
+=======
+    open var collectionViewBackgroundColor: UIColor! = UIColor.clear
+>>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
     
     // MARK: 图片属性
     // 图片显示Mode
@@ -265,10 +296,17 @@ public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
     fileprivate var timer: Timer?
     
     // 加载状态图
+<<<<<<< HEAD
     fileprivate var placeHolderViewImage: UIImage! = UIImage.init(named: "LLCycleScrollView.bundle/llplaceholder.png")
     
     // 空数据页面显示占位图
     fileprivate var coverViewImage: UIImage! = UIImage.init(named: "LLCycleScrollView.bundle/llplaceholder.png")
+=======
+    fileprivate var placeHolderViewImage: UIImage! = UIImage(named: "LLCycleScrollView.bundle/llplaceholder.png", in: Bundle(for: LLCycleScrollView.self), compatibleWith: nil)
+    
+    // 空数据页面显示占位图
+    fileprivate var coverViewImage: UIImage! = UIImage(named: "LLCycleScrollView.bundle/llplaceholder.png", in: Bundle(for: LLCycleScrollView.self), compatibleWith: nil)
+>>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
     
     // MARK: Init
     override public init(frame: CGRect) {

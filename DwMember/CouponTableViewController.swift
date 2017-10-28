@@ -23,11 +23,11 @@ class CouponTableViewController: UITableViewController {
      let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     override func viewDidLoad() {
         super.viewDidLoad()
-        let appdelegate = UIApplication.shared.delegate as! AppDelegate
-        appdelegate.couponTable = self
         spinner.center = view.center
         view.addSubview(spinner)
         spinner.startAnimating()
+        
+        //print("我是你爸爸")
         
         switch couponS {
         case .unuse:
@@ -50,6 +50,7 @@ class CouponTableViewController: UITableViewController {
         
     }
     
+ 
     
     
 
@@ -76,7 +77,7 @@ class CouponTableViewController: UITableViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                 print("未用",json)
+                 //print("未用",json)
                 if result.ok {
                     if  DwCouponBaseRootClass(fromDictionary: json).code == 1 {
                         self.couponunuseList = DwCouponBaseRootClass(fromDictionary: json).data

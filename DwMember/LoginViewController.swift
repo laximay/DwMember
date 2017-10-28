@@ -72,8 +72,9 @@ class LoginViewController: UIViewController {
                 }else {
                     
                     OperationQueue.main.addOperation {
-                        self.msgLab.text = "賬號或密碼錯誤，請重試"
+                        self.msgLab.text = NSLocalizedString("Login failed", comment: "密碼錯誤提示語")
                         self.msgLab.isHidden = false
+                        
                     }
                     
                 }
@@ -96,6 +97,7 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let startScale = CGAffineTransform(scaleX: 0, y: 0)
         let startPos = CGAffineTransform(translationX: 0, y: 0)
+        imageLoginLogo.isHidden = false
         imageLoginLogo.transform = startScale.concatenating(startPos)
         
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: {
