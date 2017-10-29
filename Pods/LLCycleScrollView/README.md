@@ -8,6 +8,10 @@
 ## Issues
 如果使用过程中，有什么问题欢迎issues。
 
+版本1.3.1之前 包含IBDesignable，部分可能存在IBDesignable问题。
+
+版本1.3.2 取消了IBDesignable，建议使用此版本。
+
 ## Support
 
 * 支持纯图片
@@ -22,21 +26,17 @@
 * 支持系统UIPageControl位置设置
 * 支持StoryBoard
 * 支持纯文本
+* 支持CustomPageControl位置设置
 
 ## Update
-<<<<<<< HEAD
-请使用最新版本 1.3.0
+请使用最新版本 1.3.4
 
 版本信息 | 更新描述
 ----    |  ------
-=======
-请使用最新版本 1.3.1
-
-版本信息 | 更新描述
-----    |  ------
+1.3.4   | * 增加自定义PageControl的位置控制pageControlPosition
+1.3.3   | * 修复titles数据异步加载问题
 1.3.2   | * 由于IBDesignable问题，临时取消，后续会检查更新
 1.3.1   | * 修复图placeHolder显示问题
->>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
 1.3.0   | * 修复StoryBoard在部分设备显示问题
 1.2.9   | * 增加支持文本Leading约束属性titleLeading<br>* PageControl的Bottom约束属性pageControlBottom
 1.2.8   | * 支持纯文本部分属性修改，没有开放Label

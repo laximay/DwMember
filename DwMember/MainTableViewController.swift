@@ -10,6 +10,7 @@ import UIKit
 import Just
 import CoreData
 import LLCycleScrollView
+import swiftScan
 enum opentypeM: String{
     case WV = "WV" , //WEBVIEW功能網頁方式打開
     NA = "NA",  //原生形式
@@ -22,21 +23,21 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     @IBOutlet weak var indexImageView: UIView! //放置轮播图的VIEW
     @IBOutlet weak var menuView: UIStackView! //放置功能按钮的VIEW
-    //var mainScrollView: SSCycleScrollView? //轮播图空间
+    
     
     //活动的LIST
-    var  activitys : [DwCache] = []
+    var  activitys : [DwHomeActivity] = []
     //远程首页轮播图LIST
-    var  ads : [DwCache] = []
+    var  ads : [DwHomeActivity] = []
     //远程首页轮播图LIST
-    var  features : [DwCache] = []
+    var  features : [DwHomeFeature] = []
     var scrollImageUrls: [String] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         homeCache()
-       
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(self.homeCache), for: .valueChanged)
@@ -49,165 +50,56 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         tableView.rowHeight = UITableViewAutomaticDimension //自适应行高 ，还需设置宽度约束，动态行数设为0，0代表动态行数
     }
     
-        override func viewWillAppear(_ animated: Bool) {
-            //隱藏導航條
-            //navigationController?.setNavigationBarHidden(true, animated: true)
-             ApiUtil.checkUpdata(sender: self)
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        //隱藏導航條
+        //navigationController?.setNavigationBarHidden(true, animated: true)
+        ApiUtil.checkUpdata(sender: self)
+    }
     
-//    override var prefersStatusBarHidden: Bool{
-//        return true
-//    }
+    //    override var prefersStatusBarHidden: Bool{
+    //        return true
+    //    }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200.0
     }
     
-    
-    
-    
-    func addMainScrollView() {
-        let w = UIScreen.main.bounds.width
-        let mainScrollView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect.init(x: 0, y:0, width: w, height: 155), imageURLPaths: self.scrollImageUrls, didSelectItemAtIndex: { index in
-            print("当前点击图片的位置为:\(index)")
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let requestAds : NSFetchRequest<DwCache> = DwCache.fetchRequest()
-            let cateAds = NSPredicate.init(format: "type='ads'")
-            requestAds.predicate = cateAds
-            do{
-                if let ads: [DwCache] = try appDelegate.persistentContainer.viewContext.fetch(requestAds){
-                    let ad = ads[index]
-                    let openType = opentypeM.init(rawValue: ad.opentype!).unsafelyUnwrapped
-                    
-                    switch openType {
-                    case .NA:
-                        //原生跳转处理
-                        print("NA")
-                        
-                        self.performSegue(withIdentifier: nativeViews[ad.url!]!, sender: self)
-                    case .OV:
-                        //第三方WEBVIEW跳转
-                        print("OV")
-                        if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
-                            pageVC.url = ad.url!
-                            pageVC.type = "OV"
-                            self.navigationController?.pushViewController(pageVC, animated: true)
-                        }
-                    case .WV:
-                        //内部WEBVIEW跳转
-                        print("WV")
-                        ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
-                        
-                    default:
-                        print("未知类型")
-                    }
-                }
-                
-            }catch{
-                print(error)
-            }
-            
-        })
-        
-        
-        mainScrollView.customPageControlStyle = .none
-        mainScrollView.customPageControlInActiveTintColor = UIColor.red
-        mainScrollView.pageControlPosition = .left
-        mainScrollView.pageControlLeadingOrTrialingContact = 28
-        mainScrollView.placeHolderImage = #imageLiteral(resourceName: "thlogo")
-        mainScrollView.coverImage = #imageLiteral(resourceName: "photoalbum")
-        
-        // 下边约束
-        mainScrollView.pageControlBottom = 15
-        self.indexImageView.addSubview(mainScrollView)    }
-    
     func homeCache()  {
-        //先加載CORE的數據
-        fetchHomeData()
+        
         //異步請求會覆蓋上一步的數據，重新填充
         Just.post(ApiUtil.homeApi ,  data: ["company": ApiUtil.companyCode]) { (result) in
+          
             guard let json = result.json as? NSDictionary else{
+                //网络失败处理
+            self.setupIndexData()
                 return
             }
-            print("index:",json)
+          
+            
+            let defaults = UserDefaults.standard
+            let str = self.getJSONStringFromDictionary(dictionary: json);
+           
+            defaults.set( str, forKey: "index_data")
+            let xx = defaults.string(forKey: "index_data")
+        
             if(result.ok){
                 let datas = DwHomeRootClass(fromDictionary: json).data!
-                
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 do{
-                    let allData : [DwCache] = try appDelegate.persistentContainer.viewContext.fetch(DwCache.fetchRequest())
-                    
-                    for ad in allData {
-                        appDelegate.persistentContainer.viewContext.delete(ad)
-                        appDelegate.saveContext()
-                    }
-                    //填充首頁輪播圖
-                    guard  let  scrollImageUrls_m : [String] =  datas.ads.map({(ad) -> String in
-                        let ads  =  DwCache(context: appDelegate.persistentContainer.viewContext)
-                        ads.image = ad.image
-                        ads.briefing = ad.briefing
-                        ads.english = ad.english
-                        ads.name = ad.name
-                        ads.opentype = ad.opentype
-                        ads.simpChinese = ad.simpChinese
-                        ads.sort = Int64(ad.sort)
-                        ads.thumb = ad.thumb
-                        ads.url = ad.url
-                        ads.type = "ads"
-                        appDelegate.saveContext()
-                        return ad.image
-                        
-                        
-                    })else {
-                       return
-                        
-                    }
-                     self.scrollImageUrls = scrollImageUrls_m
-                    
+                   
+                    //如果点击了则把点过的动作标志保存到存储空间，以便启动时候检查
+               
+                    //首頁輪播圖
+                    self.ads = datas.ads.sorted(by: { $0.sort < $1.sort })
+                    self.scrollImageUrls =  self.ads.map({(ad) -> String in
+                        return ad.image})
                     
                     //填充首頁活動圖
+                    self.activitys = datas.activitys.sorted(by: { $0.sort < $1.sort })
                     
-                    guard  let activitys_m : [DwCache] =   datas.activitys.map({(ad) -> DwCache in
-                        let at  =  DwCache(context: appDelegate.persistentContainer.viewContext)
-                        at.image = ad.image
-                        at.briefing = ad.briefing
-                        at.english = ad.english
-                        at.name = ad.name
-                        at.opentype = ad.opentype
-                        at.simpChinese = ad.simpChinese
-                        at.sort = Int64(ad.sort)
-                        at.thumb = ad.thumb
-                        at.url = ad.url
-                        at.type = "activitys"
-                        return at
-                        
-                    }).sorted(by: { $0.sort < $1.sort })else {
-                        return
-                    }
-                    
-                    self.activitys = activitys_m
+                    //首页功能按钮
+                    self.features = datas.features.sorted(by: { $0.sort < $1.sort })
                     
                     
-                    guard  let features_m : [DwCache] =  datas.features.map({(ad) -> DwCache in
-                        let fs  =  DwCache(context: appDelegate.persistentContainer.viewContext)
-                        fs.image = ad.image
-                        fs.briefing = ad.briefing
-                        fs.english = ad.english
-                        fs.name = ad.name
-                        fs.opentype = ad.opentype
-                        fs.simpChinese = ad.simpChinese
-                        fs.sort = Int64(ad.sort)
-                        fs.thumb = ad.thumb
-                        fs.url = ad.url
-                        fs.type = "features"
-                        return fs
-                        
-                    }).sorted(by: { $0.sort < $1.sort })else {
-                      return
-                    }
-                      self.features = features_m
-                    
-                    appDelegate.saveContext()
                     OperationQueue.main.addOperation {
                         self.tableView.reloadData()
                         self.refreshControl?.endRefreshing()
@@ -228,9 +120,6 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                 }
             }
             
-            
-            
-            
         }
         
         self.tableView.reloadData()
@@ -240,35 +129,56 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     
     
-    /*從COREDATA加載數據*/
-    func fetchHomeData()  {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        //活動REUEST
-        let requestActivitys : NSFetchRequest<DwCache> = DwCache.fetchRequest()
-        let cateActivitys = NSPredicate.init(format: "type='activitys'")
-        requestActivitys.predicate = cateActivitys
-        //首頁廣告ADS
-        let requestAds : NSFetchRequest<DwCache> = DwCache.fetchRequest()
-        let cateAds = NSPredicate.init(format: "type='ads'")
-        requestAds.predicate = cateAds
-        //功能按鈕
-        let requestFeatures : NSFetchRequest<DwCache> = DwCache.fetchRequest()
-        let cateFeatures = NSPredicate.init(format: "type='features'")
-        requestFeatures.predicate = cateFeatures
-        do{
-            activitys = try appDelegate.persistentContainer.viewContext.fetch(requestActivitys)
-            ads = try appDelegate.persistentContainer.viewContext.fetch(requestAds)
-            features = try appDelegate.persistentContainer.viewContext.fetch(requestFeatures)
-            // dump(ads)
-            for ad in ads {
-                scrollImageUrls.append(ad.image!)
+    
+    
+    func addMainScrollView() {
+        let w = UIScreen.main.bounds.width
+        let mainScrollView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect.init(x: 0, y:0, width: w, height: 155), imageURLPaths: self.scrollImageUrls, didSelectItemAtIndex: { index in
+            print("当前点击图片的位置为:\(index)")
+            let ad = self.ads[index]
+            let openType = opentypeM.init(rawValue: ad.opentype!).unsafelyUnwrapped
+            
+            switch openType {
+            case .NA:
+                //原生跳转处理
+                print("NA")
+                
+                self.performSegue(withIdentifier: nativeViews[ad.url!]!, sender: self)
+            case .OV:
+                //第三方WEBVIEW跳转
+                print("OV")
+                if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+                    pageVC.url = ad.url!
+                    pageVC.type = "OV"
+                    self.navigationController?.pushViewController(pageVC, animated: true)
+                }
+            case .WV:
+                //内部WEBVIEW跳转
+                print("WV")
+                ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
+        
             }
-        }catch {
-            print(error)
-        }
-        addMainScrollView()
-        createMenuBtn()
+            
+        })
+        
+        
+        mainScrollView.customPageControlStyle = .none
+        mainScrollView.customPageControlInActiveTintColor = UIColor.red
+        mainScrollView.pageControlPosition = .left
+        mainScrollView.pageControlLeadingOrTrialingContact = 28
+        mainScrollView.placeHolderImage = #imageLiteral(resourceName: "photoalbum")
+        mainScrollView.coverImage = #imageLiteral(resourceName: "photoalbum")
+        
+        // 下边约束
+        mainScrollView.pageControlBottom = 15
+        self.indexImageView.addSubview(mainScrollView)
+        
     }
+    
+    
+    
+    
+    
     
     
     
@@ -276,7 +186,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     @IBAction func featureTap(_ sender: UIButton) {
         // print("tab:\(sender.tag)")
-        if  let feature : DwCache = features[sender.tag] {
+        if  let feature : DwHomeFeature = features[sender.tag] {
             
             
             let openType = opentypeM.init(rawValue: feature.opentype!).unsafelyUnwrapped
@@ -298,9 +208,6 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                 //内部WEBVIEW跳转
                 print("WV")
                 ApiUtil.webViewHandle(withIdentifier: feature.url!, sender: self)
-                
-            default:
-                print("未知类型")
             }
         }
         
@@ -388,10 +295,10 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as! MainActivitysTableViewCell
         let activity = activitys[indexPath.row]
-        //error
-        if  let imgUrl = URL(string: activity.image!){
+        
+        let imgUrl = URL(string: activity.image!)
         cell.thumbImage.kf.setImage(with: imgUrl)
-        }
+        
         // Configure the cell...
         
         return cell
@@ -399,7 +306,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let activity : DwCache = activitys[indexPath.row] {
+        if let activity : DwHomeActivity = activitys[indexPath.row] {
             let openType = opentypeM.init(rawValue: activity.opentype!).unsafelyUnwrapped
             
             switch openType {
@@ -419,8 +326,6 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                 //内部WEBVIEW跳转
                 print("WV")
                 ApiUtil.webViewHandle(withIdentifier: activity.url!, sender: self)
-            default:
-                print("未知类型")
             }
         }
         
@@ -429,6 +334,39 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         
     }
     
+    
+    func setupIndexData() {
+        let defaults = UserDefaults.standard
+
+        if let result =  defaults.string(forKey: "index_data"){
+            guard let json = getDictionaryFromJSONString(jsonString: result) as? NSDictionary else{
+            return
+        }
+       print("indsetupIndexDataex: ",json)
+        
+        let datas = DwHomeRootClass(fromDictionary: json).data!
+            //如果点击了则把点过的动作标志保存到存储空间，以便启动时候检查
+            
+            //首頁輪播圖
+            self.ads = datas.ads.sorted(by: { $0.sort < $1.sort })
+            self.scrollImageUrls =  self.ads.map({(ad) -> String in
+                return ad.image})
+            
+            //填充首頁活動圖
+            self.activitys = datas.activitys.sorted(by: { $0.sort < $1.sort })
+            
+            //首页功能按钮
+            self.features = datas.features.sorted(by: { $0.sort < $1.sort })
+            
+            
+            OperationQueue.main.addOperation {
+                self.tableView.reloadData()
+                self.refreshControl?.endRefreshing()
+                self.addMainScrollView()
+                self.createMenuBtn()
+            }
+        }
+    }
     
     /*
      // Override to support conditional editing of the table view.
@@ -476,8 +414,41 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             dest.selectIndex = 0
             dest.indexFlag = true
         }
+        //扫描二维码的的Segue
+        if segue.identifier == "scanSegue"{
+            let scanVc = segue.destination as! ScanViewController
+                var style = LBXScanViewStyle()
+                style.animationImage = UIImage(named: "qrcode_scan_light_green")
+                style.colorAngle = UIColor(red: 158/255.0, green: 16.0/255.0, blue: 38.0/255.0, alpha: 1.0)
+                scanVc.scanStyle = style
+        }
         //隐藏底部导航条
         segue.destination.hidesBottomBarWhenPushed = true
+        
+    }
+    
+    //字典转JSON
+    func getJSONStringFromDictionary(dictionary:NSDictionary) -> NSString {
+        if (!JSONSerialization.isValidJSONObject(dictionary)) {
+            print("无法解析出JSONString")
+            return ""
+        }
+        let data : NSData! = try? JSONSerialization.data(withJSONObject: dictionary, options: []) as NSData!
+        let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
+        return JSONString!
+    }
+    
+    //JSON转字典
+    func getDictionaryFromJSONString(jsonString:String) ->NSDictionary{
+        
+        let jsonData:Data = jsonString.data(using: .utf8)!
+        
+        let dict = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
+        if dict != nil {
+            return dict as! NSDictionary
+        }
+        return NSDictionary()
+        
         
     }
     

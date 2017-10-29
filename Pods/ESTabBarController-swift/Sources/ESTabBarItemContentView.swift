@@ -2,7 +2,7 @@
 //  ESTabBarContentView.swift
 //
 //  Created by Vincent Li on 2017/2/8.
-//  Copyright (c) 2013-2016 ESTabBarController (https://github.com/eggswift/ESTabBarController)
+//  Copyright (c) 2013-2017 ESTabBarController (https://github.com/eggswift/ESTabBarController)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -207,7 +207,6 @@ open class ESTabBarItemContentView: UIView {
                                            y: h - titleLabel.bounds.size.height - 1.0,
                                            width: titleLabel.bounds.size.width,
                                            height: titleLabel.bounds.size.height)
-
             imageView.frame = CGRect.init(x: (w - imageView.bounds.size.width) / 2.0,
                                           y: (h - imageView.bounds.size.height) / 2.0 - 6.0,
                                           width: imageView.bounds.size.width,

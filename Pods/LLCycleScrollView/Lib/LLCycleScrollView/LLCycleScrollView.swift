@@ -24,17 +24,10 @@ public enum PageControlPosition {
 }
 
 public typealias LLdidSelectItemAtIndexClosure = (NSInteger) -> Void
-<<<<<<< HEAD
-@IBDesignable open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
-    // MARK: 控制参数
-    // 是否自动滚动，默认true
-    @IBInspectable open var autoScroll: Bool? = true {
-=======
 open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
     // MARK: 控制参数
     // 是否自动滚动，默认true
     open var autoScroll: Bool? = true {
->>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
         didSet {
             invalidateTimer()
             if autoScroll! {
@@ -44,20 +37,12 @@ open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionView
     }
     
     // 无限循环，默认true 此属性修改了就不存在轮播的意义了
-<<<<<<< HEAD
-    @IBInspectable open var infiniteLoop: Bool? = true {
-=======
     open var infiniteLoop: Bool? = true {
->>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
         didSet {
             if imagePaths.count > 0 {
                 let temp = imagePaths
                 imagePaths = temp
-<<<<<<< HEAD
-            }
-=======
             }   
->>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
         }
     }
     
@@ -74,22 +59,14 @@ open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionView
     }
     
     // 滚动间隔时间,默认2s
-<<<<<<< HEAD
-    @IBInspectable open var autoScrollTimeInterval: Double = 2.0 {
-=======
     open var autoScrollTimeInterval: Double = 2.0 {
->>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
         didSet {
             autoScroll = true
         }
     }
     
     // 加载状态图 -- 这个是有数据，等待加载的占位图
-<<<<<<< HEAD
-    @IBInspectable open var placeHolderImage: UIImage? = nil {
-=======
     open var placeHolderImage: UIImage? = nil {
->>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
         didSet {
             if placeHolderImage != nil {
                 placeHolderViewImage = placeHolderImage
@@ -98,11 +75,7 @@ open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionView
     }
     
     // 空数据页面显示占位图 -- 这个是没有数据，整个轮播器的占位图
-<<<<<<< HEAD
-    @IBInspectable open var coverImage: UIImage? = nil {
-=======
     open var coverImage: UIImage? = nil {
->>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
         didSet {
             if coverImage != nil {
                 coverViewImage = coverImage
@@ -111,11 +84,7 @@ open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionView
     }
     
     // 背景色
-<<<<<<< HEAD
-    @IBInspectable open var collectionViewBackgroundColor: UIColor! = UIColor.clear
-=======
     open var collectionViewBackgroundColor: UIColor! = UIColor.clear
->>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
     
     // MARK: 图片属性
     // 图片显示Mode
@@ -158,7 +127,7 @@ open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionView
         }
     }
     
-    // PageControl 位置 （此属性目前仅支持系统默认控制器，未来会支持其他自定义PageControl）
+    // PageControl 位置
     open var pageControlPosition: PageControlPosition = .center {
         didSet {
             setupPageControl()
@@ -247,7 +216,15 @@ open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionView
     
     // MARK: 标题数据源
     // 标题
-    open var titles: Array<String> = []
+    open var titles: Array<String> = [] {
+        didSet {
+            if titles.count > 0 {
+                if imagePaths.count == 0 {
+                    imagePaths = titles
+                }
+            }
+        }
+    }
     
     // MARK: 闭包
     // 回调
@@ -296,17 +273,10 @@ open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionView
     fileprivate var timer: Timer?
     
     // 加载状态图
-<<<<<<< HEAD
-    fileprivate var placeHolderViewImage: UIImage! = UIImage.init(named: "LLCycleScrollView.bundle/llplaceholder.png")
-    
-    // 空数据页面显示占位图
-    fileprivate var coverViewImage: UIImage! = UIImage.init(named: "LLCycleScrollView.bundle/llplaceholder.png")
-=======
     fileprivate var placeHolderViewImage: UIImage! = UIImage(named: "LLCycleScrollView.bundle/llplaceholder.png", in: Bundle(for: LLCycleScrollView.self), compatibleWith: nil)
     
     // 空数据页面显示占位图
     fileprivate var coverViewImage: UIImage! = UIImage(named: "LLCycleScrollView.bundle/llplaceholder.png", in: Bundle(for: LLCycleScrollView.self), compatibleWith: nil)
->>>>>>> 499e87becf3a1c59d2164d9accf848bd60f483a7
     
     // MARK: Init
     override public init(frame: CGRect) {
@@ -332,18 +302,25 @@ open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionView
     }
     
     // MARK: 纯文本
-    open class func llCycleScrollViewWithTitles(frame: CGRect, titles: Array<String>? = [], didSelectItemAtIndex: LLdidSelectItemAtIndexClosure? = nil) -> LLCycleScrollView {
+    open class func llCycleScrollViewWithTitles(frame: CGRect, backImage: UIImage? = nil, titles: Array<String>? = [], didSelectItemAtIndex: LLdidSelectItemAtIndexClosure? = nil) -> LLCycleScrollView {
         let llcycleScrollView: LLCycleScrollView = LLCycleScrollView.init(frame: frame)
+        
+        if let backImage = backImage {
+            // 异步加载数据时候，第一个页面会出现placeholder image，可以用backImage来设置纯色图片等其他方式
+            llcycleScrollView.coverImage = backImage
+        }
+        
         // Set isOnlyTitle
         llcycleScrollView.isOnlyTitle = true
-
+        
         // Cell Height
         llcycleScrollView.cellHeight = frame.size.height
         
+        // Titles Data
         if (titles?.count)! > 0 {
-            llcycleScrollView.imagePaths = titles!
             llcycleScrollView.titles = titles!
         }
+
         if didSelectItemAtIndex != nil {
             llcycleScrollView.lldidSelectItemAtIndex = didSelectItemAtIndex
         }
@@ -459,12 +436,21 @@ open class LLCycleScrollView: UIView, UICollectionViewDelegate, UICollectionView
             }
         }else{
             var y = self.ll_h-pageControlBottom
+            
             // pill
             if customPageControlStyle == .pill {
                 y+=5
             }
+            
             let oldFrame = customPageControl?.frame
-            customPageControl?.frame = CGRect.init(x: (oldFrame?.origin.x)!, y: y, width: (oldFrame?.size.width)!, height: 10)
+            switch pageControlPosition {
+            case .left:
+                customPageControl?.frame = CGRect.init(x: pageControlLeadingOrTrialingContact * 0.5, y: y, width: (oldFrame?.size.width)!, height: 10)
+            case.right:
+                customPageControl?.frame = CGRect.init(x: UIScreen.main.bounds.width - (oldFrame?.size.width)! - pageControlLeadingOrTrialingContact * 0.5, y: y, width: (oldFrame?.size.width)!, height: 10)
+            default:
+                customPageControl?.frame = CGRect.init(x: (oldFrame?.origin.x)!, y: y, width: (oldFrame?.size.width)!, height: 10)
+            }
         }
         
         if collectionView.contentOffset.x == 0 && totalItemsCount > 0 {
