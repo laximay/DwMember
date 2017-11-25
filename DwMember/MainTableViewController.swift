@@ -36,6 +36,14 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //註冊推送
+       // print("udid:\(ApiUtil.idfv)")
+//        JPUSHService.setAlias(ApiUtil.idfv,
+//                              callbackSelector: #selector(self.tagsAliasCallBack(resCode:tags:alias:)),
+//                              object: self)
+        JPUSHService.setAlias(ApiUtil.idfv, completion: nil, seq: 1)
+        
+        
         homeCache()
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -109,7 +117,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                     
                 }catch{
                     if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                        print("錯誤代碼:\(error.code as Int);信息:\(error)原因:\(error.result)")
+                       // print("錯誤代碼:\(error.code as Int);信息:\(error)原因:\(error.result)")
                         ApiUtil.openAlert(msg: error.msg, sender: self)
                     }
                 }
@@ -134,19 +142,19 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     func addMainScrollView() {
         let w = UIScreen.main.bounds.width
         let mainScrollView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect.init(x: 0, y:0, width: w, height: 155), imageURLPaths: self.scrollImageUrls, didSelectItemAtIndex: { index in
-            print("当前点击图片的位置为:\(index)")
+           // print("当前点击图片的位置为:\(index)")
             let ad = self.ads[index]
             let openType = opentypeM.init(rawValue: ad.opentype!).unsafelyUnwrapped
             
             switch openType {
             case .NA:
                 //原生跳转处理
-                print("NA")
+               // print("NA")
                 
                 self.performSegue(withIdentifier: nativeViews[ad.url!]!, sender: self)
             case .OV:
                 //第三方WEBVIEW跳转
-                print("OV")
+               // print("OV")
                 if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                     pageVC.url = ad.url!
                     pageVC.type = "OV"
@@ -154,7 +162,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                 }
             case .WV:
                 //内部WEBVIEW跳转
-                print("WV")
+               // print("WV")
                 ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
         
             }
@@ -194,11 +202,11 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             switch openType {
             case .NA:
                 //原生跳转处理
-                print("NA")
+                //print("NA")
                 performSegue(withIdentifier: nativeViews[feature.url!]!, sender: self)
             case .OV:
                 //第三方WEBVIEW跳转
-                print("OV")
+                //print("OV")
                 if let pageVC = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                     pageVC.url = feature.url!
                     pageVC.type = "OV"
@@ -206,7 +214,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                 }
             case .WV:
                 //内部WEBVIEW跳转
-                print("WV")
+               // print("WV")
                 ApiUtil.webViewHandle(withIdentifier: feature.url!, sender: self)
             }
         }
@@ -312,11 +320,11 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             switch openType {
             case .NA:
                 //原生跳转处理
-                print("NA")
+                //print("NA")
                 performSegue(withIdentifier: nativeViews[activity.url!]!, sender: self)
             case .OV:
                 //第三方WEBVIEW跳转
-                print("OV")
+               // print("OV")
                 if let pageVC = storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                     pageVC.url = activity.url!
                     pageVC.type = "OV"
@@ -324,7 +332,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                 }
             case .WV:
                 //内部WEBVIEW跳转
-                print("WV")
+               // print("WV")
                 ApiUtil.webViewHandle(withIdentifier: activity.url!, sender: self)
             }
         }
@@ -342,7 +350,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             guard let json = getDictionaryFromJSONString(jsonString: result) as? NSDictionary else{
             return
         }
-       print("indsetupIndexDataex: ",json)
+       //print("indsetupIndexDataex: ",json)
         
         let datas = DwHomeRootClass(fromDictionary: json).data!
             //如果点击了则把点过的动作标志保存到存储空间，以便启动时候检查
@@ -430,7 +438,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     //字典转JSON
     func getJSONStringFromDictionary(dictionary:NSDictionary) -> NSString {
         if (!JSONSerialization.isValidJSONObject(dictionary)) {
-            print("无法解析出JSONString")
+            //print("无法解析出JSONString")
             return ""
         }
         let data : NSData! = try? JSONSerialization.data(withJSONObject: dictionary, options: []) as NSData!
@@ -451,6 +459,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         
         
     }
+ 
     
     
     

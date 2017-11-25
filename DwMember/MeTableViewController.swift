@@ -67,7 +67,7 @@ class MeTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("索引是:\(indexPath.section) \(indexPath.row  )")
+        //print("索引是:\(indexPath.section) \(indexPath.row  )")
         
         
         if indexPath == [0, 0] {
@@ -146,7 +146,7 @@ class MeTableViewController: UITableViewController{
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            print(json)
+            //print(json)
             if result.ok {
                 if  DwLoginRootClass(fromDictionary: json).code == 1 {
                     
@@ -197,7 +197,7 @@ class MeTableViewController: UITableViewController{
                 }else {
                     //異常處理
                     if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                        print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                       // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                         ApiUtil.openAlert(msg: error.msg, sender: self)
                     }
                     
@@ -224,7 +224,7 @@ class MeTableViewController: UITableViewController{
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            print("MSG:" , json)
+           // print("MSG:" , json)
             if result.ok {
                 if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
                     let datas = DwCountBaseRootClass(fromDictionary: json).data
@@ -236,7 +236,7 @@ class MeTableViewController: UITableViewController{
                     
                 }else {
                     if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                        print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                       // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                         OperationQueue.main.addOperation {
                             ApiUtil.openAlert(msg: error.msg, sender: self)
                         }
@@ -276,7 +276,7 @@ class MeTableViewController: UITableViewController{
                     
                     //異常處理
                     if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                        print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                        //print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                         OperationQueue.main.addOperation {
                             ApiUtil.openAlert(msg: error.msg, sender: self)
                         }

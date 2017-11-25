@@ -59,7 +59,7 @@ class PayViewController: UIViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print("详情：",json)
+                //print("详情：",json)
                 if result.ok {
                     if  DwPayCodeRootClass(fromDictionary: json).code == 1 {
                         let payData: DwPayCodeData = DwPayCodeRootClass(fromDictionary: json).data
@@ -95,7 +95,7 @@ class PayViewController: UIViewController {
                     }else {
                         //異常處理
                         if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                            print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                           // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                             OperationQueue.main.addOperation {
                                 ApiUtil.openAlert(msg: error.msg, sender: self)
                             }
@@ -114,7 +114,7 @@ class PayViewController: UIViewController {
     
     private var remainingSeconds: Int = 0 {
         willSet {
-            print("\(newValue)")
+           // print("\(newValue)")
             countTimeLab.text = "\(newValue)"
             
         }

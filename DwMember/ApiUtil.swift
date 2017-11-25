@@ -59,7 +59,8 @@ let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", 
                                            "MPWD": webViewConfig(code : "MPWD", verif: false),
                                            "DZXQ": webViewConfig(code: "DZXQ", verif: true),
                                            "FPWD": webViewConfig(code: "FPWD", verif: true),
-                                           "JFCX": webViewConfig(code: "JFCX", verif: true)]
+                                           "JFCX": webViewConfig(code: "JFCX", verif: true),
+                            "HYJH": webViewConfig(code: "HYJH", verif: true)]
 
 open class ApiUtil{
     
@@ -69,10 +70,10 @@ open class ApiUtil{
     }
     
     //服務鏈接
-    static let serverUrl = "http://apps.dongwangtech.com/a"
+    static let serverUrl = "https://cloud.ablegenius.com/a"
     //static var serverUrl = "http://192.168.90.93:8081"
     //公司代碼
-    static let companyCode = "epot"
+    static let companyCode = "EPOT"
     //公司代碼
     static let channel = "IOS"
     //啟動頁Api
@@ -131,7 +132,8 @@ open class ApiUtil{
     static let mainSB = UIStoryboard(name: "Main", bundle: Bundle.main)
     
     
-    static let idfv: String = "823676274628746"//UIDevice.current.identifierForVendor!.uuidString
+    static let idfv: String =  UIDevice.current.identifierForVendor!.uuidString.replacingOccurrences(of: "-", with: "")
+    
     
     
     //加載引導頁的遠程資源-下次緩存
@@ -150,6 +152,31 @@ open class ApiUtil{
             
         }
     }
+    
+    static func launchCache_New(_ completion: @escaping (String)->()) -> Void {
+        Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode]) { (result) in
+            if result.ok {
+                guard let json = result.json as? NSDictionary else{
+                    return
+                }
+               // print(json)
+                let datas = DwStartRootClass(fromDictionary: json).data!
+                if let ads = datas.ads{
+                   // let idx = Int(arc4random()) % ads.count
+                     let launchUrl = ads.image
+                    completion(launchUrl!)
+                        
+                    
+                }
+                
+                
+                
+                
+            }
+            
+        }
+    }
+    
     
     
     
@@ -258,7 +285,7 @@ open class ApiUtil{
                 }else {
                     //異常處理
                     if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                        print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                      //  print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                         OperationQueue.main.addOperation {
                             ApiUtil.openAlert(msg: error.msg, sender: sender)
                         }
@@ -268,7 +295,7 @@ open class ApiUtil{
             }else{
                 //處理接口系統錯誤
                 if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                    print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                   // print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
                 }
             }
             

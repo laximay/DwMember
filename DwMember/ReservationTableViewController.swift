@@ -139,7 +139,7 @@ class ReservationTableViewController: UITableViewController {
                         }else {
                             //異常處理
                             if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                                print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                                //print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                                 OperationQueue.main.addOperation {
                                     ApiUtil.openAlert(msg: error.msg, sender: self)
                                 }

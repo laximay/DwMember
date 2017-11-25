@@ -1,3 +1,12 @@
-/* (No Commment) */
-"CFBundleName" = "稻香会员";
+/* (No Comment) */
+"CFBundleDisplayName" = "一锅堂";
+
+/* (No Comment) */
+"CFBundleName" = "EPOT";
+
+/* (No Comment) */
+"NSCameraUsageDescription" = "是否允许使用相机?";
+
+/* (No Comment) */
+"NSPhotoLibraryUsageDescription" = "是否允许访问相册?";
 

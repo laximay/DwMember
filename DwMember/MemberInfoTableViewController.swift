@@ -127,7 +127,7 @@ class MemberInfoTableViewController: UITableViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print(json)
+                
                 if result.ok {
                     if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
                         OperationQueue.main.addOperation {
@@ -135,7 +135,7 @@ class MemberInfoTableViewController: UITableViewController {
                         }
                     }else{
                         if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                            print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                           // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                             OperationQueue.main.addOperation {
                                 ApiUtil.openAlert(msg: error.msg, sender: self)
                             }

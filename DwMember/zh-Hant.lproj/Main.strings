@@ -1,97 +1,288 @@
-{
-	"0Cs-Cz-b0k.text" = Label;
-	"3yP-fP-QX2.text" = "2017-09-19 09:44";
-	"5ny-fg-ytY.title" = "\U5546\U57ce";
-	"5tf-iG-25n.title" = meNav;
-	"6Ue-WU-Wpx.text" = Label;
-	"6eq-VC-agp.text" = 0;
-	"7hR-q4-UJx.text" = Label;
-	"8uI-PT-bci.text" = Label;
-	"9df-47-sxk.normalTitle" = "\U6fc0\U6d3b";
-	"AMp-BX-gs1.text" = "\U5df2\U8b80";
-	"Adu-eX-6Rc.headerTitle" = " ";
-	"AlI-bp-gZr.text" = "\U751f\U65e5\U6708";
-	"ArU-iU-9WQ.text" = "\U6210\U529f";
-	"B9Z-kR-BuD.normalTitle" = Button;
-	"Bti-hF-9Jh.text" = Label;
-	"Bun-A7-xY3.text" = "\U512a\U60e0\U5238";
-	"DBz-dM-cOQ.text" = Label;
-	"DqC-Rb-ns4.text" = "\U6383\U63cf\U4e0a\U65b9\U5b89\U5168\U78bc\U9032\U884c\U7a4d\U5206";
-	"ED1-cV-zjt.text" = Label;
-	"ET1-US-kVx.text" = "\U8a73\U60c5>";
-	"El5-uM-nEW.text" = "\U95dc\U65bc";
-	"GEu-SC-GRp.normalTitle" = "\U7acb\U5373\U9ad4\U9a57\Uff01";
-	"IMv-f5-HOl.text" = Label;
-	"Ikj-jj-Ogw.text" = 0;
-	"K7X-UQ-xNq.title" = "\U767b\U5165";
-	"Kh1-mk-UC8.text" = "\U7576\U524d\U7248\U672c v1.0";
-	"LRv-8H-xbM.normalTitle" = "\U63d0\U4ea4";
-	"MkR-Lk-Koy.text" = Label;
-	"MlR-oc-ofh.title" = "CouponDeatilsTableViewController";
-	"N1S-EG-fs2.text" = F;
-	"OCy-3R-XZI.text" = "\U7528\U6236\U4fe1\U606f";
-	"ORn-A0-1O7.text" = "\U6c92\U6709\U767b\U9304";
-	"QZG-pk-1JA.headerTitle" = " ";
-	"S5X-sf-b7k.title" = loginNav;
-	"SsL-16-QLV.title" = mallNav;
-	"Ukm-GD-O3b.normalTitle" = Lable;
-	"V97-cS-AhR.title" = "\U6d88\U606f";
-	"VUp-ZY-emU.text" = "\U8a02\U5ea7\U4fe1\U606f";
-	"VWb-9k-tkq.text" = "NO.0005897088";
-	"WiA-OC-xLg.text" = "\U6027\U5225";
-	"Wlp-ZY-4H9.text" = Label;
-	"XC4-d7-ryg.headerTitle" = " ";
-	"YLJ-9X-KbK.title" = homeNav;
-	"Yjl-Nb-5b8.text" = "\U7a4d\U5206";
-	"Ynk-Uj-Zxu.text" = lable;
-	"ZUZ-Se-qHo.normalTitle" = "\U514c\U63db";
-	"ZUg-Vx-LAj.normalTitle" = Lable;
-	"ZcI-Ri-crw.placeholder" = "\U5361\U865f";
-	"bUm-Y2-GqX.normalTitle" = Lable;
-	"c73-ww-KLG.title" = CouponNav;
-	"cOY-jX-6F3.title" = "\U6211\U7684";
-	"cTb-7Z-HUt.text" = "\U5361\U865f";
-	"cjy-hU-Zsa.text" = "\U6e05\U9664\U7de9\U5b58";
-	"cy6-4q-DiI.text" = "\U5730\U5740";
-	"d7L-DL-D5P.text" = 0;
-	"dJE-x5-tUo.text" = Label;
-	"fTY-ki-VZd.text" = Label;
-	"gK1-zA-jQY.text" = Label;
-	"glx-nq-rXE.text" = 60;
-	"gzd-8g-gWY.text" = "\U96fb\U8a71";
-	"hKy-j9-QBJ.text" = "\U7b49\U5f85\U78ba\U8a8d";
-	"hmS-bZ-zvE.text" = "\U6703\U54e1\U9808\U77e5";
-	"iDf-D3-ch6.placeholder" = "\U5bc6\U78bc";
-	"iKd-bo-p0P.title" = findNav;
-	"itt-ZE-h4x.footerTitle" = " ";
-	"itt-ZE-h4x.headerTitle" = " ";
-	"iz7-YD-exe.title" = "\U8a02\U5ea7\U8a18\U9304";
-	"jOg-nt-DHG.text" = "\U6703\U54e1\U689d\U6b3e";
-	"jl2-9q-qsF.headerTitle" = " ";
-	"kEr-qI-iaF.text" = Label;
-	"kX4-rt-AEP.normalTitle" = "\U5fd8\U8a18\U5bc6\U78bc?";
-	"kaS-JC-yQN.title" = "\U6211\U7684";
-	"ksX-TE-nxC.headerTitle" = " ";
-	"m6M-Bc-X8G.normalTitle" = "+";
-	"mYl-j7-EQZ.text" = "  \U6d3b\U52d5:";
-	"nH0-Ke-2O7.text" = Label;
-	"oFP-tS-4Qt.text" = "\U66f4\U6539\U5bc6\U78bc";
-	"pzy-uF-egH.normalTitle" = Lable;
-	"qq9-Lx-sZG.text" = Label;
-	"r8B-oX-b2q.text" = "\U90f5\U4ef6";
-	"rHj-st-t7r.text" = "\U767b\U51fa";
-	"rOY-kc-vdw.title" = "\U767c\U73fe";
-	"rqs-j1-U9f.normalTitle" = "\U767b\U5165";
-	"tdm-Lz-V73.title" = "\U6703\U54e1\U5546\U57ce";
-	"uIB-8h-baL.text" = "\U6d88\U606f";
-	"uko-IV-HjM.title" = Main;
-	"vHg-nZ-9Ls.title" = LoginViewController;
-	"wgk-sK-znf.text" = "\U7a4d\U5206\U898f\U5247";
-	"x0d-ih-zIE.text" = "\U9810\U8a02";
-	"xOO-vH-eYg.title" = "\U4e3b\U9801";
-	"zRH-Zu-o8N.text" = "\U66b1\U7a31";
-	"zSE-Ly-QxW.text" = Label;
-	"zhb-C2-k7Z.text" = "\U6709\U6548\U671f";
-	"zqA-KH-oCE.text" = Label;
-	"zz0-OZ-XyL.text" = Label;
-}
+/* Class = "UILabel"; text = "Label"; ObjectID = "0Cs-Cz-b0k"; */
+"0Cs-Cz-b0k.text" = "Label";
+
+/* Class = "UILabel"; text = "2017-09-19 09:44"; ObjectID = "3yP-fP-QX2"; */
+"3yP-fP-QX2.text" = "2017-09-19 09:44";
+
+/* Class = "UINavigationItem"; title = "Mall"; ObjectID = "5ny-fg-ytY"; */
+"5ny-fg-ytY.title" = "商城";
+
+/* Class = "UINavigationController"; title = "meNav"; ObjectID = "5tf-iG-25n"; */
+"5tf-iG-25n.title" = "meNav";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6Ue-WU-Wpx"; */
+"6Ue-WU-Wpx.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "6eq-VC-agp"; */
+"6eq-VC-agp.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7hR-q4-UJx"; */
+"7hR-q4-UJx.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8uI-PT-bci"; */
+"8uI-PT-bci.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "9df-47-sxk"; */
+"9df-47-sxk.normalTitle" = "激活";
+
+/* Class = "UILabel"; text = "isread"; ObjectID = "AMp-BX-gs1"; */
+"AMp-BX-gs1.text" = "已讀";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "Adu-eX-6Rc"; */
+"Adu-eX-6Rc.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "Birthday month"; ObjectID = "AlI-bp-gZr"; */
+"AlI-bp-gZr.text" = "生日月";
+
+/* Class = "UILabel"; text = "success"; ObjectID = "ArU-iU-9WQ"; */
+"ArU-iU-9WQ.text" = "成功";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "B9Z-kR-BuD"; */
+"B9Z-kR-BuD.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Bti-hF-9Jh"; */
+"Bti-hF-9Jh.text" = "Label";
+
+/* Class = "UILabel"; text = "Coupon"; ObjectID = "Bun-A7-xY3"; */
+"Bun-A7-xY3.text" = "優惠券";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DBz-dM-cOQ"; */
+"DBz-dM-cOQ.text" = "Label";
+
+/* Class = "UILabel"; text = "Scan  the security code"; ObjectID = "DqC-Rb-ns4"; */
+"DqC-Rb-ns4.text" = "掃描上方安全碼進行積分";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ED1-cV-zjt"; */
+"ED1-cV-zjt.text" = "Label";
+
+/* Class = "UILabel"; text = "Detailed>"; ObjectID = "ET1-US-kVx"; */
+"ET1-US-kVx.text" = "詳情>";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "El5-uM-nEW"; */
+"El5-uM-nEW.text" = "關於";
+
+/* Class = "UIButton"; normalTitle = "use now!"; ObjectID = "GEu-SC-GRp"; */
+"GEu-SC-GRp.normalTitle" = "立即體驗！";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "IMv-f5-HOl"; */
+"IMv-f5-HOl.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Ikj-jj-Ogw"; */
+"Ikj-jj-Ogw.text" = "0";
+
+/* Class = "UINavigationItem"; title = "Login"; ObjectID = "K7X-UQ-xNq"; */
+"K7X-UQ-xNq.title" = "登入";
+
+/* Class = "UINavigationItem"; title = "Queue"; ObjectID = "Kdk-bB-7JI"; */
+"Kdk-bB-7JI.title" = "叫號";
+
+/* Class = "UILabel"; text = "當前版本 v1.0"; ObjectID = "Kh1-mk-UC8"; */
+"Kh1-mk-UC8.text" = "當前版本 v1.0";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "LRv-8H-xbM"; */
+"LRv-8H-xbM.normalTitle" = "提交";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MkR-Lk-Koy"; */
+"MkR-Lk-Koy.text" = "Label";
+
+/* Class = "UITableViewController"; title = "CouponDeatilsTableViewController"; ObjectID = "MlR-oc-ofh"; */
+"MlR-oc-ofh.title" = "CouponDeatilsTableViewController";
+
+/* Class = "UILabel"; text = "F"; ObjectID = "N1S-EG-fs2"; */
+"N1S-EG-fs2.text" = "F";
+
+/* Class = "UILabel"; text = "Memberinfo"; ObjectID = "OCy-3R-XZI"; */
+"OCy-3R-XZI.text" = "用戶信息";
+
+/* Class = "UILabel"; text = "李大文"; ObjectID = "ORn-A0-1O7"; */
+"ORn-A0-1O7.text" = "沒有登錄";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "QZG-pk-1JA"; */
+"QZG-pk-1JA.headerTitle" = " ";
+
+/* Class = "UINavigationController"; title = "loginNav"; ObjectID = "S5X-sf-b7k"; */
+"S5X-sf-b7k.title" = "loginNav";
+
+/* Class = "UINavigationController"; title = "mallNav"; ObjectID = "SsL-16-QLV"; */
+"SsL-16-QLV.title" = "mallNav";
+
+/* Class = "UITableViewController"; title = "Message"; ObjectID = "V97-cS-AhR"; */
+"V97-cS-AhR.title" = "消息";
+
+/* Class = "UILabel"; text = "BookingInfo"; ObjectID = "VUp-ZY-emU"; */
+"VUp-ZY-emU.text" = "訂座信息";
+
+/* Class = "UILabel"; text = "NO.0005897088"; ObjectID = "VWb-9k-tkq"; */
+"VWb-9k-tkq.text" = "NO.0005897088";
+
+/* Class = "UILabel"; text = "Sex"; ObjectID = "WiA-OC-xLg"; */
+"WiA-OC-xLg.text" = "性別";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Wlp-ZY-4H9"; */
+"Wlp-ZY-4H9.text" = "Label";
+
+/* Class = "UILabel"; text = "Find"; ObjectID = "X57-YV-DSl"; */
+"X57-YV-DSl.text" = "發現";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "XC4-d7-ryg"; */
+"XC4-d7-ryg.headerTitle" = " ";
+
+/* Class = "UINavigationController"; title = "homeNav"; ObjectID = "YLJ-9X-KbK"; */
+"YLJ-9X-KbK.title" = "homeNav";
+
+/* Class = "UILabel"; text = "integral"; ObjectID = "Yjl-Nb-5b8"; */
+"Yjl-Nb-5b8.text" = "積分";
+
+/* Class = "UILabel"; text = "lable"; ObjectID = "Ynk-Uj-Zxu"; */
+"Ynk-Uj-Zxu.text" = "lable";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Z15-T7-SAO"; */
+"Z15-T7-SAO.text" = "無信息";
+
+/* Class = "UIButton"; normalTitle = "Exchange"; ObjectID = "ZUZ-Se-qHo"; */
+"ZUZ-Se-qHo.normalTitle" = "兌換";
+
+/* Class = "UITextField"; placeholder = "CardNum"; ObjectID = "ZcI-Ri-crw"; */
+"ZcI-Ri-crw.placeholder" = "卡號";
+
+/* Class = "UINavigationController"; title = "CouponNav"; ObjectID = "c73-ww-KLG"; */
+"c73-ww-KLG.title" = "CouponNav";
+
+/* Class = "UITableViewController"; title = "Me"; ObjectID = "cOY-jX-6F3"; */
+"cOY-jX-6F3.title" = "我的";
+
+/* Class = "UILabel"; text = "CardNo"; ObjectID = "cTb-7Z-HUt"; */
+"cTb-7Z-HUt.text" = "卡號";
+
+/* Class = "UILabel"; text = "Clear Cache"; ObjectID = "cjy-hU-Zsa"; */
+"cjy-hU-Zsa.text" = "清除緩存";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "cy6-4q-DiI"; */
+"cy6-4q-DiI.text" = "地址";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "d7L-DL-D5P"; */
+"d7L-DL-D5P.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dJE-x5-tUo"; */
+"dJE-x5-tUo.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fTY-ki-VZd"; */
+"fTY-ki-VZd.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gK1-zA-jQY"; */
+"gK1-zA-jQY.text" = "Label";
+
+/* Class = "UILabel"; text = "60"; ObjectID = "glx-nq-rXE"; */
+"glx-nq-rXE.text" = "60";
+
+/* Class = "UILabel"; text = "Mobile"; ObjectID = "gzd-8g-gWY"; */
+"gzd-8g-gWY.text" = "電話";
+
+/* Class = "UILabel"; text = "Waiting for confirmation"; ObjectID = "hKy-j9-QBJ"; */
+"hKy-j9-QBJ.text" = "等待確認";
+
+/* Class = "UILabel"; text = "Notice"; ObjectID = "hmS-bZ-zvE"; */
+"hmS-bZ-zvE.text" = "會員須知";
+
+/* Class = "UITextField"; placeholder = "PassWord"; ObjectID = "iDf-D3-ch6"; */
+"iDf-D3-ch6.placeholder" = "密碼";
+
+/* Class = "UINavigationController"; title = "findNav"; ObjectID = "iKd-bo-p0P"; */
+"iKd-bo-p0P.title" = "findNav";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "itt-ZE-h4x"; */
+"itt-ZE-h4x.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "itt-ZE-h4x"; */
+"itt-ZE-h4x.headerTitle" = " ";
+
+/* Class = "UITableViewController"; title = "ReservationList"; ObjectID = "iz7-YD-exe"; */
+"iz7-YD-exe.title" = "訂座記錄";
+
+/* Class = "UILabel"; text = "Membership terms"; ObjectID = "jOg-nt-DHG"; */
+"jOg-nt-DHG.text" = "會員條款";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "jl2-9q-qsF"; */
+"jl2-9q-qsF.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kEr-qI-iaF"; */
+"kEr-qI-iaF.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Forget?"; ObjectID = "kX4-rt-AEP"; */
+"kX4-rt-AEP.normalTitle" = "忘記密碼?";
+
+/* Class = "UINavigationItem"; title = "Me"; ObjectID = "kaS-JC-yQN"; */
+"kaS-JC-yQN.title" = "我的";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "ksX-TE-nxC"; */
+"ksX-TE-nxC.headerTitle" = " ";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "m6M-Bc-X8G"; */
+"m6M-Bc-X8G.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "  Activity:"; ObjectID = "mYl-j7-EQZ"; */
+"mYl-j7-EQZ.text" = "  活動:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nH0-Ke-2O7"; */
+"nH0-Ke-2O7.text" = "Label";
+
+/* Class = "UILabel"; text = "Validity:"; ObjectID = "nnM-uI-YRp"; */
+"nnM-uI-YRp.text" = "有效期:";
+
+/* Class = "UILabel"; text = "Change Password"; ObjectID = "oFP-tS-4Qt"; */
+"oFP-tS-4Qt.text" = "更改密碼";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qq9-Lx-sZG"; */
+"qq9-Lx-sZG.text" = "Label";
+
+/* Class = "UILabel"; text = "E-mail"; ObjectID = "r8B-oX-b2q"; */
+"r8B-oX-b2q.text" = "郵件";
+
+/* Class = "UILabel"; text = "Logout"; ObjectID = "rHj-st-t7r"; */
+"rHj-st-t7r.text" = "登出";
+
+/* Class = "UINavigationItem"; title = "Find"; ObjectID = "rOY-kc-vdw"; */
+"rOY-kc-vdw.title" = "發現";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "rqs-j1-U9f"; */
+"rqs-j1-U9f.normalTitle" = "登入";
+
+/* Class = "UINavigationItem"; title = "Member Mall"; ObjectID = "tdm-Lz-V73"; */
+"tdm-Lz-V73.title" = "會員商城";
+
+/* Class = "UILabel"; text = "Message"; ObjectID = "uIB-8h-baL"; */
+"uIB-8h-baL.text" = "消息";
+
+/* Class = "UITableViewController"; title = "Main"; ObjectID = "uko-IV-HjM"; */
+"uko-IV-HjM.title" = "Main";
+
+/* Class = "UIViewController"; title = "LoginViewController"; ObjectID = "vHg-nZ-9Ls"; */
+"vHg-nZ-9Ls.title" = "LoginViewController";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vJX-3W-zeu"; */
+"vJX-3W-zeu.text" = "無信息";
+
+/* Class = "UILabel"; text = "Integral rule"; ObjectID = "wgk-sK-znf"; */
+"wgk-sK-znf.text" = "積分規則";
+
+/* Class = "UILabel"; text = "Booking"; ObjectID = "x0d-ih-zIE"; */
+"x0d-ih-zIE.text" = "預訂";
+
+/* Class = "UINavigationItem"; title = "EPOT"; ObjectID = "xOO-vH-eYg"; */
+"xOO-vH-eYg.title" = "一鍋堂";
+
+/* Class = "UILabel"; text = "Nickname"; ObjectID = "zRH-Zu-o8N"; */
+"zRH-Zu-o8N.text" = "暱稱";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zSE-Ly-QxW"; */
+"zSE-Ly-QxW.text" = "Label";
+
+/* Class = "UILabel"; text = "Valid period"; ObjectID = "zhb-C2-k7Z"; */
+"zhb-C2-k7Z.text" = "有效期";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zqA-KH-oCE"; */
+"zqA-KH-oCE.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zz0-OZ-XyL"; */
+"zz0-OZ-XyL.text" = "Label";
+

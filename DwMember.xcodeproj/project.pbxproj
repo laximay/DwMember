@@ -39,7 +39,6 @@
 		3D1F008E1F37F89D0080957F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F008D1F37F89D0080957F /* WebViewController.swift */; };
 		3D2569DE1F3D58A800E01816 /* DwEntitys.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569DC1F3D58A800E01816 /* DwEntitys.xcdatamodeld */; };
 		3D2569E31F3D7B9800E01816 /* UIImageView+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569E11F3D7B9800E01816 /* UIImageView+Gif.swift */; };
-		3D2569E41F3D7B9800E01816 /* ZLaunchAdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569E21F3D7B9800E01816 /* ZLaunchAdVC.swift */; };
 		3D2569EB1F3DB28300E01816 /* DwHomeActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569E71F3DB28300E01816 /* DwHomeActivity.swift */; };
 		3D2569EC1F3DB28300E01816 /* DwHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569E81F3DB28300E01816 /* DwHomeData.swift */; };
 		3D2569ED1F3DB28300E01816 /* DwHomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569E91F3DB28300E01816 /* DwHomeFeature.swift */; };
@@ -96,6 +95,8 @@
 		3DD3E2581F2EC4C7001FC47E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD3E2561F2EC4C7001FC47E /* LaunchScreen.storyboard */; };
 		3DD885B21F2F3323007A1CE1 /* PodFile in Resources */ = {isa = PBXBuildFile; fileRef = 3DD885B11F2F3323007A1CE1 /* PodFile */; };
 		3DE9AEC51FA440E900492E09 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9AEC41FA440E900492E09 /* ScanViewController.swift */; };
+		3DEBCD291FC8615B00D9F30E /* ZLaunchAdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBCD281FC8615B00D9F30E /* ZLaunchAdVC.swift */; };
+		3DEBCD2B1FC8753A00D9F30E /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBCD2A1FC8753A00D9F30E /* TempViewController.swift */; };
 		71DA84E6DB0F8C1C269054B6 /* Pods_DwMember.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4CD4F2448D444F046254A9 /* Pods_DwMember.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,7 +140,6 @@
 		3D1F008D1F37F89D0080957F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3D2569DD1F3D58A800E01816 /* DwEntitys.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DwEntitys.xcdatamodel; sourceTree = "<group>"; };
 		3D2569E11F3D7B9800E01816 /* UIImageView+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Gif.swift"; sourceTree = "<group>"; };
-		3D2569E21F3D7B9800E01816 /* ZLaunchAdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdVC.swift; sourceTree = "<group>"; };
 		3D2569E71F3DB28300E01816 /* DwHomeActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwHomeActivity.swift; sourceTree = "<group>"; };
 		3D2569E81F3DB28300E01816 /* DwHomeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwHomeData.swift; sourceTree = "<group>"; };
 		3D2569E91F3DB28300E01816 /* DwHomeFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwHomeFeature.swift; sourceTree = "<group>"; };
@@ -199,6 +199,8 @@
 		3DD885B11F2F3323007A1CE1 /* PodFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodFile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3DD885B31F2F3547007A1CE1 /* DwMember-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DwMember-Bridging-Header.h"; sourceTree = "<group>"; };
 		3DE9AEC41FA440E900492E09 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		3DEBCD281FC8615B00D9F30E /* ZLaunchAdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdVC.swift; sourceTree = "<group>"; };
+		3DEBCD2A1FC8753A00D9F30E /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		43F163E528729B10AFD69FD6 /* Pods-DwMember.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwMember.release.xcconfig"; path = "Pods/Target Support Files/Pods-DwMember/Pods-DwMember.release.xcconfig"; sourceTree = "<group>"; };
 		AC4CD4F2448D444F046254A9 /* Pods_DwMember.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DwMember.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AC6189F94F154D3B69D4C9 /* Pods-DwMember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwMember.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DwMember/Pods-DwMember.debug.xcconfig"; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				3D19865E1F6233B600385DAD /* ResDetailTableViewController.swift */,
 				3D1986601F62367200385DAD /* ResDetailTableViewCell.swift */,
 				3DE9AEC41FA440E900492E09 /* ScanViewController.swift */,
+				3DEBCD2A1FC8753A00D9F30E /* TempViewController.swift */,
 			);
 			name = controll;
 			sourceTree = "<group>";
@@ -283,8 +286,8 @@
 		3D2569E01F3D7B9800E01816 /* ZLaunchAd */ = {
 			isa = PBXGroup;
 			children = (
+				3DEBCD281FC8615B00D9F30E /* ZLaunchAdVC.swift */,
 				3D2569E11F3D7B9800E01816 /* UIImageView+Gif.swift */,
-				3D2569E21F3D7B9800E01816 /* ZLaunchAdVC.swift */,
 			);
 			path = ZLaunchAd;
 			sourceTree = "<group>";
@@ -504,9 +507,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DwMember/Pods-DwMember-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BubbleTransition/BubbleTransition.framework",
+				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/Just/Just.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LLCycleScrollView/LLCycleScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+				"${BUILT_PRODUCTS_DIR}/swiftScan/swiftScan.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BubbleTransition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Just.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLCycleScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/swiftScan.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -519,13 +539,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DwMember-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -559,6 +582,7 @@
 				3D6458661F444D9C008220C3 /* DwWebViewBaseData.swift in Sources */,
 				3D1488951F33085900E90270 /* MallViewController.swift in Sources */,
 				3D493F9B1F3C41F100CEAD4B /* ApiUtil.swift in Sources */,
+				3DEBCD2B1FC8753A00D9F30E /* TempViewController.swift in Sources */,
 				3D1986491F5CE9B000385DAD /* DwArticleRootClass.swift in Sources */,
 				3D493F861F3C2BCF00CEAD4B /* GuiderViewController.swift in Sources */,
 				3D6458D21F4A89C0008220C3 /* DwReservationRemark.swift in Sources */,
@@ -594,6 +618,7 @@
 				3D1428F81F5B9564004116EB /* DwUpdataRootClass.swift in Sources */,
 				3D2569EE1F3DB28300E01816 /* DwHomeRootClass.swift in Sources */,
 				3D171BCD1F4095CC008BC06E /* String.swift in Sources */,
+				3DEBCD291FC8615B00D9F30E /* ZLaunchAdVC.swift in Sources */,
 				3D6458D11F4A89C0008220C3 /* DwReservationReList.swift in Sources */,
 				3D493FA71F3C51A800CEAD4B /* DwStartAd.swift in Sources */,
 				3D91761D1F486BD500E855F6 /* DwPayCodeData.swift in Sources */,
@@ -610,7 +635,6 @@
 				3D6458AE1F4599F1008220C3 /* MessageDetailViewController.swift in Sources */,
 				3D91761E1F486BD500E855F6 /* DwPayCodeRootClass.swift in Sources */,
 				3D154EF21F31A63800A6E157 /* MyTabBarViewController.swift in Sources */,
-				3D2569E41F3D7B9800E01816 /* ZLaunchAdVC.swift in Sources */,
 				3D6458AB1F455E0F008220C3 /* DwMsgListBaseData.swift in Sources */,
 				3D8274F11F43DEC2009BB0C9 /* DwLoginData.swift in Sources */,
 				3D5182481F53F87B00361E3F /* DwBranchsData.swift in Sources */,
@@ -771,8 +795,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 64443H3TSF;
 				INFOPLIST_FILE = DwMember/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dongwangtech.taoheungmember;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongwangtech.epot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DwMember-Bridging-Header.h";
@@ -791,8 +816,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 64443H3TSF;
 				INFOPLIST_FILE = DwMember/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dongwangtech.taoheungmember;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongwangtech.epot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DwMember-Bridging-Header.h";

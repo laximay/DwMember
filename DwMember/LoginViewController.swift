@@ -82,7 +82,18 @@ class LoginViewController: UIViewController {
             }else{
                 //處理接口系統錯誤
                 if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                    print("錯誤代碼\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    //print("錯誤代碼\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    OperationQueue.main.addOperation {
+                        self.msgLab.text = NSLocalizedString("Login failed", comment: "密碼錯誤提示語")
+                        self.msgLab.isHidden = false
+                        
+                    }
+                }
+                
+                    OperationQueue.main.addOperation {
+                    self.msgLab.text = NSLocalizedString("Login failed", comment: "密碼錯誤提示語")
+                    self.msgLab.isHidden = false
+                    
                 }
             }
             
@@ -97,6 +108,7 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let startScale = CGAffineTransform(scaleX: 0, y: 0)
         let startPos = CGAffineTransform(translationX: 0, y: 0)
+        imageLoginLogo.layer.cornerRadius = 30
         imageLoginLogo.isHidden = false
         imageLoginLogo.transform = startScale.concatenating(startPos)
         

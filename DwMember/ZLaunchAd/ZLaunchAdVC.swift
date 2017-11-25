@@ -232,7 +232,7 @@ class ZLaunchAdVC: UIViewController {
     }
     
     deinit {
-        print("byebye")
+        //print("byebye")
     }
 }
 
@@ -294,6 +294,8 @@ extension ZLaunchAdVC {
         self.adImgViewClick = adImgViewClick
     }
     
+  
+    
     /// 添加动画
     fileprivate func addLayer() {
         let bezierPath = UIBezierPath.init(ovalIn: skipBtn.bounds)
@@ -328,7 +330,7 @@ extension ZLaunchAdVC {
         
         originalTimer?.setEventHandler(handler: {
             
-            printLog("默认定时器" + "\(self.defaultTime)")
+            //printLog("默认定时器" + "\(self.defaultTime)")
             
             if self.defaultTime == 0 {
                 
@@ -367,7 +369,7 @@ extension ZLaunchAdVC {
                 
             }
             
-            printLog("广告倒计时" + "\(self.adDuration)")
+            //printLog("广告倒计时" + "\(self.adDuration)")
             
             self.adDuration -= 1
             

@@ -27,7 +27,7 @@ class CouponTableViewController: UITableViewController {
         view.addSubview(spinner)
         spinner.startAnimating()
         
-        //print("我是你爸爸")
+  
         
         switch couponS {
         case .unuse:
@@ -37,10 +37,10 @@ class CouponTableViewController: UITableViewController {
             //print("類型\(couponS.rawValue)")
             getcouponuseList()
         case .over:
-            //print("類型\(couponS.rawValue)")
+            
             getcouponoverList()
         case .mall:
-            //print("類型\(couponS.rawValue)")
+        
             getcouponList()
         default:()
         }
@@ -77,7 +77,6 @@ class CouponTableViewController: UITableViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                 //print("未用",json)
                 if result.ok {
                     if  DwCouponBaseRootClass(fromDictionary: json).code == 1 {
                         self.couponunuseList = DwCouponBaseRootClass(fromDictionary: json).data
@@ -89,7 +88,7 @@ class CouponTableViewController: UITableViewController {
                     }else {
                         //異常處理
                         if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                            print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                           // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                             OperationQueue.main.addOperation {
                                 ApiUtil.openAlert(msg: error.msg, sender: self)
                             }
@@ -124,7 +123,7 @@ class CouponTableViewController: UITableViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                //print("已用",json)
+                
                 if result.ok {
                     if  DwCouponBaseRootClass(fromDictionary: json).code == 1 {
                         self.couponuseList = DwCouponBaseRootClass(fromDictionary: json).data
@@ -161,7 +160,7 @@ class CouponTableViewController: UITableViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                //print("過期",json)
+              
                 if result.ok {
                     if  DwCouponBaseRootClass(fromDictionary: json).code == 1 {
                         self.couponoverList = DwCouponBaseRootClass(fromDictionary: json).data
@@ -173,7 +172,7 @@ class CouponTableViewController: UITableViewController {
                     }else {
                         //異常處理
                         if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                            print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                           // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                             OperationQueue.main.addOperation {
                                 ApiUtil.openAlert(msg: error.msg, sender: self)
                             }
@@ -216,7 +215,7 @@ class CouponTableViewController: UITableViewController {
                     }else {
                         //異常處理
                         if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                            print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                            //print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                             OperationQueue.main.addOperation {
                                 ApiUtil.openAlert(msg: error.msg, sender: self)
                             }
@@ -277,7 +276,7 @@ class CouponTableViewController: UITableViewController {
             let imgUrl = URL(string: coupon.image)
             cell.titleLab.text = coupon.title
             cell.expiredLab.text = coupon.endTime
-            //print("未用imgUrl:\(imgUrl)")
+            
             cell.couponImg.image = #imageLiteral(resourceName: "photoalbum") //加載佔位符
             cell.couponImg.kf.setImage(with: imgUrl)
         case .use:
@@ -285,7 +284,7 @@ class CouponTableViewController: UITableViewController {
             let imgUrl = URL(string: coupon.image)
             cell.titleLab.text = coupon.title
             cell.expiredLab.text = coupon.endTime
-            // print("已用imgUrl:\(imgUrl)")
+         
             cell.couponImg.image = #imageLiteral(resourceName: "photoalbum") //加載佔位符
             cell.couponImg.kf.setImage(with: imgUrl)
             
@@ -294,7 +293,7 @@ class CouponTableViewController: UITableViewController {
             let imgUrl = URL(string: coupon.image)
             cell.titleLab.text = coupon.title
             cell.expiredLab.text = coupon.endTime
-            //print("过期imgUrl:\(imgUrl)")
+            
             cell.couponImg.image = #imageLiteral(resourceName: "photoalbum") //加載佔位符
             cell.couponImg.kf.setImage(with: imgUrl)
             
@@ -305,7 +304,7 @@ class CouponTableViewController: UITableViewController {
             cell.expiredLab.text = coupon.endTime
             cell.descLab.text = coupon.exchangeMsg
             cell.descLab.isHidden = false
-            //print("商城imgUrl:\(imgUrl)")
+            
             cell.couponImg.image = #imageLiteral(resourceName: "photoalbum") //加載佔位符
             cell.couponImg.kf.setImage(with: imgUrl)
             

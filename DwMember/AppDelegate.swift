@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         let mainSB = UIStoryboard(name: "Main", bundle: nil)
         self.couponView = mainSB.instantiateViewController(withIdentifier: "CouponViewController") as! CouponViewController
 
-        ApiUtil.launchCache()
+        //ApiUtil.launchCache()
    
     
         //导航栏设置字体
@@ -52,9 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         }
         
         JPUSHService.setup(withOption: launchOptions,
-                           appKey: "116a28c4d4cbce2f55610675", //這條是測試的KEY，生成版本需要更換
+                           appKey: "632332f84b691dc836b88d1e", //這條是測試的KEY，生成版本需要更換
                            channel: "app store",
-                           apsForProduction: false)
+                           apsForProduction: true)
         
         
         
@@ -82,27 +82,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             let adVC = ZLaunchAdVC.init(defaultDuration: 3, completion: { [weak self] in
                 self?.window?.rootViewController = homeVC
             })
-            /// 延时模拟网络请求 如果存在啟動廣告，則啟動記載廣告
-            /// ====================================================
-            /// ====================================================
-            let defaults = UserDefaults.standard
-           
-            if let url = defaults.string(forKey: "launchImageUrl")  {
-                //dump(url)
+            
+        
+            
+            ApiUtil.launchCache_New({ (imgUrl) in
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() , execute: {
                     
                     let adDuartion = 3
+                          adVC.setAdParams(url: imgUrl, adDuartion: adDuartion, skipBtnType: .circle, adViewBottomDistance: 0, transitionType: .filpFromLeft, adImgViewClick: nil)
                     
-                    /// 设置参数 點擊圖片時候的跳轉
-                    adVC.setAdParams(url: url, adDuartion: adDuartion, skipBtnType: .circle, adViewBottomDistance: 100, transitionType: .filpFromLeft, adImgViewClick: {
-                        //                    let vc = UIViewController()
-                        //                    vc.view.backgroundColor = UIColor.yellow
-                        //                    homeVC.navigationController?.pushViewController(vc, animated: true)
-                        
-                    })
                     
+                   
+                  
                 })
-            }
+            })
+            
             window?.rootViewController = adVC
         }
         
@@ -128,6 +122,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         application.cancelAllLocalNotifications()
         
     }
+    
+    
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
@@ -175,7 +171,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         if context.hasChanges {
             do {
                 try context.save()
-                print("保存成功")
+                //print("保存成功")
             } catch {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -213,7 +209,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     }
     @available(iOS 10.0, *)
     func jpushNotificationCenter(_ center: UNUserNotificationCenter!, willPresent notification: UNNotification!, withCompletionHandler completionHandler: ((Int) -> Void)!) {
-        print(">JPUSHRegisterDelegate jpushNotificationCenter willPresent");
+        //print(">JPUSHRegisterDelegate jpushNotificationCenter willPresent");
         let userInfo = notification.request.content.userInfo
         if (notification.request.trigger?.isKind(of: UNPushNotificationTrigger.self))!{
             JPUSHService.handleRemoteNotification(userInfo)
@@ -223,7 +219,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     }
     @available(iOS 10.0, *)
     func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
-        print(">JPUSHRegisterDelegate jpushNotificationCenter didReceive");
+        //print(">JPUSHRegisterDelegate jpushNotificationCenter didReceive");
         let userInfo = response.notification.request.content.userInfo
         if (response.notification.request.trigger?.isKind(of: UNPushNotificationTrigger.self))!{
             JPUSHService.handleRemoteNotification(userInfo)
