@@ -86,8 +86,8 @@ class BranchDetailTableViewController: UITableViewController,MKMapViewDelegate {
         //创建一个大头针对象
         let objectAnnotation = MKPointAnnotation()
         //设置大头针的显示位置
-        objectAnnotation.coordinate = CLLocation(latitude:Double(branch.latitude)!,
-                                                 longitude: Double(branch.longitude)!).coordinate
+        objectAnnotation.coordinate = CLLocation(latitude:Double(branch.longitude)!,
+                                                 longitude: Double(branch.latitude )!).coordinate
         //设置点击大头针之后显示的标题
         objectAnnotation.title = branch.name1
         //设置点击大头针之后显示的描述

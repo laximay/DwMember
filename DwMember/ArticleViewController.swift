@@ -12,9 +12,11 @@ class ArticleViewController: UIViewController {
     
     var type: articleType =  .ABOUTUS
 
-    @IBOutlet weak var context: UILabel!
+  
+    @IBOutlet weak var content: UITextView!
     @IBOutlet weak var titleLab: UILabel!
     @IBOutlet weak var dateLab: UILabel!
+    fileprivate let SCREEN_WIDTH = UIScreen.main.bounds.size.width
     override func viewDidLoad() {
         super.viewDidLoad()
         getarticle(type: type)
@@ -37,9 +39,12 @@ class ArticleViewController: UIViewController {
                 let datas = DwArticleRootClass(fromDictionary: json).data!
                  let attribstr = try! NSAttributedString.init(data:(datas.content.data(using: String.Encoding.unicode))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
                 
+             
+
                 OperationQueue.main.addOperation {
+                
+                    self.content.attributedText = attribstr
                     
-                    self.context.attributedText = attribstr
                     self.titleLab.text = datas.title
                     self.dateLab.text = datas.date
                     
@@ -50,6 +55,9 @@ class ArticleViewController: UIViewController {
             
         }
     }
+    
+    
+  
     
 
     /*

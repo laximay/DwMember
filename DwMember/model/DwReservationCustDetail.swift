@@ -1,7 +1,7 @@
 //
 //	DwReservationCustDetail.swift
 //
-//	Create by 靖 温 on 21/8/2017
+//	Create by 靖 温 on 29/11/2017
 //	Copyright © 2017. All rights reserved.
 //	模型生成器（小波汉化）JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
@@ -9,11 +9,12 @@ import Foundation
 
 struct DwReservationCustDetail{
 
-	var addr : AnyObject!
+	var addr : String!
 	var ageRange : AnyObject!
 	var bindtype : String!
 	var birthMonth : String!
 	var birthday : Int!
+	var card : AnyObject!
 	var cardNo : String!
 	var companyId : AnyObject!
 	var ctid : AnyObject!
@@ -23,7 +24,7 @@ struct DwReservationCustDetail{
 	var id : String!
 	var lastUpdateNameId : AnyObject!
 	var lastUpdateTime : AnyObject!
-	var lastname : AnyObject!
+	var lastname : String!
 	var mobile : String!
 	var opendid : AnyObject!
 	var outlet : AnyObject!
@@ -42,11 +43,12 @@ struct DwReservationCustDetail{
 	 * 用字典来初始化一个实例并设置各个属性值
 	 */
 	init(fromDictionary dictionary: NSDictionary){
-		addr = dictionary["addr"] as? AnyObject
+		addr = dictionary["addr"] as? String
 		ageRange = dictionary["ageRange"] as? AnyObject
 		bindtype = dictionary["bindtype"] as? String
 		birthMonth = dictionary["birthMonth"] as? String
 		birthday = dictionary["birthday"] as? Int
+		card = dictionary["card"] as? AnyObject
 		cardNo = dictionary["cardNo"] as? String
 		companyId = dictionary["companyId"] as? AnyObject
 		ctid = dictionary["ctid"] as? AnyObject
@@ -56,7 +58,7 @@ struct DwReservationCustDetail{
 		id = dictionary["id"] as? String
 		lastUpdateNameId = dictionary["lastUpdateNameId"] as? AnyObject
 		lastUpdateTime = dictionary["lastUpdateTime"] as? AnyObject
-		lastname = dictionary["lastname"] as? AnyObject
+		lastname = dictionary["lastname"] as? String
 		mobile = dictionary["mobile"] as? String
 		opendid = dictionary["opendid"] as? AnyObject
 		outlet = dictionary["outlet"] as? AnyObject
@@ -76,7 +78,7 @@ struct DwReservationCustDetail{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		let dictionary = NSMutableDictionary()
+		var dictionary = NSMutableDictionary()
 		if addr != nil{
 			dictionary["addr"] = addr
 		}
@@ -91,6 +93,9 @@ struct DwReservationCustDetail{
 		}
 		if birthday != nil{
 			dictionary["birthday"] = birthday
+		}
+		if card != nil{
+			dictionary["card"] = card
 		}
 		if cardNo != nil{
 			dictionary["cardNo"] = cardNo

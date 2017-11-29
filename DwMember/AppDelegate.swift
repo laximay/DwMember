@@ -56,6 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
                            channel: "app store",
                            apsForProduction: true)
         
+        application.applicationIconBadgeNumber = 0;
+        JPUSHService.resetBadge()
+        
         
         
         //啟動頁面

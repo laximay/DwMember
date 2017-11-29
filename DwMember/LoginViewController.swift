@@ -13,7 +13,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var imageLoginLogo: UIImageView!
     @IBOutlet weak var cardNoLab: UITextField!
     @IBOutlet weak var passwordLab: UITextField!
-    @IBOutlet weak var msgLab: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         //每次打開這個頁面都要清空
@@ -34,10 +33,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func registerTap(_ sender: Any) {
-        ApiUtil.webViewHandle(withIdentifier: webViewType.BIND.rawValue, sender: self)
+        ApiUtil.webViewHandle(withIdentifier: webViewType.BIND.rawValue, id: "", sender: self)
     }
     @IBAction func forgetTap(_ sender: Any) {
-        ApiUtil.webViewHandle(withIdentifier: webViewType.MPWD.rawValue, sender: self)
+        ApiUtil.webViewHandle(withIdentifier: webViewType.MPWD.rawValue, id: "", sender: self)
     }
     //登錄
     func login(cardNo: String, password: String )   {
@@ -65,17 +64,19 @@ class LoginViewController: UIViewController {
                     //print("登錄成功")
                     
                     OperationQueue.main.addOperation {
-                        
                         self.navigationController!.popViewController(animated: true)
                     }
                     
                 }else {
                     
                     OperationQueue.main.addOperation {
-                        self.msgLab.text = NSLocalizedString("Login failed", comment: "密碼錯誤提示語")
-                        self.msgLab.isHidden = false
-                        
+                         ApiUtil.openAlert(msg: DwLoginRootClass(fromDictionary: json).msg, sender: self)
+
                     }
+                    
+                    
+                    
+                    
                     
                 }
                 
@@ -84,17 +85,11 @@ class LoginViewController: UIViewController {
                 if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
                     //print("錯誤代碼\(error.status);信息:\(error.message)原因:\(error.exception)")
                     OperationQueue.main.addOperation {
-                        self.msgLab.text = NSLocalizedString("Login failed", comment: "密碼錯誤提示語")
-                        self.msgLab.isHidden = false
-                        
+                             ApiUtil.openAlert(msg: error.message, sender: self)
                     }
+                
                 }
                 
-                    OperationQueue.main.addOperation {
-                    self.msgLab.text = NSLocalizedString("Login failed", comment: "密碼錯誤提示語")
-                    self.msgLab.isHidden = false
-                    
-                }
             }
             
             

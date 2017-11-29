@@ -27,6 +27,7 @@ class ReservationTableViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: CGRect.zero)//去除页脚
         tableView.separatorColor = UIColor(white: 0.9, alpha: 1)//去除分割线
         
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -56,10 +57,11 @@ class ReservationTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resCell", for: indexPath) as! ResTableViewCell
         let res = self.resList[indexPath.row]
-        
+        let persons  = res.persons.map{ "\($0.viewName!):\($0.personNum!)" }.joined(separator: ",")
+
         cell.branchLab.text = res.branch.name1
         cell.addLab.text = res.branch.addr
-        cell.personLab.text = res.person
+        cell.personLab.text = res.person+"(\(persons))"
         cell.timeLab.text = res.indate! + " " + res.intime!
         cell.statusLab.text = res.iscomfrim == "0" ? NSLocalizedString("Waiting for confirmation", comment: "待確認") : NSLocalizedString("Confirmed", comment: "已確認")
         
@@ -126,6 +128,7 @@ class ReservationTableViewController: UITableViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
+                print(json)
                 if result.ok {
                     if  DwReservationRootClass(fromDictionary: json).code == 1 {
                         if let resData   = DwReservationRootClass(fromDictionary: json).data {

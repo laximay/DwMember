@@ -8,13 +8,21 @@
 
 import UIKit
 import Just
-class FindTableViewController: UITableViewController {
+import CoreLocation
+class FindTableViewController: UITableViewController, CLLocationManagerDelegate {
     
-    var outletList: [DwBranchsData] = [] 
-
+    var outletList: [DwBranchsData] = []
+    var latitude: Double = 0.00
+    var longitude: Double = 0.00
+    
+    let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
         
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(self.getOutletList), for: .valueChanged)
@@ -41,13 +49,15 @@ class FindTableViewController: UITableViewController {
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
         avgs.updateValue(ApiUtil.companyCode, forKey: "company")
+         avgs.updateValue(self.latitude, forKey: "latitude")
+         avgs.updateValue(self.longitude, forKey: "longitude")
         
-        
+        dump(avgs)
         Just.post(ApiUtil.outletApi ,  data: avgs) { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
             }
-           //print(json)
+           print(json)
             if result.ok {
                 if  DwBranchsRootClass(fromDictionary: json).code == 1 {
                     self.outletList = DwBranchsRootClass(fromDictionary: json).data
@@ -105,9 +115,14 @@ class FindTableViewController: UITableViewController {
             cell.bgImg.kf.setImage(with: imgUrl)
         }
    
-        cell.titleLab.text = outlet.name1
-        cell.distance.text =  "\(outlet.distance as Int)km"
+        cell.titleLab.text = outlet.name1!
+        
+        let distance = Double(String(format: "%.1f", outlet.distance!/100000))!
+        cell.distance.text =  "\(distance)km"
 
+        
+        
+        
         return cell
     }
     
@@ -146,6 +161,31 @@ class FindTableViewController: UITableViewController {
         return true
     }
     */
+    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        let location:CLLocation = locations[locations.count-1]
+//        //currLocation = locations.last
+//        latitude = Double(String(format: "%.1f", location.coordinate.latitude))!
+//        longitude = Double(String(format: "%.1f", location.coordinate.longitude))!
+//
+//
+//        print("經度:\(latitude) 緯度\(longitude)")
+//         locationManager.stopUpdatingLocation()
+////        label1.text = "\(currentLocation!.coordinate.latitude)"
+////        label2.text = "\(currentLocation!.coordinate.longitude)"
+////        label3.text = "\(currentLocation!.altitude)"
+//    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location:CLLocation = locations[locations.count-1]
+                //currLocation = locations.last
+                latitude = Double(String(format: "%.1f", location.coordinate.latitude))!
+                longitude = Double(String(format: "%.1f", location.coordinate.longitude))!
+        print("緯度:\(latitude) 經度\(longitude)")
+                locationManager.stopUpdatingLocation()
+    }
+    
+    
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

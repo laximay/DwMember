@@ -71,11 +71,11 @@ class MeTableViewController: UITableViewController{
         
         
         if indexPath == [0, 0] {
-            ApiUtil.webViewHandle(withIdentifier: webViewType.JFCX.rawValue, sender: self)
+            ApiUtil.webViewHandle(withIdentifier: webViewType.JFCX.rawValue, id: "",  sender: self)
         }
         
         if indexPath == [1, 0] {
-            ApiUtil.webViewHandle(withIdentifier: webViewType.DZXQ.rawValue, sender: self)
+            ApiUtil.webViewHandle(withIdentifier: webViewType.DZXQ.rawValue, id: "",  sender: self)
         }
         
         if indexPath == [3, 0] {
@@ -108,7 +108,7 @@ class MeTableViewController: UITableViewController{
         
         
         if indexPath == [4, 0] {
-            ApiUtil.webViewHandle(withIdentifier: webViewType.FPWD.rawValue, sender: self)
+            ApiUtil.webViewHandle(withIdentifier: webViewType.FPWD.rawValue, id: "", sender: self)
         }
         
         if indexPath == [4, 3] {
@@ -198,14 +198,19 @@ class MeTableViewController: UITableViewController{
                     //異常處理
                     if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
                        // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
-                        ApiUtil.openAlert(msg: error.msg, sender: self)
+                
+                        OperationQueue.main.addOperation {
+                            ApiUtil.openAlert(msg: error.msg, sender: self)
+                        }
                     }
                     
                 }
             }else{
                 //處理接口系統錯誤
                 if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                    print("錯誤代碼\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.message, sender: self)
+                    }
                 }
             }
             

@@ -89,7 +89,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
            
             defaults.set( str, forKey: "index_data")
             let xx = defaults.string(forKey: "index_data")
-        
+            dump(json)
             if(result.ok){
                 let datas = DwHomeRootClass(fromDictionary: json).data!
                 do{
@@ -118,13 +118,18 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                 }catch{
                     if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
                        // print("錯誤代碼:\(error.code as Int);信息:\(error)原因:\(error.result)")
-                        ApiUtil.openAlert(msg: error.msg, sender: self)
+                        OperationQueue.main.addOperation {
+                            ApiUtil.openAlert(msg: error.msg, sender: self)
+                        }
                     }
                 }
             }else{
                 //處理接口系統錯誤
                 if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                    print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    //print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.message, sender: self)
+                    }
                 }
             }
             
@@ -163,7 +168,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             case .WV:
                 //内部WEBVIEW跳转
                // print("WV")
-                ApiUtil.webViewHandle(withIdentifier: ad.url!, sender: self)
+                ApiUtil.webViewHandle(withIdentifier: ad.url!, id: ad.id!, sender: self)
         
             }
             
@@ -215,7 +220,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             case .WV:
                 //内部WEBVIEW跳转
                // print("WV")
-                ApiUtil.webViewHandle(withIdentifier: feature.url!, sender: self)
+                ApiUtil.webViewHandle(withIdentifier: feature.url!, id: feature.id, sender: self)
             }
         }
         
@@ -333,7 +338,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             case .WV:
                 //内部WEBVIEW跳转
                // print("WV")
-                ApiUtil.webViewHandle(withIdentifier: activity.url!, sender: self)
+                ApiUtil.webViewHandle(withIdentifier: activity.url!, id: activity.id!, sender: self)
             }
         }
         

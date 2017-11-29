@@ -14,6 +14,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     var random = ""
     var cardNo = ""
     var type = ""
+    var id = ""
     
     lazy private var webview: WKWebView = {
        
@@ -47,7 +48,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
             webview.load(URLRequest.init(url: URL.init(string: url)!))
         }else {
         
-            if let url = URL(string: "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)&company=\(ApiUtil.companyCode)"){
+            if let url = URL(string: "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)&company=\(ApiUtil.companyCode)&id=\(id)"){
                 let request = URLRequest(url: url)
                 // webView.loadRequest(request)
                 webview.load(request) //使用更快，内存占用更小的的WKWEBVIEW 使用wkwebview需要注意在所在VIEW里面不勾选under top bars，要不然顶部会缩进去导航条里面

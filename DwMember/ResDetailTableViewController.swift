@@ -41,32 +41,36 @@ class ResDetailTableViewController: UITableViewController {
             cell.nameLab.text = NSLocalizedString("status", comment: "訂座狀態")
             cell.valueLab.text = self.resDetail?.iscomfrim == "0" ? NSLocalizedString("Waiting for confirmation", comment: "待確認") : NSLocalizedString("Confirmed", comment: "已確認")
         case 1:
-            cell.nameLab.text = NSLocalizedString("CardNo", comment: "卡號")
+            cell.nameLab.text = NSLocalizedString("CardNo", comment: "會員卡號")
             cell.valueLab.text = self.resDetail?.cardno
         case 2:
-            cell.nameLab.text = NSLocalizedString("Shop Name", comment: "全稱")
+            cell.nameLab.text = NSLocalizedString("Shop Name", comment: "店鋪名稱")
             cell.valueLab.text = self.resDetail?.branch.name1
         case 3:
-            cell.nameLab.text =  NSLocalizedString("Address", comment: "地址")
+            cell.nameLab.text =  NSLocalizedString("Address", comment: "店鋪地址")
             cell.valueLab.text = self.resDetail?.branch.addr
             
         case 4:
-            cell.nameLab.text = NSLocalizedString("Tel No.", comment: "電話")
+            cell.nameLab.text = NSLocalizedString("Tel No.", comment: "店鋪電話")
             cell.valueLab.text = self.resDetail?.branch.tel
         case 5:
             cell.nameLab.text = NSLocalizedString("Booking Time", comment: "預訂時間")
             cell.valueLab.text =  (self.resDetail?.indate!)! + " " +  (self.resDetail?.intime!)!
         case 6:
-            cell.nameLab.text = NSLocalizedString("Person", comment: "位數")
-            cell.valueLab.text = self.resDetail?.person
-        case 7:
-            cell.nameLab.text = NSLocalizedString("Remark", comment: "備註")
+    
             
-            let remarks = self.resDetail?.remarks.map{ "\($0.remarkName)" }.joined(separator: ";")
+              let persons = self.resDetail?.persons.map{ "\($0.viewName!):\($0.personNum!)" }.joined(separator: ",")
+            
+            cell.nameLab.text = NSLocalizedString("Person", comment: "預訂位數")
+            cell.valueLab.text = (self.resDetail?.person)!+"(\(persons!))"
+        case 7:
+            cell.nameLab.text = NSLocalizedString("Remark", comment: "備註信息")
+            
+            let remarks = self.resDetail?.remarks.map{ "\($0.remarkName!)" }.joined(separator: ";")
             cell.valueLab.text = remarks
         case 8:
             cell.nameLab.text = NSLocalizedString("Reserved food", comment: "預留食品")
-             let meals = self.resDetail?.meals.map{ "\($0.meal) ：\($0.total)" }.joined(separator: ";")
+             let meals = self.resDetail?.meals.map{ "\($0.meal!) ：\($0.total!)" }.joined(separator: ";")
             cell.valueLab.text = meals
             
        

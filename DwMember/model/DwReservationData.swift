@@ -1,7 +1,7 @@
 //
 //	DwReservationData.swift
 //
-//	Create by 靖 温 on 21/8/2017
+//	Create by 靖 温 on 29/11/2017
 //	Copyright © 2017. All rights reserved.
 //	模型生成器（小波汉化）JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
@@ -30,7 +30,7 @@ struct DwReservationData{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		let dictionary = NSMutableDictionary()
+		var dictionary = NSMutableDictionary()
 		if reList != nil{
 			var dictionaryElements = [NSDictionary]()
 			for reListElement in reList {

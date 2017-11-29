@@ -1,7 +1,7 @@
 //
 //	DwReservationReList.swift
 //
-//	Create by 靖 温 on 21/8/2017
+//	Create by 靖 温 on 29/11/2017
 //	Copyright © 2017. All rights reserved.
 //	模型生成器（小波汉化）JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
@@ -13,27 +13,32 @@ struct DwReservationReList{
 	var cardno : String!
 	var custDetail : DwReservationCustDetail!
 	var custName : String!
+	var gender : String!
 	var id : String!
 	var indate : String!
 	var intime : String!
 	var iscomfrim : String!
-	var lastUpdateNameId : AnyObject!
-	var lastUpdateTime : AnyObject!
+	var isseat : String!
+	var lastName : String!
+	var lastUpdateNameId : String!
+	var lastUpdateTime : String!
 	var meals : [DwReservationMeal]!
 	var memPeriod : DwReservationMemPeriod!
 	var orderNo : String!
 	var orderType : String!
-	var outlet : AnyObject!
-	var period : AnyObject!
+	var outlet : String!
+	var period : String!
 	var person : String!
+	var persons : [DwReservationPerson]!
 	var phoneNo : String!
-	var remark1 : AnyObject!
-	var remark2 : AnyObject!
-	var remark3 : AnyObject!
+	var remark1 : String!
+	var remark2 : String!
+	var remark3 : String!
 	var remarks : [DwReservationRemark]!
 	var reservationType : DwReservationReservationType!
-	var tableNo : AnyObject!
-	var type : AnyObject!
+	var serial : String!
+	var tableNo : String!
+	var type : String!
 	var version : Int!
 
 
@@ -49,12 +54,15 @@ struct DwReservationReList{
 				custDetail = DwReservationCustDetail(fromDictionary: custDetailData)
 			}
 		custName = dictionary["custName"] as? String
+		gender = dictionary["gender"] as? String
 		id = dictionary["id"] as? String
 		indate = dictionary["indate"] as? String
 		intime = dictionary["intime"] as? String
 		iscomfrim = dictionary["iscomfrim"] as? String
-		lastUpdateNameId = dictionary["lastUpdateNameId"] as? AnyObject
-		lastUpdateTime = dictionary["lastUpdateTime"] as? AnyObject
+		isseat = dictionary["isseat"] as? String
+		lastName = dictionary["lastName"] as? String
+		lastUpdateNameId = dictionary["lastUpdateNameId"] as? String
+		lastUpdateTime = dictionary["lastUpdateTime"] as? String
 		meals = [DwReservationMeal]()
 		if let mealsArray = dictionary["meals"] as? [NSDictionary]{
 			for dic in mealsArray{
@@ -67,13 +75,20 @@ struct DwReservationReList{
 			}
 		orderNo = dictionary["orderNo"] as? String
 		orderType = dictionary["orderType"] as? String
-		outlet = dictionary["outlet"] as? AnyObject
-		period = dictionary["period"] as? AnyObject
+		outlet = dictionary["outlet"] as? String
+		period = dictionary["period"] as? String
 		person = dictionary["person"] as? String
+		persons = [DwReservationPerson]()
+		if let personsArray = dictionary["persons"] as? [NSDictionary]{
+			for dic in personsArray{
+				let value = DwReservationPerson(fromDictionary: dic)
+				persons.append(value)
+			}
+		}
 		phoneNo = dictionary["phoneNo"] as? String
-		remark1 = dictionary["remark1"] as? AnyObject
-		remark2 = dictionary["remark2"] as? AnyObject
-		remark3 = dictionary["remark3"] as? AnyObject
+		remark1 = dictionary["remark1"] as? String
+		remark2 = dictionary["remark2"] as? String
+		remark3 = dictionary["remark3"] as? String
 		remarks = [DwReservationRemark]()
 		if let remarksArray = dictionary["remarks"] as? [NSDictionary]{
 			for dic in remarksArray{
@@ -84,8 +99,9 @@ struct DwReservationReList{
 		if let reservationTypeData = dictionary["reservationType"] as? NSDictionary{
 				reservationType = DwReservationReservationType(fromDictionary: reservationTypeData)
 			}
-		tableNo = dictionary["tableNo"] as? AnyObject
-		type = dictionary["type"] as? AnyObject
+		serial = dictionary["serial"] as? String
+		tableNo = dictionary["tableNo"] as? String
+		type = dictionary["type"] as? String
 		version = dictionary["version"] as? Int
 	}
 
@@ -94,7 +110,7 @@ struct DwReservationReList{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		let dictionary = NSMutableDictionary()
+        let dictionary = NSMutableDictionary()
 		if branch != nil{
 			dictionary["branch"] = branch.toDictionary()
 		}
@@ -107,6 +123,9 @@ struct DwReservationReList{
 		if custName != nil{
 			dictionary["custName"] = custName
 		}
+		if gender != nil{
+			dictionary["gender"] = gender
+		}
 		if id != nil{
 			dictionary["id"] = id
 		}
@@ -118,6 +137,12 @@ struct DwReservationReList{
 		}
 		if iscomfrim != nil{
 			dictionary["iscomfrim"] = iscomfrim
+		}
+		if isseat != nil{
+			dictionary["isseat"] = isseat
+		}
+		if lastName != nil{
+			dictionary["lastName"] = lastName
 		}
 		if lastUpdateNameId != nil{
 			dictionary["lastUpdateNameId"] = lastUpdateNameId
@@ -150,6 +175,13 @@ struct DwReservationReList{
 		if person != nil{
 			dictionary["person"] = person
 		}
+		if persons != nil{
+			var dictionaryElements = [NSDictionary]()
+			for personsElement in persons {
+				dictionaryElements.append(personsElement.toDictionary())
+			}
+			dictionary["persons"] = dictionaryElements
+		}
 		if phoneNo != nil{
 			dictionary["phoneNo"] = phoneNo
 		}
@@ -171,6 +203,9 @@ struct DwReservationReList{
 		}
 		if reservationType != nil{
 			dictionary["reservationType"] = reservationType.toDictionary()
+		}
+		if serial != nil{
+			dictionary["serial"] = serial
 		}
 		if tableNo != nil{
 			dictionary["tableNo"] = tableNo

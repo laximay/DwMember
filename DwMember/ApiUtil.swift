@@ -59,6 +59,7 @@ let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", 
                                            "MPWD": webViewConfig(code : "MPWD", verif: false),
                                            "DZXQ": webViewConfig(code: "DZXQ", verif: true),
                                            "FPWD": webViewConfig(code: "FPWD", verif: true),
+                                           "HDXQ": webViewConfig(code: "HDXQ", verif: false),
                                            "JFCX": webViewConfig(code: "JFCX", verif: true),
                             "HYJH": webViewConfig(code: "HYJH", verif: true)]
 
@@ -70,8 +71,8 @@ open class ApiUtil{
     }
     
     //服務鏈接
-    static let serverUrl = "https://cloud.ablegenius.com/a"
-    //static var serverUrl = "http://192.168.90.93:8081"
+    //static let serverUrl = "https://cloud.ablegenius.com/a"
+    static var serverUrl = "http://192.168.90.220:8088"
     //公司代碼
     static let companyCode = "EPOT"
     //公司代碼
@@ -239,7 +240,7 @@ open class ApiUtil{
     }
     
     //webView統一跳轉控制器
-    static func webViewHandle(withIdentifier: String, sender: UIViewController ) {
+    static func webViewHandle(withIdentifier: String, id: String, sender: UIViewController ) {
         
         let webCode = inrwebView[withIdentifier]!
         //dump(webCode)
@@ -259,8 +260,7 @@ open class ApiUtil{
             url = ApiUtil.webviewApi
         }
         
-        dump(avgs)
-        
+
         Just.post(url ,  data: avgs) { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
@@ -274,6 +274,7 @@ open class ApiUtil{
                             if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                                 pageVC.url = datas.url
                                 pageVC.random = datas.random
+                                pageVC.id = id
                                 if let cardNo: String = avgs["cardNo"] as? String {
                                     pageVC.cardNo = cardNo
                                 }
@@ -296,6 +297,9 @@ open class ApiUtil{
                 //處理接口系統錯誤
                 if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
                    // print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.message, sender: sender)
+                    }
                 }
             }
             

@@ -21,7 +21,7 @@ struct DwBranchsData{
     var image : String!
     var latitude :  String!
     var longitude :  String!
-    var distance :  Int!
+    var distance :  Double!
 
 
 
@@ -38,7 +38,7 @@ struct DwBranchsData{
 		name2 = dictionary["name2"] as? String
 		regionName = dictionary["regionName"] as? String
 		telphone = dictionary["telphone"] as? String
-        distance = dictionary["distance"] as? Int
+        distance = dictionary["distance"] as? Double
         image = dictionary["image"] as? String
         latitude = dictionary["latitude"] as? String
         longitude = dictionary["longitude"] as? String

@@ -19,6 +19,7 @@ struct DwHomeFeature{
 	var sort : Int!
 	var thumb : String!
 	var url : String!
+    var id : String!
 
 
 	/**
@@ -35,6 +36,7 @@ struct DwHomeFeature{
 		sort = dictionary["sort"] as? Int
 		thumb = dictionary["thumb"] as? String
 		url = dictionary["url"] as? String
+        id = dictionary["id"] as? String
 	}
 
 	/**
@@ -73,6 +75,9 @@ struct DwHomeFeature{
 		if url != nil{
 			dictionary["url"] = url
 		}
+        if id != nil{
+            dictionary["id"] = id
+        }
 		return dictionary
 	}
 

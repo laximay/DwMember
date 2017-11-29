@@ -1,7 +1,7 @@
 //
 //	DwReservationReservationType.swift
 //
-//	Create by 靖 温 on 21/8/2017
+//	Create by 靖 温 on 29/11/2017
 //	Copyright © 2017. All rights reserved.
 //	模型生成器（小波汉化）JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
@@ -12,6 +12,7 @@ struct DwReservationReservationType{
 	var branch : AnyObject!
 	var code : String!
 	var id : String!
+	var isdefault : String!
 	var isvalid : String!
 	var lastUpdateNameId : AnyObject!
 	var lastUpdateTime : AnyObject!
@@ -19,6 +20,7 @@ struct DwReservationReservationType{
 	var name : String!
 	var outlet : String!
 	var period : String!
+	var regionId : AnyObject!
 	var remark1 : String!
 	var remark2 : AnyObject!
 	var remark3 : AnyObject!
@@ -32,6 +34,7 @@ struct DwReservationReservationType{
 		branch = dictionary["branch"] as? AnyObject
 		code = dictionary["code"] as? String
 		id = dictionary["id"] as? String
+		isdefault = dictionary["isdefault"] as? String
 		isvalid = dictionary["isvalid"] as? String
 		lastUpdateNameId = dictionary["lastUpdateNameId"] as? AnyObject
 		lastUpdateTime = dictionary["lastUpdateTime"] as? AnyObject
@@ -39,6 +42,7 @@ struct DwReservationReservationType{
 		name = dictionary["name"] as? String
 		outlet = dictionary["outlet"] as? String
 		period = dictionary["period"] as? String
+		regionId = dictionary["regionId"] as? AnyObject
 		remark1 = dictionary["remark1"] as? String
 		remark2 = dictionary["remark2"] as? AnyObject
 		remark3 = dictionary["remark3"] as? AnyObject
@@ -50,7 +54,7 @@ struct DwReservationReservationType{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		let dictionary = NSMutableDictionary()
+		var dictionary = NSMutableDictionary()
 		if branch != nil{
 			dictionary["branch"] = branch
 		}
@@ -59,6 +63,9 @@ struct DwReservationReservationType{
 		}
 		if id != nil{
 			dictionary["id"] = id
+		}
+		if isdefault != nil{
+			dictionary["isdefault"] = isdefault
 		}
 		if isvalid != nil{
 			dictionary["isvalid"] = isvalid
@@ -80,6 +87,9 @@ struct DwReservationReservationType{
 		}
 		if period != nil{
 			dictionary["period"] = period
+		}
+		if regionId != nil{
+			dictionary["regionId"] = regionId
 		}
 		if remark1 != nil{
 			dictionary["remark1"] = remark1

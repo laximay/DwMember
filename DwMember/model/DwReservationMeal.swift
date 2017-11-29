@@ -1,7 +1,7 @@
 //
 //	DwReservationMeal.swift
 //
-//	Create by 靖 温 on 21/8/2017
+//	Create by 靖 温 on 29/11/2017
 //	Copyright © 2017. All rights reserved.
 //	模型生成器（小波汉化）JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
@@ -11,7 +11,9 @@ struct DwReservationMeal{
 
 	var cardno : String!
 	var custname : String!
+	var id : String!
 	var meal : String!
+	var mealCode : String!
 	var mealId : String!
 	var reservationId : String!
 	var total : String!
@@ -23,7 +25,9 @@ struct DwReservationMeal{
 	init(fromDictionary dictionary: NSDictionary){
 		cardno = dictionary["cardno"] as? String
 		custname = dictionary["custname"] as? String
+		id = dictionary["id"] as? String
 		meal = dictionary["meal"] as? String
+		mealCode = dictionary["mealCode"] as? String
 		mealId = dictionary["mealId"] as? String
 		reservationId = dictionary["reservationId"] as? String
 		total = dictionary["total"] as? String
@@ -34,15 +38,21 @@ struct DwReservationMeal{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		let dictionary = NSMutableDictionary()
+		var dictionary = NSMutableDictionary()
 		if cardno != nil{
 			dictionary["cardno"] = cardno
 		}
 		if custname != nil{
 			dictionary["custname"] = custname
 		}
+		if id != nil{
+			dictionary["id"] = id
+		}
 		if meal != nil{
 			dictionary["meal"] = meal
+		}
+		if mealCode != nil{
+			dictionary["mealCode"] = mealCode
 		}
 		if mealId != nil{
 			dictionary["mealId"] = mealId

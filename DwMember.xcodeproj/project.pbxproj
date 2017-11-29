@@ -56,6 +56,8 @@
 		3D5182481F53F87B00361E3F /* DwBranchsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5182461F53F87B00361E3F /* DwBranchsData.swift */; };
 		3D5182491F53F87B00361E3F /* DwBranchsRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5182471F53F87B00361E3F /* DwBranchsRootClass.swift */; };
 		3D51824B1F53F9F700361E3F /* FindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51824A1F53F9F700361E3F /* FindTableViewCell.swift */; };
+		3D51BEC01FCC0DE300C16DEF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D51BEBF1FCC0DD600C16DEF /* CoreLocation.framework */; };
+		3D51BEC21FCE526F00C16DEF /* DwReservationPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51BEC11FCE526E00C16DEF /* DwReservationPerson.swift */; };
 		3D6458631F442A72008220C3 /* DwCountBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458621F442A72008220C3 /* DwCountBaseRootClass.swift */; };
 		3D6458661F444D9C008220C3 /* DwWebViewBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */; };
 		3D6458671F444D9C008220C3 /* DwWebViewBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */; };
@@ -157,6 +159,8 @@
 		3D5182461F53F87B00361E3F /* DwBranchsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwBranchsData.swift; sourceTree = "<group>"; };
 		3D5182471F53F87B00361E3F /* DwBranchsRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwBranchsRootClass.swift; sourceTree = "<group>"; };
 		3D51824A1F53F9F700361E3F /* FindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewCell.swift; sourceTree = "<group>"; };
+		3D51BEBF1FCC0DD600C16DEF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3D51BEC11FCE526E00C16DEF /* DwReservationPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationPerson.swift; sourceTree = "<group>"; };
 		3D6458621F442A72008220C3 /* DwCountBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwCountBaseRootClass.swift; sourceTree = "<group>"; };
 		3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwWebViewBaseData.swift; sourceTree = "<group>"; };
 		3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwWebViewBaseRootClass.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D51BEC01FCC0DE300C16DEF /* CoreLocation.framework in Frameworks */,
 				3D1429001F5C10E8004116EB /* MapKit.framework in Frameworks */,
 				71DA84E6DB0F8C1C269054B6 /* Pods_DwMember.framework in Frameworks */,
 			);
@@ -222,6 +227,7 @@
 		21D3EBA1DFAFC3DEF2DF550E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D51BEBF1FCC0DD600C16DEF /* CoreLocation.framework */,
 				3D1428FF1F5C10E8004116EB /* MapKit.framework */,
 				AC4CD4F2448D444F046254A9 /* Pods_DwMember.framework */,
 			);
@@ -295,6 +301,7 @@
 		3D493F8B1F3C3DB800CEAD4B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				3D51BEC11FCE526E00C16DEF /* DwReservationPerson.swift */,
 				3D1986461F5CE9B000385DAD /* DwArticleData.swift */,
 				3D1986471F5CE9B000385DAD /* DwArticleRootClass.swift */,
 				3D1428F51F5B9564004116EB /* DwUpdataData.swift */,
@@ -432,7 +439,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Wen Jing";
 				TargetAttributes = {
 					3DD3E2461F2EC4C6001FC47E = {
@@ -566,6 +573,7 @@
 				3D19865F1F6233B600385DAD /* ResDetailTableViewController.swift in Sources */,
 				3D1488991F3311A700E90270 /* MessageTableViewController.swift in Sources */,
 				3DE9AEC51FA440E900492E09 /* ScanViewController.swift in Sources */,
+				3D51BEC21FCE526F00C16DEF /* DwReservationPerson.swift in Sources */,
 				3D16157A1F2F765000E33F3D /* BouncesContentView.swift in Sources */,
 				3D2569E31F3D7B9800E01816 /* UIImageView+Gif.swift in Sources */,
 				3D1428FC1F5BC8EE004116EB /* BranchDetailTableViewController.swift in Sources */,
@@ -699,7 +707,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -707,7 +717,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -751,7 +765,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -759,7 +775,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
