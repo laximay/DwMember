@@ -22,6 +22,7 @@ class MeTableViewController: UITableViewController{
     @IBOutlet weak var validperiodLab: UILabel!
     @IBOutlet weak var birthImg: UIImageView!
     var userInfo: DwLoginData?
+    let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +30,8 @@ class MeTableViewController: UITableViewController{
         if let version = defaults.string(forKey: "localVersion"){
             localVersion.text = "當前版本:\(version)"
         }else{
-            localVersion.text = "當前版本:1.0.0.1"
+          
+            localVersion.text = "當前版本:\(currentVersion)"
         }
         
         refreshControl = UIRefreshControl()

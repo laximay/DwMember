@@ -16,14 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     var couponView = CouponViewController()
 
     
-    
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UINavigationBar.appearance().barTintColor =  UIColor.white //设置前景色
         UINavigationBar.appearance().tintColor = UIColor(red: 158/255.0, green: 16/255.0, blue: 38/255.0, alpha: 1)
-        let mainSB = UIStoryboard(name: "Main", bundle: nil)
-        self.couponView = mainSB.instantiateViewController(withIdentifier: "CouponViewController") as! CouponViewController
+        let couponSB = UIStoryboard(name: "Coupon", bundle: nil)
+        self.couponView = couponSB.instantiateViewController(withIdentifier: "CouponViewController") as! CouponViewController
 
         //ApiUtil.launchCache()
    

@@ -71,8 +71,8 @@ open class ApiUtil{
     }
     
     //服務鏈接
-    //static let serverUrl = "https://cloud.ablegenius.com/a"
-    static var serverUrl = "http://192.168.90.220:8088"
+    static let serverUrl = "https://cloud.ablegenius.com/a"
+    //static var serverUrl = "http://192.168.90.220:8088"
     //公司代碼
     static let companyCode = "EPOT"
     //公司代碼
@@ -131,6 +131,7 @@ open class ApiUtil{
     static let encoding: String.Encoding = String.Encoding.utf8
     
     static let mainSB = UIStoryboard(name: "Main", bundle: Bundle.main)
+    static let loginSB = UIStoryboard(name: "Login", bundle: Bundle.main)
     
     
     static let idfv: String =  UIDevice.current.identifierForVendor!.uuidString.replacingOccurrences(of: "-", with: "")
@@ -347,7 +348,7 @@ open class ApiUtil{
             let menu = UIAlertController(title: nil, message: "please sign in", preferredStyle: .alert)
             let optionOK = UIAlertAction(title: "Ok", style: .default, handler: { (_) in
                 
-                if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+                if let pageVC = ApiUtil.loginSB.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
                     
                     //sender.self.navigationController?.pushViewController(pageVC, animated: true)
                     //sender.present(pageVC, animated: true, completion: nil)
@@ -367,7 +368,7 @@ open class ApiUtil{
     static func checklogin_me( sender: UIViewController){
         let defaults = UserDefaults.standard
         guard (defaults.string(forKey: "dwsercet") != nil) else{
-            if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+            if let pageVC = ApiUtil.loginSB.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
                 
                 sender.self.navigationController?.pushViewController(pageVC, animated: true)
                 //sender.present(pageVC, animated: true, completion: nil)

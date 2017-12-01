@@ -56,8 +56,8 @@ class CouponTableViewController: UITableViewController {
 
     
     class func create() -> CouponTableViewController {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        return mainStoryboard.instantiateViewController(withIdentifier: String(describing: self)) as! CouponTableViewController
+        let couponStoryboard = UIStoryboard(name: "Coupon", bundle: nil)
+        return couponStoryboard.instantiateViewController(withIdentifier: String(describing: self)) as! CouponTableViewController
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

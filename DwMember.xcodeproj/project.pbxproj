@@ -15,7 +15,6 @@
 		3D1428FC1F5BC8EE004116EB /* BranchDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1428FB1F5BC8EE004116EB /* BranchDetailTableViewController.swift */; };
 		3D1428FE1F5BCEDD004116EB /* BranchDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1428FD1F5BCEDD004116EB /* BranchDetailTableViewCell.swift */; };
 		3D1429001F5C10E8004116EB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1428FF1F5C10E8004116EB /* MapKit.framework */; };
-		3D1488951F33085900E90270 /* MallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1488941F33085900E90270 /* MallViewController.swift */; };
 		3D1488971F3310C700E90270 /* CouponTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1488961F3310C700E90270 /* CouponTableViewController.swift */; };
 		3D1488991F3311A700E90270 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1488981F3311A700E90270 /* MessageTableViewController.swift */; };
 		3D154EF21F31A63800A6E157 /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D154EF11F31A63800A6E157 /* MyTabBarViewController.swift */; };
@@ -58,6 +57,7 @@
 		3D51824B1F53F9F700361E3F /* FindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51824A1F53F9F700361E3F /* FindTableViewCell.swift */; };
 		3D51BEC01FCC0DE300C16DEF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D51BEBF1FCC0DD600C16DEF /* CoreLocation.framework */; };
 		3D51BEC21FCE526F00C16DEF /* DwReservationPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51BEC11FCE526E00C16DEF /* DwReservationPerson.swift */; };
+		3D51BECA1FD110C900C16DEF /* Queue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D51BEC91FD110C900C16DEF /* Queue.storyboard */; };
 		3D6458631F442A72008220C3 /* DwCountBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458621F442A72008220C3 /* DwCountBaseRootClass.swift */; };
 		3D6458661F444D9C008220C3 /* DwWebViewBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */; };
 		3D6458671F444D9C008220C3 /* DwWebViewBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */; };
@@ -92,6 +92,12 @@
 		3D8274F21F43DEC2009BB0C9 /* DwLoginRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */; };
 		3D91761D1F486BD500E855F6 /* DwPayCodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91761B1F486BD500E855F6 /* DwPayCodeData.swift */; };
 		3D91761E1F486BD500E855F6 /* DwPayCodeRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */; };
+		3DB8A4961FD11CB40076FDD5 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB8A4951FD11CB40076FDD5 /* Coupon.storyboard */; };
+		3DB8A4981FD11D5B0076FDD5 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB8A4971FD11D5B0076FDD5 /* Message.storyboard */; };
+		3DB8A49A1FD11DA10076FDD5 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB8A4991FD11DA10076FDD5 /* Find.storyboard */; };
+		3DB8A49C1FD11E2A0076FDD5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB8A49B1FD11E2A0076FDD5 /* Login.storyboard */; };
+		3DB8A49E1FD11E630076FDD5 /* Res.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB8A49D1FD11E630076FDD5 /* Res.storyboard */; };
+		3DB8A4A01FD11E8B0076FDD5 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB8A49F1FD11E8B0076FDD5 /* Me.storyboard */; };
 		3DD3E24B1F2EC4C6001FC47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3E24A1F2EC4C6001FC47E /* AppDelegate.swift */; };
 		3DD3E2501F2EC4C6001FC47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD3E24E1F2EC4C6001FC47E /* Main.storyboard */; };
 		3DD3E2581F2EC4C7001FC47E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD3E2561F2EC4C7001FC47E /* LaunchScreen.storyboard */; };
@@ -111,7 +117,6 @@
 		3D1428FB1F5BC8EE004116EB /* BranchDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchDetailTableViewController.swift; sourceTree = "<group>"; };
 		3D1428FD1F5BCEDD004116EB /* BranchDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3D1428FF1F5C10E8004116EB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		3D1488941F33085900E90270 /* MallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MallViewController.swift; sourceTree = "<group>"; };
 		3D1488961F3310C700E90270 /* CouponTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponTableViewController.swift; sourceTree = "<group>"; };
 		3D1488981F3311A700E90270 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		3D154EF11F31A63800A6E157 /* MyTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +166,7 @@
 		3D51824A1F53F9F700361E3F /* FindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewCell.swift; sourceTree = "<group>"; };
 		3D51BEBF1FCC0DD600C16DEF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3D51BEC11FCE526E00C16DEF /* DwReservationPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationPerson.swift; sourceTree = "<group>"; };
+		3D51BEC91FD110C900C16DEF /* Queue.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Queue.storyboard; sourceTree = "<group>"; };
 		3D6458621F442A72008220C3 /* DwCountBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwCountBaseRootClass.swift; sourceTree = "<group>"; };
 		3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwWebViewBaseData.swift; sourceTree = "<group>"; };
 		3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwWebViewBaseRootClass.swift; sourceTree = "<group>"; };
@@ -195,6 +201,12 @@
 		3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginRootClass.swift; sourceTree = "<group>"; };
 		3D91761B1F486BD500E855F6 /* DwPayCodeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPayCodeData.swift; sourceTree = "<group>"; };
 		3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPayCodeRootClass.swift; sourceTree = "<group>"; };
+		3DB8A4951FD11CB40076FDD5 /* Coupon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Coupon.storyboard; sourceTree = "<group>"; };
+		3DB8A4971FD11D5B0076FDD5 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		3DB8A4991FD11DA10076FDD5 /* Find.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Find.storyboard; sourceTree = "<group>"; };
+		3DB8A49B1FD11E2A0076FDD5 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		3DB8A49D1FD11E630076FDD5 /* Res.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Res.storyboard; sourceTree = "<group>"; };
+		3DB8A49F1FD11E8B0076FDD5 /* Me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		3DD3E2471F2EC4C6001FC47E /* DwMember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DwMember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD3E24A1F2EC4C6001FC47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DD3E24F1F2EC4C6001FC47E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -253,7 +265,6 @@
 				3D11B39D1F306D020031DD5C /* MainActivitysTableViewCell.swift */,
 				3D1F008D1F37F89D0080957F /* WebViewController.swift */,
 				3D31C4521F322F2000988876 /* LoginViewController.swift */,
-				3D1488941F33085900E90270 /* MallViewController.swift */,
 				3D493F851F3C2BCF00CEAD4B /* GuiderViewController.swift */,
 				3D493F871F3C2C2C00CEAD4B /* ContentViewController.swift */,
 				3D1488981F3311A700E90270 /* MessageTableViewController.swift */,
@@ -373,6 +384,13 @@
 		3DD3E2491F2EC4C6001FC47E /* DwMember */ = {
 			isa = PBXGroup;
 			children = (
+				3DB8A49F1FD11E8B0076FDD5 /* Me.storyboard */,
+				3DB8A49D1FD11E630076FDD5 /* Res.storyboard */,
+				3DB8A49B1FD11E2A0076FDD5 /* Login.storyboard */,
+				3DB8A4991FD11DA10076FDD5 /* Find.storyboard */,
+				3DB8A4971FD11D5B0076FDD5 /* Message.storyboard */,
+				3DB8A4951FD11CB40076FDD5 /* Coupon.storyboard */,
+				3D51BEC91FD110C900C16DEF /* Queue.storyboard */,
 				3D19865B1F60F12D00385DAD /* InfoPlist.strings */,
 				3D1986561F60F12B00385DAD /* Localizable.strings */,
 				3D19864C1F60DEAD00385DAD /* Assets.xcassets */,
@@ -482,11 +500,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D1986541F60F12B00385DAD /* Localizable.strings in Resources */,
+				3DB8A49A1FD11DA10076FDD5 /* Find.storyboard in Resources */,
 				3D1986591F60F12D00385DAD /* InfoPlist.strings in Resources */,
+				3D51BECA1FD110C900C16DEF /* Queue.storyboard in Resources */,
 				3DD3E2581F2EC4C7001FC47E /* LaunchScreen.storyboard in Resources */,
+				3DB8A4981FD11D5B0076FDD5 /* Message.storyboard in Resources */,
+				3DB8A4961FD11CB40076FDD5 /* Coupon.storyboard in Resources */,
+				3DB8A49E1FD11E630076FDD5 /* Res.storyboard in Resources */,
 				3DD3E2501F2EC4C6001FC47E /* Main.storyboard in Resources */,
 				3D19864D1F60DEAD00385DAD /* Assets.xcassets in Resources */,
 				3DD885B21F2F3323007A1CE1 /* PodFile in Resources */,
+				3DB8A4A01FD11E8B0076FDD5 /* Me.storyboard in Resources */,
+				3DB8A49C1FD11E2A0076FDD5 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,7 +613,6 @@
 				3D493FA51F3C51A800CEAD4B /* DwGuideData.swift in Sources */,
 				3D2569EC1F3DB28300E01816 /* DwHomeData.swift in Sources */,
 				3D6458661F444D9C008220C3 /* DwWebViewBaseData.swift in Sources */,
-				3D1488951F33085900E90270 /* MallViewController.swift in Sources */,
 				3D493F9B1F3C41F100CEAD4B /* ApiUtil.swift in Sources */,
 				3DEBCD2B1FC8753A00D9F30E /* TempViewController.swift in Sources */,
 				3D1986491F5CE9B000385DAD /* DwArticleRootClass.swift in Sources */,

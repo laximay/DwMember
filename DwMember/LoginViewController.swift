@@ -20,7 +20,15 @@ class LoginViewController: UIViewController {
         defaults.removeObject(forKey: "dwsercet")
         defaults.removeObject(forKey: "cardNo")
         
+        cardNoLab.inputAccessoryView = AddToolBar()
+        passwordLab.inputAccessoryView = AddToolBar()
         
+        
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(false)
     }
     
     override func didReceiveMemoryWarning() {
@@ -114,6 +122,22 @@ class LoginViewController: UIViewController {
         }, completion: nil)
         
     }
+    
+    func AddToolBar() -> UIToolbar {
+        let toolBar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 35))
+        toolBar.backgroundColor = UIColor.gray
+        let spaceBtn = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let barBtn = UIBarButtonItem(title: "完成", style: .plain, target: self, action: #selector(doneNum))
+        toolBar.items = [spaceBtn, barBtn]
+        toolBar.sizeToFit()
+        return toolBar
+    }
+    
+    func doneNum() {
+        self.view.endEditing(false)
+    }
+    
+ 
     
     
     /*

@@ -12,6 +12,9 @@ import BubbleTransition
 class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UIViewControllerTransitioningDelegate {
     let transition = BubbleTransition() //第三方轉場動畫
     let mainSB = UIStoryboard(name: "Main", bundle: Bundle.main)
+    let queueSB = UIStoryboard(name: "Queue", bundle: Bundle.main)
+    let couponSB = UIStoryboard(name: "Coupon", bundle: Bundle.main)
+    let meSB = UIStoryboard(name: "Me", bundle: Bundle.main)
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,22 +79,17 @@ class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UI
         let homeNav = mainSB.instantiateViewController(withIdentifier: "homeNav") //一定要用這種方式讀取，要不然會關聯不到storyboard
         homeNav.tabBarItem =  ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Home", comment: "主頁"), image: UIImage(named: "ic_home29"), selectedImage: UIImage(named: "ic_home_on29"))
         
-//        let mallNav = mainSB.instantiateViewController(withIdentifier: "mallNav")
-//        mallNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Mall", comment: "商城") , image: UIImage(named: "ic_store29"), selectedImage: UIImage(named: "ic_store_on29"))
-        
-        let couponNav = mainSB.instantiateViewController(withIdentifier: "couponNav")
+        let couponNav = couponSB.instantiateViewController(withIdentifier: "couponNav")
         couponNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Mall", comment: "商城") , image: UIImage(named: "ic_ticket29"), selectedImage: UIImage(named: "ic_ticket_on29"))
         
         let payVC = mainSB.instantiateViewController(withIdentifier: "PayViewController")
         payVC.tabBarItem = ESTabBarItem.init(IrregularityContentView(), title: nil, image: UIImage(named: "qrcode"), selectedImage: UIImage(named: "qrcode_1"))
         
-//        let findNav = mainSB.instantiateViewController(withIdentifier: "findNav")
-//        findNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Find", comment: "發現") , image: UIImage(named: "ic_discovery29"), selectedImage: UIImage(named: "ic_discovery_on29"))
-        
-        let queueNav = mainSB.instantiateViewController(withIdentifier: "tempNav")
+        let queueNav = queueSB.instantiateViewController(withIdentifier: "tempNav")
         queueNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Queue", comment: "叫號") , image: UIImage(named: "ic_queue"), selectedImage: UIImage(named: "ic_queue_red"))
         
-        let meNav = mainSB.instantiateViewController(withIdentifier: "meNav")
+        
+        let meNav = meSB.instantiateViewController(withIdentifier: "meNav")
         meNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Me", comment: "我的") , image: UIImage(named: "ic_user29"), selectedImage: UIImage(named: "ic_user_on29"))
         
         self.viewControllers = [homeNav, couponNav, payVC, queueNav, meNav]
