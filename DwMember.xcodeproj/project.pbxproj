@@ -134,12 +134,8 @@
 		3D1986461F5CE9B000385DAD /* DwArticleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwArticleData.swift; sourceTree = "<group>"; };
 		3D1986471F5CE9B000385DAD /* DwArticleRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwArticleRootClass.swift; sourceTree = "<group>"; };
 		3D19864C1F60DEAD00385DAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3D19864E1F60EBA100385DAD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		3D19864F1F60EBA100385DAD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3D1986501F60EBB300385DAD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		3D1986511F60EBB300385DAD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		3D1986551F60F12B00385DAD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		3D19865A1F60F12D00385DAD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		3D19865C1F60F16E00385DAD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3D19865D1F60F16F00385DAD /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		3D19865E1F6233B600385DAD /* ResDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +213,10 @@
 		3DE9AEC41FA440E900492E09 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		3DEBCD281FC8615B00D9F30E /* ZLaunchAdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdVC.swift; sourceTree = "<group>"; };
 		3DEBCD2A1FC8753A00D9F30E /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
+		3DF5FE0C1FD6D82F0042D778 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		3DF5FE0D1FD6D8300042D778 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		3DF5FE0E1FD6D8300042D778 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		3DF5FE0F1FD6D8300042D778 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		43F163E528729B10AFD69FD6 /* Pods-DwMember.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwMember.release.xcconfig"; path = "Pods/Target Support Files/Pods-DwMember/Pods-DwMember.release.xcconfig"; sourceTree = "<group>"; };
 		AC4CD4F2448D444F046254A9 /* Pods_DwMember.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DwMember.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AC6189F94F154D3B69D4C9 /* Pods-DwMember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwMember.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DwMember/Pods-DwMember.debug.xcconfig"; sourceTree = "<group>"; };
@@ -483,6 +483,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 3DD3E23E1F2EC4C6001FC47E;
 			productRefGroup = 3DD3E2481F2EC4C6001FC47E /* Products */;
@@ -682,8 +683,8 @@
 		3D1986561F60F12B00385DAD /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3D1986551F60F12B00385DAD /* zh-Hans */,
 				3D19865C1F60F16E00385DAD /* zh-Hant */,
+				3DF5FE0F1FD6D8300042D778 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -691,8 +692,8 @@
 		3D19865B1F60F12D00385DAD /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3D19865A1F60F12D00385DAD /* zh-Hans */,
 				3D19865D1F60F16F00385DAD /* zh-Hant */,
+				3DF5FE0E1FD6D8300042D778 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -701,8 +702,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				3DD3E24F1F2EC4C6001FC47E /* Base */,
-				3D19864E1F60EBA100385DAD /* zh-Hans */,
 				3D1986501F60EBB300385DAD /* zh-Hant */,
+				3DF5FE0C1FD6D82F0042D778 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -711,8 +712,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				3DD3E2571F2EC4C7001FC47E /* Base */,
-				3D19864F1F60EBA100385DAD /* zh-Hans */,
 				3D1986511F60EBB300385DAD /* zh-Hant */,
+				3DF5FE0D1FD6D8300042D778 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
