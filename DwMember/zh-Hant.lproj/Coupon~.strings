@@ -1,0 +1,270 @@
+/* Class = "UILabel"; text = "Label"; ObjectID = "0Cs-Cz-b0k"; */
+"0Cs-Cz-b0k.text" = "Label";
+
+/* Class = "UILabel"; text = "2017-09-19 09:44"; ObjectID = "3yP-fP-QX2"; */
+"3yP-fP-QX2.text" = "2017-09-19 09:44";
+
+/* Class = "UINavigationController"; title = "meNav"; ObjectID = "5tf-iG-25n"; */
+"5tf-iG-25n.title" = "meNav";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6Ue-WU-Wpx"; */
+"6Ue-WU-Wpx.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "6eq-VC-agp"; */
+"6eq-VC-agp.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7hR-q4-UJx"; */
+"7hR-q4-UJx.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8uI-PT-bci"; */
+"8uI-PT-bci.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "9df-47-sxk"; */
+"9df-47-sxk.normalTitle" = "Register";
+
+/* Class = "UILabel"; text = "isread"; ObjectID = "AMp-BX-gs1"; */
+"AMp-BX-gs1.text" = "isread";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "Adu-eX-6Rc"; */
+"Adu-eX-6Rc.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "Birthday month"; ObjectID = "AlI-bp-gZr"; */
+"AlI-bp-gZr.text" = "Birthday month";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Bti-hF-9Jh"; */
+"Bti-hF-9Jh.text" = "Label";
+
+/* Class = "UILabel"; text = "Coupon"; ObjectID = "Bun-A7-xY3"; */
+"Bun-A7-xY3.text" = "Coupon";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DBz-dM-cOQ"; */
+"DBz-dM-cOQ.text" = "Label";
+
+/* Class = "UILabel"; text = "Scan  the security code"; ObjectID = "DqC-Rb-ns4"; */
+"DqC-Rb-ns4.text" = "Scan  the security code";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ED1-cV-zjt"; */
+"ED1-cV-zjt.text" = "Label";
+
+/* Class = "UILabel"; text = "Detailed>"; ObjectID = "ET1-US-kVx"; */
+"ET1-US-kVx.text" = "Detailed>";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "El5-uM-nEW"; */
+"El5-uM-nEW.text" = "About";
+
+/* Class = "UIButton"; normalTitle = "use now!"; ObjectID = "GEu-SC-GRp"; */
+"GEu-SC-GRp.normalTitle" = "use now!";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "IMv-f5-HOl"; */
+"IMv-f5-HOl.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Ikj-jj-Ogw"; */
+"Ikj-jj-Ogw.text" = "0";
+
+/* Class = "UINavigationItem"; title = "Login"; ObjectID = "K7X-UQ-xNq"; */
+"K7X-UQ-xNq.title" = "Login";
+
+/* Class = "UILabel"; text = "當前版本 v1.0"; ObjectID = "Kh1-mk-UC8"; */
+"Kh1-mk-UC8.text" = "當前版本 v1.0";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "LRv-8H-xbM"; */
+"LRv-8H-xbM.normalTitle" = "Submit";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MkR-Lk-Koy"; */
+"MkR-Lk-Koy.text" = "Label";
+
+/* Class = "UITableViewController"; title = "CouponDeatilsTableViewController"; ObjectID = "MlR-oc-ofh"; */
+"MlR-oc-ofh.title" = "CouponDeatilsTableViewController";
+
+/* Class = "UILabel"; text = "F"; ObjectID = "N1S-EG-fs2"; */
+"N1S-EG-fs2.text" = "F";
+
+/* Class = "UILabel"; text = "Memberinfo"; ObjectID = "OCy-3R-XZI"; */
+"OCy-3R-XZI.text" = "Memberinfo";
+
+/* Class = "UILabel"; text = "李大文"; ObjectID = "ORn-A0-1O7"; */
+"ORn-A0-1O7.text" = "李大文";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "QZG-pk-1JA"; */
+"QZG-pk-1JA.headerTitle" = " ";
+
+/* Class = "UINavigationController"; title = "loginNav"; ObjectID = "S5X-sf-b7k"; */
+"S5X-sf-b7k.title" = "loginNav";
+
+/* Class = "UITableViewController"; title = "Message"; ObjectID = "V97-cS-AhR"; */
+"V97-cS-AhR.title" = "Message";
+
+/* Class = "UILabel"; text = "BookingInfo"; ObjectID = "VUp-ZY-emU"; */
+"VUp-ZY-emU.text" = "BookingInfo";
+
+/* Class = "UILabel"; text = "NO.0005897088"; ObjectID = "VWb-9k-tkq"; */
+"VWb-9k-tkq.text" = "NO.0005897088";
+
+/* Class = "UILabel"; text = "Sex"; ObjectID = "WiA-OC-xLg"; */
+"WiA-OC-xLg.text" = "Sex";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Wlp-ZY-4H9"; */
+"Wlp-ZY-4H9.text" = "Label";
+
+/* Class = "UILabel"; text = "Find"; ObjectID = "X57-YV-DSl"; */
+"X57-YV-DSl.text" = "Find";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "XC4-d7-ryg"; */
+"XC4-d7-ryg.headerTitle" = " ";
+
+/* Class = "UINavigationController"; title = "homeNav"; ObjectID = "YLJ-9X-KbK"; */
+"YLJ-9X-KbK.title" = "homeNav";
+
+/* Class = "UILabel"; text = "integral"; ObjectID = "Yjl-Nb-5b8"; */
+"Yjl-Nb-5b8.text" = "integral";
+
+/* Class = "UILabel"; text = "lable"; ObjectID = "Ynk-Uj-Zxu"; */
+"Ynk-Uj-Zxu.text" = "lable";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Z15-T7-SAO"; */
+"Z15-T7-SAO.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Exchange"; ObjectID = "ZUZ-Se-qHo"; */
+"ZUZ-Se-qHo.normalTitle" = "Exchange";
+
+/* Class = "UITextField"; placeholder = "CardNum"; ObjectID = "ZcI-Ri-crw"; */
+"ZcI-Ri-crw.placeholder" = "CardNum";
+
+/* Class = "UINavigationController"; title = "CouponNav"; ObjectID = "c73-ww-KLG"; */
+"c73-ww-KLG.title" = "CouponNav";
+
+/* Class = "UITableViewController"; title = "Me"; ObjectID = "cOY-jX-6F3"; */
+"cOY-jX-6F3.title" = "Me";
+
+/* Class = "UILabel"; text = "CardNo"; ObjectID = "cTb-7Z-HUt"; */
+"cTb-7Z-HUt.text" = "CardNo";
+
+/* Class = "UILabel"; text = "Clear Cache"; ObjectID = "cjy-hU-Zsa"; */
+"cjy-hU-Zsa.text" = "Clear Cache";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "cy6-4q-DiI"; */
+"cy6-4q-DiI.text" = "Address";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "d7L-DL-D5P"; */
+"d7L-DL-D5P.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dJE-x5-tUo"; */
+"dJE-x5-tUo.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fTY-ki-VZd"; */
+"fTY-ki-VZd.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gK1-zA-jQY"; */
+"gK1-zA-jQY.text" = "Label";
+
+/* Class = "UILabel"; text = "60"; ObjectID = "glx-nq-rXE"; */
+"glx-nq-rXE.text" = "60";
+
+/* Class = "UILabel"; text = "Mobile"; ObjectID = "gzd-8g-gWY"; */
+"gzd-8g-gWY.text" = "Mobile";
+
+/* Class = "UILabel"; text = "Waiting for confirmation"; ObjectID = "hKy-j9-QBJ"; */
+"hKy-j9-QBJ.text" = "Waiting for confirmation";
+
+/* Class = "UILabel"; text = "Notice"; ObjectID = "hmS-bZ-zvE"; */
+"hmS-bZ-zvE.text" = "Notice";
+
+/* Class = "UITextField"; placeholder = "PassWord"; ObjectID = "iDf-D3-ch6"; */
+"iDf-D3-ch6.placeholder" = "PassWord";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "itt-ZE-h4x"; */
+"itt-ZE-h4x.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "itt-ZE-h4x"; */
+"itt-ZE-h4x.headerTitle" = " ";
+
+/* Class = "UITableViewController"; title = "ReservationList"; ObjectID = "iz7-YD-exe"; */
+"iz7-YD-exe.title" = "ReservationList";
+
+/* Class = "UILabel"; text = "Membership terms"; ObjectID = "jOg-nt-DHG"; */
+"jOg-nt-DHG.text" = "Membership terms";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "jl2-9q-qsF"; */
+"jl2-9q-qsF.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kEr-qI-iaF"; */
+"kEr-qI-iaF.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Forget?"; ObjectID = "kX4-rt-AEP"; */
+"kX4-rt-AEP.normalTitle" = "Forget?";
+
+/* Class = "UINavigationItem"; title = "Me"; ObjectID = "kaS-JC-yQN"; */
+"kaS-JC-yQN.title" = "Me";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "ksX-TE-nxC"; */
+"ksX-TE-nxC.headerTitle" = " ";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "m6M-Bc-X8G"; */
+"m6M-Bc-X8G.normalTitle" = "+";
+
+/* Class = "UILabel"; text = "  Activity:"; ObjectID = "mYl-j7-EQZ"; */
+"mYl-j7-EQZ.text" = "  Activity:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nH0-Ke-2O7"; */
+"nH0-Ke-2O7.text" = "Label";
+
+/* Class = "UILabel"; text = "Validity:"; ObjectID = "nnM-uI-YRp"; */
+"nnM-uI-YRp.text" = "Validity:";
+
+/* Class = "UILabel"; text = "Change Password"; ObjectID = "oFP-tS-4Qt"; */
+"oFP-tS-4Qt.text" = "Change Password";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qq9-Lx-sZG"; */
+"qq9-Lx-sZG.text" = "Label";
+
+/* Class = "UILabel"; text = "E-mail"; ObjectID = "r8B-oX-b2q"; */
+"r8B-oX-b2q.text" = "E-mail";
+
+/* Class = "UILabel"; text = "Logout"; ObjectID = "rHj-st-t7r"; */
+"rHj-st-t7r.text" = "Logout";
+
+/* Class = "UINavigationItem"; title = "Find"; ObjectID = "rOY-kc-vdw"; */
+"rOY-kc-vdw.title" = "Find";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "rqs-j1-U9f"; */
+"rqs-j1-U9f.normalTitle" = "Login";
+
+/* Class = "UINavigationItem"; title = "Member Mall"; ObjectID = "tdm-Lz-V73"; */
+"tdm-Lz-V73.title" = "Member Mall";
+
+/* Class = "UILabel"; text = "Message"; ObjectID = "uIB-8h-baL"; */
+"uIB-8h-baL.text" = "Message";
+
+/* Class = "UITableViewController"; title = "Main"; ObjectID = "uko-IV-HjM"; */
+"uko-IV-HjM.title" = "Main";
+
+/* Class = "UIViewController"; title = "LoginViewController"; ObjectID = "vHg-nZ-9Ls"; */
+"vHg-nZ-9Ls.title" = "LoginViewController";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vJX-3W-zeu"; */
+"vJX-3W-zeu.text" = "Label";
+
+/* Class = "UILabel"; text = "Integral rule"; ObjectID = "wgk-sK-znf"; */
+"wgk-sK-znf.text" = "Integral rule";
+
+/* Class = "UILabel"; text = "Booking"; ObjectID = "x0d-ih-zIE"; */
+"x0d-ih-zIE.text" = "Booking";
+
+/* Class = "UINavigationItem"; title = "EPOT"; ObjectID = "xOO-vH-eYg"; */
+"xOO-vH-eYg.title" = "EPOT";
+
+/* Class = "UILabel"; text = "Nickname"; ObjectID = "zRH-Zu-o8N"; */
+"zRH-Zu-o8N.text" = "Nickname";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zSE-Ly-QxW"; */
+"zSE-Ly-QxW.text" = "Label";
+
+/* Class = "UILabel"; text = "Valid period"; ObjectID = "zhb-C2-k7Z"; */
+"zhb-C2-k7Z.text" = "Valid period";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zqA-KH-oCE"; */
+"zqA-KH-oCE.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zz0-OZ-XyL"; */
+"zz0-OZ-XyL.text" = "Label";
+

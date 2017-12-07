@@ -1,4 +1,5 @@
-/* 地址 */
+/* 地址
+   店鋪地址 */
 "Address" = "店鋪地址";
 
 /* 品牌 */
@@ -7,7 +8,7 @@
 /* 預訂時間 */
 "Booking Time" = "預訂時間";
 
-/* 卡號 */
+/* 會員卡號 */
 "CardNo" = "會員卡號";
 
 /* 已確認 */
@@ -19,23 +20,14 @@
 /* 引導頁-頭部1 */
 "Fill in simple information" = "填寫簡單信息";
 
-/* 發現 */
-"Find" = "發現";
-
 /* 主頁 */
 "Home" = "主頁";
 
 /* 引導頁-底部3 */
-"Integral Mall" = "積分商城";
+"Integral Mall" = "會員商城";
 
 /* 引導頁-頭部3 */
 "Integral courtesy" = "積分禮遇";
-
-/* 密碼錯誤提示語 */
-"Login failed" = "登陸失敗";
-
-/* 接口請求失敗提示語 */
-"Request failed please check the network" = "請求失敗,請檢查網絡";
 
 /* 商城 */
 "Mall" = "商城";
@@ -44,27 +36,32 @@
 "Me" = "我的";
 
 /* 引導頁-底部1 */
-"Membership registration" = "會員註冊";
+"Membership registration" = "會籍註冊";
 
 /* 引導頁-底部2 */
 "More offers" = "更多優惠";
 
-/* 位數 */
+/* 預訂位數 */
 "Person" = "預訂位數";
 
-/* 引導頁-頭部2 */
-"Receive offers" = "接收優惠訊息";
+/* 叫號 */
+"Queue" = "叫號";
 
-/* 備註 */
-"Remark" = "備註信息";
+/* 引導頁-頭部2 */
+"Receive offers" = "接收優惠";
+
+/* 備註信息 */
+"Remark" = "備註";
 
 /* 預留食品 */
 "Reserved food" = "預留食品";
 
-/* 全稱 */
+/* 店鋪名稱
+   全稱 */
 "Shop Name" = "店鋪名稱";
 
-/* 電話 */
+/* 店鋪電話
+   電話 */
 "Tel No." = "店鋪電話";
 
 /* 至 */
