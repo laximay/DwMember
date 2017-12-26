@@ -1,6 +1,6 @@
 /* 地址
    店鋪地址 */
-"Address" = "店铺地址";
+"Address" = "地址";
 
 /* 品牌 */
 "Band" = "品牌";
@@ -9,7 +9,7 @@
 "Booking Time" = "预订时间";
 
 /* 會員卡號 */
-"CardNo" = "会员卡号";
+"CardNo" = "卡号";
 
 /* 已確認 */
 "Confirmed" = "已确认";
@@ -18,13 +18,13 @@
 "Expired" = "已过期";
 
 /* 引導頁-頭部1 */
-"Fill in simple information" = "填写简单信息";
+"Fill in simple information" = "引导页";
 
 /* 主頁 */
 "Home" = "主页";
 
 /* 引導頁-底部3 */
-"Integral Mall" = "积分商城";
+"Integral Mall" = "会员商城";
 
 /* 引導頁-頭部3 */
 "Integral courtesy" = "积分礼遇";
@@ -45,13 +45,13 @@
 "Person" = "预订位数";
 
 /* 叫號 */
-"Queue" = "叫號";
+"Queue" = "叫号";
 
 /* 引導頁-頭部2 */
-"Receive offers" = "接收优惠资讯";
+"Receive offers" = "接收优惠信息";
 
 /* 備註信息 */
-"Remark" = "信息备注";
+"Remark" = "备注";
 
 /* 預留食品 */
 "Reserved food" = "预留食品";

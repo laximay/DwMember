@@ -1,12 +1,9 @@
 /* (No Comment) */
-"CFBundleDisplayName" = "一锅堂";
+"CFBundleDisplayName" = "";
 
 /* (No Comment) */
-"CFBundleName" = "EPOT";
+"NSCameraUsageDescription" = "使用照相机?";
 
 /* (No Comment) */
-"NSCameraUsageDescription" = "是否允许使用相机?";
-
-/* (No Comment) */
-"NSPhotoLibraryUsageDescription" = "是否允许访问相册?";
+"NSPhotoLibraryUsageDescription" = "使用相册?";
 
