@@ -53,13 +53,14 @@ class LoginViewController: UIViewController {
         
         avgs.updateValue(cardNo, forKey: "cardNo")
         avgs.updateValue(password.md5().md5(), forKey: "password")
-        let defaults = UserDefaults.standard
-        //保存KEY，保存操作只在登錄的時候做一次，如果成功則會沿用，重新調用登錄方法會覆蓋
+        
         let key = "\(cardNo)#\(password.md5())"
+        let defaults = UserDefaults.standard
         defaults.set(key, forKey: "dwsercet")
-        defaults.set(cardNo, forKey: "cardNo")
+    
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
+        dump(avgs)
         Just.post(ApiUtil.loginApi ,  data: avgs) { (result) in
             
             
@@ -70,6 +71,12 @@ class LoginViewController: UIViewController {
             if result.ok {
                 if   DwLoginRootClass(fromDictionary: json).code == 1 {
                     //print("登錄成功")
+                    let defaults = UserDefaults.standard
+                    let realcardNo: String  = DwLoginRootClass(fromDictionary: json).data.card.cardno
+                    //保存KEY，保存操作只在登錄的時候做一次，如果成功則會沿用，重新調用登錄方法會覆蓋
+                    let key = "\(realcardNo)#\(password.md5())"
+                   // defaults.set(key, forKey: "dwsercet")
+                    defaults.set(realcardNo, forKey: "cardNo")
                     
                     OperationQueue.main.addOperation {
                         self.navigationController!.popViewController(animated: true)

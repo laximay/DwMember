@@ -342,6 +342,7 @@ open class ApiUtil{
         
     }
     
+    
     static func checklogin( sender: UIViewController){
         let defaults = UserDefaults.standard
         guard (defaults.string(forKey: "dwsercet") != nil) else{

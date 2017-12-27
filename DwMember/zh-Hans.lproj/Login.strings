@@ -8,7 +8,7 @@
 "S5X-sf-b7k.title" = "loginNav";
 
 /* Class = "UITextField"; placeholder = "CardNum"; ObjectID = "ZcI-Ri-crw"; */
-"ZcI-Ri-crw.placeholder" = "卡号";
+"ZcI-Ri-crw.placeholder" = "卡号或手机号码";
 
 /* Class = "UITextField"; placeholder = "PassWord"; ObjectID = "iDf-D3-ch6"; */
 "iDf-D3-ch6.placeholder" = "密码";
