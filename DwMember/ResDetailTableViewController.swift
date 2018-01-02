@@ -27,7 +27,7 @@ class ResDetailTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 9
+        return 10
     }
 
    
@@ -72,6 +72,10 @@ class ResDetailTableViewController: UITableViewController {
             cell.nameLab.text = NSLocalizedString("Reserved food", comment: "預留食品")
              let meals = self.resDetail?.meals.map{ "\($0.meal!) ：\($0.total!)" }.joined(separator: ";")
             cell.valueLab.text = meals
+        case 9:
+            cell.nameLab.text = NSLocalizedString("tableNo", comment: "分配桌臺")
+            
+             cell.valueLab.text =  self.resDetail?.tableNo
             
        
             
