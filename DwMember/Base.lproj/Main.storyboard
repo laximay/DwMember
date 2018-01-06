@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4eS-xY-7cL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4eS-xY-7cL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,104 +46,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="s7L-1J-Vpr">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hfx-Xu-M1e">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESI-JK-sBN">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESI-JK-sBN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="155"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="155" id="SvI-9X-Hae"/>
-                                            </constraints>
-                                        </view>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Pq-2g-qRH">
-                                            <rect key="frame" x="0.0" y="155" width="375" height="65"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukm-GD-O3b">
-                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="65"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <state key="normal">
-                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="featureTap:" destination="uko-IV-HjM" eventType="touchUpInside" id="b2x-CO-sQf"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUm-Y2-GqX">
-                                                    <rect key="frame" x="94" y="0.0" width="93.5" height="65"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <state key="normal">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="featureTap:" destination="uko-IV-HjM" eventType="touchUpInside" id="9Cj-lt-0iN"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzy-uF-egH">
-                                                    <rect key="frame" x="187.5" y="0.0" width="94" height="65"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <state key="normal">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="featureTap:" destination="uko-IV-HjM" eventType="touchUpInside" id="QLm-KE-RH5"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUg-Vx-LAj">
-                                                    <rect key="frame" x="281.5" y="0.0" width="93.5" height="65"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <state key="normal">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="featureTap:" destination="uko-IV-HjM" eventType="touchUpInside" id="QbM-mk-aQD"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="6Pq-2g-qRH" secondAttribute="height" multiplier="375:65" id="CJk-zc-JlW"/>
-                                            </constraints>
-                                        </stackView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi0-cE-lFn">
-                                            <rect key="frame" x="0.0" y="220" width="375" height="30"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="  Activity:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYl-j7-EQZ" userLabel="Activity:">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="ESI-JK-sBN" secondAttribute="trailing" id="8I9-jx-MZL"/>
-                                        <constraint firstItem="ESI-JK-sBN" firstAttribute="centerX" secondItem="Hfx-Xu-M1e" secondAttribute="centerX" id="N9o-VV-Yub"/>
-                                        <constraint firstItem="ESI-JK-sBN" firstAttribute="leading" secondItem="Hfx-Xu-M1e" secondAttribute="leading" id="xUe-uA-y8M"/>
-                                    </constraints>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="  Activity:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYl-j7-EQZ" userLabel="Activity:">
+                                    <rect key="frame" x="8" y="322.5" width="67" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Pq-2g-qRH">
+                                    <rect key="frame" x="0.0" y="250" width="375" height="72.5"/>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="Hfx-Xu-M1e" firstAttribute="leading" secondItem="s7L-1J-Vpr" secondAttribute="leading" id="CYn-zM-nOx"/>
-                                <constraint firstItem="6Pq-2g-qRH" firstAttribute="width" secondItem="s7L-1J-Vpr" secondAttribute="width" id="TpN-bm-JT8"/>
-                                <constraint firstAttribute="trailing" secondItem="Hfx-Xu-M1e" secondAttribute="trailing" id="oOn-UV-hX6"/>
-                                <constraint firstItem="Hfx-Xu-M1e" firstAttribute="top" secondItem="s7L-1J-Vpr" secondAttribute="top" id="sbI-1k-dG7"/>
-                                <constraint firstAttribute="bottom" secondItem="Hfx-Xu-M1e" secondAttribute="bottom" id="uL5-o4-XDD"/>
+                                <constraint firstItem="mYl-j7-EQZ" firstAttribute="leading" secondItem="s7L-1J-Vpr" secondAttribute="leading" constant="8" id="3JE-Dk-EYV"/>
+                                <constraint firstItem="mYl-j7-EQZ" firstAttribute="top" secondItem="6Pq-2g-qRH" secondAttribute="bottom" id="DCD-Ru-8HJ"/>
+                                <constraint firstItem="ESI-JK-sBN" firstAttribute="leading" secondItem="s7L-1J-Vpr" secondAttribute="leading" id="MFv-bE-b2N"/>
+                                <constraint firstItem="6Pq-2g-qRH" firstAttribute="leading" secondItem="s7L-1J-Vpr" secondAttribute="leading" id="Q1m-JN-frI"/>
+                                <constraint firstAttribute="trailing" secondItem="ESI-JK-sBN" secondAttribute="trailing" id="Smt-9I-1pb"/>
+                                <constraint firstAttribute="bottom" secondItem="ESI-JK-sBN" secondAttribute="bottom" constant="100" id="TbQ-K1-4Y0"/>
+                                <constraint firstAttribute="trailing" secondItem="6Pq-2g-qRH" secondAttribute="trailing" id="ZtA-M1-Ymo"/>
+                                <constraint firstItem="ESI-JK-sBN" firstAttribute="top" secondItem="s7L-1J-Vpr" secondAttribute="top" id="dDF-o8-NOf"/>
+                                <constraint firstItem="6Pq-2g-qRH" firstAttribute="firstBaseline" secondItem="ESI-JK-sBN" secondAttribute="bottom" id="egg-1O-o7d"/>
+                                <constraint firstAttribute="bottom" secondItem="mYl-j7-EQZ" secondAttribute="bottom" constant="8" id="wBb-JY-gj9"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityCell" rowHeight="200" id="F8j-RX-XNL" customClass="MainActivitysTableViewCell" customModule="DwMember" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="278" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="378" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8j-RX-XNL" id="cXt-QH-sxc">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
@@ -192,7 +128,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hku-g8-s4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="-74"/>
+            <point key="canvasLocation" x="796" y="-74.212893553223395"/>
         </scene>
         <!--Scan View Controller-->
         <scene sceneID="R0n-n3-c8X">

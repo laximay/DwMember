@@ -88,7 +88,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             let str = self.getJSONStringFromDictionary(dictionary: json);
            
             defaults.set( str, forKey: "index_data")
-            let xx = defaults.string(forKey: "index_data")
+         
             dump(json)
             if(result.ok){
                 let datas = DwHomeRootClass(fromDictionary: json).data!
@@ -146,7 +146,8 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     func addMainScrollView() {
         let w = UIScreen.main.bounds.width
-        let mainScrollView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect.init(x: 0, y:0, width: w, height: 155), imageURLPaths: self.scrollImageUrls, didSelectItemAtIndex: { index in
+        let h = w * 0.75
+        let mainScrollView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect.init(x: 0, y:0, width: w, height: h), imageURLPaths: self.scrollImageUrls, didSelectItemAtIndex: { index in
            // print("当前点击图片的位置为:\(index)")
             let ad = self.ads[index]
             let openType = opentypeM.init(rawValue: ad.opentype!).unsafelyUnwrapped
@@ -253,10 +254,10 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     func createMenuBtn() {
         
         
-        let btn1 : UIButton = menuView.arrangedSubviews[0] as! UIButton
-        let btn2 : UIButton = menuView.arrangedSubviews[1] as! UIButton
-        let btn3 : UIButton = menuView.arrangedSubviews[2] as! UIButton
-        let btn4 : UIButton = menuView.arrangedSubviews[3] as! UIButton
+        let btn1 : UIButton = UIButton()
+        let btn2 : UIButton = UIButton()
+        let btn3 : UIButton = UIButton()
+        let btn4 : UIButton = UIButton()
         
         //        btn1.setLocal(image: UIImage(named: "thumb")!, title: "网", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
         //        btn2.setLocal(image: UIImage(named: "thumb")!, title: "络", titlePosition: .bottom,additionalSpacing: 10.0, state: .normal)
@@ -283,6 +284,11 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             btn4.tag = 3
             
         }
+        
+        self.menuView.addSubview(btn1)
+        self.menuView.addSubview(btn2)
+        self.menuView.addSubview(btn3)
+        self.menuView.addSubview(btn4)
         
     }
     
