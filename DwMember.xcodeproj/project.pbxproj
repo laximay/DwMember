@@ -89,14 +89,12 @@
 		3D8274F21F43DEC2009BB0C9 /* DwLoginRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */; };
 		3D91761D1F486BD500E855F6 /* DwPayCodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91761B1F486BD500E855F6 /* DwPayCodeData.swift */; };
 		3D91761E1F486BD500E855F6 /* DwPayCodeRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */; };
-		3DB7B1FD1FD7EE910092FAC0 /* Coupon~.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1EB1FD7EE8F0092FAC0 /* Coupon~.storyboard */; };
 		3DB7B1FE1FD7EE910092FAC0 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1ED1FD7EE8F0092FAC0 /* Me.storyboard */; };
 		3DB7B1FF1FD7EE910092FAC0 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1EF1FD7EE8F0092FAC0 /* Find.storyboard */; };
 		3DB7B2001FD7EE910092FAC0 /* Queue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1F11FD7EE8F0092FAC0 /* Queue.storyboard */; };
 		3DB7B2011FD7EE910092FAC0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1F31FD7EE900092FAC0 /* Login.storyboard */; };
 		3DB7B2021FD7EE910092FAC0 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1F51FD7EE900092FAC0 /* Message.storyboard */; };
 		3DB7B2031FD7EE910092FAC0 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1F71FD7EE900092FAC0 /* Coupon.storyboard */; };
-		3DB7B2041FD7EE910092FAC0 /* Find~.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1F91FD7EE900092FAC0 /* Find~.storyboard */; };
 		3DB7B2051FD7EE910092FAC0 /* Res.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1FB1FD7EE910092FAC0 /* Res.storyboard */; };
 		3DB7B21F1FD7FAAA0092FAC0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B2211FD7FAAA0092FAC0 /* InfoPlist.strings */; };
 		3DB7B2241FD7FAAB0092FAC0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B2261FD7FAAB0092FAC0 /* Localizable.strings */; };
@@ -194,32 +192,26 @@
 		3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginRootClass.swift; sourceTree = "<group>"; };
 		3D91761B1F486BD500E855F6 /* DwPayCodeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPayCodeData.swift; sourceTree = "<group>"; };
 		3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPayCodeRootClass.swift; sourceTree = "<group>"; };
-		3DB7B1EC1FD7EE8F0092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Coupon~.storyboard"; sourceTree = "<group>"; };
 		3DB7B1EE1FD7EE8F0092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		3DB7B1F01FD7EE8F0092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Find.storyboard; sourceTree = "<group>"; };
 		3DB7B1F21FD7EE8F0092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Queue.storyboard; sourceTree = "<group>"; };
 		3DB7B1F41FD7EE900092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		3DB7B1F61FD7EE900092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Message.storyboard; sourceTree = "<group>"; };
 		3DB7B1F81FD7EE900092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Coupon.storyboard; sourceTree = "<group>"; };
-		3DB7B1FA1FD7EE900092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Find~.storyboard"; sourceTree = "<group>"; };
 		3DB7B1FC1FD7EE910092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Res.storyboard; sourceTree = "<group>"; };
 		3DB7B2071FD7EF0F0092FAC0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Find.strings"; sourceTree = "<group>"; };
-		3DB7B2081FD7EF0F0092FAC0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Find~.strings"; sourceTree = "<group>"; };
 		3DB7B2091FD7EF100092FAC0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Login.strings"; sourceTree = "<group>"; };
 		3DB7B20A1FD7EF100092FAC0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Message.strings"; sourceTree = "<group>"; };
 		3DB7B20B1FD7EF100092FAC0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Coupon.strings"; sourceTree = "<group>"; };
-		3DB7B20C1FD7EF100092FAC0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Coupon~.strings"; sourceTree = "<group>"; };
 		3DB7B20D1FD7EF100092FAC0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Me.strings"; sourceTree = "<group>"; };
 		3DB7B20E1FD7EF100092FAC0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Queue.strings"; sourceTree = "<group>"; };
 		3DB7B20F1FD7EF100092FAC0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Res.strings"; sourceTree = "<group>"; };
 		3DB7B2101FD7EF100092FAC0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		3DB7B2111FD7EF100092FAC0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3DB7B2121FD7EF1F0092FAC0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Find.strings"; sourceTree = "<group>"; };
-		3DB7B2131FD7EF1F0092FAC0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Find~.strings"; sourceTree = "<group>"; };
 		3DB7B2141FD7EF200092FAC0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Login.strings"; sourceTree = "<group>"; };
 		3DB7B2151FD7EF200092FAC0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Message.strings"; sourceTree = "<group>"; };
 		3DB7B2161FD7EF200092FAC0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Coupon.strings"; sourceTree = "<group>"; };
-		3DB7B2171FD7EF200092FAC0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Coupon~.strings"; sourceTree = "<group>"; };
 		3DB7B2181FD7EF200092FAC0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Me.strings"; sourceTree = "<group>"; };
 		3DB7B2191FD7EF200092FAC0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Queue.strings"; sourceTree = "<group>"; };
 		3DB7B21A1FD7EF200092FAC0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Res.strings"; sourceTree = "<group>"; };
@@ -387,11 +379,9 @@
 			isa = PBXGroup;
 			children = (
 				3DB7B1EF1FD7EE8F0092FAC0 /* Find.storyboard */,
-				3DB7B1F91FD7EE900092FAC0 /* Find~.storyboard */,
 				3DB7B1F31FD7EE900092FAC0 /* Login.storyboard */,
 				3DB7B1F51FD7EE900092FAC0 /* Message.storyboard */,
 				3DB7B1F71FD7EE900092FAC0 /* Coupon.storyboard */,
-				3DB7B1EB1FD7EE8F0092FAC0 /* Coupon~.storyboard */,
 				3DB7B1ED1FD7EE8F0092FAC0 /* Me.storyboard */,
 				3DB7B1F11FD7EE8F0092FAC0 /* Queue.storyboard */,
 				3DB7B1FB1FD7EE910092FAC0 /* Res.storyboard */,
@@ -533,7 +523,6 @@
 			files = (
 				3DB7B2011FD7EE910092FAC0 /* Login.storyboard in Resources */,
 				3DB7B21F1FD7FAAA0092FAC0 /* InfoPlist.strings in Resources */,
-				3DB7B2041FD7EE910092FAC0 /* Find~.storyboard in Resources */,
 				3DD3E2581F2EC4C7001FC47E /* LaunchScreen.storyboard in Resources */,
 				3DD3E2501F2EC4C6001FC47E /* Main.storyboard in Resources */,
 				3DB7B1FF1FD7EE910092FAC0 /* Find.storyboard in Resources */,
@@ -544,7 +533,6 @@
 				3DB7B2241FD7FAAB0092FAC0 /* Localizable.strings in Resources */,
 				3DB7B2021FD7EE910092FAC0 /* Message.storyboard in Resources */,
 				3DB7B1FE1FD7EE910092FAC0 /* Me.storyboard in Resources */,
-				3DB7B1FD1FD7EE910092FAC0 /* Coupon~.storyboard in Resources */,
 				3DB7B2051FD7EE910092FAC0 /* Res.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,16 +701,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3DB7B1EB1FD7EE8F0092FAC0 /* Coupon~.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3DB7B1EC1FD7EE8F0092FAC0 /* Base */,
-				3DB7B20C1FD7EF100092FAC0 /* zh-Hans */,
-				3DB7B2171FD7EF200092FAC0 /* zh-Hant */,
-			);
-			name = "Coupon~.storyboard";
-			sourceTree = "<group>";
-		};
 		3DB7B1ED1FD7EE8F0092FAC0 /* Me.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -781,16 +759,6 @@
 				3DB7B2161FD7EF200092FAC0 /* zh-Hant */,
 			);
 			name = Coupon.storyboard;
-			sourceTree = "<group>";
-		};
-		3DB7B1F91FD7EE900092FAC0 /* Find~.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3DB7B1FA1FD7EE900092FAC0 /* Base */,
-				3DB7B2081FD7EF0F0092FAC0 /* zh-Hans */,
-				3DB7B2131FD7EF1F0092FAC0 /* zh-Hant */,
-			);
-			name = "Find~.storyboard";
 			sourceTree = "<group>";
 		};
 		3DB7B1FB1FD7EE910092FAC0 /* Res.storyboard */ = {
