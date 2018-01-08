@@ -11,36 +11,36 @@ import Foundation
 import AVFoundation
 
 public protocol LBXScanViewControllerDelegate {
-     func scanFinished(scanResult: LBXScanResult, error: String?)
+    func scanFinished(scanResult: LBXScanResult, error: String?)
 }
 
 
 open class LBXScanViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
- //返回扫码结果，也可以通过继承本控制器，改写该handleCodeResult方法即可
-   open var scanResultDelegate: LBXScanViewControllerDelegate?
+    //返回扫码结果，也可以通过继承本控制器，改写该handleCodeResult方法即可
+    open var scanResultDelegate: LBXScanViewControllerDelegate?
     
-   open var scanObj: LBXScanWrapper?
+    open var scanObj: LBXScanWrapper?
     
-   open var scanStyle: LBXScanViewStyle? = LBXScanViewStyle()
+    open var scanStyle: LBXScanViewStyle? = LBXScanViewStyle()
     
-   open var qRScanView: LBXScanView?
+    open var qRScanView: LBXScanView?
     
     //启动区域识别功能
-   open var isOpenInterestRect = false
+    open var isOpenInterestRect = false
     
     //识别码的类型
     var arrayCodeType:[String]?
     
     //是否需要识别后的当前图像
     var isNeedCodeImage = false
-
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
-              // [self.view addSubview:_qRScanView];
+        // [self.view addSubview:_qRScanView];
         self.view.backgroundColor = UIColor.black
         self.edgesForExtendedLayout = UIRectEdge(rawValue: 0)
     }
@@ -53,7 +53,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     open func setOpenInterestRect(isOpen:Bool){
         isOpenInterestRect = isOpen
     }
- 
+    
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -63,7 +63,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         super.viewDidAppear(animated)
         
         drawScanView()
-       
+        
         perform(#selector(LBXScanViewController.startScan), with: nil, afterDelay: 0.3)
         
     }
@@ -103,7 +103,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
                     
                     strongSelf.handleCodeResult(arrayResult: arrayResult)
                 }
-             })
+            })
         }
         
         //结束相机等待提示
@@ -126,7 +126,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         qRScanView?.deviceStartReadying(readyStr: NSLocalizedString("Loading...", comment: "Loading..."))
         
     }
-   
+    
     
     /**
      处理扫码结果，如果是继承本控制器的，可以重写该方法,作出相应地处理，或者设置delegate作出相应处理
@@ -140,7 +140,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
             let result:LBXScanResult = arrayResult[0]
             
             delegate.scanFinished(scanResult: result, error: nil)
-
+            
         }else{
             
             for result:LBXScanResult in arrayResult
@@ -204,7 +204,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
                 return
             }
         }
-      
+        
         showMsg(title: nil, message: NSLocalizedString("Identify failed", comment: "Identify failed"))
     }
     
@@ -212,16 +212,16 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     {
         if LBXScanWrapper.isSysIos8Later()
         {
-        
+            
             //if #available(iOS 8.0, *)
             
             let alertController = UIAlertController(title: nil, message:message, preferredStyle: UIAlertControllerStyle.alert)
             let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: UIAlertActionStyle.default) { (alertAction) in
                 
-//                if let strongSelf = self
-//                {
-//                    strongSelf.startScan()
-//                }
+                //                if let strongSelf = self
+                //                {
+                //                    strongSelf.startScan()
+                //                }
             }
             
             alertController.addAction(alertAction)
@@ -230,12 +230,9 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     }
     deinit
     {
-//        print("LBXScanViewController deinit")
+        //        print("LBXScanViewController deinit")
     }
     
 }
-
-
-
 
 

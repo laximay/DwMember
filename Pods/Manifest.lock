@@ -10,7 +10,7 @@ PODS:
     - Kingfisher
   - pop (1.0.10)
   - Segmentio (2.1.2)
-  - swiftScan (1.1.1)
+  - swiftScan (1.1.2)
 
 DEPENDENCIES:
   - BubbleTransition (~> 2.0.0)
@@ -33,8 +33,8 @@ SPEC CHECKSUMS:
   LLCycleScrollView: 1801c8e0b6e6c0b6a538ac49311d18d63ed5c2bf
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Segmentio: f85114993e305bd9c522952eef8c2c4db732fd17
-  swiftScan: f1f7f3eccb67ed1fb9777d084486d201dfca0306
+  swiftScan: 5bb808704805fc734fc63058143d8468dd11452e
 
 PODFILE CHECKSUM: ecff260a68515fca51199c0da201762a71ca3c39
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0.beta.2

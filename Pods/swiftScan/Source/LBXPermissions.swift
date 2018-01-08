@@ -5,7 +5,6 @@
 //  Created by xialibing on 15/12/15.
 //  Copyright © 2015年 xialibing. All rights reserved.
 //
-
 import UIKit
 import AVFoundation
 import Photos
@@ -14,7 +13,7 @@ import AssetsLibrary
 
 
 class LBXPermissions: NSObject {
-
+    
     //MARK: ---相机权限
     static func isGetCameraPermission()->Bool
     {
@@ -46,8 +45,9 @@ class LBXPermissions: NSObject {
                 bResult = true
             }
         }
-
+        
         return bResult
     }
     
 }
+

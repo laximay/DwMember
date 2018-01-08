@@ -5,14 +5,13 @@
 //  Created by lbxia on 15/12/9.
 //  Copyright © 2015年 xialibing. All rights reserved.
 //
-
 import UIKit
 
 class LBXScanNetAnimation: UIImageView {
-
+    
     var isAnimationing = false
     var animationRect:CGRect = CGRect.zero
-
+    
     
     
     static public func instance()->LBXScanNetAnimation
@@ -32,10 +31,10 @@ class LBXScanNetAnimation: UIImageView {
         
         if (image != nil)
         {
-           stepAnimation()
+            stepAnimation()
         }
-       
-       
+        
+        
         
     }
     
@@ -68,10 +67,10 @@ class LBXScanNetAnimation: UIImageView {
             
             self.frame = frame;
             
-            }, completion:{ (value: Bool) -> Void in
-                
-                self.perform(#selector(LBXScanNetAnimation.stepAnimation), with: nil, afterDelay: 0.3)
-               
+        }, completion:{ (value: Bool) -> Void in
+            
+            self.perform(#selector(LBXScanNetAnimation.stepAnimation), with: nil, afterDelay: 0.3)
+            
         })
         
     }
@@ -81,5 +80,5 @@ class LBXScanNetAnimation: UIImageView {
         self.isHidden = true;
         isAnimationing = false;
     }
-
+    
 }

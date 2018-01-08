@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UINavigationBar.appearance().barTintColor =  UIColor.white //设置前景色
-        UINavigationBar.appearance().tintColor = UIColor(red: 158/255.0, green: 16/255.0, blue: 38/255.0, alpha: 1)
+        UINavigationBar.appearance().tintColor = ApiUtil.fontColor
         let couponSB = UIStoryboard(name: "Coupon", bundle: nil)
         self.couponView = couponSB.instantiateViewController(withIdentifier: "CouponViewController") as! CouponViewController
 
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         if let barFont = UIFont(name: "Avenir-Light", size: 24){
             UINavigationBar.appearance().titleTextAttributes = [
                 NSFontAttributeName: barFont,
-                NSForegroundColorAttributeName:UIColor(red: 158/255.0, green: 16/255.0, blue: 38/255.0, alpha: 1),
+                NSForegroundColorAttributeName:ApiUtil.fontColor,
                 
             ]
         }

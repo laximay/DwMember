@@ -47,7 +47,7 @@ class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UI
         //開啟劫持點擊事件webViewHandle
         self.shouldHijackHandler = {
             tabbarController, viewController, index in
-            if index == 2 {
+            if index == 1 {
                 return true
             }
             
@@ -56,7 +56,7 @@ class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UI
         //劫持事件
         self.didHijackHandler = {
             [weak tabBarController] tabbarController, viewController, index in
-             if index == 2 {
+             if index == 1 {
             let payVC1 = self.mainSB.instantiateViewController(withIdentifier: "PayViewController")
             payVC1.transitioningDelegate = self //獲得動畫代理
             self.present(payVC1, animated: true, completion: nil)
@@ -83,7 +83,7 @@ class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UI
 //        couponNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Mall", comment: "商城") , image: UIImage(named: "ic_store29"), selectedImage: UIImage(named: "ic_store_on29"))
         
         let payVC = mainSB.instantiateViewController(withIdentifier: "PayViewController")
-        payVC.tabBarItem = ESTabBarItem.init(IrregularityContentView(), title: nil, image: UIImage(named: "qrcode"), selectedImage: UIImage(named: "qrcode_1"))
+        payVC.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: nil, image: UIImage(named: "qrcode"), selectedImage: UIImage(named: "qrcode_1"))
         
 //        let queueNav = queueSB.instantiateViewController(withIdentifier: "tempNav")
 //        queueNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Queue", comment: "叫號") , image: UIImage(named: "ic_queue"), selectedImage: UIImage(named: "ic_queue_red"))
@@ -106,14 +106,14 @@ class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UI
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
         transition.startingPoint = CGPoint(x:  UIScreen.main.bounds.width/2, y:  UIScreen.main.bounds.height-50)
-        transition.bubbleColor = UIColor.init(red: 158/255.0, green: 16/255.0, blue: 38/255.0, alpha: 1.0)
+        transition.bubbleColor = ApiUtil.fontColor
         return transition
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
         transition.startingPoint = CGPoint(x:  UIScreen.main.bounds.width/2, y:  UIScreen.main.bounds.height-50)
-        transition.bubbleColor = UIColor.init(red: 158/255.0, green: 16/255.0, blue: 38/255.0, alpha: 1.0)
+        transition.bubbleColor = ApiUtil.fontColor
         return transition
     }
     

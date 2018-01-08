@@ -69,6 +69,8 @@ open class ApiUtil{
         let apiUtil = ApiUtil();
         return apiUtil;
     }
+    //系統顏色圖標顏色
+    static let fontColor: UIColor = UIColor(red: 158/255.0, green: 16/255.0, blue: 38/255.0, alpha: 1)
     
     //服務鏈接
     static let serverUrl = "https://cloud.ablegenius.com/a"
