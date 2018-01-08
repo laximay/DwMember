@@ -83,7 +83,7 @@ class ZLaunchAdVC: UIViewController {
             
             skipBtn.titleLabel?.font = UIFont.systemFont(ofSize: self.skipBtnType == .timer ? 13.5 : 12)
             
-            skipBtn.setTitle(self.skipBtnType == .timer ? "\(self.adDuration) 跳过" : "跳过", for: .normal)
+            skipBtn.setTitle(self.skipBtnType == .timer ? "\(self.adDuration) 跳過" : "跳過", for: .normal)
         }
     }
     

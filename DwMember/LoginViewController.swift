@@ -75,8 +75,9 @@ class LoginViewController: UIViewController {
                     let realcardNo: String  = DwLoginRootClass(fromDictionary: json).data.card.cardno
                     //保存KEY，保存操作只在登錄的時候做一次，如果成功則會沿用，重新調用登錄方法會覆蓋
                     let key = "\(realcardNo)#\(password.md5())"
-                   // defaults.set(key, forKey: "dwsercet")
-                    defaults.set(realcardNo, forKey: "cardNo")
+                  
+                     defaults.set(realcardNo, forKey: "cardNo")
+                     defaults.set(key, forKey: "dwsercet")
                     
                     OperationQueue.main.addOperation {
                         self.navigationController!.popViewController(animated: true)

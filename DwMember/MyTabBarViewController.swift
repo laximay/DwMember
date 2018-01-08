@@ -83,7 +83,7 @@ class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UI
 //        couponNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Mall", comment: "商城") , image: UIImage(named: "ic_store29"), selectedImage: UIImage(named: "ic_store_on29"))
         
         let payVC = mainSB.instantiateViewController(withIdentifier: "PayViewController")
-        payVC.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: nil, image: UIImage(named: "qrcode"), selectedImage: UIImage(named: "qrcode_1"))
+        payVC.tabBarItem = ESTabBarItem.init(IrregularityContentView(), title: nil, image: UIImage(named: "qrcode"), selectedImage: UIImage(named: "qrcode_1"))
         
 //        let queueNav = queueSB.instantiateViewController(withIdentifier: "tempNav")
 //        queueNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Queue", comment: "叫號") , image: UIImage(named: "ic_queue"), selectedImage: UIImage(named: "ic_queue_red"))

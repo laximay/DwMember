@@ -353,7 +353,7 @@ open class ApiUtil{
                 
                 if let pageVC = ApiUtil.loginSB.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
                     
-                    //sender.self.navigationController?.pushViewController(pageVC, animated: true)
+                    sender.self.navigationController?.pushViewController(pageVC, animated: true)
                     //sender.present(pageVC, animated: true, completion: nil)
                 }
             })
@@ -368,19 +368,7 @@ open class ApiUtil{
         
     }
     
-    static func checklogin_me( sender: UIViewController){
-        let defaults = UserDefaults.standard
-        guard (defaults.string(forKey: "dwsercet") != nil) else{
-            if let pageVC = ApiUtil.loginSB.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-                
-                sender.self.navigationController?.pushViewController(pageVC, animated: true)
-                //sender.present(pageVC, animated: true, completion: nil)
-            }
-            
-            return
-        }
-        
-    }
+
     
     
     static func openAlert(msg: String ,sender: UIViewController){

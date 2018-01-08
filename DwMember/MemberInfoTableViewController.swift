@@ -27,13 +27,13 @@ class MemberInfoTableViewController: UITableViewController {
         
         if let user = self.userInfo?.card {
             self.nicknameInp.text = user.memberName
-            self.sexLab.text = user.sex
+            self.sexLab.text = user.sex == "F" ? "女性": "男性"
             self.bmLab.text = user.birthMonth!
             self.addLab.text = user.address
             self.mobileLab.text = user.mobile
             self.emailInp.text = user.email
             self.cardnoLab.text = user.cardno
-            self.vaildLab.text = user.closedt
+            self.vaildLab.text = user.closedt == nil ? "長期有效" : user.closedt
         }
         
         tableView.backgroundColor = UIColor(white: 0.98, alpha: 1)//美化列表

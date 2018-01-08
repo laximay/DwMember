@@ -267,8 +267,6 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             btnFeature.tag = index
             btnFeature.addTarget(self, action: #selector(featureTap(_:)), for: .touchUpInside)
             index = index + 1
-           
-         
              self.menuView.addArrangedSubview(btnFeature)
         }
     }
