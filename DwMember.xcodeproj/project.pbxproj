@@ -223,7 +223,7 @@
 		3DB7B2251FD7FAAB0092FAC0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		3DB7B2271FD7FAE40092FAC0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		3DB7B2281FD7FAE50092FAC0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		3DD3E2471F2EC4C6001FC47E /* DwMember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DwMember.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DD3E2471F2EC4C6001FC47E /* EPOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPOT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD3E24A1F2EC4C6001FC47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DD3E24F1F2EC4C6001FC47E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DD3E2571F2EC4C7001FC47E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -409,7 +409,7 @@
 		3DD3E2481F2EC4C6001FC47E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3DD3E2471F2EC4C6001FC47E /* DwMember.app */,
+				3DD3E2471F2EC4C6001FC47E /* EPOT.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -472,7 +472,7 @@
 			);
 			name = DwMember;
 			productName = DwMember;
-			productReference = 3DD3E2471F2EC4C6001FC47E /* DwMember.app */;
+			productReference = 3DD3E2471F2EC4C6001FC47E /* EPOT.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -938,7 +938,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dongwangtech.epot;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EPOT;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DwMember-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -959,7 +959,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dongwangtech.epot;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EPOT;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DwMember-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
