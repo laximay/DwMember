@@ -358,7 +358,7 @@ extension ZLaunchAdVC {
         
         dataTimer?.setEventHandler(handler: {
             
-            self.skipBtn.setTitle(self.skipBtnType == .timer ? "\(self.adDuration) 跳过" : "跳过", for: .normal)
+            self.skipBtn.setTitle(self.skipBtnType == .timer ? "\(self.adDuration) 跳過" : "跳過", for: .normal)
             
             if self.adDuration == 0 {
                 

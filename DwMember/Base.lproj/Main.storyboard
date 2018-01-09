@@ -92,7 +92,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cci-RO-SoK">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cci-RO-SoK">
                                             <rect key="frame" x="5" y="5" width="365" height="190"/>
                                         </imageView>
                                     </subviews>
@@ -394,6 +394,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffa-TP-HMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1195" y="822"/>
+        </scene>
+        <!--Rich Text View Controller-->
+        <scene sceneID="s5n-di-DYI">
+            <objects>
+                <viewController storyboardIdentifier="RichTextViewController" id="MZO-eI-IDY" customClass="RichTextViewController" customModule="DwMember" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jyp-0s-Ue1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q43-4p-g0O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oeO-03-vCP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w11-xb-EqY">
+                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="w11-xb-EqY" firstAttribute="width" secondItem="oeO-03-vCP" secondAttribute="width" id="HeV-fA-50e"/>
+                            <constraint firstItem="w11-xb-EqY" firstAttribute="centerY" secondItem="oeO-03-vCP" secondAttribute="centerY" id="IAX-iZ-WaO"/>
+                            <constraint firstItem="w11-xb-EqY" firstAttribute="height" secondItem="oeO-03-vCP" secondAttribute="height" id="O26-Sx-Kkl"/>
+                            <constraint firstItem="w11-xb-EqY" firstAttribute="centerX" secondItem="oeO-03-vCP" secondAttribute="centerX" id="VUE-JC-OrE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="richTextLab" destination="w11-xb-EqY" id="jmh-6o-HKL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="elb-hB-h9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2255" y="760"/>
         </scene>
     </scenes>
     <resources>

@@ -14,7 +14,9 @@ import swiftScan
 enum opentypeM: String{
     case WV = "WV" , //WEBVIEW功能網頁方式打開
     NA = "NA",  //原生形式
-    OV = "OV" //外部第三方網頁
+    OV = "OV", //外部第三方網頁
+    AI = "AI"//內部文章
+    
     
 }
 
@@ -170,6 +172,12 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                 //内部WEBVIEW跳转
                 // print("WV")
                 ApiUtil.webViewHandle(withIdentifier: ad.url!, id: ad.id!, sender: self)
+            case .AI:
+                if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "RichTextViewController") as? RichTextViewController{
+                    pageVC.richText = ad.descriptionField
+                    pageVC.title = ad.briefing
+                    self.navigationController?.pushViewController(pageVC, animated: true)
+                }
                 
             }
             
@@ -180,8 +188,9 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         mainScrollView.customPageControlInActiveTintColor = UIColor.red
         mainScrollView.pageControlPosition = .left
         mainScrollView.pageControlLeadingOrTrialingContact = 28
-        mainScrollView.placeHolderImage = #imageLiteral(resourceName: "photoalbum")
-        mainScrollView.coverImage = #imageLiteral(resourceName: "photoalbum")
+//        mainScrollView.placeHolderImage = #imageLiteral(resourceName: "photoalbum")
+//        mainScrollView.coverImage = #imageLiteral(resourceName: "photoalbum")
+        mainScrollView.imageViewContentMode = .scaleToFill
         
         // 下边约束
         mainScrollView.pageControlBottom = 15
@@ -222,6 +231,12 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                 //内部WEBVIEW跳转
                 // print("WV")
                 ApiUtil.webViewHandle(withIdentifier: feature.url!, id: feature.id, sender: self)
+            case .AI:
+                if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "RichTextViewController") as? RichTextViewController{
+                    pageVC.richText = feature.descriptionField
+                    pageVC.title = feature.briefing
+                    self.navigationController?.pushViewController(pageVC, animated: true)
+                }
             }
         }
         
@@ -324,6 +339,12 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
                 //内部WEBVIEW跳转
                 // print("WV")
                 ApiUtil.webViewHandle(withIdentifier: activity.url!, id: activity.id!, sender: self)
+            case .AI:
+                if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "RichTextViewController") as? RichTextViewController{
+                    pageVC.richText = activity.descriptionField
+                    pageVC.title = activity.briefing
+                    self.navigationController?.pushViewController(pageVC, animated: true)
+                }
             }
         }
         
