@@ -59,7 +59,7 @@ let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", 
                                            "MPWD": webViewConfig(code : "MPWD", verif: false),
                                            "DZXQ": webViewConfig(code: "DZXQ", verif: true),
                                            "FPWD": webViewConfig(code: "FPWD", verif: true),
-                                           "HDXQ": webViewConfig(code: "HDXQ", verif: false),
+                                           "HDXQ": webViewConfig(code: "HDXQ", verif: true),
                                            "JFCX": webViewConfig(code: "JFCX", verif: true),
                             "HYJH": webViewConfig(code: "HYJH", verif: true)]
 

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/MainTableViewController.swift"
-            timestampString = "537200761.725747"
+            timestampString = "537288266.405803"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.745939"
+            timestampString = "537288842.834321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.746003"
+            timestampString = "537288842.834419"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
@@ -310,7 +310,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.7461129"
+            timestampString = "537288842.834498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -358,7 +358,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.746206"
+            timestampString = "537288842.8345619"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -374,7 +374,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.746262"
+            timestampString = "537288842.834603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -422,7 +422,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.746316"
+            timestampString = "537288842.8346421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -470,7 +470,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.746371"
+            timestampString = "537288842.834679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "315"
@@ -486,7 +486,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.746435"
+            timestampString = "537288842.834717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "317"
@@ -518,7 +518,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/MainTableViewController.swift"
-            timestampString = "537200761.7374099"
+            timestampString = "537288266.4133019"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "145"
@@ -534,7 +534,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/MainTableViewController.swift"
-            timestampString = "537200761.738494"
+            timestampString = "537288266.4138221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "274"
@@ -550,7 +550,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/MainTableViewController.swift"
-            timestampString = "537200761.739188"
+            timestampString = "537288266.414165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "270"
@@ -566,7 +566,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.747357"
+            timestampString = "537288842.834797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "290"
@@ -582,7 +582,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.747414"
+            timestampString = "537288842.834837"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "289"
@@ -662,7 +662,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.747542"
+            timestampString = "537288842.834918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "256"
@@ -678,7 +678,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.747597"
+            timestampString = "537288842.834958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "309"
@@ -886,108 +886,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.747824"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
-            landmarkName = "launchCache()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.7478811"
+            timestampString = "537288842.835144"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "275"
             endingLineNumber = "275"
             landmarkName = "webViewHandle(withIdentifier:id:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.7479351"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "launchCache()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static DwMember.ApiUtil.checkUpdata (sender : __ObjC.UIViewController) -&gt; ()"
-                  moduleName = "DwMember"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wenjing/switfProject/DwMember/DwMember/ApiUtil.swift"
-                  timestampString = "526097126.564881"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static DwMember.ApiUtil.(checkUpdata (sender : __ObjC.UIViewController) -&gt; ()).(closure #1)"
-                  moduleName = "DwMember"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wenjing/switfProject/DwMember/DwMember/ApiUtil.swift"
-                  timestampString = "526097126.56756"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "145"
-                  endingLineNumber = "145"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.747988"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "launchCache()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.748041"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "launchCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1004,70 +908,6 @@
             startingLineNumber = "41"
             endingLineNumber = "41"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.748114"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "launchCache()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static DwMember.ApiUtil.(checkUpdata (sender : __ObjC.UIViewController) -&gt; ()).(closure #1)"
-                  moduleName = "DwMember"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wenjing/switfProject/DwMember/DwMember/ApiUtil.swift"
-                  timestampString = "526098378.342917"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "150"
-                  endingLineNumber = "150"
-                  offsetFromSymbolStart = "451">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static DwMember.ApiUtil.(checkUpdata (sender : __ObjC.UIViewController) -&gt; ()).(closure #1)"
-                  moduleName = "DwMember"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wenjing/switfProject/DwMember/DwMember/ApiUtil.swift"
-                  timestampString = "526098378.344881"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "150"
-                  endingLineNumber = "150"
-                  offsetFromSymbolStart = "1912">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.7481689"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "launchCache()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1222,7 +1062,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/MainTableViewController.swift"
-            timestampString = "537200761.7409509"
+            timestampString = "537288266.415188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "358"
@@ -1238,7 +1078,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/MainTableViewController.swift"
-            timestampString = "537200761.741767"
+            timestampString = "537288266.4155689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -1382,7 +1222,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.749032"
+            timestampString = "537288842.835363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "248"
@@ -1462,7 +1302,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "537156769.7491601"
+            timestampString = "537288842.835444"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -1702,7 +1542,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/MainTableViewController.swift"
-            timestampString = "537200761.743209"
+            timestampString = "537288266.416912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "215"
@@ -1714,11 +1554,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/MainTableViewController.swift"
-            timestampString = "537200761.743865"
+            timestampString = "537288266.421342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "155"

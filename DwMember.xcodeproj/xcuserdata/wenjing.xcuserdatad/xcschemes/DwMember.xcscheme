@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3DD3E2461F2EC4C6001FC47E"
-               BuildableName = "DwMember.app"
+               BuildableName = "EPOT.app"
                BlueprintName = "DwMember"
                ReferencedContainer = "container:DwMember.xcodeproj">
             </BuildableReference>
@@ -34,7 +34,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3DD3E2461F2EC4C6001FC47E"
-            BuildableName = "DwMember.app"
+            BuildableName = "EPOT.app"
             BlueprintName = "DwMember"
             ReferencedContainer = "container:DwMember.xcodeproj">
          </BuildableReference>
@@ -58,7 +58,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3DD3E2461F2EC4C6001FC47E"
-            BuildableName = "DwMember.app"
+            BuildableName = "EPOT.app"
             BlueprintName = "DwMember"
             ReferencedContainer = "container:DwMember.xcodeproj">
          </BuildableReference>
@@ -77,7 +77,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3DD3E2461F2EC4C6001FC47E"
-            BuildableName = "DwMember.app"
+            BuildableName = "EPOT.app"
             BlueprintName = "DwMember"
             ReferencedContainer = "container:DwMember.xcodeproj">
          </BuildableReference>
