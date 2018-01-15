@@ -40,7 +40,7 @@
         <!--Main-->
         <scene sceneID="dmX-k5-ZJ0">
             <objects>
-                <tableViewController storyboardIdentifier="MainTableViewController" title="Main" id="uko-IV-HjM" customClass="MainTableViewController" customModule="DwMember" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MainTableViewController" title="Main" id="uko-IV-HjM" customClass="MainTableViewController" customModule="EPOT" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="peh-NZ-7PW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityCell" rowHeight="200" id="F8j-RX-XNL" customClass="MainActivitysTableViewCell" customModule="DwMember" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityCell" rowHeight="200" id="F8j-RX-XNL" customClass="MainActivitysTableViewCell" customModule="EPOT" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="398" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8j-RX-XNL" id="cXt-QH-sxc">
@@ -128,6 +128,7 @@
                     <connections>
                         <outlet property="indexImageView" destination="ESI-JK-sBN" id="bPm-o8-yND"/>
                         <outlet property="menuView" destination="6Pq-2g-qRH" id="vEt-0W-KdL"/>
+                        <outlet property="topView" destination="mH7-Wv-I8c" id="CY5-CY-5sd"/>
                         <segue destination="2DH-Yo-miL" kind="show" identifier="couponMallSegue" id="SfT-GK-cdd"/>
                         <segue destination="eel-d0-HJd" kind="show" identifier="homeToWebSegue" id="bW7-Ef-9Fg"/>
                         <segue destination="arO-Kb-KLR" kind="unwind" identifier="hometoCouponListSegue" unwindAction="closeWithSegue:" id="QYb-n8-gP4"/>
@@ -140,7 +141,7 @@
         <!--Scan View Controller-->
         <scene sceneID="R0n-n3-c8X">
             <objects>
-                <viewController storyboardIdentifier="ScanViewController" id="V5t-V2-bFk" customClass="ScanViewController" customModule="DwMember" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScanViewController" id="V5t-V2-bFk" customClass="ScanViewController" customModule="EPOT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="emW-C3-yTw"/>
                         <viewControllerLayoutGuide type="bottom" id="hfh-Nm-EJI"/>
@@ -158,7 +159,7 @@
         <!--Guider View Controller-->
         <scene sceneID="oCW-XJ-NxX">
             <objects>
-                <pageViewController storyboardIdentifier="GuideConntroller" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Rap-V0-gY0" customClass="GuiderViewController" customModule="DwMember" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="GuideConntroller" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Rap-V0-gY0" customClass="GuiderViewController" customModule="EPOT" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKy-PV-KQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3127" y="618"/>
@@ -166,7 +167,7 @@
         <!--My Tab Bar View Controller-->
         <scene sceneID="YPA-eh-M8B">
             <objects>
-                <tabBarController storyboardIdentifier="MyTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="4eS-xY-7cL" customClass="MyTabBarViewController" customModule="DwMember" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MyTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="4eS-xY-7cL" customClass="MyTabBarViewController" customModule="EPOT" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ENz-OA-Qmt">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -181,7 +182,7 @@
         <!--Pay View Controller-->
         <scene sceneID="ATL-tY-RPt">
             <objects>
-                <viewController storyboardIdentifier="PayViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tIg-DY-gSR" customClass="PayViewController" customModule="DwMember" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PayViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tIg-DY-gSR" customClass="PayViewController" customModule="EPOT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z89-qq-dKI"/>
                         <viewControllerLayoutGuide type="bottom" id="hpd-Tp-zb0"/>
@@ -294,7 +295,7 @@
         <!--Web View Controller-->
         <scene sceneID="g7u-uO-rRp">
             <objects>
-                <viewController storyboardIdentifier="WebViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eel-d0-HJd" customClass="WebViewController" customModule="DwMember" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eel-d0-HJd" customClass="WebViewController" customModule="EPOT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KgS-SJ-QiW"/>
                         <viewControllerLayoutGuide type="bottom" id="mPq-0o-MuW"/>
@@ -314,7 +315,7 @@
         <!--Content View Controller-->
         <scene sceneID="HYY-x1-u1H">
             <objects>
-                <viewController storyboardIdentifier="ContentControll" id="i2j-tf-ABw" customClass="ContentViewController" customModule="DwMember" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentControll" id="i2j-tf-ABw" customClass="ContentViewController" customModule="EPOT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W49-iM-PdT"/>
                         <viewControllerLayoutGuide type="bottom" id="qhr-tV-NP2"/>
@@ -398,7 +399,7 @@
         <!--Rich Text View Controller-->
         <scene sceneID="s5n-di-DYI">
             <objects>
-                <viewController storyboardIdentifier="RichTextViewController" id="MZO-eI-IDY" customClass="RichTextViewController" customModule="DwMember" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RichTextViewController" id="MZO-eI-IDY" customClass="RichTextViewController" customModule="EPOT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jyp-0s-Ue1"/>
                         <viewControllerLayoutGuide type="bottom" id="Q43-4p-g0O"/>

@@ -26,6 +26,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     @IBOutlet weak var indexImageView: UIView! //放置轮播图的VIEW
     @IBOutlet weak var menuView: UIStackView! //放置功能按钮的VIEW
     
+    @IBOutlet weak var topView: UIStackView!
     
     //活动的LIST
     var  activitys : [DwHomeActivity] = []
@@ -269,6 +270,13 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     //創建功能按鈕,原生的滿足不了需求，擴展了一個
     func createMenuBtn() {
+        if features.count == 0 {
+            self.menuView.isHidden = true
+            return
+        }
+        
+        self.menuView.isHidden = false
+        
         for view in self.menuView.arrangedSubviews{
             view.removeFromSuperview()
         }
