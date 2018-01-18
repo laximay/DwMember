@@ -53,7 +53,7 @@
 "VWb-9k-tkq.text" = "NO.0005897088";
 
 /* Class = "UILabel"; text = "Sex"; ObjectID = "WiA-OC-xLg"; */
-"WiA-OC-xLg.text" = "性别";
+"WiA-OC-xLg.text" = "性       别";
 
 /* Class = "UILabel"; text = "Find"; ObjectID = "X57-YV-DSl"; */
 "X57-YV-DSl.text" = "发现";
@@ -68,13 +68,13 @@
 "cOY-jX-6F3.title" = "我的";
 
 /* Class = "UILabel"; text = "CardNo"; ObjectID = "cTb-7Z-HUt"; */
-"cTb-7Z-HUt.text" = "卡号";
+"cTb-7Z-HUt.text" = "卡       号";
 
 /* Class = "UILabel"; text = "Clear Cache"; ObjectID = "cjy-hU-Zsa"; */
 "cjy-hU-Zsa.text" = "清除缓存";
 
 /* Class = "UILabel"; text = "Address"; ObjectID = "cy6-4q-DiI"; */
-"cy6-4q-DiI.text" = "地址";
+"cy6-4q-DiI.text" = "地       址";
 
 /* Class = "UILabel"; text = "0"; ObjectID = "d7L-DL-D5P"; */
 "d7L-DL-D5P.text" = "0";
@@ -128,10 +128,10 @@
 "x0d-ih-zIE.text" = "预订";
 
 /* Class = "UILabel"; text = "Nickname"; ObjectID = "zRH-Zu-o8N"; */
-"zRH-Zu-o8N.text" = "昵称";
+"zRH-Zu-o8N.text" = "昵       称";
 
 /* Class = "UILabel"; text = "Valid period"; ObjectID = "zhb-C2-k7Z"; */
-"zhb-C2-k7Z.text" = "有效期";
+"zhb-C2-k7Z.text" = "有效期至";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "zz0-OZ-XyL"; */
 "zz0-OZ-XyL.text" = "Label";

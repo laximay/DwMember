@@ -26,6 +26,10 @@ class MeTableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.backgroundView?.backgroundColor = UIColor.black
+        
+        self.tableView.backgroundColor = UIColor.black
+        
         let defaults = UserDefaults.standard
         if let version = defaults.string(forKey: "localVersion"){
             localVersion.text = "當前版本:\(version)"
@@ -45,6 +49,7 @@ class MeTableViewController: UITableViewController{
     
     
     override func viewDidAppear(_ animated: Bool) {
+       
         
         let defaults = UserDefaults.standard
         if (defaults.string(forKey: "dwsercet") != nil){

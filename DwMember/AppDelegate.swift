@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UINavigationBar.appearance().barTintColor =  ApiUtil.bgColor //设置前景色
-        UINavigationBar.appearance().tintColor = ApiUtil.fontColor
+        UINavigationBar.appearance().tintColor = ApiUtil.fontColor2
         let couponSB = UIStoryboard(name: "Coupon", bundle: nil)
         self.couponView = couponSB.instantiateViewController(withIdentifier: "CouponViewController") as! CouponViewController
 
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         if let barFont = UIFont(name: "Avenir-Light", size: 24){
             UINavigationBar.appearance().titleTextAttributes = [
                 NSFontAttributeName: barFont,
-                NSForegroundColorAttributeName:ApiUtil.fontColor,
+                NSForegroundColorAttributeName:ApiUtil.fontColor2,
                 
             ]
         }
@@ -186,7 +186,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         JPUSHService.registerDeviceToken(deviceToken)
         //设置tags,后台可以根据这个来推送
-        JPUSHService.setTags(["imei"], aliasInbackground: ApiUtil.idfv)
+//        JPUSHService.setTags(["imei"], aliasInbackground: ApiUtil.idfv)
+      
     }
     //注册失败方法
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

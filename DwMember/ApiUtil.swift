@@ -70,13 +70,13 @@ open class ApiUtil{
         return apiUtil;
     }
     //系統顏色圖標顏色
-    static let fontColor: UIColor = UIColor(red: 55/255.0, green: 120/255.0, blue: 185/255.0, alpha: 1)
+    static let fontColor: UIColor = UIColor(red: 168/255.0, green: 15/255.0, blue: 43/255.0, alpha: 1)
     static let fontColor2: UIColor = UIColor.white
     static let bgColor: UIColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
     
     //服務鏈接
     //static let serverUrl = "https://cloud.ablegenius.com/a"
-    static var serverUrl = "http://192.168.1.102:8070/a"
+    static var serverUrl = "http://192.168.90.82/a"
     //公司代碼
     static let companyCode = "EPOT"
     //公司代碼
