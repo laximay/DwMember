@@ -10,6 +10,7 @@ import UIKit
 import ESTabBarController_swift
 import BubbleTransition
 class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UIViewControllerTransitioningDelegate {
+
     let transition = BubbleTransition() //第三方轉場動畫
     let mainSB = UIStoryboard(name: "Main", bundle: Bundle.main)
     let queueSB = UIStoryboard(name: "Queue", bundle: Bundle.main)
@@ -65,8 +66,12 @@ class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UI
         }
         
         self.title = "dwMember"
-        self.tabBar.shadowImage = UIImage(named: "transparent")
-        self.tabBar.backgroundImage = UIImage(named: "background")
+//        self.tabBar.shadowImage = UIImage(named: "transparent")
+//        self.tabBar.backgroundImage = UIImage(named: "background")
+
+        self.tabBar.barTintColor = ApiUtil.bgColor
+        
+  
         /*  使用storyboard進行跳轉
          let sb = UIStoryboard(name:"Search",bundle: Bundle.main)
          
@@ -93,6 +98,8 @@ class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UI
         meNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Me", comment: "我的") , image: UIImage(named: "ic_user29"), selectedImage: UIImage(named: "ic_user_on29"))
         
         self.viewControllers = [homeNav, payVC, meNav]
+        self
+        
         
     }
     

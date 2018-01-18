@@ -76,7 +76,7 @@
                                     </constraints>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="mH7-Wv-I8c" firstAttribute="height" secondItem="s7L-1J-Vpr" secondAttribute="height" id="Cd6-yh-Oo3"/>
                                 <constraint firstItem="mH7-Wv-I8c" firstAttribute="leading" secondItem="s7L-1J-Vpr" secondAttribute="leading" id="MPq-vI-tXu"/>
@@ -210,7 +210,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="dJE-x5-tUo" firstAttribute="leading" secondItem="Dyj-FM-dVl" secondAttribute="leading" id="8HH-fl-Skj"/>
                                     <constraint firstItem="ZLY-Q7-2OG" firstAttribute="trailing" secondItem="lii-mC-x0C" secondAttribute="trailingMargin" id="G0j-Ew-R4a"/>
@@ -266,7 +266,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.6705882352941176" green="0.23529411764705882" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="DqC-Rb-ns4" firstAttribute="top" secondItem="glx-nq-rXE" secondAttribute="bottom" constant="25" id="1gw-iS-kKb"/>
                             <constraint firstItem="lii-mC-x0C" firstAttribute="leading" secondItem="OIF-Df-2x0" secondAttribute="leadingMargin" id="6eH-YX-Nj9"/>

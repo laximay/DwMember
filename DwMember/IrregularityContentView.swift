@@ -8,12 +8,13 @@ class IrregularityBasicContentView: BouncesContentView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        textColor = UIColor.init(red: 60/255.0, green: 60/255.0, blue: 60/255.0, alpha: 1.0)
+        textColor = ApiUtil.fontColor2
         highlightTextColor = ApiUtil.fontColor
-        iconColor = UIColor.init(red: 60/255.0, green: 60/255.0, blue: 60/255.0, alpha: 1.0)
+        iconColor = ApiUtil.fontColor2
         highlightIconColor = ApiUtil.fontColor
-        backdropColor =  UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
-        highlightBackdropColor =  UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
+//        backdropColor =  ApiUtil.bgColor
+//        highlightBackdropColor =  UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
+
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -28,6 +29,8 @@ class IrregularityContentView: ESTabBarItemContentView {
     super.init(frame: frame)
     
     self.imageView.backgroundColor = ApiUtil.fontColor
+
+
     self.imageView.layer.borderWidth = 2.0
     self.imageView.layer.borderColor = UIColor.init(white: 235 / 255.0, alpha: 1.0).cgColor
     self.imageView.layer.cornerRadius = 35

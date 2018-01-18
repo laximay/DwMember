@@ -39,6 +39,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     
         //註冊推送
        //  print("udid:\(ApiUtil.idfv)")
 //                JPUSHService.setAlias(ApiUtil.idfv,
