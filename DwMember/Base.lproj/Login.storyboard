@@ -30,7 +30,7 @@
         <!--LoginViewController-->
         <scene sceneID="Zug-mP-nbj">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" id="vHg-nZ-9Ls" customClass="LoginViewController" customModule="EPOT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" id="vHg-nZ-9Ls" customClass="LoginViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eRm-DH-GVQ"/>
                         <viewControllerLayoutGuide type="bottom" id="WGq-JH-omd"/>
@@ -42,12 +42,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lvt-V2-elA">
                                 <rect key="frame" x="36" y="114" width="303" height="350"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="120" image="epotlogo" translatesAutoresizingMaskIntoConstraints="NO" id="vCc-bu-xly">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="120" image="epotlogo" translatesAutoresizingMaskIntoConstraints="NO" id="vCc-bu-xly">
                                         <rect key="frame" x="101.5" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="JCS-71-kWV"/>
                                             <constraint firstAttribute="width" constant="100" id="N5M-s3-6jx"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="50"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="m7P-16-nlV">
                                         <rect key="frame" x="0.0" y="120" width="303" height="110"/>

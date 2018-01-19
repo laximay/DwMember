@@ -12,7 +12,7 @@ import swiftScan
 class CouponDeatilsViewController: UIViewController {
     
     
-    @IBOutlet weak var bgImg: UIImageView!
+   
     @IBOutlet weak var titleLab: UILabel!
     
     @IBOutlet weak var briefingLab: UILabel!
@@ -23,11 +23,15 @@ class CouponDeatilsViewController: UIViewController {
     
     @IBOutlet weak var couponNumImg: UIImageView!
     
-    @IBOutlet weak var submitView: UIView!
-    @IBOutlet weak var couponNumView: UIView!
-    @IBOutlet weak var closeBtn: UIButton!
+
+    @IBOutlet weak var exchangeBtn: UIButton!
+    
     @IBOutlet weak var branchs: UILabel!
-    @IBOutlet weak var branchsView: UIView!
+  
+    
+    @IBOutlet weak var couponContentView: UIView!
+    
+    @IBOutlet weak var popLab: UILabel!
     
     //基礎券列表:未用，已用，過期
     var couponBase:  CouponDetailsData?
@@ -43,16 +47,28 @@ class CouponDeatilsViewController: UIViewController {
         super.viewDidLoad()
         
         
+        
+        
+
+
+        
+        
+        
+        
         switch couponS {
         case .mall:
-            self.couponNumView.isHidden = true
-            self.branchsView.isHidden = true
-            self.submitView.isHidden = false
+            self.popLab.isHidden = true
+            self.briefingLab.isHidden = true
+            self.couponNumImg.isHidden = true
+            self.branchs.isHidden = true
+            self.exchangeBtn.isHidden = false
             getcouponMall()
         default:
-            self.couponNumView.isHidden = false
-            self.branchsView.isHidden = false
-            self.submitView.isHidden = true
+             self.popLab.isHidden = false
+            self.couponNumImg.isHidden = false
+             self.briefingLab.isHidden = false
+            self.branchs.isHidden = false
+            self.exchangeBtn.isHidden = true
             getcouponbase()
         }
         // Uncomment the following line to preserve selection between presentations
@@ -89,9 +105,8 @@ class CouponDeatilsViewController: UIViewController {
                 if  CouponDetailsRootClass(fromDictionary: json).code == 1 {
                     self.couponBase = CouponDetailsRootClass(fromDictionary: json).data
                     let attribstr = try! NSAttributedString.init(data:(self.couponBase?.descriptionField.data(using: String.Encoding.unicode))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
-                    let barImg: UIImage = LBXScanWrapper.createCode128(codeString: (self.couponBase?.couponNo)!, size: self.couponNumImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white)!
-                    let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-                    blurEffectView.frame = self.bgImg.frame
+                       let barImg: UIImage = LBXScanWrapper.createCode128(codeString: (self.couponBase?.couponNo)!, size: self.couponNumImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white)!
+                  
                     
                     OperationQueue.main.addOperation {
                         
@@ -101,10 +116,7 @@ class CouponDeatilsViewController: UIViewController {
                         
                         self.validperiod.text = NSLocalizedString("Valid period", comment: "有效期") + (self.couponBase?.useStartTime)! + NSLocalizedString("To", comment: "至") + (self.couponBase?.useEndTime)! + " " + (self.couponBase?.useDaysMsg)!
                         
-                        self.bgImg.addSubview(blurEffectView)
-                        let imgUrl = URL(string: (self.couponBase?.image)!)
-                        self.bgImg.kf.setImage(with: imgUrl)
-                        self.couponNumImg.image = barImg
+                          self.couponNumImg.image = barImg
                         self.branchs.text = "适用分店:" + (self.couponBase?.branchs)!
                         
                         
@@ -155,11 +167,7 @@ class CouponDeatilsViewController: UIViewController {
                         self.validperiod.text = NSLocalizedString("Valid period", comment: "有效期") + (self.couponMall?.starttime)! + NSLocalizedString("To", comment: "至") + (self.couponMall?.endtime)!
                         self.exchangeMsgLab.attributedText = attribstr
                         
-                        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-                        blurEffectView.frame = self.bgImg.frame
-                        self.bgImg.addSubview(blurEffectView)
-                        let imgUrl = URL(string: (self.couponMall?.image)!)
-                        self.bgImg.kf.setImage(with: imgUrl)
+                       
                     }
                 }else {
                     //異常處理
@@ -218,7 +226,7 @@ class CouponDeatilsViewController: UIViewController {
     }
     
     func openAlert()  {
-        let menu = UIAlertController(title: "prompt", message: "exchange success", preferredStyle: .alert)
+        let menu = UIAlertController(title: "提示", message: "兌換成功!", preferredStyle: .alert)
         let optionOK = UIAlertAction(title: "OK", style: .default) { (_) in
             let appdelegate = UIApplication.shared.delegate as! AppDelegate
             appdelegate.couponView.getCouponCount(isupdata: true) //更新数目
