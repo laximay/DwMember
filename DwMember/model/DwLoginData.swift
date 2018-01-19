@@ -10,6 +10,7 @@ import Foundation
 struct DwLoginData{
 
 	var card : DwLoginCard!
+    var isOpenSeat : Int!
 
 
 	/**
@@ -18,6 +19,7 @@ struct DwLoginData{
 	init(fromDictionary dictionary: NSDictionary){
 		if let cardData = dictionary["card"] as? NSDictionary{
 				card = DwLoginCard(fromDictionary: cardData)
+                isOpenSeat = dictionary["isOpenSeat"] as? Int
 			}
 	}
 
@@ -30,6 +32,11 @@ struct DwLoginData{
 		if card != nil{
 			dictionary["card"] = card.toDictionary()
 		}
+        
+        if isOpenSeat != nil{
+            dictionary["isOpenSeat"] = isOpenSeat
+        }
+        
 		return dictionary
 	}
 

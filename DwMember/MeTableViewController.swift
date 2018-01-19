@@ -18,17 +18,19 @@ class MeTableViewController: UITableViewController{
     @IBOutlet weak var couponCountLab: UILabel!
     @IBOutlet weak var msgCountLab: UILabel!
     @IBOutlet weak var localVersion: UILabel!
-    
+    @IBOutlet weak var bookingCell: UITableViewCell!
+    @IBOutlet weak var BookingInfoCell: UITableViewCell!
     @IBOutlet weak var validperiodLab: UILabel!
     @IBOutlet weak var birthImg: UIImageView!
     var userInfo: DwLoginData?
+
     let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.backgroundView?.backgroundColor = UIColor.black
         
-        self.tableView.backgroundColor = UIColor.black
+        
+      
         
         let defaults = UserDefaults.standard
         if let version = defaults.string(forKey: "localVersion"){
@@ -153,7 +155,7 @@ class MeTableViewController: UITableViewController{
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            //print(json)
+            print(json)
             if result.ok {
                 if  DwLoginRootClass(fromDictionary: json).code == 1 {
                     
@@ -176,6 +178,14 @@ class MeTableViewController: UITableViewController{
                         if let validperiod = self.userInfo?.card.closedt {
                             self.validperiodLab.text = "有效期:\(validperiod)"
                             self.validperiodLab.isHidden = false
+                        }
+                        
+                        if let isOpenSeat = self.userInfo?.isOpenSeat {
+                            if isOpenSeat == 0 {
+                            
+                               // self.tableView.deleteSections([1], with: .none)
+                                
+                            }
                         }
                         
                         
