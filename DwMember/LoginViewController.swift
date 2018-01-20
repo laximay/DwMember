@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
     
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
-        dump(avgs)
+       // dump(avgs)
         Just.post(ApiUtil.loginApi ,  data: avgs) { (result) in
             
             
@@ -86,7 +86,7 @@ class LoginViewController: UIViewController {
                 }else {
                     
                     OperationQueue.main.addOperation {
-                         ApiUtil.openAlert(msg: DwLoginRootClass(fromDictionary: json).msg, sender: self)
+                         ApiUtil.openAlert(msg: "賬號或密碼錯誤!", sender: self)
 
                     }
                     
@@ -119,7 +119,7 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let startScale = CGAffineTransform(scaleX: 0, y: 0)
         let startPos = CGAffineTransform(translationX: 0, y: 0)
-        imageLoginLogo.layer.cornerRadius = 30
+        imageLoginLogo.layer.cornerRadius = 50
         imageLoginLogo.isHidden = false
         imageLoginLogo.transform = startScale.concatenating(startPos)
         

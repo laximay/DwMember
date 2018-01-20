@@ -98,7 +98,7 @@ class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UI
         meNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Me", comment: "我的") , image: UIImage(named: "ic_user29"), selectedImage: UIImage(named: "ic_user_on29"))
         
         self.viewControllers = [homeNav, payVC, meNav]
-        self
+        
         
         
     }

@@ -76,9 +76,11 @@ open class ApiUtil{
     
     //服務鏈接
     //static let serverUrl = "https://cloud.ablegenius.com/a"
-    static var serverUrl = "http://localhost:8070/a"
+    static var serverUrl = "http://192.168.90.82/a"
     //公司代碼
     static let companyCode = "EPOT"
+    //APP類型細分編號
+    static let serial = "X97Gre352EED2E2"
     //公司代碼
     static let channel = "IOS"
     //啟動頁Api

@@ -83,30 +83,31 @@ class MeTableViewController: UITableViewController{
             ApiUtil.webViewHandle(withIdentifier: webViewType.JFCX.rawValue, id: "",  sender: self)
         }
         
-        if indexPath == [1, 0] {
-            ApiUtil.webViewHandle(withIdentifier: webViewType.DZXQ.rawValue, id: "",  sender: self)
-        }
+//        if indexPath == [1, 0] {
+//             tableView.deselectRow(at: indexPath, animated: true)
+//            //ApiUtil.webViewHandle(withIdentifier: webViewType.DZXQ.rawValue, id: "",  sender: self)
+//        }
         
-        if indexPath == [3, 0] {
+        if indexPath == [2, 0] {
             if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
                 pageVC.type = .MEMTERMS
                 self.navigationController?.pushViewController(pageVC, animated: true)
             }
         }
         
-        if indexPath == [3, 1] {
+        if indexPath == [2, 1] {
             if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
                 pageVC.type = .ABOUTUS
                 self.navigationController?.pushViewController(pageVC, animated: true)
             }
         }
-        if indexPath == [3, 2] {
+        if indexPath == [2, 2] {
             if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
                 pageVC.type = .INTERULE
                 self.navigationController?.pushViewController(pageVC, animated: true)
             }
         }
-        if indexPath == [3, 3] {
+        if indexPath == [2, 3] {
             if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
                 pageVC.type = .MEMINFO
                 self.navigationController?.pushViewController(pageVC, animated: true)
@@ -116,11 +117,11 @@ class MeTableViewController: UITableViewController{
         
         
         
-        if indexPath == [4, 0] {
+        if indexPath == [3, 0] {
             ApiUtil.webViewHandle(withIdentifier: webViewType.FPWD.rawValue, id: "", sender: self)
         }
         
-        if indexPath == [4, 3] {
+        if indexPath == [3, 3] {
             clearCacheBtnClick()
         }
         
@@ -144,9 +145,11 @@ class MeTableViewController: UITableViewController{
         
         var avgs = ApiUtil.frontFunc()
         
-        
+        avgs.updateValue(ApiUtil.serial, forKey: "serial")
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
+      
+        
         
         //dump(avgs)
         
@@ -155,7 +158,7 @@ class MeTableViewController: UITableViewController{
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            print(json)
+            //print(json)
             if result.ok {
                 if  DwLoginRootClass(fromDictionary: json).code == 1 {
                     
@@ -180,13 +183,13 @@ class MeTableViewController: UITableViewController{
                             self.validperiodLab.isHidden = false
                         }
                         
-                        if let isOpenSeat = self.userInfo?.isOpenSeat {
-                            if isOpenSeat == 0 {
-                            
-                               // self.tableView.deleteSections([1], with: .none)
-                                
-                            }
-                        }
+//                        if let isOpenSeat = self.userInfo?.isOpenSeat {
+//                            if isOpenSeat == 0 {
+//
+//                               // self.tableView.deleteSections([1], with: .none)
+//
+//                            }
+//                        }
                         
                         
                         if let isBir = self.userInfo?.card.isCustBirthMonth {
@@ -403,7 +406,7 @@ class MeTableViewController: UITableViewController{
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 6
+        return 5
     }
     
     //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

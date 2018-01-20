@@ -81,6 +81,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         //print("加载完成")
+        self.title = webView.title
         
     }
     
