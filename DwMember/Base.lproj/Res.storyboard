@@ -68,14 +68,14 @@
                                                                 <constraint firstAttribute="height" constant="20" id="NTY-HY-C6d"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_clock" translatesAutoresizingMaskIntoConstraints="NO" id="XiD-TK-SGE">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_clock-1" translatesAutoresizingMaskIntoConstraints="NO" id="XiD-TK-SGE">
                                                             <rect key="frame" x="26" y="52" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="74y-b8-DS3"/>
                                                                 <constraint firstAttribute="width" constant="20" id="tpW-AR-58k"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_note" translatesAutoresizingMaskIntoConstraints="NO" id="foU-jB-TXo">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_user" translatesAutoresizingMaskIntoConstraints="NO" id="foU-jB-TXo">
                                                             <rect key="frame" x="26" y="87" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="TOO-B8-kbb"/>
@@ -231,8 +231,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ico_clock" width="64" height="64"/>
+        <image name="ico_clock-1" width="64" height="64"/>
         <image name="ico_compass" width="64" height="64"/>
-        <image name="ico_note" width="64" height="64"/>
+        <image name="ico_user" width="64" height="64"/>
     </resources>
 </document>

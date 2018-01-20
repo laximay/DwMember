@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D03761A1F484895003173FD /* CouponDeatilsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0376191F484895003173FD /* CouponDeatilsViewController.swift */; };
+		3D060355201333B00026A782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D060354201333B00026A782 /* Assets.xcassets */; };
 		3D11B3991F30587D0031DD5C /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B3981F30587D0031DD5C /* UIButton.swift */; };
 		3D11B39E1F306D020031DD5C /* MainActivitysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B39D1F306D020031DD5C /* MainActivitysTableViewCell.swift */; };
 		3D1428F71F5B9564004116EB /* DwUpdataData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1428F51F5B9564004116EB /* DwUpdataData.swift */; };
@@ -30,7 +31,6 @@
 		3D1986451F5CE1FC00385DAD /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1986441F5CE1FC00385DAD /* ArticleViewController.swift */; };
 		3D1986481F5CE9B000385DAD /* DwArticleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1986461F5CE9B000385DAD /* DwArticleData.swift */; };
 		3D1986491F5CE9B000385DAD /* DwArticleRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1986471F5CE9B000385DAD /* DwArticleRootClass.swift */; };
-		3D19864D1F60DEAD00385DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D19864C1F60DEAD00385DAD /* Assets.xcassets */; };
 		3D19865F1F6233B600385DAD /* ResDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19865E1F6233B600385DAD /* ResDetailTableViewController.swift */; };
 		3D1986611F62367200385DAD /* ResDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1986601F62367200385DAD /* ResDetailTableViewCell.swift */; };
 		3D1F008E1F37F89D0080957F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F008D1F37F89D0080957F /* WebViewController.swift */; };
@@ -111,6 +111,7 @@
 
 /* Begin PBXFileReference section */
 		3D0376191F484895003173FD /* CouponDeatilsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDeatilsViewController.swift; sourceTree = "<group>"; };
+		3D060354201333B00026A782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D11B3981F30587D0031DD5C /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		3D11B39D1F306D020031DD5C /* MainActivitysTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainActivitysTableViewCell.swift; sourceTree = "<group>"; };
 		3D1428F51F5B9564004116EB /* DwUpdataData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwUpdataData.swift; sourceTree = "<group>"; };
@@ -134,7 +135,6 @@
 		3D1986441F5CE1FC00385DAD /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		3D1986461F5CE9B000385DAD /* DwArticleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwArticleData.swift; sourceTree = "<group>"; };
 		3D1986471F5CE9B000385DAD /* DwArticleRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwArticleRootClass.swift; sourceTree = "<group>"; };
-		3D19864C1F60DEAD00385DAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D19865E1F6233B600385DAD /* ResDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResDetailTableViewController.swift; sourceTree = "<group>"; };
 		3D1986601F62367200385DAD /* ResDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3D1F008D1F37F89D0080957F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -417,9 +417,9 @@
 		3DD3E2491F2EC4C6001FC47E /* DwMember */ = {
 			isa = PBXGroup;
 			children = (
+				3D060354201333B00026A782 /* Assets.xcassets */,
 				3DB7B2261FD7FAAB0092FAC0 /* Localizable.strings */,
 				3DB7B2211FD7FAAA0092FAC0 /* InfoPlist.strings */,
-				3D19864C1F60DEAD00385DAD /* Assets.xcassets */,
 				3D2569E01F3D7B9800E01816 /* ZLaunchAd */,
 				3D493F8B1F3C3DB800CEAD4B /* model */,
 				3D1640BD1F39F969008F0819 /* DwMember.entitlements */,
@@ -529,8 +529,8 @@
 				3DD3E2581F2EC4C7001FC47E /* LaunchScreen.storyboard in Resources */,
 				3DD3E2501F2EC4C6001FC47E /* Main.storyboard in Resources */,
 				3DB7B1FF1FD7EE910092FAC0 /* Find.storyboard in Resources */,
-				3D19864D1F60DEAD00385DAD /* Assets.xcassets in Resources */,
 				3DB7B2031FD7EE910092FAC0 /* Coupon.storyboard in Resources */,
+				3D060355201333B00026A782 /* Assets.xcassets in Resources */,
 				3DD885B21F2F3323007A1CE1 /* PodFile in Resources */,
 				3DB7B2001FD7EE910092FAC0 /* Queue.storyboard in Resources */,
 				3DB7B2241FD7FAAB0092FAC0 /* Localizable.strings in Resources */,
