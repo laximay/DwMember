@@ -18,8 +18,6 @@ class MeTableViewController: UITableViewController{
     @IBOutlet weak var couponCountLab: UILabel!
     @IBOutlet weak var msgCountLab: UILabel!
     @IBOutlet weak var localVersion: UILabel!
-    @IBOutlet weak var bookingCell: UITableViewCell!
-    @IBOutlet weak var BookingInfoCell: UITableViewCell!
     @IBOutlet weak var validperiodLab: UILabel!
     @IBOutlet weak var birthImg: UIImageView!
     var userInfo: DwLoginData?
@@ -181,6 +179,9 @@ class MeTableViewController: UITableViewController{
                         if let validperiod = self.userInfo?.card.closedt {
                             self.validperiodLab.text = "有效期:\(validperiod)"
                             self.validperiodLab.isHidden = false
+                        }else{
+                              self.validperiodLab.text = "有效期:長期有效"
+                              self.validperiodLab.isHidden = false
                         }
                         
 //                        if let isOpenSeat = self.userInfo?.isOpenSeat {

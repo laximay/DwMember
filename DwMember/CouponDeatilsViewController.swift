@@ -105,10 +105,11 @@ class CouponDeatilsViewController: UIViewController {
                 if  CouponDetailsRootClass(fromDictionary: json).code == 1 {
                     self.couponBase = CouponDetailsRootClass(fromDictionary: json).data
                     let attribstr = try! NSAttributedString.init(data:(self.couponBase?.descriptionField.data(using: String.Encoding.unicode))! , options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
-                       let barImg: UIImage = LBXScanWrapper.createCode128(codeString: (self.couponBase?.couponNo)!, size: self.couponNumImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white)!
+                    
                   
                     
                     OperationQueue.main.addOperation {
+                        let barImg: UIImage = LBXScanWrapper.createCode128(codeString: (self.couponBase?.couponNo)!, size: self.couponNumImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white)!
                         
                         self.exchangeMsgLab.attributedText = attribstr
                         self.titleLab.text = self.couponBase?.title

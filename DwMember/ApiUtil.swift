@@ -61,6 +61,7 @@ let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", 
                                            "FPWD": webViewConfig(code: "FPWD", verif: true),
                                            "HDXQ": webViewConfig(code: "HDXQ", verif: true),
                                            "JFCX": webViewConfig(code: "JFCX", verif: true),
+                                            "HYDC": webViewConfig(code: "HYDC", verif: true),
                             "HYJH": webViewConfig(code: "HYJH", verif: true)]
 
 open class ApiUtil{
