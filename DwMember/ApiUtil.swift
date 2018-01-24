@@ -76,12 +76,14 @@ open class ApiUtil{
     static let bgColor: UIColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
     
     //服務鏈接
-    //static let serverUrl = "https://cloud.ablegenius.com/a"
-    static var serverUrl = "http://192.168.90.82/a"
-    //公司代碼
+    static let serverUrl = "https://cloud.ablegenius.com/a"
+    //static var serverUrl = "http://192.168.90.82/a"
+    //公司代碼`
     static let companyCode = "EPOT"
     //APP類型細分編號
     static let serial = "X97Gre352EED2E2"
+    //推送APPKEY
+    static let apnsKey = "3d3875c4f028cfac41294580"
     //公司代碼
     static let channel = "IOS"
     //啟動頁Api
@@ -353,8 +355,8 @@ open class ApiUtil{
     static func checklogin( sender: UIViewController){
         let defaults = UserDefaults.standard
         guard (defaults.string(forKey: "dwsercet") != nil) else{
-            let menu = UIAlertController(title: nil, message: "please sign in", preferredStyle: .alert)
-            let optionOK = UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+            let menu = UIAlertController(title: nil, message: "請登錄", preferredStyle: .alert)
+            let optionOK = UIAlertAction(title: "好", style: .default, handler: { (_) in
                 
                 if let pageVC = ApiUtil.loginSB.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
                     
@@ -362,7 +364,7 @@ open class ApiUtil{
                     //sender.present(pageVC, animated: true, completion: nil)
                 }
             })
-            let optionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let optionCancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
             menu.addAction(optionOK)
             menu.addAction(optionCancel)
             

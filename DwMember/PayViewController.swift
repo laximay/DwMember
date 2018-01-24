@@ -76,12 +76,13 @@ class PayViewController: UIViewController {
                             return
                         }else{
                             
-                            let qrImg: UIImage = LBXScanWrapper.createCode(codeType: "CIQRCodeGenerator",codeString:payData.code, size: self.qrcodeImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white
-                                )!
-                            let barImg: UIImage = LBXScanWrapper.createCode128(codeString: payData.code, size: self.barcodeImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white)!
+                          
                             
                             OperationQueue.main.addOperation {
                                 //生成二维码
+                                let qrImg: UIImage = LBXScanWrapper.createCode(codeType: "CIQRCodeGenerator",codeString:payData.code, size: self.qrcodeImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white
+                                    )!
+                                let barImg: UIImage = LBXScanWrapper.createCode128(codeString: payData.code, size: self.barcodeImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white)!
                                 
                                 self.qrcodeImg.image = qrImg
                                 

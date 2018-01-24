@@ -26,8 +26,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     @IBOutlet weak var indexImageView: UIView! //放置轮播图的VIEW
     @IBOutlet weak var menuView: UIStackView! //放置功能按钮的VIEW
     
-    @IBOutlet weak var topView: UIStackView!
-    
+    @IBOutlet weak var topView: UIView!
     //活动的LIST
     var  activitys : [DwHomeActivity] = []
     //远程首页轮播图LIST
@@ -39,12 +38,15 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        let w = UIScreen.main.bounds.width
+        let h = w * 0.75 + 70
+        self.topView.frame = CGRect(x: 0.00, y: 0.00, width: w, height: h)
+        
+        
+        
         //註冊推送
-       //  print("udid:\(ApiUtil.idfv)")
-//                JPUSHService.setAlias(ApiUtil.idfv,
-//                                      callbackSelector: #selector(self.tagsAliasCallBack(resCode:tags:alias:)),
-//                                      object: self)
+        // print("udid:\(ApiUtil.idfv)")
+
         JPUSHService.setAlias(ApiUtil.idfv, completion: nil, seq: 1)
         
         
@@ -151,7 +153,8 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     func addMainScrollView() {
         let w = UIScreen.main.bounds.width
         let h = w * 0.75
-        let mainScrollView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect.init(x: 0, y:0, width: w, height: h), imageURLPaths: self.scrollImageUrls, didSelectItemAtIndex: { index in
+        self.indexImageView.frame = CGRect(x: 0.00, y: 0.00, width: w, height: h)
+        let mainScrollView = LLCycleScrollView.llCycleScrollViewWithFrame(self.indexImageView.frame, imageURLPaths: self.scrollImageUrls, didSelectItemAtIndex: { index in
             // print("当前点击图片的位置为:\(index)")
             let ad = self.ads[index]
             let openType = opentypeM.init(rawValue: ad.opentype!).unsafelyUnwrapped
@@ -287,9 +290,12 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             btnFeature.setTitleColor(UIColor.black, for: .normal)
             btnFeature.titleLabel?.font =  UIFont.systemFont(ofSize: 15)
             btnFeature.set(image: feature.image!, title: feature.name!, titlePosition: .bottom,
-                     additionalSpacing: 5, state: .normal)
+                     additionalSpacing: 0, state: .normal)
             btnFeature.tag = index
             btnFeature.addTarget(self, action: #selector(featureTap(_:)), for: .touchUpInside)
+            
+           
+                
             index = index + 1
              self.menuView.addArrangedSubview(btnFeature)
         }
@@ -306,6 +312,10 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "活動"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

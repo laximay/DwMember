@@ -10,10 +10,10 @@ import UIKit
 import Just
 class GuiderViewController: UIPageViewController, UIPageViewControllerDataSource {
     
-    var headings = [NSLocalizedString("Fill in simple information", comment: "引導頁-頭部1")
-        , NSLocalizedString("Receive offers", comment: "引導頁-頭部2"), NSLocalizedString("Integral courtesy", comment: "引導頁-頭部3")]
+    var headings = ["填寫簡單信息"
+        , "接收優惠", "積分禮遇"]
     var images = ["card", "card", "card"]
-    var footers = [NSLocalizedString("Membership registration", comment: "引導頁-底部1") , NSLocalizedString("More offers", comment: "引導頁-底部2") , NSLocalizedString("Integral Mall", comment: "引導頁-底部3")]
+    var footers = ["會籍註冊" , "更多優惠" ,"會員商城"]
     
     
     

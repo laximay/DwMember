@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,16 +16,16 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Find-->
+        <!--發現-->
         <scene sceneID="FpU-A5-3XM">
             <objects>
-                <tableViewController storyboardIdentifier="FindTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bOt-OL-jbQ" customClass="FindTableViewController" customModule="DwMember" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FindTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bOt-OL-jbQ" customClass="FindTableViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2BJ-26-ZCd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FindCell" rowHeight="150" id="td6-0U-Xh7" customClass="FindTableViewCell" customModule="DwMember" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FindCell" rowHeight="150" id="td6-0U-Xh7" customClass="FindTableViewCell" customModule="一鍋堂" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="td6-0U-Xh7" id="8zz-1h-C1u">
@@ -73,7 +77,7 @@
                             <outlet property="delegate" destination="bOt-OL-jbQ" id="rm5-eb-chU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Find" id="rOY-kc-vdw"/>
+                    <navigationItem key="navigationItem" title="發現" id="rOY-kc-vdw"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3E-mQ-zg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,9 +86,9 @@
         <!--Branch Detail Table View Controller-->
         <scene sceneID="aPj-Ul-s9f">
             <objects>
-                <tableViewController id="0zm-Zb-t2P" customClass="BranchDetailTableViewController" customModule="DwMember" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="0zm-Zb-t2P" customClass="BranchDetailTableViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yPg-EU-qj9">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Bx5-dL-Sel">
@@ -107,7 +111,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="branchCell" id="H46-o7-vzH" customClass="BranchDetailTableViewCell" customModule="DwMember" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="branchCell" id="H46-o7-vzH" customClass="BranchDetailTableViewCell" customModule="一鍋堂" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="328" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H46-o7-vzH" id="QGH-mB-c1z">

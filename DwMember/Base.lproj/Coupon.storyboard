@@ -157,7 +157,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gzw-LP-Phq">
-                                        <rect key="frame" x="10" y="120" width="303" height="188"/>
+                                        <rect key="frame" x="10" y="120" width="303" height="161"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Omb-4e-viQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="303" height="100"/>
@@ -171,14 +171,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請向店員出示此券,以便核銷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-bV-YbB">
-                                                <rect key="frame" x="0.0" y="140.5" width="303" height="17"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請向店員出示此券,以便核銷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-bV-YbB">
+                                                <rect key="frame" x="0.0" y="135.5" width="303" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofs-Ma-wbf">
-                                                <rect key="frame" x="0.0" y="167.5" width="303" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="140.5" width="303" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -186,7 +186,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tN7-fi-crC">
-                                        <rect key="frame" x="10" y="318" width="303" height="50"/>
+                                        <rect key="frame" x="10" y="291" width="303" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ylU-FV-dWp"/>
                                         </constraints>
@@ -194,15 +194,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUZ-Se-qHo">
-                                        <rect key="frame" x="10" y="378" width="303" height="40"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUZ-Se-qHo">
+                                        <rect key="frame" x="10" y="351" width="303" height="40"/>
                                         <color key="backgroundColor" red="0.65818500518798828" green="0.059780292212963104" blue="0.16733807325363159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="275" id="eYT-lx-p2g"/>
                                             <constraint firstAttribute="height" constant="40" id="yW7-XA-ZjX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Exchange">
+                                        <state key="normal" title="兌換">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -212,6 +212,14 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="exchangebtn:" destination="WSl-xH-3mQ" eventType="touchUpInside" id="vbX-Z4-mUH"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lxm-qn-v8j">
+                                        <rect key="frame" x="34" y="30" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="close"/>
+                                        <connections>
+                                            <segue destination="OmT-6S-fsp" kind="unwind" identifier="unwindToCouponList" unwindAction="closeWithSegue:" id="Fah-GW-JXc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -254,12 +262,13 @@
                         <outlet property="couponNumImg" destination="Omb-4e-viQ" id="mI7-FG-ey1"/>
                         <outlet property="exchangeBtn" destination="ZUZ-Se-qHo" id="3Rj-MZ-dGZ"/>
                         <outlet property="exchangeMsgLab" destination="Ofs-Ma-wbf" id="IOl-bO-zb5"/>
-                        <outlet property="popLab" destination="Yoh-bV-YbB" id="ujh-YP-IMx"/>
+                        <outlet property="popLab" destination="Yoh-bV-YbB" id="rdU-9F-CIk"/>
                         <outlet property="titleLab" destination="JTm-Dp-OuG" id="Aa5-X9-9lI"/>
                         <outlet property="validperiod" destination="3I9-D8-WbO" id="MQU-wi-D88"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbX-Ye-3vk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OmT-6S-fsp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2885.5" y="-1255.5"/>
         </scene>
@@ -281,7 +290,7 @@
             </objects>
             <point key="canvasLocation" x="31" y="-1255"/>
         </scene>
-        <!--Member Mall-->
+        <!--會員商城-->
         <scene sceneID="8eC-7w-OcN">
             <objects>
                 <viewController storyboardIdentifier="CouponViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yE2-QY-pjS" customClass="CouponViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
@@ -346,7 +355,7 @@
                         </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Member Mall" id="tdm-Lz-V73"/>
+                    <navigationItem key="navigationItem" title="會員商城" id="tdm-Lz-V73"/>
                     <connections>
                         <outlet property="containerView" destination="U4p-Qt-EvM" id="Qc5-FX-Ror"/>
                         <outlet property="scrollView" destination="Cg6-OS-uNb" id="Fd1-we-YYb"/>

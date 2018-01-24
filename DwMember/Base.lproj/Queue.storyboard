@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,20 +25,20 @@
             </objects>
             <point key="canvasLocation" x="-1050" y="-1531"/>
         </scene>
-        <!--Queue-->
+        <!--取票-->
         <scene sceneID="E9R-Lo-mNg">
             <objects>
-                <viewController storyboardIdentifier="TempViewController" id="y6D-hj-JBC" customClass="TempViewController" customModule="DwMember" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TempViewController" id="y6D-hj-JBC" customClass="TempViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UrN-Be-2Ly"/>
                         <viewControllerLayoutGuide type="bottom" id="P20-u6-6LJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tgx-mb-378">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Queue" id="Kdk-bB-7JI"/>
+                    <navigationItem key="navigationItem" title="取票" id="Kdk-bB-7JI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fso-Do-0gI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

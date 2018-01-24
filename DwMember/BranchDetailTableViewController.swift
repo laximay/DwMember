@@ -48,18 +48,18 @@ class BranchDetailTableViewController: UITableViewController,MKMapViewDelegate {
         cell.backgroundColor = UIColor.clear //透明色
         switch indexPath.row {
         case 0:
-            cell.nameLab.text = NSLocalizedString("Band", comment: "品牌")
+            cell.nameLab.text = "品       牌"
             cell.valueLab.text = self.branch.regionName
         case 1:
-            cell.nameLab.text = NSLocalizedString("Shop Name", comment: "全稱")
+            cell.nameLab.text = "店鋪名稱"
             cell.valueLab.text = self.branch.name1
 
         case 2:
-            cell.nameLab.text = NSLocalizedString("Tel No.", comment: "電話")
+            cell.nameLab.text = "店鋪電話"
             cell.valueLab.text = self.branch.telphone
 
         case 3:
-            cell.nameLab.text =  NSLocalizedString("Address", comment: "地址")
+            cell.nameLab.text =  "店鋪地址"
             cell.valueLab.text = self.branch.address
 
         default:

@@ -222,7 +222,9 @@ class MeTableViewController: UITableViewController{
                 
                         OperationQueue.main.addOperation {
                             ApiUtil.openAlert(msg: error.msg, sender: self)
+                            self.performSegue(withIdentifier: "logoutSegue", sender: self)
                         }
+                        
                     }
                     
                 }

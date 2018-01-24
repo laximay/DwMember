@@ -82,20 +82,20 @@ class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UI
         
         
         let homeNav = mainSB.instantiateViewController(withIdentifier: "homeNav") //一定要用這種方式讀取，要不然會關聯不到storyboard
-        homeNav.tabBarItem =  ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Home", comment: "主頁"), image: UIImage(named: "ic_home29"), selectedImage: UIImage(named: "ic_home_on29"))
+        homeNav.tabBarItem =  ESTabBarItem.init(IrregularityBasicContentView(), title: "主頁", image: UIImage(named: "ic_home29"), selectedImage: UIImage(named: "ic_home_on29"))
         
 //        let couponNav = couponSB.instantiateViewController(withIdentifier: "couponNav")
-//        couponNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Mall", comment: "商城") , image: UIImage(named: "ic_store29"), selectedImage: UIImage(named: "ic_store_on29"))
+//        couponNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: "商城", image: UIImage(named: "ic_store29"), selectedImage: UIImage(named: "ic_store_on29"))
         
         let payVC = mainSB.instantiateViewController(withIdentifier: "PayViewController")
         payVC.tabBarItem = ESTabBarItem.init(IrregularityContentView(), title: nil, image: UIImage(named: "qrcode"), selectedImage: UIImage(named: "qrcode_1"))
         
 //        let queueNav = queueSB.instantiateViewController(withIdentifier: "tempNav")
-//        queueNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Queue", comment: "叫號") , image: UIImage(named: "ic_queue"), selectedImage: UIImage(named: "ic_queue_red"))
+//        queueNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: "取票", image: UIImage(named: "ic_queue"), selectedImage: UIImage(named: "ic_queue_red"))
         
         
         let meNav = meSB.instantiateViewController(withIdentifier: "meNav")
-        meNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: NSLocalizedString("Me", comment: "我的") , image: UIImage(named: "ic_user29"), selectedImage: UIImage(named: "ic_user_on29"))
+        meNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: "我的" , image: UIImage(named: "ic_user29"), selectedImage: UIImage(named: "ic_user_on29"))
         
         self.viewControllers = [homeNav, payVC, meNav]
         

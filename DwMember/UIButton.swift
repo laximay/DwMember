@@ -13,9 +13,13 @@ extension UIButton {
     @objc func set(image anImage: String?, title: String,
                    titlePosition: UIViewContentMode, additionalSpacing: CGFloat, state: UIControlState){
         //self.imageView?.contentMode = .scaleAspectFill
-        self.imageView?.contentMode = .center
+    //    self.imageView?.contentMode = .center
+       // self.imageRect(forContentRect: CGRect(x: 0, y: 0, width: 30, height: 30))
         let imgUrl = URL(string: anImage!)
+       // self.imageView?.frame =  CGRect.init(x: 0, y: 0, width: 30, height: 30)
+        
         self.kf.setImage(with: imgUrl, for: state)
+     
     
         positionLabelRespectToImage(title: title, position: titlePosition, spacing: additionalSpacing)
         
@@ -73,7 +77,7 @@ extension UIButton {
             imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
         
-        
+     
         self.titleEdgeInsets = titleInsets
         self.imageEdgeInsets = imageInsets
     }

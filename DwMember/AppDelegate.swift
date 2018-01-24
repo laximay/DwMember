@@ -49,13 +49,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             JPUSHService.register(forRemoteNotificationTypes: type, categories: nil)
         }
         
-        JPUSHService.setup(withOption: launchOptions,
-                           appKey: "632332f84b691dc836b88d1e", //這條是測試的KEY，生成版本需要更換
-                           channel: "app store",
-                           apsForProduction: true)
         
         application.applicationIconBadgeNumber = 0;
         JPUSHService.resetBadge()
+        
+        JPUSHService.setup(withOption: launchOptions,
+                           appKey: ApiUtil.apnsKey,
+                           channel: "1",
+                           apsForProduction: true)
         
         
         
@@ -118,9 +119,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        application.applicationIconBadgeNumber = 0
-        application.cancelAllLocalNotifications()
+        application.applicationIconBadgeNumber = 0;
+        JPUSHService.resetBadge()
         
     }
     

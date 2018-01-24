@@ -57,7 +57,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="m7P-16-nlV">
                                         <rect key="frame" x="0.0" y="120" width="303" height="110"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CardNum or PhoneNum" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcI-Ri-crw">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="卡號或電話號碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcI-Ri-crw">
                                                 <rect key="frame" x="0.0" y="0.0" width="303" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="3Lt-IF-smt"/>
@@ -66,7 +66,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PassWord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iDf-D3-ch6">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iDf-D3-ch6">
                                                 <rect key="frame" x="0.0" y="70" width="303" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Ecb-19-yUU"/>
@@ -84,8 +84,8 @@
                                         <rect key="frame" x="0.0" y="250" width="303" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kX4-rt-AEP">
-                                                <rect key="frame" x="0.0" y="0.0" width="53" height="30"/>
-                                                <state key="normal" title="Forget?">
+                                                <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
+                                                <state key="normal" title="忘記密碼?">
                                                     <color key="titleColor" red="0.65818500518798828" green="0.059780292212963104" blue="0.16733807325363159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -93,8 +93,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9df-47-sxk">
-                                                <rect key="frame" x="246" y="0.0" width="57" height="30"/>
-                                                <state key="normal" title="Register">
+                                                <rect key="frame" x="241" y="0.0" width="62" height="30"/>
+                                                <state key="normal" title="登記會員">
                                                     <color key="titleColor" red="0.65818500518798828" green="0.059780292212963104" blue="0.16733807325363159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -110,7 +110,7 @@
                                             <constraint firstAttribute="height" constant="50" id="Zf2-T0-hlF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Login">
+                                        <state key="normal" title="登陸">
                                             <color key="titleColor" red="0.99963909390000005" green="1" blue="0.99975615740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -140,7 +140,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Lvt-V2-elA" secondAttribute="trailing" constant="20" id="vmf-1p-590"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" id="K7X-UQ-xNq"/>
+                    <navigationItem key="navigationItem" title="登陸" id="K7X-UQ-xNq"/>
                     <connections>
                         <outlet property="cardNoLab" destination="ZcI-Ri-crw" id="O70-Po-guf"/>
                         <outlet property="imageLoginLogo" destination="vCc-bu-xly" id="dDQ-84-rxK"/>

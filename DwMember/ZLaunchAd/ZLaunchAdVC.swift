@@ -46,7 +46,7 @@ class ZLaunchAdVC: UIViewController {
     
     /// 跳过按钮位置
     /// ===========================
-    fileprivate var skipBtnPosition: SkipButtonPosition = .rightTop
+    fileprivate var skipBtnPosition: SkipButtonPosition = .rightBottom
     
     /// 跳过按钮类型
     /// ===========================
@@ -251,7 +251,7 @@ extension ZLaunchAdVC {
     ///   - transitionType:         过渡的类型，默认没有
     ///   - adImgViewClick:         点击广告回调
     ///   - completion:             完成回调
-    func setAdParams(url: String, adDuartion: Int, skipBtnType: SkipButtonType = .timer, skipBtnPosition: SkipButtonPosition = .rightTop,  adViewBottomDistance: CGFloat = 100, transitionType: TransitionType = .none, adImgViewClick: (()->())?) {
+    func setAdParams(url: String, adDuartion: Int, skipBtnType: SkipButtonType = .timer, skipBtnPosition: SkipButtonPosition = .rightBottom,  adViewBottomDistance: CGFloat = 100, transitionType: TransitionType = .none, adImgViewClick: (()->())?) {
         
         self.AdViewBottomDistance = adViewBottomDistance
         self.skipBtnPosition = skipBtnPosition
@@ -358,12 +358,11 @@ extension ZLaunchAdVC {
         
         dataTimer?.setEventHandler(handler: {
             
-            self.skipBtn.setTitle(self.skipBtnType == .timer ? "\(self.adDuration) 跳過" : "跳過", for: .normal)
-            
             if self.adDuration == 0 {
                 
                 
                 DispatchQueue.main.async {
+                    self.skipBtn.setTitle(self.skipBtnType == .timer ? "\(self.adDuration) 跳過" : "跳過", for: .normal)
                     self.launchAdVCRemove(completion: nil)
                 }
                 

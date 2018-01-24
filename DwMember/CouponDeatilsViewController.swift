@@ -57,18 +57,11 @@ class CouponDeatilsViewController: UIViewController {
         
         switch couponS {
         case .mall:
-            self.popLab.isHidden = true
-            self.briefingLab.isHidden = true
-            self.couponNumImg.isHidden = true
-            self.branchs.isHidden = true
-            self.exchangeBtn.isHidden = false
+          
+
             getcouponMall()
         default:
-             self.popLab.isHidden = false
-            self.couponNumImg.isHidden = false
-             self.briefingLab.isHidden = false
-            self.branchs.isHidden = false
-            self.exchangeBtn.isHidden = true
+            
             getcouponbase()
         }
         // Uncomment the following line to preserve selection between presentations
@@ -115,13 +108,16 @@ class CouponDeatilsViewController: UIViewController {
                         self.titleLab.text = self.couponBase?.title
                         self.briefingLab.text = self.couponBase?.couponNo
                         
-                        self.validperiod.text = NSLocalizedString("Valid period", comment: "有效期") + (self.couponBase?.useStartTime)! + NSLocalizedString("To", comment: "至") + (self.couponBase?.useEndTime)! + " " + (self.couponBase?.useDaysMsg)!
+                        self.validperiod.text = "有效期" + (self.couponBase?.useStartTime)! + "至" + (self.couponBase?.useEndTime)! + " " + (self.couponBase?.useDaysMsg)!
                         
                           self.couponNumImg.image = barImg
-                        self.branchs.text = "适用分店:" + (self.couponBase?.branchs)!
+                            self.branchs.text = "適用分店:" + (self.couponBase?.branchs)!
                         
-                        
-                        
+                        self.popLab.isHidden = false
+                        self.couponNumImg.isHidden = false
+                        self.briefingLab.isHidden = false
+                        self.branchs.isHidden = false
+                        self.exchangeBtn.isHidden = true
                         
                     }
                 }else {
@@ -165,9 +161,13 @@ class CouponDeatilsViewController: UIViewController {
                     OperationQueue.main.addOperation {
                         self.titleLab.text = self.couponMall?.title
                         self.briefingLab.text = self.couponMall?.briefing
-                        self.validperiod.text = NSLocalizedString("Valid period", comment: "有效期") + (self.couponMall?.starttime)! + NSLocalizedString("To", comment: "至") + (self.couponMall?.endtime)!
+                        self.validperiod.text = "有效期" + (self.couponMall?.starttime)! + "至" + (self.couponMall?.endtime)!
                         self.exchangeMsgLab.attributedText = attribstr
                         
+                        self.briefingLab.isHidden = true
+                        self.couponNumImg.isHidden = true
+                        self.branchs.isHidden = true
+                        self.exchangeBtn.isHidden = false
                        
                     }
                 }else {

@@ -63,7 +63,7 @@ class ReservationTableViewController: UITableViewController {
         cell.addLab.text = res.branch.addr
         cell.personLab.text = res.person+"(\(persons))"
         cell.timeLab.text = res.indate! + " " + res.intime!
-        cell.statusLab.text = res.iscomfrim == "0" ? NSLocalizedString("Waiting for confirmation", comment: "待確認") : NSLocalizedString("Confirmed", comment: "已確認")
+        cell.statusLab.text = res.iscomfrim == "0" ? "待確認" : "已確認"
         
         // Configure the cell...
         
