@@ -67,7 +67,7 @@ class LoginViewController: UIViewController {
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            print(json)
+           // print(json)
             if result.ok {
                 if   DwLoginRootClass(fromDictionary: json).code == 1 {
                     //print("登錄成功")
