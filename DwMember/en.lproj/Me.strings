@@ -24,7 +24,7 @@
 "ED1-cV-zjt.text" = "Label";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "El5-uM-nEW"; */
-"El5-uM-nEW.text" = "關於";
+"El5-uM-nEW.text" = "加入我們";
 
 /* Class = "UILabel"; text = "0"; ObjectID = "Ikj-jj-Ogw"; */
 "Ikj-jj-Ogw.text" = "0";
@@ -39,7 +39,7 @@
 "N1S-EG-fs2.text" = "Label";
 
 /* Class = "UILabel"; text = "Memberinfo"; ObjectID = "OCy-3R-XZI"; */
-"OCy-3R-XZI.text" = "會員信息";
+"OCy-3R-XZI.text" = "用戶信息";
 
 /* Class = "UILabel"; text = "李大文"; ObjectID = "ORn-A0-1O7"; */
 "ORn-A0-1O7.text" = "李大文";
@@ -51,7 +51,7 @@
 "WiA-OC-xLg.text" = "性別";
 
 /* Class = "UILabel"; text = "Find"; ObjectID = "X57-YV-DSl"; */
-"X57-YV-DSl.text" = "發現";
+"X57-YV-DSl.text" = "店鋪地址";
 
 /* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "XC4-d7-ryg"; */
 "XC4-d7-ryg.headerTitle" = " ";
@@ -78,7 +78,7 @@
 "gzd-8g-gWY.text" = "手提電話";
 
 /* Class = "UILabel"; text = "Notice"; ObjectID = "hmS-bZ-zvE"; */
-"hmS-bZ-zvE.text" = "會員須知";
+"hmS-bZ-zvE.text" = "私隱政策及聲明";
 
 /* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "itt-ZE-h4x"; */
 "itt-ZE-h4x.footerTitle" = " ";
@@ -87,7 +87,7 @@
 "itt-ZE-h4x.headerTitle" = " ";
 
 /* Class = "UILabel"; text = "Membership terms"; ObjectID = "jOg-nt-DHG"; */
-"jOg-nt-DHG.text" = "會員條款";
+"jOg-nt-DHG.text" = "條款細則";
 
 /* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "jl2-9q-qsF"; */
 "jl2-9q-qsF.headerTitle" = " ";
@@ -96,13 +96,13 @@
 "kEr-qI-iaF.text" = "Label";
 
 /* Class = "UINavigationItem"; title = "Me"; ObjectID = "kaS-JC-yQN"; */
-"kaS-JC-yQN.title" = "我的";
+"kaS-JC-yQN.title" = "會員專區";
 
 /* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "ksX-TE-nxC"; */
 "ksX-TE-nxC.headerTitle" = " ";
 
 /* Class = "UILabel"; text = "Validity:"; ObjectID = "nnM-uI-YRp"; */
-"nnM-uI-YRp.text" = "有效期:";
+"nnM-uI-YRp.text" = "積分有效期:";
 
 /* Class = "UILabel"; text = "Change Password"; ObjectID = "oFP-tS-4Qt"; */
 "oFP-tS-4Qt.text" = "更改密碼";
@@ -111,13 +111,13 @@
 "r8B-oX-b2q.text" = "電子郵件";
 
 /* Class = "UILabel"; text = "Logout"; ObjectID = "rHj-st-t7r"; */
-"rHj-st-t7r.text" = "登出";
+"rHj-st-t7r.text" = "退出登錄";
 
 /* Class = "UILabel"; text = "Message"; ObjectID = "uIB-8h-baL"; */
 "uIB-8h-baL.text" = "消息";
 
 /* Class = "UILabel"; text = "Integral rule"; ObjectID = "wgk-sK-znf"; */
-"wgk-sK-znf.text" = "積分規則";
+"wgk-sK-znf.text" = "顧客意見";
 
 /* Class = "UILabel"; text = "Nickname"; ObjectID = "zRH-Zu-o8N"; */
 "zRH-Zu-o8N.text" = "暱稱";

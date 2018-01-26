@@ -8,11 +8,11 @@ class IrregularityBasicContentView: BouncesContentView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        textColor = ApiUtil.fontColor2
-        highlightTextColor = ApiUtil.fontColor
-        iconColor = ApiUtil.fontColor2
-        highlightIconColor = ApiUtil.fontColor
-//        backdropColor =  ApiUtil.bgColor
+        textColor = ApiUtil.iconColor
+        highlightTextColor = ApiUtil.iconColor
+        iconColor = ApiUtil.iconColor
+        highlightIconColor = ApiUtil.iconColor
+//       backdropColor =  ApiUtil.fontColor2
 //        highlightBackdropColor =  UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
 
     }
@@ -28,11 +28,11 @@ class IrregularityContentView: ESTabBarItemContentView {
     override init(frame: CGRect) {
     super.init(frame: frame)
     
-    self.imageView.backgroundColor = ApiUtil.fontColor
+    self.imageView.backgroundColor = ApiUtil.fontColor2
 
 
-    //self.imageView.layer.borderWidth = 2.0
-    //self.imageView.layer.borderColor = UIColor.init(white: 235 / 255.0, alpha: 1.0).cgColor
+   // self.imageView.layer.borderWidth = 2.0
+   // self.imageView.layer.borderColor = UIColor.init(white: 235 / 255.0, alpha: 1.0).cgColor
     self.imageView.layer.cornerRadius = 35
     self.insets = UIEdgeInsetsMake(-32, 0, 0, 0)
     let transform = CGAffineTransform.identity
@@ -41,7 +41,7 @@ class IrregularityContentView: ESTabBarItemContentView {
     
     textColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
     highlightTextColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
-    iconColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
+    iconColor =  UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
     highlightIconColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
     backdropColor = .clear
     highlightBackdropColor = .clear

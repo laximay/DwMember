@@ -71,9 +71,13 @@ open class ApiUtil{
         return apiUtil;
     }
     //系統顏色圖標顏色
-    static let fontColor: UIColor = UIColor(red: 168/255.0, green: 15/255.0, blue: 43/255.0, alpha: 1)
-    static let fontColor2: UIColor = UIColor.white
-    static let bgColor: UIColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
+    static let fontColor: UIColor = UIColor.white
+    static let fontColor2: UIColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
+    static let bgColor: UIColor = UIColor.white
+    
+//    static let iconColor: UIColor =  UIColor(red: 178/255.0, green: 126/255.0, blue: 86/255.0, alpha: 1)
+    
+       static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
     static let serverUrl = "https://cloud.ablegenius.com/a"
@@ -135,6 +139,9 @@ open class ApiUtil{
     static let updataApi = serverUrl + "/api/app/version"
     //文章獲取Api
     static let articleApi = serverUrl + "/api/app/article"
+    
+    //獲取外部鏈接Api
+    static let pageListApi = serverUrl + "/api/getPageList"
     
     //統一編碼
     static let encoding: String.Encoding = String.Encoding.utf8

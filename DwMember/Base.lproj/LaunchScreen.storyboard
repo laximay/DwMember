@@ -28,19 +28,10 @@
                                     <constraint firstAttribute="height" constant="150" id="ug5-6M-bPl"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aglogo" translatesAutoresizingMaskIntoConstraints="NO" id="pnq-pu-uRh">
-                                <rect key="frame" x="67.5" y="599" width="240" height="53"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="01R-pp-f20"/>
-                                    <constraint firstAttribute="width" constant="240" id="eH9-jJ-CSG"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="pnq-pu-uRh" secondAttribute="bottom" constant="15" id="9wR-vc-PpB"/>
                             <constraint firstItem="gBe-4u-Wgu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="AFd-1K-6Hu"/>
-                            <constraint firstItem="pnq-pu-uRh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Tpj-jy-nNX"/>
                             <constraint firstItem="gBe-4u-Wgu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-100" id="hN6-oy-NPw"/>
                         </constraints>
                     </view>
@@ -51,7 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="aglogo" width="1357" height="303"/>
         <image name="epotlogo-r" width="512" height="512"/>
     </resources>
 </document>

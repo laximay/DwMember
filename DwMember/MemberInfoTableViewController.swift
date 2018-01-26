@@ -27,7 +27,7 @@ class MemberInfoTableViewController: UITableViewController {
         
         if let user = self.userInfo?.card {
             self.nicknameInp.text = user.memberName
-            self.sexLab.text = user.sex == "F" ? "女性": "男性"
+            self.sexLab.text = user.sex == "F" ? "女士": "先生"
             self.bmLab.text = user.birthMonth!
             self.addLab.text = user.address
             self.mobileLab.text = user.mobile
@@ -157,7 +157,7 @@ class MemberInfoTableViewController: UITableViewController {
     }
     
     func openAlert()  {
-        let menu = UIAlertController(title: nil, message: "update completed", preferredStyle: .alert)
+        let menu = UIAlertController(title: nil, message: "用戶信息更改成功", preferredStyle: .alert)
         let optionOK = UIAlertAction(title: "OK", style: .default) { (_) in
             self.navigationController!.popViewController(animated: true)
         }

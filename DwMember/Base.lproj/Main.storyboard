@@ -227,7 +227,7 @@
                                     <constraint firstAttribute="width" constant="60" id="ARz-dB-B4g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="+">
+                                <state key="normal" image="logout">
                                     <color key="titleColor" red="0.6705882353" green="0.23529411759999999" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -425,5 +425,6 @@
     <resources>
         <image name="ico_message" width="22" height="20"/>
         <image name="ico_scan" width="20" height="20"/>
+        <image name="logout" width="64" height="64"/>
     </resources>
 </document>

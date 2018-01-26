@@ -93,8 +93,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9df-47-sxk">
-                                                <rect key="frame" x="241" y="0.0" width="62" height="30"/>
-                                                <state key="normal" title="登記會員">
+                                                <rect key="frame" x="226" y="0.0" width="77" height="30"/>
+                                                <state key="normal" title="註冊成會員">
                                                     <color key="titleColor" red="0.65818500518798828" green="0.059780292212963104" blue="0.16733807325363159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -110,7 +110,7 @@
                                             <constraint firstAttribute="height" constant="50" id="Zf2-T0-hlF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="登陸">
+                                        <state key="normal" title="登入">
                                             <color key="titleColor" red="0.99963909390000005" green="1" blue="0.99975615740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>

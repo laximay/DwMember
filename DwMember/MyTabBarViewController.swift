@@ -69,7 +69,7 @@ class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UI
 //        self.tabBar.shadowImage = UIImage(named: "transparent")
 //        self.tabBar.backgroundImage = UIImage(named: "background")
 
-        self.tabBar.barTintColor = ApiUtil.bgColor
+        self.tabBar.barTintColor = ApiUtil.fontColor2
         
   
         /*  使用storyboard進行跳轉
@@ -95,7 +95,7 @@ class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UI
         
         
         let meNav = meSB.instantiateViewController(withIdentifier: "meNav")
-        meNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: "我的" , image: UIImage(named: "ic_user29"), selectedImage: UIImage(named: "ic_user_on29"))
+        meNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: "會員專區" , image: UIImage(named: "vip_40"), selectedImage: UIImage(named: "vip_on_40"))
         
         self.viewControllers = [homeNav, payVC, meNav]
         

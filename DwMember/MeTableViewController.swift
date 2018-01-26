@@ -95,22 +95,23 @@ class MeTableViewController: UITableViewController{
         
         if indexPath == [2, 1] {
             if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
-                pageVC.type = .ABOUTUS
+                pageVC.type = .MEMINFO
                 self.navigationController?.pushViewController(pageVC, animated: true)
             }
         }
+        
         if indexPath == [2, 2] {
+            
+         self.getPageList()
+            
+        }
+        if indexPath == [2, 3] {
             if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
                 pageVC.type = .INTERULE
                 self.navigationController?.pushViewController(pageVC, animated: true)
             }
         }
-        if indexPath == [2, 3] {
-            if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
-                pageVC.type = .MEMINFO
-                self.navigationController?.pushViewController(pageVC, animated: true)
-            }
-        }
+     
         
         
         
@@ -156,7 +157,7 @@ class MeTableViewController: UITableViewController{
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            //print(json)
+            print(json)
             if result.ok {
                 if  DwLoginRootClass(fromDictionary: json).code == 1 {
                     
@@ -168,19 +169,20 @@ class MeTableViewController: UITableViewController{
                             self.integralLab.text = "\(integral)"
                         }
                         if let memberName = self.userInfo?.card.memberName {
-                            self.memberNameLab.text = memberName
+                            
+                            self.memberNameLab.text = "\(memberName)  \( self.userInfo?.card.sex == "F" ? "女士": "先生")"
                             self.memberNameLab.isHidden = false
                         }
-                        if let cardNo = self.userInfo?.card.cardno {
-                            self.cardNoLab.text = "NO:\(cardNo)"
+                        if let mobile = self.userInfo?.card.mobile {
+                            self.cardNoLab.text = mobile
                             self.cardNoLab.isHidden = false
                         }
                         
                         if let validperiod = self.userInfo?.card.closedt {
-                            self.validperiodLab.text = "有效期:\(validperiod)"
+                            self.validperiodLab.text = "積分有效期:\(validperiod)"
                             self.validperiodLab.isHidden = false
                         }else{
-                              self.validperiodLab.text = "有效期:長期有效"
+                              self.validperiodLab.text = "積分有效期:2018-12-31"
                               self.validperiodLab.isHidden = false
                         }
                         
@@ -394,6 +396,56 @@ class MeTableViewController: UITableViewController{
             }
         }
        // return result
+    }
+    //調查問卷接口
+    func getPageList()  {
+        var avgs: [String: Any] = [:]
+     
+        
+        avgs.updateValue(ApiUtil.companyCode, forKey: "company")
+        avgs.updateValue("AC", forKey: "type")
+        avgs.updateValue("MINE", forKey: "page")
+        
+        
+        Just.post(ApiUtil.pageListApi ,  data: avgs) { (result) in
+            guard let json = result.json as? NSDictionary else{
+                return
+            }
+            // print(json)
+            if result.ok {
+                if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
+                    let datas = DwWebViewBaseRootClass(fromDictionary: json).data
+                    OperationQueue.main.addOperation {
+                        if let datas = datas {
+                            if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+                                pageVC.url = "ad.url!"
+                                pageVC.type = "OV"
+                              self.navigationController?.pushViewController(pageVC, animated: true)
+                            }
+                        }
+                    }
+                    
+                }else {
+                    //異常處理
+                    if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                        //  print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                        OperationQueue.main.addOperation {
+                            ApiUtil.openAlert(msg: error.msg, sender: self)
+                        }
+                    }
+                    
+                }
+            }else{
+                //處理接口系統錯誤
+                if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
+                    // print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.message, sender: self)
+                    }
+                }
+            }
+            
+        }
     }
     
     
