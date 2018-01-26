@@ -27,6 +27,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
     @IBOutlet weak var menuView: UIStackView! //放置功能按钮的VIEW
     
     @IBOutlet weak var topView: UIView!
+    
     //活动的LIST
     var  activitys : [DwHomeActivity] = []
     //远程首页轮播图LIST
@@ -41,6 +42,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
         let w = UIScreen.main.bounds.width
         let h = w * 0.75 + 70
         self.topView.frame = CGRect(x: 0.00, y: 0.00, width: w, height: h)
+        self.menuView.frame = CGRect(x: 0.00, y: 0.00, width: w, height: 70)
         
         
         
@@ -95,7 +97,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             
             defaults.set( str, forKey: "index_data")
             
-            dump(json)
+            //dump(json)
             if(result.ok){
                 let datas = DwHomeRootClass(fromDictionary: json).data!
                 do{

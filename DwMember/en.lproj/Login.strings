@@ -1,1 +1,25 @@
 
+/* Class = "UIButton"; normalTitle = "註冊成會員"; ObjectID = "9df-47-sxk"; */
+"9df-47-sxk.normalTitle" = "註冊成會員";
+
+/* Class = "UINavigationItem"; title = "登入"; ObjectID = "K7X-UQ-xNq"; */
+"K7X-UQ-xNq.title" = "登入";
+
+/* Class = "UINavigationController"; title = "loginNav"; ObjectID = "S5X-sf-b7k"; */
+"S5X-sf-b7k.title" = "loginNav";
+
+/* Class = "UITextField"; placeholder = "卡號或電話號碼"; ObjectID = "ZcI-Ri-crw"; */
+"ZcI-Ri-crw.placeholder" = "卡號或電話號碼";
+
+/* Class = "UITextField"; placeholder = "密碼"; ObjectID = "iDf-D3-ch6"; */
+"iDf-D3-ch6.placeholder" = "密碼";
+
+/* Class = "UIButton"; normalTitle = "忘記密碼?"; ObjectID = "kX4-rt-AEP"; */
+"kX4-rt-AEP.normalTitle" = "忘記密碼?";
+
+/* Class = "UIButton"; normalTitle = "登入"; ObjectID = "rqs-j1-U9f"; */
+"rqs-j1-U9f.normalTitle" = "登入";
+
+/* Class = "UIViewController"; title = "LoginViewController"; ObjectID = "vHg-nZ-9Ls"; */
+"vHg-nZ-9Ls.title" = "LoginViewController";
+

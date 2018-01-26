@@ -52,12 +52,12 @@ class FindTableViewController: UITableViewController, CLLocationManagerDelegate 
          avgs.updateValue(self.latitude, forKey: "latitude")
          avgs.updateValue(self.longitude, forKey: "longitude")
         
-        dump(avgs)
+        //dump(avgs)
         Just.post(ApiUtil.outletApi ,  data: avgs) { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
             }
-           print(json)
+          //print(json)
             if result.ok {
                 if  DwBranchsRootClass(fromDictionary: json).code == 1 {
                     self.outletList = DwBranchsRootClass(fromDictionary: json).data

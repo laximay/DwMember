@@ -140,7 +140,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Lvt-V2-elA" secondAttribute="trailing" constant="20" id="vmf-1p-590"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="登陸" id="K7X-UQ-xNq"/>
+                    <navigationItem key="navigationItem" title="登入" id="K7X-UQ-xNq"/>
                     <connections>
                         <outlet property="cardNoLab" destination="ZcI-Ri-crw" id="O70-Po-guf"/>
                         <outlet property="imageLoginLogo" destination="vCc-bu-xly" id="dDQ-84-rxK"/>

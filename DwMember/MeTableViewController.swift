@@ -107,7 +107,7 @@ class MeTableViewController: UITableViewController{
         }
         if indexPath == [2, 3] {
             if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
-                pageVC.type = .INTERULE
+                pageVC.type = .ABOUTUS
                 self.navigationController?.pushViewController(pageVC, animated: true)
             }
         }
@@ -157,7 +157,7 @@ class MeTableViewController: UITableViewController{
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            print(json)
+            //print(json)
             if result.ok {
                 if  DwLoginRootClass(fromDictionary: json).code == 1 {
                     
@@ -223,8 +223,17 @@ class MeTableViewController: UITableViewController{
                        // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                 
                         OperationQueue.main.addOperation {
-                            ApiUtil.openAlert(msg: error.msg, sender: self)
-                            self.performSegue(withIdentifier: "logoutSegue", sender: self)
+                            //ApiUtil.openAlert(msg: error.msg, sender: self)
+                            let menu = UIAlertController(title: nil, message: error.msg, preferredStyle: .alert)
+                            
+                            let optionOK = UIAlertAction(title: "重新登陆", style: .default, handler: { (_) in
+                                
+                                self.performSegue(withIdentifier: "logoutSegue", sender: self)
+                            })
+                            menu.addAction(optionOK)
+                            
+                            self.present(menu, animated: true, completion: nil)
+                            
                         }
                         
                     }
@@ -248,7 +257,7 @@ class MeTableViewController: UITableViewController{
         
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
-        dump(avgs)
+        //dump(avgs)
         
         Just.post(ApiUtil.msgcountApi ,  data: avgs) { (result) in
             guard let json = result.json as? NSDictionary else{
@@ -275,7 +284,9 @@ class MeTableViewController: UITableViewController{
             }else{
                 //處理接口系統錯誤
                 if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                    print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.message, sender: self)
+                    }
                 }
             }
             
@@ -315,7 +326,9 @@ class MeTableViewController: UITableViewController{
             }else{
                 //處理接口系統錯誤
                 if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                    print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.message, sender: self)
+                    }
                 }
             }
             
@@ -413,13 +426,13 @@ class MeTableViewController: UITableViewController{
             }
             // print(json)
             if result.ok {
-                if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
-                    let datas = DwWebViewBaseRootClass(fromDictionary: json).data
+                if  DwPageListRootClass(fromDictionary: json).code == 1 {
+                    let datas = DwPageListRootClass(fromDictionary: json).data
                     OperationQueue.main.addOperation {
                         if let datas = datas {
                             if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
-                                pageVC.url = "ad.url!"
-                                pageVC.type = "OV"
+                                pageVC.url = datas.pageList[0].url
+                                pageVC.type = datas.pageList[0].opentype
                               self.navigationController?.pushViewController(pageVC, animated: true)
                             }
                         }

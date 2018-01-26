@@ -133,7 +133,12 @@ class CouponTableViewController: UITableViewController {
                             self.tableView.reloadData()
                         }
                     }else {
-                        print(result.error ?? "未知错误")
+                        if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                            // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                            OperationQueue.main.addOperation {
+                                ApiUtil.openAlert(msg: error.msg, sender: self)
+                            }
+                        }
                         //異常處理
                     }
                 }else{

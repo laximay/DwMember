@@ -49,7 +49,7 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESI-JK-sBN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="275"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Pq-2g-qRH">
                                             <rect key="frame" x="0.0" y="280" width="414" height="70"/>
@@ -58,7 +58,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ESI-JK-sBN" firstAttribute="centerX" secondItem="nJI-NS-oD7" secondAttribute="centerX" id="SZq-Q5-2rL"/>
-                                        <constraint firstItem="6Pq-2g-qRH" firstAttribute="top" secondItem="nJI-NS-oD7" secondAttribute="top" constant="280" id="hFq-I4-UKS"/>
+                                        <constraint firstItem="6Pq-2g-qRH" firstAttribute="top" secondItem="nJI-NS-oD7" secondAttribute="top" constant="280" id="r3k-Xn-f0B"/>
                                     </constraints>
                                 </stackView>
                             </subviews>

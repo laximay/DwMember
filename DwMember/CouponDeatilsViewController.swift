@@ -87,7 +87,7 @@ class CouponDeatilsViewController: UIViewController {
         avgs.updateValue(couponId, forKey: "id")
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
-        dump(avgs)
+        //dump(avgs)
         
         Just.post(ApiUtil.couponbaseApi ,  data: avgs) { (result) in
             guard let json = result.json as? NSDictionary else{
@@ -147,7 +147,7 @@ class CouponDeatilsViewController: UIViewController {
         avgs.updateValue(couponId, forKey: "couponId")
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
-        dump(avgs)
+        //dump(avgs)
         
         Just.post(ApiUtil.coupomallApi ,  data: avgs) { (result) in
             guard let json = result.json as? NSDictionary else{
@@ -196,7 +196,7 @@ class CouponDeatilsViewController: UIViewController {
         avgs.updateValue(couponId, forKey: "couponId")
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
-        dump(avgs)
+        //dump(avgs)
         
         Just.post(ApiUtil.coupongetApi ,  data: avgs) { (result) in
             guard let json = result.json as? NSDictionary else{

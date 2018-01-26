@@ -23,7 +23,7 @@ class MemberInfoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dump(userInfo)
+        //dump(userInfo)
         
         if let user = self.userInfo?.card {
             self.nicknameInp.text = user.memberName

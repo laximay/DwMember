@@ -111,7 +111,7 @@ class TempViewController: UIViewController  , WKUIDelegate, WKNavigationDelegate
             url = ApiUtil.webviewApi
         }
         
-        dump(avgs)
+        //dump(avgs)
         
         Just.post(url ,  data: avgs) { (result) in
             guard let json = result.json as? NSDictionary else{

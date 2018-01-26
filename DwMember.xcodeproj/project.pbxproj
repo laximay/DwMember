@@ -56,6 +56,9 @@
 		3D51824B1F53F9F700361E3F /* FindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51824A1F53F9F700361E3F /* FindTableViewCell.swift */; };
 		3D51BEC01FCC0DE300C16DEF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D51BEBF1FCC0DD600C16DEF /* CoreLocation.framework */; };
 		3D51BEC21FCE526F00C16DEF /* DwReservationPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51BEC11FCE526E00C16DEF /* DwReservationPerson.swift */; };
+		3D60224B201B5E510017CE18 /* DwPageListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D602248201B5E500017CE18 /* DwPageListData.swift */; };
+		3D60224C201B5E510017CE18 /* DwPageListPageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D602249201B5E510017CE18 /* DwPageListPageList.swift */; };
+		3D60224D201B5E510017CE18 /* DwPageListRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60224A201B5E510017CE18 /* DwPageListRootClass.swift */; };
 		3D6458631F442A72008220C3 /* DwCountBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458621F442A72008220C3 /* DwCountBaseRootClass.swift */; };
 		3D6458661F444D9C008220C3 /* DwWebViewBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */; };
 		3D6458671F444D9C008220C3 /* DwWebViewBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */; };
@@ -169,6 +172,18 @@
 		3D5B656D20181BAC00649B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Res.strings; sourceTree = "<group>"; };
 		3D5B656E20181BAC00649B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3D5B656F20181BAC00649B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3D602248201B5E500017CE18 /* DwPageListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPageListData.swift; sourceTree = "<group>"; };
+		3D602249201B5E510017CE18 /* DwPageListPageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPageListPageList.swift; sourceTree = "<group>"; };
+		3D60224A201B5E510017CE18 /* DwPageListRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPageListRootClass.swift; sourceTree = "<group>"; };
+		3D60224E201B62B40017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Find.strings"; sourceTree = "<group>"; };
+		3D60224F201B62B40017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Login.strings"; sourceTree = "<group>"; };
+		3D602250201B62B40017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Message.strings"; sourceTree = "<group>"; };
+		3D602251201B62B40017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Coupon.strings"; sourceTree = "<group>"; };
+		3D602252201B62B50017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Me.strings"; sourceTree = "<group>"; };
+		3D602253201B62B50017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Queue.strings"; sourceTree = "<group>"; };
+		3D602254201B62B50017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Res.strings"; sourceTree = "<group>"; };
+		3D602255201B62B50017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		3D602256201B62B50017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3D6458621F442A72008220C3 /* DwCountBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwCountBaseRootClass.swift; sourceTree = "<group>"; };
 		3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwWebViewBaseData.swift; sourceTree = "<group>"; };
 		3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwWebViewBaseRootClass.swift; sourceTree = "<group>"; };
@@ -316,6 +331,9 @@
 		3D493F8B1F3C3DB800CEAD4B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				3D602248201B5E500017CE18 /* DwPageListData.swift */,
+				3D602249201B5E510017CE18 /* DwPageListPageList.swift */,
+				3D60224A201B5E510017CE18 /* DwPageListRootClass.swift */,
 				3D51BEC11FCE526E00C16DEF /* DwReservationPerson.swift */,
 				3D1986461F5CE9B000385DAD /* DwArticleData.swift */,
 				3D1986471F5CE9B000385DAD /* DwArticleRootClass.swift */,
@@ -494,6 +512,7 @@
 			knownRegions = (
 				Base,
 				en,
+				"zh-Hant",
 			);
 			mainGroup = 3DD3E23E1F2EC4C6001FC47E;
 			productRefGroup = 3DD3E2481F2EC4C6001FC47E /* Products */;
@@ -600,6 +619,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D60224C201B5E510017CE18 /* DwPageListPageList.swift in Sources */,
 				3D1615671F2F700B00E33F3D /* MeTableViewController.swift in Sources */,
 				3D16156B1F2F704100E33F3D /* PayViewController.swift in Sources */,
 				3D6458BE1F45BEF6008220C3 /* DwCouponBaseRootClass.swift in Sources */,
@@ -644,6 +664,7 @@
 				3D6458BA1F45BEF6008220C3 /* CouponMallDetailsData.swift in Sources */,
 				3D2569DE1F3D58A800E01816 /* DwEntitys.xcdatamodeld in Sources */,
 				3D16156D1F2F709800E33F3D /* FindTableViewController.swift in Sources */,
+				3D60224D201B5E510017CE18 /* DwPageListRootClass.swift in Sources */,
 				3D1428FE1F5BCEDD004116EB /* BranchDetailTableViewCell.swift in Sources */,
 				3D6458B81F45BEF6008220C3 /* CouponDetailsRootClass.swift in Sources */,
 				3D51824B1F53F9F700361E3F /* FindTableViewCell.swift in Sources */,
@@ -676,6 +697,7 @@
 				3D11B3991F30587D0031DD5C /* UIButton.swift in Sources */,
 				3D1986611F62367200385DAD /* ResDetailTableViewCell.swift in Sources */,
 				3D6458AE1F4599F1008220C3 /* MessageDetailViewController.swift in Sources */,
+				3D60224B201B5E510017CE18 /* DwPageListData.swift in Sources */,
 				3D91761E1F486BD500E855F6 /* DwPayCodeRootClass.swift in Sources */,
 				3D154EF21F31A63800A6E157 /* MyTabBarViewController.swift in Sources */,
 				3D6458AB1F455E0F008220C3 /* DwMsgListBaseData.swift in Sources */,
@@ -695,6 +717,7 @@
 			children = (
 				3DB7B1EE1FD7EE8F0092FAC0 /* Base */,
 				3D5B656B20181BAC00649B24 /* en */,
+				3D602252201B62B50017CE18 /* zh-Hant */,
 			);
 			name = Me.storyboard;
 			sourceTree = "<group>";
@@ -704,6 +727,7 @@
 			children = (
 				3DB7B1F01FD7EE8F0092FAC0 /* Base */,
 				3D5B656720181BAC00649B24 /* en */,
+				3D60224E201B62B40017CE18 /* zh-Hant */,
 			);
 			name = Find.storyboard;
 			sourceTree = "<group>";
@@ -713,6 +737,7 @@
 			children = (
 				3DB7B1F21FD7EE8F0092FAC0 /* Base */,
 				3D5B656C20181BAC00649B24 /* en */,
+				3D602253201B62B50017CE18 /* zh-Hant */,
 			);
 			name = Queue.storyboard;
 			sourceTree = "<group>";
@@ -722,6 +747,7 @@
 			children = (
 				3DB7B1F41FD7EE900092FAC0 /* Base */,
 				3D5B656820181BAC00649B24 /* en */,
+				3D60224F201B62B40017CE18 /* zh-Hant */,
 			);
 			name = Login.storyboard;
 			sourceTree = "<group>";
@@ -731,6 +757,7 @@
 			children = (
 				3DB7B1F61FD7EE900092FAC0 /* Base */,
 				3D5B656920181BAC00649B24 /* en */,
+				3D602250201B62B40017CE18 /* zh-Hant */,
 			);
 			name = Message.storyboard;
 			sourceTree = "<group>";
@@ -740,6 +767,7 @@
 			children = (
 				3DB7B1F81FD7EE900092FAC0 /* Base */,
 				3D5B656A20181BAC00649B24 /* en */,
+				3D602251201B62B40017CE18 /* zh-Hant */,
 			);
 			name = Coupon.storyboard;
 			sourceTree = "<group>";
@@ -749,6 +777,7 @@
 			children = (
 				3DB7B1FC1FD7EE910092FAC0 /* Base */,
 				3D5B656D20181BAC00649B24 /* en */,
+				3D602254201B62B50017CE18 /* zh-Hant */,
 			);
 			name = Res.storyboard;
 			sourceTree = "<group>";
@@ -766,6 +795,7 @@
 			children = (
 				3DD3E24F1F2EC4C6001FC47E /* Base */,
 				3D5B656E20181BAC00649B24 /* en */,
+				3D602255201B62B50017CE18 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -775,6 +805,7 @@
 			children = (
 				3DD3E2571F2EC4C7001FC47E /* Base */,
 				3D5B656F20181BAC00649B24 /* en */,
+				3D602256201B62B50017CE18 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

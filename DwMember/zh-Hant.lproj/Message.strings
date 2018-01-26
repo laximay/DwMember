@@ -1,8 +1,9 @@
-/* Class = "UILabel"; text = "isread"; ObjectID = "AMp-BX-gs1"; */
+
+/* Class = "UILabel"; text = "已讀"; ObjectID = "AMp-BX-gs1"; */
 "AMp-BX-gs1.text" = "已讀";
 
 /* Class = "UITableViewController"; title = "Message"; ObjectID = "V97-cS-AhR"; */
-"V97-cS-AhR.title" = "消息";
+"V97-cS-AhR.title" = "Message";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Wlp-ZY-4H9"; */
 "Wlp-ZY-4H9.text" = "Label";
@@ -15,4 +16,3 @@
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "zqA-KH-oCE"; */
 "zqA-KH-oCE.text" = "Label";
-

@@ -41,7 +41,7 @@ class MessageDetailViewController: UIViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print(json)
+                //print(json)
                 if result.ok {
                     if  DwMsgListBaseRootClass(fromDictionary: json).code != 1 {
                         //異常處理
@@ -55,7 +55,9 @@ class MessageDetailViewController: UIViewController {
                 }else{
                     //處理接口系統錯誤
                     if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                        print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                        OperationQueue.main.addOperation {
+                            ApiUtil.openAlert(msg: error.message, sender: self)
+                        }
                     }
                 }
                 

@@ -128,7 +128,7 @@ class ReservationTableViewController: UITableViewController {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print(json)
+               // print(json)
                 if result.ok {
                     if  DwReservationRootClass(fromDictionary: json).code == 1 {
                         if let resData   = DwReservationRootClass(fromDictionary: json).data {

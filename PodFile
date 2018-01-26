@@ -2,7 +2,7 @@ use_frameworks!
 
 target 'DwMember' do
 pod 'Just'
-pod 'Kingfisher' ,'~> 3.10.2'
+pod 'Kingfisher' ,'~> 4.6.1'
 pod 'ESTabBarController-swift'
 pod 'pop'
 pod 'BubbleTransition', '~> 2.0.0'
