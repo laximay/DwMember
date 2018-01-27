@@ -23,13 +23,13 @@ class PayViewController: UIViewController {
         super.viewDidLoad()
         
         //开启倒计时
-        self.isCounting = true
+        //self.isCounting = true
         //getpaycode()
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-          ApiUtil.checklogin(sender: self)
+         self.isCounting = true
     }
     
     @IBAction func actionClose(_ sender: Any) {

@@ -224,7 +224,7 @@
                                             <segue destination="2DH-Yo-miL" kind="show" identifier="meToMemberMallSegue" id="baI-CJ-WLB"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Coupon" id="Gac-y8-wE2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Branchs" id="Gac-y8-wE2">
                                         <rect key="frame" x="0.0" y="280" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gac-y8-wE2" id="8GK-2N-EFe">
@@ -254,9 +254,6 @@
                                                 <constraint firstItem="D4f-sw-K5y" firstAttribute="centerY" secondItem="8GK-2N-EFe" secondAttribute="centerY" constant="1" id="nLb-tr-Z3E"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="1Kb-zO-EQH" kind="show" identifier="FindSegue" id="iHw-8R-Jns"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -468,7 +465,7 @@
                                                         <constraint firstAttribute="width" constant="25" id="YWq-IF-c5z"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="退出登錄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHj-st-t7r">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="退出登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHj-st-t7r">
                                                     <rect key="frame" x="56" y="11" width="77.5" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <nil key="textColor"/>
@@ -918,9 +915,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="303" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRv-8H-xbM">
-                                                    <rect key="frame" x="36" y="1" width="303" height="40"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="303" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRv-8H-xbM">
+                                                    <rect key="frame" x="41" y="1" width="293" height="40"/>
                                                     <color key="backgroundColor" red="0.65818500520000001" green="0.059780292210000002" blue="0.1673380733" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <state key="normal" title="Submit">
@@ -936,6 +932,11 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="LRv-8H-xbM" secondAttribute="trailing" constant="25" id="PNL-Jr-DCc"/>
+                                                <constraint firstItem="LRv-8H-xbM" firstAttribute="leading" secondItem="fqr-z6-9rY" secondAttribute="leadingMargin" constant="25" id="czt-DK-oKB"/>
+                                                <constraint firstItem="LRv-8H-xbM" firstAttribute="centerY" secondItem="fqr-z6-9rY" secondAttribute="centerY" id="d2A-Il-ng9"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>

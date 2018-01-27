@@ -95,7 +95,7 @@ class MyTabBarViewController: ESTabBarController, UITabBarControllerDelegate, UI
         
         
         let meNav = meSB.instantiateViewController(withIdentifier: "meNav")
-        meNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: "會員專區" , image: UIImage(named: "vip_40"), selectedImage: UIImage(named: "vip_on_40"))
+        meNav.tabBarItem = ESTabBarItem.init(IrregularityBasicContentView(), title: "會員專區" , image: UIImage(named: "ic_user29"), selectedImage: UIImage(named: "ic_user_on29"))
         
         self.viewControllers = [homeNav, payVC, meNav]
         

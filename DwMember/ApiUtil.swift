@@ -81,7 +81,7 @@ open class ApiUtil{
     
     //服務鏈接
     static let serverUrl = "https://cloud.ablegenius.com/a"
-    //static var serverUrl = "http://192.168.90.82/a"
+    //static var serverUrl = "http://192.168.1.101/a"
     //公司代碼`
     static let companyCode = "EPOT"
     //APP類型細分編號
@@ -362,7 +362,7 @@ open class ApiUtil{
     static func checklogin( sender: UIViewController){
         let defaults = UserDefaults.standard
         guard (defaults.string(forKey: "dwsercet") != nil) else{
-            let menu = UIAlertController(title: nil, message: "請登錄", preferredStyle: .alert)
+            let menu = UIAlertController(title: nil, message: "請登入", preferredStyle: .alert)
             let optionOK = UIAlertAction(title: "好", style: .default, handler: { (_) in
                 
                 if let pageVC = ApiUtil.loginSB.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {

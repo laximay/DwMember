@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--發現-->
+        <!--店鋪位置-->
         <scene sceneID="FpU-A5-3XM">
             <objects>
-                <tableViewController storyboardIdentifier="FindTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bOt-OL-jbQ" customClass="FindTableViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FindTableViewController" title="店鋪位置" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bOt-OL-jbQ" customClass="FindTableViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2BJ-26-ZCd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,11 +77,29 @@
                             <outlet property="delegate" destination="bOt-OL-jbQ" id="rm5-eb-chU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="發現" id="rOY-kc-vdw"/>
+                    <navigationItem key="navigationItem" title="店鋪位置" id="rOY-kc-vdw"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3E-mQ-zg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2662" y="2728"/>
+        </scene>
+        <!--店鋪位置-->
+        <scene sceneID="a3u-fm-jv8">
+            <objects>
+                <viewController storyboardIdentifier="BranchsMapViewController" title="店鋪位置" id="UIa-NZ-mqP" customClass="BranchsMapViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Kg-mI-hrO"/>
+                        <viewControllerLayoutGuide type="bottom" id="BqT-Tq-5Bt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RRF-N4-cru">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QS2-GX-4au" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3113" y="3433"/>
         </scene>
         <!--Branch Detail Table View Controller-->
         <scene sceneID="aPj-Ul-s9f">

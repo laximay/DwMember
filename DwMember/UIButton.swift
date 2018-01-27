@@ -80,6 +80,8 @@ extension UIButton {
                 offset = -15
             case 414:
                 offset = 10
+            case 320:
+                 offset = -15
             default: break
              
                 

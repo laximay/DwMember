@@ -111,7 +111,7 @@
 "r8B-oX-b2q.text" = "電子郵件";
 
 /* Class = "UILabel"; text = "退出登錄"; ObjectID = "rHj-st-t7r"; */
-"rHj-st-t7r.text" = "退出登錄";
+"rHj-st-t7r.text" = "退出登入";
 
 /* Class = "UILabel"; text = "消息"; ObjectID = "uIB-8h-baL"; */
 "uIB-8h-baL.text" = "消息";

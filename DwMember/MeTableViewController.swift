@@ -21,20 +21,20 @@ class MeTableViewController: UITableViewController{
     @IBOutlet weak var validperiodLab: UILabel!
     @IBOutlet weak var birthImg: UIImageView!
     var userInfo: DwLoginData?
-
+    
     let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         
-      
+        
         
         let defaults = UserDefaults.standard
         if let version = defaults.string(forKey: "localVersion"){
             localVersion.text = "當前版本:\(version)"
         }else{
-          
+            
             localVersion.text = "當前版本:\(currentVersion)"
         }
         
@@ -49,24 +49,51 @@ class MeTableViewController: UITableViewController{
     
     
     override func viewDidAppear(_ animated: Bool) {
-       
         
-        let defaults = UserDefaults.standard
-        if (defaults.string(forKey: "dwsercet") != nil){
-            getCardInfo()
-            getMsgCount()
-            getCouponCount()
-        } else{
-//            if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
-//                
-//                self.navigationController?.pushViewController(pageVC, animated: true)
-//                //sender.present(pageVC, animated: true, completion: nil)
-//            }
-            
-            self.performSegue(withIdentifier: "logoutSegue", sender: self)
-            
-            return
-        }
+        self.integralLab.text = "0"
+        self.couponCountLab.text = "0"
+        self.memberNameLab.text = ""
+        self.cardNoLab.text = ""
+        self.validperiodLab.text = ""
+        
+        getCardInfo()
+        getMsgCount()
+        getCouponCount()
+        
+        
+        //        let defaults = UserDefaults.standard
+        //        if (defaults.string(forKey: "dwsercet") != nil){
+        //            getCardInfo()
+        //            getMsgCount()
+        //            getCouponCount()
+        //        } else{
+        //            self.integralLab.text = "0"
+        //            self.couponCountLab.text = "0"
+        //            self.memberNameLab.text = ""
+        //            self.cardNoLab.text = ""
+        //            self.validperiodLab.text = ""
+        
+        //            if let pageVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+        //
+        //                self.navigationController?.pushViewController(pageVC, animated: true)
+        //                //sender.present(pageVC, animated: true, completion: nil)
+        //            }
+        
+        //            let menu = UIAlertController(title: nil, message: "請登入", preferredStyle: .alert)
+        //
+        //            let optionOK = UIAlertAction(title: "登入", style: .default, handler: { (_) in
+        //
+        //                self.performSegue(withIdentifier: "logoutSegue", sender: self)
+        //            })
+        //            menu.addAction(optionOK)
+        //
+        //            let optionCancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        //            menu.addAction(optionCancel)
+        //
+        //            self.present(menu, animated: true, completion: nil)
+        
+        //            return
+        //        }
         
         
         
@@ -81,10 +108,16 @@ class MeTableViewController: UITableViewController{
             ApiUtil.webViewHandle(withIdentifier: webViewType.JFCX.rawValue, id: "",  sender: self)
         }
         
-//        if indexPath == [1, 0] {
-//             tableView.deselectRow(at: indexPath, animated: true)
-//            //ApiUtil.webViewHandle(withIdentifier: webViewType.DZXQ.rawValue, id: "",  sender: self)
-//        }
+        //        if indexPath == [1, 0] {
+        //             tableView.deselectRow(at: indexPath, animated: true)
+        //            //ApiUtil.webViewHandle(withIdentifier: webViewType.DZXQ.rawValue, id: "",  sender: self)
+        //        }
+        if indexPath == [1, 2] {
+              let barnchsSB = UIStoryboard(name: "Find", bundle: Bundle.main)
+            if let pageVC = barnchsSB.instantiateViewController(withIdentifier: "BranchsMapViewController") as? BranchsMapViewController {
+                self.navigationController?.pushViewController(pageVC, animated: true)
+            }
+        }
         
         if indexPath == [2, 0] {
             if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
@@ -94,6 +127,7 @@ class MeTableViewController: UITableViewController{
         }
         
         if indexPath == [2, 1] {
+           
             if let pageVC = storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleViewController {
                 pageVC.type = .MEMINFO
                 self.navigationController?.pushViewController(pageVC, animated: true)
@@ -102,7 +136,7 @@ class MeTableViewController: UITableViewController{
         
         if indexPath == [2, 2] {
             
-         self.getPageList()
+            self.getPageList()
             
         }
         if indexPath == [2, 3] {
@@ -111,7 +145,7 @@ class MeTableViewController: UITableViewController{
                 self.navigationController?.pushViewController(pageVC, animated: true)
             }
         }
-     
+        
         
         
         
@@ -147,7 +181,7 @@ class MeTableViewController: UITableViewController{
         avgs.updateValue(ApiUtil.serial, forKey: "serial")
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
-      
+        
         
         
         //dump(avgs)
@@ -182,17 +216,17 @@ class MeTableViewController: UITableViewController{
                             self.validperiodLab.text = "積分有效期:\(validperiod)"
                             self.validperiodLab.isHidden = false
                         }else{
-                              self.validperiodLab.text = "積分有效期:2018-12-31"
-                              self.validperiodLab.isHidden = false
+                            self.validperiodLab.text = "積分有效期:2018-12-31"
+                            self.validperiodLab.isHidden = false
                         }
                         
-//                        if let isOpenSeat = self.userInfo?.isOpenSeat {
-//                            if isOpenSeat == 0 {
-//
-//                               // self.tableView.deleteSections([1], with: .none)
-//
-//                            }
-//                        }
+                        //                        if let isOpenSeat = self.userInfo?.isOpenSeat {
+                        //                            if isOpenSeat == 0 {
+                        //
+                        //                               // self.tableView.deleteSections([1], with: .none)
+                        //
+                        //                            }
+                        //                        }
                         
                         
                         if let isBir = self.userInfo?.card.isCustBirthMonth {
@@ -208,11 +242,11 @@ class MeTableViewController: UITableViewController{
                                     let endPos = CGAffineTransform(translationX: 0, y: 0)
                                     self.birthImg.transform = endPos.concatenating(endScale)
                                 }, completion: nil)
-
+                                
                             }
                         }
                         
-                    
+                        
                         
                         
                     }
@@ -220,13 +254,13 @@ class MeTableViewController: UITableViewController{
                 }else {
                     //異常處理
                     if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                       // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
-                
+                        // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                        
                         OperationQueue.main.addOperation {
                             //ApiUtil.openAlert(msg: error.msg, sender: self)
                             let menu = UIAlertController(title: nil, message: error.msg, preferredStyle: .alert)
                             
-                            let optionOK = UIAlertAction(title: "重新登陆", style: .default, handler: { (_) in
+                            let optionOK = UIAlertAction(title: "重新登入", style: .default, handler: { (_) in
                                 
                                 self.performSegue(withIdentifier: "logoutSegue", sender: self)
                             })
@@ -263,7 +297,7 @@ class MeTableViewController: UITableViewController{
             guard let json = result.json as? NSDictionary else{
                 return
             }
-           // print("MSG:" , json)
+            // print("MSG:" , json)
             if result.ok {
                 if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
                     let datas = DwCountBaseRootClass(fromDictionary: json).data
@@ -275,7 +309,7 @@ class MeTableViewController: UITableViewController{
                     
                 }else {
                     if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                       // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                        // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                         OperationQueue.main.addOperation {
                             ApiUtil.openAlert(msg: error.msg, sender: self)
                         }
@@ -337,7 +371,7 @@ class MeTableViewController: UITableViewController{
     
     //開始清除緩存
     func clearCacheBtnClick(){
-  
+        
         //提示框
         let message = self.cacheSize
         let alert = UIAlertController(title: "清除缓存", message: message, preferredStyle:UIAlertControllerStyle.alert)
@@ -388,7 +422,7 @@ class MeTableViewController: UITableViewController{
     /// 清除缓存
     ///
     /// - returns: 是否清理成功
-     func clearCache()  {
+    func clearCache()  {
         var result = true
         // 取出cache文件夹目录 缓存文件都在这个目录下
         let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
@@ -408,12 +442,12 @@ class MeTableViewController: UITableViewController{
                 }
             }
         }
-       // return result
+        // return result
     }
     //調查問卷接口
     func getPageList()  {
         var avgs: [String: Any] = [:]
-     
+        
         
         avgs.updateValue(ApiUtil.companyCode, forKey: "company")
         avgs.updateValue("AC", forKey: "type")
@@ -433,7 +467,7 @@ class MeTableViewController: UITableViewController{
                             if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                                 pageVC.url = datas.pageList[0].url
                                 pageVC.type = datas.pageList[0].opentype
-                              self.navigationController?.pushViewController(pageVC, animated: true)
+                                self.navigationController?.pushViewController(pageVC, animated: true)
                             }
                         }
                     }
@@ -462,7 +496,7 @@ class MeTableViewController: UITableViewController{
     }
     
     
-   
+    
     
     
     override func didReceiveMemoryWarning() {
@@ -538,7 +572,7 @@ class MeTableViewController: UITableViewController{
             dest.userInfo = self.userInfo
             segue.destination.hidesBottomBarWhenPushed = true
         }else if segue.identifier == "logoutSegue"{
-           
+            
             segue.destination.hidesBottomBarWhenPushed = true
         }
         //隐藏底部导航条

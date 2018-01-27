@@ -51,6 +51,9 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
 
         JPUSHService.setAlias(ApiUtil.idfv, completion: nil, seq: 1)
         
+        JPUSHService.setTags([ApiUtil.companyCode], completion: nil, seq: 2)
+        
+        
         
         homeCache()
         

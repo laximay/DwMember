@@ -42,6 +42,7 @@
 		3D2569EE1F3DB28300E01816 /* DwHomeRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569EA1F3DB28300E01816 /* DwHomeRootClass.swift */; };
 		3D31C4531F322F2000988876 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D31C4521F322F2000988876 /* LoginViewController.swift */; };
 		3D3CBE0020045FF100659F37 /* RichTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3CBDFF20045FF100659F37 /* RichTextViewController.swift */; };
+		3D44C003201C83F40019E8F2 /* BranchsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D44C002201C83F40019E8F2 /* BranchsMapViewController.swift */; };
 		3D493F861F3C2BCF00CEAD4B /* GuiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493F851F3C2BCF00CEAD4B /* GuiderViewController.swift */; };
 		3D493F881F3C2C2C00CEAD4B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493F871F3C2C2C00CEAD4B /* ContentViewController.swift */; };
 		3D493F9B1F3C41F100CEAD4B /* ApiUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493F9A1F3C41F100CEAD4B /* ApiUtil.swift */; };
@@ -148,6 +149,7 @@
 		3D2569EA1F3DB28300E01816 /* DwHomeRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwHomeRootClass.swift; sourceTree = "<group>"; };
 		3D31C4521F322F2000988876 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3D3CBDFF20045FF100659F37 /* RichTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextViewController.swift; sourceTree = "<group>"; };
+		3D44C002201C83F40019E8F2 /* BranchsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsMapViewController.swift; sourceTree = "<group>"; };
 		3D493F851F3C2BCF00CEAD4B /* GuiderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuiderViewController.swift; sourceTree = "<group>"; };
 		3D493F871F3C2C2C00CEAD4B /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		3D493F9A1F3C41F100CEAD4B /* ApiUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUtil.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				3DE9AEC41FA440E900492E09 /* ScanViewController.swift */,
 				3DEBCD2A1FC8753A00D9F30E /* TempViewController.swift */,
 				3D3CBDFF20045FF100659F37 /* RichTextViewController.swift */,
+				3D44C002201C83F40019E8F2 /* BranchsMapViewController.swift */,
 			);
 			name = controll;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				3D493F861F3C2BCF00CEAD4B /* GuiderViewController.swift in Sources */,
 				3D6458D21F4A89C0008220C3 /* DwReservationRemark.swift in Sources */,
 				3D6458D31F4A89C0008220C3 /* DwReservationReservationType.swift in Sources */,
+				3D44C003201C83F40019E8F2 /* BranchsMapViewController.swift in Sources */,
 				3D6458DA1F4AA0AC008220C3 /* ResTableViewCell.swift in Sources */,
 				3D1428F71F5B9564004116EB /* DwUpdataData.swift in Sources */,
 				3D2569ED1F3DB28300E01816 /* DwHomeFeature.swift in Sources */,
