@@ -74,18 +74,18 @@ extension UIButton {
             imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: -titleSize.width)
         case .bottom:
             let w = UIScreen.main.bounds.width
-            var offset: CGFloat = 0
-            switch(w){
-            case 375:
-                offset = -15
-            case 414:
-                offset = 10
-            case 320:
-                 offset = -15
-            default: break
-             
-                
-            }
+            var offset: CGFloat = -15
+//            switch(w){
+//            case 375:
+//                offset = -15
+//            case 414:
+//                offset = -15
+//            case 320:
+//                 offset = -15
+//            default: break
+//
+//
+//            }
             
             
             
