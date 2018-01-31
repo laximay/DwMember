@@ -13,7 +13,7 @@ class GuiderViewController: UIPageViewController, UIPageViewControllerDataSource
     var headings = ["填寫簡單信息"
         , "接收優惠", "積分禮遇"]
     var images = ["card", "card", "card"]
-    var footers = ["會籍註冊" , "更多優惠" ,"會員商城"]
+    var footers = ["會籍註冊" , "更多優惠" ,"會員禮遇"]
     
     
     

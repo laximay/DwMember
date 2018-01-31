@@ -290,7 +290,7 @@
             </objects>
             <point key="canvasLocation" x="31" y="-1255"/>
         </scene>
-        <!--會員商城-->
+        <!--會員禮遇-->
         <scene sceneID="8eC-7w-OcN">
             <objects>
                 <viewController storyboardIdentifier="CouponViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yE2-QY-pjS" customClass="CouponViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
@@ -355,7 +355,7 @@
                         </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="會員商城" id="tdm-Lz-V73"/>
+                    <navigationItem key="navigationItem" title="會員禮遇" id="tdm-Lz-V73"/>
                     <connections>
                         <outlet property="containerView" destination="U4p-Qt-EvM" id="Qc5-FX-Ror"/>
                         <outlet property="scrollView" destination="Cg6-OS-uNb" id="Fd1-we-YYb"/>
