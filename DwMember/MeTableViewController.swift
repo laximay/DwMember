@@ -191,7 +191,7 @@ class MeTableViewController: UITableViewController{
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            //print(json)
+            print(json)
             if result.ok {
                 if  DwLoginRootClass(fromDictionary: json).code == 1 {
                     
@@ -212,7 +212,7 @@ class MeTableViewController: UITableViewController{
                             self.cardNoLab.isHidden = false
                         }
                         
-                        if let validperiod = self.userInfo?.card.closedt {
+                        if let validperiod = self.userInfo?.card.integralDesc {
                             self.validperiodLab.text = "積分有效期:\(validperiod)"
                             self.validperiodLab.isHidden = false
                         }else{

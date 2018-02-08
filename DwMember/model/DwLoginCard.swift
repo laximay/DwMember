@@ -22,6 +22,7 @@ struct DwLoginCard{
     var sex : String!
     var stat : String!
     var isCustBirthMonth : Bool!
+    var integralDesc : String!
     
     
     /**
@@ -41,6 +42,7 @@ struct DwLoginCard{
         sex = dictionary["sex"] as? String
         stat = dictionary["stat"] as? String
         isCustBirthMonth = dictionary["isCustBirthMonth"] as? Bool
+        integralDesc = dictionary["integralDesc"] as? String
     }
     
     /**
@@ -87,6 +89,9 @@ struct DwLoginCard{
         }
         if isCustBirthMonth != nil{
             dictionary["isCustBirthMonth"] = isCustBirthMonth
+        }
+        if integralDesc != nil{
+            dictionary["integralDesc"] = integralDesc
         }
         return dictionary
     }
