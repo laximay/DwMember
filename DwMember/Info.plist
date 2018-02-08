@@ -21,7 +21,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.9</string>
+	<string>1.1.10</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -32,13 +32,13 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Need access Camera?</string>
+	<string>需要通過掃描二維碼實現掃一掃進行預點餐,您是否允許打開相機?</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>使用定位?</string>
+	<string>需要通過獲取地理位置實現獲取店鋪位置,您是否允許獲取位置?</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>使用定位?</string>
+	<string>需要通過獲取地理位置實現獲取店鋪位置,您是否允許獲取位置?</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Need access photo Library</string>
+	<string>需要訪問相冊實現圖片上傳分享,您是否允許訪問相冊?</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

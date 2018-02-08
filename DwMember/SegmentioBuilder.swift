@@ -33,7 +33,7 @@ struct SegmentioBuilder {
             SegmentioItem(title: "未用" , image: nil),
             SegmentioItem(title: "已用" , image: nil),
             SegmentioItem(title: "已過期", image: nil),
-            SegmentioItem(title: "商城" , image: nil)
+            SegmentioItem(title: "兌換" , image: nil)
         ]
     }
     
