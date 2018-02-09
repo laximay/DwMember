@@ -23,7 +23,9 @@ extension UIButton {
                  progressBlock: nil,
                  completionHandler: { image, error, cacheType, imageURL in
                     //print(" Finished\(image?.size)")
+                    if error == nil {
                     self.positionLabelRespectToImage(title: title, position: titlePosition, spacing: additionalSpacing, imgeSize: (image?.size)!)
+                    }
                     
         })
         
