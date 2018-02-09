@@ -80,8 +80,8 @@ open class ApiUtil{
        static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-    static let serverUrl = "https://cloud.ablegenius.com/a"
-    //static var serverUrl = "http://192.168.1.101/a"
+    //static let serverUrl = "https://cloud.ablegenius.com/a"
+    static var serverUrl = "http://192.168.90.82/a"
     //公司代碼`
     static let companyCode = "EPOT"
     //APP類型細分編號
@@ -156,7 +156,7 @@ open class ApiUtil{
     
     //加載引導頁的遠程資源-下次緩存
     static func launchCache()   {
-        Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode]) { (result) in
+        Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode, "serial": serial]) { (result) in
             if result.ok {
                 guard let json = result.json as? NSDictionary else{
                     return
@@ -172,7 +172,7 @@ open class ApiUtil{
     }
     
     static func launchCache_New(_ completion: @escaping (String)->()) -> Void {
-        Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode]) { (result) in
+        Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode, "serial": serial]) { (result) in
             if result.ok {
                 guard let json = result.json as? NSDictionary else{
                     return
@@ -201,7 +201,7 @@ open class ApiUtil{
     
     //檢測更新
     static func checkUpdata(sender: UIViewController)   {
-        Just.post(ApiUtil.updataApi ,  data: ["company": ApiUtil.companyCode, "channel" : ApiUtil.channel]) { (result) in
+        Just.post(ApiUtil.updataApi ,  data: ["company": ApiUtil.companyCode, "channel" : ApiUtil.channel, "serial": serial]) { (result) in
             if result.ok {
                 guard let json = result.json as? NSDictionary else{
                     return
@@ -330,10 +330,10 @@ open class ApiUtil{
         
         
         guard (defaults.string(forKey: "cardNo") != nil) else {
-            return  ["channel": ApiUtil.channel, "imei": ApiUtil.idfv, "timestamp": timeInterval]
+            return  ["channel": ApiUtil.channel, "imei": ApiUtil.idfv, "timestamp": timeInterval, "serial": serial]
         }
         let cardNo: String = defaults.string(forKey: "cardNo")!
-        return  ["channel": ApiUtil.channel, "imei": ApiUtil.idfv, "timestamp": timeInterval, "cardNo" : cardNo]
+        return  ["channel": ApiUtil.channel, "imei": ApiUtil.idfv, "timestamp": timeInterval, "cardNo" : cardNo, "serial": serial]
         
     }
     

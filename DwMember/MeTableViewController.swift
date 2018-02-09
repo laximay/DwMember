@@ -215,9 +215,6 @@ class MeTableViewController: UITableViewController{
                         if let validperiod = self.userInfo?.card.integralDesc {
                             self.validperiodLab.text = "積分有效期:\(validperiod)"
                             self.validperiodLab.isHidden = false
-                        }else{
-                            self.validperiodLab.text = "積分有效期:2018-12-31"
-                            self.validperiodLab.isHidden = false
                         }
                         
                         //                        if let isOpenSeat = self.userInfo?.isOpenSeat {
@@ -229,11 +226,12 @@ class MeTableViewController: UITableViewController{
                         //                        }
                         
                         
-                        if let isBir = self.userInfo?.card.isCustBirthMonth {
+                        if let isBir = self.userInfo?.card.custBirthMonth {
+                      
                             if isBir {
                                 let startScale = CGAffineTransform(scaleX: 0, y: 0)
                                 let startPos = CGAffineTransform(translationX: 0, y: 0)
-                                self.birthImg.image = #imageLiteral(resourceName: "birthdaycake")
+                                self.birthImg.image = #imageLiteral(resourceName: "cake")
                                 self.birthImg.isHidden = false
                                 self.birthImg.transform = startScale.concatenating(startPos)
                                 
