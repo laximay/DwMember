@@ -177,7 +177,6 @@ class MeTableViewController: UITableViewController{
     func getCardInfo() {
         
         var avgs = ApiUtil.frontFunc()
-        
         avgs.updateValue(ApiUtil.serial, forKey: "serial")
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")

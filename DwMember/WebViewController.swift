@@ -8,17 +8,78 @@
 
 import UIKit
 import WebKit
-class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
-    
+class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
+    /*H5頁面調用原生代碼
+     1.繼承:WKScriptMessageHandler
+     2.實現 userContentController方法
+     3.註冊 WKWebViewConfiguration
+     */
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        switch message.name {
+        case "externalsite":
+             ApiUtil.webViewHandle(webCode: message.body as! String, sender: self)
+        case "openQrCode":
+            if let payVC = mainSB.instantiateViewController(withIdentifier: "PayViewController") as? PayViewController{
+//            self.navigationController?.pushViewController(payVC, animated: true)
+              self.present(payVC, animated: true, completion: nil)
+            }
+         case "clearCahe":
+            clearCacheBtnClick();
+        case "loginOut":
+            if let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginViewController")  as? LoginViewController{
+            self.navigationController?.pushViewController(loginVC, animated: true)
+            }
+//            self.present(loginVC, animated: true, completion: nil)
+        case "branchMap":
+            if let pageVC = barnchsSB.instantiateViewController(withIdentifier: "BranchsMapViewController")   as? BranchsMapViewController{
+                self.navigationController?.pushViewController(pageVC, animated: true)
+            }
+        case "scan":
+            if let scanVC = mainSB.instantiateViewController(withIdentifier: "ScanViewController")   as? ScanViewController{
+                self.navigationController?.pushViewController(scanVC, animated: true)
+            }
+        case "encrypt":
+            //H5請求如需加密,則需調用此方法進行簽名
+            var avgs = ApiUtil.frontFunc()
+            let sign = ApiUtil.sign(data: avgs, sender: self)
+            avgs.updateValue(sign, forKey: "sign")
+            
+            let data : NSData! = try! JSONSerialization.data(withJSONObject: avgs, options: []) as NSData?
+                let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
+                webview.evaluateJavaScript("window.nativeCallBack('\(JSONString!)')") { (a, b) in
+                    print(#function)
+                }
+         
+            
+         
+        default: break
+            
+        }
+        
+    }
+    let barnchsSB = UIStoryboard(name: "Find", bundle: Bundle.main)
+    let mainSB = UIStoryboard(name: "Main", bundle: Bundle.main)
+    let loginSB = UIStoryboard(name: "Login", bundle: Bundle.main)
     var url = ""
     var random = ""
     var cardNo = ""
     var type = ""
     var id = ""
-    
+
     lazy private var webview: WKWebView = {
-       
-        self.webview = WKWebView.init(frame: self.view.bounds)
+        //註冊H5調用原生 WKWebViewConfiguration
+        let config = WKWebViewConfiguration()
+        config.userContentController.add(self, name: "externalsite")
+        config.userContentController.add(self, name: "openQrCode")
+        config.userContentController.add(self, name: "clearCahe")
+        config.userContentController.add(self, name: "loginOut")
+        config.userContentController.add(self, name: "branchMap")
+        config.userContentController.add(self, name: "scan")
+        config.userContentController.add(self, name: "encrypt")
+       //注入JS到H5
+       // let script = WKUserScript(source: self.script, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+       //config.userContentController.addUserScript(script)
+        self.webview = WKWebView.init(frame: self.view.bounds, configuration: config)
         self.webview.uiDelegate = self
         self.webview.navigationDelegate = self
         return self.webview
@@ -31,23 +92,32 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         return self.progressView
     }()
     //如果首頁隱藏了導航欄一定要加上這句
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        navigationController?.setNavigationBarHidden(false, animated: true)
-    //    }
+        override func viewWillAppear(_ animated: Bool) {
+            if type == "index" {
+            navigationController?.setNavigationBarHidden(true, animated: true)
+            }else {
+            navigationController?.setNavigationBarHidden(false, animated: true)
+            }
+            navigationController?.navigationBar.isTranslucent = false;
+        }
+
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        super.viewDidLoad()
+        setStatusBarBackgroundColor(color: UIColor(red: 51/255.0, green: 18/255.0, blue: 3/255.0, alpha: 1))
         view.addSubview(webview)
         view.addSubview(progressView)
         webview.autoresizingMask = [.flexibleHeight]
         webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         //webview.load(URLRequest.init(url: URL.init(string: "https://www.baidu.com/")!))
        
-        if type == "OV" {
+        if type == "OV" || type == "index" {
             webview.load(URLRequest.init(url: URL.init(string: url)!))
         }else {
-        
             if let url = URL(string: "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)&company=\(ApiUtil.companyCode)&id=\(id)&serial=\(ApiUtil.serial)"){
                 let request = URLRequest(url: url)
                 // webView.loadRequest(request)
@@ -55,6 +125,8 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
             }
         }
     }
+    
+ 
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
@@ -123,5 +195,94 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         webview.removeObserver(self, forKeyPath: "estimatedProgress")
         webview.uiDelegate = nil
         webview.navigationDelegate = nil
+    }
+    
+    //開始清除緩存
+    func clearCacheBtnClick(){
+        
+        //提示框
+        let message = self.cacheSize
+        let alert = UIAlertController(title: "清除缓存", message: message, preferredStyle:UIAlertControllerStyle.alert)
+        let alertConfirm = UIAlertAction(title: "确定", style:UIAlertActionStyle.default) { (alertConfirm) ->Void in
+            self.clearCache()
+        }
+        alert.addAction(alertConfirm)
+        let cancle = UIAlertAction(title: "取消", style:UIAlertActionStyle.cancel) { (cancle) ->Void in
+        }
+        alert.addAction(cancle)
+        //提示框弹出
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    var cacheSize: String{
+        get{
+            // 路径
+            let basePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
+            let fileManager = FileManager.default
+            // 遍历出所有缓存文件加起来的大小
+            func caculateCache() -> Float{
+                var total: Float = 0
+                if fileManager.fileExists(atPath: basePath!){
+                    let childrenPath = fileManager.subpaths(atPath: basePath!)
+                    if childrenPath != nil{
+                        for path in childrenPath!{
+                            let childPath = basePath!.appending("/").appending(path)
+                            do{
+                                let attr:NSDictionary = try fileManager.attributesOfItem(atPath: childPath) as NSDictionary
+                                let fileSize = attr["NSFileSize"] as! Float
+                                total += fileSize
+                                
+                            }catch _{
+                                
+                            }
+                        }
+                    }
+                }
+                // 缓存文件大小
+                return total
+            }
+            // 调用函数
+            let totalCache = caculateCache()
+            return NSString(format: "%.2f MB", totalCache / 1024.0 / 1024.0 ) as String
+        }
+    }
+    
+    /// 清除缓存
+    ///
+    /// - returns: 是否清理成功
+    func clearCache()  {
+        var result = true
+        // 取出cache文件夹目录 缓存文件都在这个目录下
+        let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
+        // 取出文件夹下所有文件数组
+        let fileArr = FileManager.default.subpaths(atPath: cachePath!)
+        // 遍历删除
+        for file in fileArr! {
+            // 拼接文件路径
+            let path = cachePath?.appending("/\(file)")
+            if FileManager.default.fileExists(atPath: path!) {
+                // 循环删除
+                do {
+                    try FileManager.default.removeItem(atPath: path!)
+                } catch {
+                    // 删除失败
+                    result = false
+                }
+            }
+        }
+        // return result
+    }
+    
+    
+    func setStatusBarBackgroundColor(color : UIColor) {
+        let statusBarWindow : UIView = UIApplication.shared.value(forKey: "statusBarWindow") as! UIView
+        let statusBar : UIView = statusBarWindow.value(forKey: "statusBar") as! UIView
+        /*
+         if statusBar.responds(to:Selector("setBackgroundColor:")) {
+         statusBar.backgroundColor = color
+         }*/
+        if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
+            statusBar.backgroundColor = color
+        }
     }
 }

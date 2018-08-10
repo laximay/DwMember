@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordLab: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+         navigationController?.setNavigationBarHidden(false, animated: true)
         //每次打開這個頁面都要清空
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "dwsercet")
@@ -26,6 +27,8 @@ class LoginViewController: UIViewController {
         
         
     }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(false)
@@ -113,10 +116,12 @@ class LoginViewController: UIViewController {
     }
     
     
-    
+
+
     
     
     override func viewDidAppear(_ animated: Bool) {
+       
         let startScale = CGAffineTransform(scaleX: 0, y: 0)
         let startPos = CGAffineTransform(translationX: 0, y: 0)
         imageLoginLogo.layer.cornerRadius = 50

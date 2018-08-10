@@ -40,7 +40,7 @@ class ScanViewController: LBXScanViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.setNavigationBarHidden(false, animated: true)
         //需要识别后的图像
         setNeedCodeImage(needCodeImg: true)
         

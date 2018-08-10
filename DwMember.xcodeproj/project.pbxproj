@@ -938,7 +938,7 @@
 				INFOPLIST_FILE = DwMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ablegenius.epot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ablegenius.wineverzhudi;
 				PRODUCT_NAME = "一鍋堂";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DwMember-Bridging-Header.h";
@@ -959,7 +959,7 @@
 				INFOPLIST_FILE = DwMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ablegenius.epot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ablegenius.wineverzhudi;
 				PRODUCT_NAME = "一鍋堂";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DwMember-Bridging-Header.h";

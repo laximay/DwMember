@@ -63,15 +63,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         //啟動頁面
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
-        let homeVC = MyTabBarViewController()
-        //let nav = UINavigationController.init(rootViewController: homeVC)
+//        let homeVC = MyTabBarViewController()
+       
         
-        
+         let homeVC = WebViewController()
+            homeVC.url = "http://192.168.90.71:8081/"
+            homeVC.type = "index"
+         let nav = UINavigationController.init(rootViewController: homeVC)
         if launchOptions != nil {
             
             /// 通过推送等启动
             /// ============================================
-            window?.rootViewController = homeVC
+            window?.rootViewController = nav
             
         } else {
             /// 正常点击icon启动页，加载广告
@@ -82,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
             
             let adVC = ZLaunchAdVC.init(defaultDuration: 3, completion: { [weak self] in
-                self?.window?.rootViewController = homeVC
+                self?.window?.rootViewController = nav
             })
             
         

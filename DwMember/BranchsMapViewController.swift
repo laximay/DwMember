@@ -14,6 +14,7 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
 
      var mapView: MKMapView!
     override func viewDidLoad() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
         super.viewDidLoad()
         self.mapView = MKMapView(frame:self.view.frame)
         self.view.addSubview(self.mapView)
