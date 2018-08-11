@@ -62,7 +62,8 @@ let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", 
                                            "HDXQ": webViewConfig(code: "HDXQ", verif: true),
                                            "JFCX": webViewConfig(code: "JFCX", verif: true),
                                             "HYDC": webViewConfig(code: "HYDC", verif: true),
-                            "HYJH": webViewConfig(code: "HYJH", verif: true)]
+                            "HYJH": webViewConfig(code: "HYJH", verif: true),
+                            "WJDC": webViewConfig(code: "WJDC", verif: false)]
 
 open class ApiUtil{
     
@@ -80,8 +81,13 @@ open class ApiUtil{
        static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
+<<<<<<< HEAD
     static let serverUrl = "https://cloud.ablegenius.com/a"
 //    static var serverUrl = "http://10.28.101.105:8070/a"
+=======
+    //static let serverUrl = "https://cloud.ablegenius.com/a"
+    static var serverUrl = "http://192.168.90.82/a"
+>>>>>>> 66911fdae3b260045d461b88c7de89f6816a3067
     //公司代碼`
     static let companyCode = "EPOT"
     //APP類型細分編號

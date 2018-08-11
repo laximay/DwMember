@@ -100,7 +100,7 @@ class MainTableViewController: UITableViewController, UIViewControllerTransition
             
             defaults.set( str, forKey: "index_data")
             
-            //dump(json)
+           // dump(json)
             if(result.ok){
                 let datas = DwHomeRootClass(fromDictionary: json).data!
                 do{

@@ -456,19 +456,14 @@ class MeTableViewController: UITableViewController{
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            // print(json)
+             print(json)
             if result.ok {
                 if  DwPageListRootClass(fromDictionary: json).code == 1 {
                     let datas = DwPageListRootClass(fromDictionary: json).data
-                    OperationQueue.main.addOperation {
-                        if let datas = datas {
-                            if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
-                                pageVC.url = datas.pageList[0].url
-                                pageVC.type = datas.pageList[0].opentype
-                                self.navigationController?.pushViewController(pageVC, animated: true)
-                            }
-                        }
-                    }
+                    
+                    ApiUtil.webViewHandle(withIdentifier: (datas?.pageList[0].url)!, id: (datas?.pageList[0].id)!, sender: self)
+                    
+            
                     
                 }else {
                     //異常處理
