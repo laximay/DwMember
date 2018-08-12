@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
        
         
          let homeVC = WebViewController()
-            homeVC.url = "http://192.168.90.71:8081/"
+            homeVC.url = ApiUtil.indexUrl
             homeVC.type = "index"
          let nav = UINavigationController.init(rootViewController: homeVC)
         if launchOptions != nil {

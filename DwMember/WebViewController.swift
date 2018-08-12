@@ -41,6 +41,12 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         case "encrypt":
             //H5請求如需加密,則需調用此方法進行簽名
             var avgs = ApiUtil.frontFunc()
+          
+            if let prams = getDictionaryFromJSONString(jsonString: message.body as! String) as? NSDictionary{
+                for (key, value) in prams{
+                    avgs.updateValue(value as! String, forKey: key as! String)
+                }
+            }
             let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             
@@ -284,5 +290,18 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
             statusBar.backgroundColor = color
         }
+    }
+    
+    func getDictionaryFromJSONString(jsonString:String) ->NSDictionary{
+        
+        let jsonData:Data = jsonString.data(using: .utf8)!
+        
+        let dict = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
+        if dict != nil {
+            return dict as! NSDictionary
+        }
+        return NSDictionary()
+        
+        
     }
 }
