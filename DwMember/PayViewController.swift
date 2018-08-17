@@ -53,21 +53,20 @@ class PayViewController: UIViewController {
         
             let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
-            dump(avgs)
-            
+//            dump(avgs)
+        
             Just.post(ApiUtil.paycodeApi ,  data: avgs) { (result) in
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-                print("详情：",json)
+//                print("详情：",json)
                 if result.ok {
                     if  DwPayCodeRootClass(fromDictionary: json).code == 1 {
                         let payData: DwPayCodeData = DwPayCodeRootClass(fromDictionary: json).data
                       
-                        let resignData :[String: Any] = ["cardNo": payData.cardNo, "code": payData.code, "timestamp": payData.timestamp ]
+                        let resignData :[String: Any] = ["cardNo": payData.cardNo! , "code": payData.code!, "timestamp": payData.timestamp! ]
                         
                         let resign = ApiUtil.sign(data: resignData, sender: self)
-                        
                         if DwPayCodeRootClass(fromDictionary: json).sign != resign {
                             OperationQueue.main.addOperation {
                             self.msgLab.text = "安全验证失败！"

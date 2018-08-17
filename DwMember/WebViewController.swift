@@ -17,13 +17,19 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         switch message.name {
         case "externalsite":
-             ApiUtil.webViewHandle(webCode: message.body as! String, sender: self)
+            if let prams = getDictionaryFromJSONString(jsonString: message.body as! String) as? NSDictionary{
+              let url = prams["url"] as! String
+              let id =  prams["id"] as! String
+              ApiUtil.webViewHandleNativ(webCode: url , id: id , sender: self)
+            }
+            
+            
         case "openQrCode":
             if let payVC = mainSB.instantiateViewController(withIdentifier: "PayViewController") as? PayViewController{
 //            self.navigationController?.pushViewController(payVC, animated: true)
               self.present(payVC, animated: true, completion: nil)
             }
-         case "clearCahe":
+         case "clearCache":
             clearCacheBtnClick();
         case "loginOut":
             if let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginViewController")  as? LoginViewController{
@@ -49,15 +55,22 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
             }
             let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
-            
             let data : NSData! = try! JSONSerialization.data(withJSONObject: avgs, options: []) as NSData?
                 let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
                 webview.evaluateJavaScript("window.nativeCallBack('\(JSONString!)')") { (a, b) in
                     print(#function)
                 }
-         
-            
-         
+        case "currentVersion":
+            let data : NSData! = try! JSONSerialization.data(withJSONObject: ["currentVersion": currentVersion], options: []) as NSData?
+            let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
+            webview.evaluateJavaScript("window.nativeCallBack('\(JSONString!)')") { (a, b) in
+                print(#function)
+            }
+        case "pagelist":
+            if let prams = getDictionaryFromJSONString(jsonString: message.body as! String) as? NSDictionary{
+                let index = prams["index"] as! String
+                ApiUtil.getPageList(sender: self, index: Int(index)!)
+            }
         default: break
             
         }
@@ -71,6 +84,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
     var cardNo = ""
     var type = ""
     var id = ""
+    let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
 
     lazy private var webview: WKWebView = {
         //註冊H5調用原生 WKWebViewConfiguration
@@ -82,6 +96,8 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         config.userContentController.add(self, name: "branchMap")
         config.userContentController.add(self, name: "scan")
         config.userContentController.add(self, name: "encrypt")
+        config.userContentController.add(self, name: "currentVersion")
+        config.userContentController.add(self, name: "pagelist")
        //注入JS到H5
        // let script = WKUserScript(source: self.script, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
        //config.userContentController.addUserScript(script)
@@ -99,6 +115,11 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
     }()
     //如果首頁隱藏了導航欄一定要加上這句
         override func viewWillAppear(_ animated: Bool) {
+            
+            webview.evaluateJavaScript("window.refPage()") { (a, b) in
+                print(#function)
+            }
+            
             if type == "index" {
             navigationController?.setNavigationBarHidden(true, animated: true)
             }else {
@@ -131,6 +152,9 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
             }
         }
     }
+    
+    
+    
     
  
     

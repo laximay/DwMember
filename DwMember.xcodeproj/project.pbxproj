@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3D03761A1F484895003173FD /* CouponDeatilsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0376191F484895003173FD /* CouponDeatilsViewController.swift */; };
-		3D060355201333B00026A782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D060354201333B00026A782 /* Assets.xcassets */; };
 		3D11B3991F30587D0031DD5C /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B3981F30587D0031DD5C /* UIButton.swift */; };
 		3D11B39E1F306D020031DD5C /* MainActivitysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B39D1F306D020031DD5C /* MainActivitysTableViewCell.swift */; };
 		3D1428F71F5B9564004116EB /* DwUpdataData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1428F51F5B9564004116EB /* DwUpdataData.swift */; };
@@ -110,11 +109,11 @@
 		3DEBCD291FC8615B00D9F30E /* ZLaunchAdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBCD281FC8615B00D9F30E /* ZLaunchAdVC.swift */; };
 		3DEBCD2B1FC8753A00D9F30E /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBCD2A1FC8753A00D9F30E /* TempViewController.swift */; };
 		71DA84E6DB0F8C1C269054B6 /* Pods_DwMember.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4CD4F2448D444F046254A9 /* Pods_DwMember.framework */; };
+		9505FF452124236700BEAD31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9505FF442124236700BEAD31 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D0376191F484895003173FD /* CouponDeatilsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDeatilsViewController.swift; sourceTree = "<group>"; };
-		3D060354201333B00026A782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D11B3981F30587D0031DD5C /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		3D11B39D1F306D020031DD5C /* MainActivitysTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainActivitysTableViewCell.swift; sourceTree = "<group>"; };
 		3D1428F51F5B9564004116EB /* DwUpdataData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwUpdataData.swift; sourceTree = "<group>"; };
@@ -238,6 +237,7 @@
 		3DEBCD281FC8615B00D9F30E /* ZLaunchAdVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLaunchAdVC.swift; sourceTree = "<group>"; };
 		3DEBCD2A1FC8753A00D9F30E /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		43F163E528729B10AFD69FD6 /* Pods-DwMember.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwMember.release.xcconfig"; path = "Pods/Target Support Files/Pods-DwMember/Pods-DwMember.release.xcconfig"; sourceTree = "<group>"; };
+		9505FF442124236700BEAD31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC4CD4F2448D444F046254A9 /* Pods_DwMember.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DwMember.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AC6189F94F154D3B69D4C9 /* Pods-DwMember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwMember.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DwMember/Pods-DwMember.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -425,7 +425,7 @@
 		3DD3E2491F2EC4C6001FC47E /* DwMember */ = {
 			isa = PBXGroup;
 			children = (
-				3D060354201333B00026A782 /* Assets.xcassets */,
+				9505FF442124236700BEAD31 /* Assets.xcassets */,
 				3DB7B2211FD7FAAA0092FAC0 /* InfoPlist.strings */,
 				3D2569E01F3D7B9800E01816 /* ZLaunchAd */,
 				3D493F8B1F3C3DB800CEAD4B /* model */,
@@ -538,11 +538,11 @@
 				3DD3E2501F2EC4C6001FC47E /* Main.storyboard in Resources */,
 				3DB7B1FF1FD7EE910092FAC0 /* Find.storyboard in Resources */,
 				3DB7B2031FD7EE910092FAC0 /* Coupon.storyboard in Resources */,
-				3D060355201333B00026A782 /* Assets.xcassets in Resources */,
 				3DD885B21F2F3323007A1CE1 /* PodFile in Resources */,
 				3DB7B2001FD7EE910092FAC0 /* Queue.storyboard in Resources */,
 				3DB7B2021FD7EE910092FAC0 /* Message.storyboard in Resources */,
 				3DB7B1FE1FD7EE910092FAC0 /* Me.storyboard in Resources */,
+				9505FF452124236700BEAD31 /* Assets.xcassets in Resources */,
 				3DB7B2051FD7EE910092FAC0 /* Res.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

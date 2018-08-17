@@ -82,13 +82,13 @@ open class ApiUtil{
     
     //服務鏈接
     //static let serverUrl = "https://cloud.ablegenius.com/a"
-    static var serverUrl = "http://192.168.0.114:8071/a"
+    static var serverUrl = "http://192.168.90.14:8088/api"
     //首頁鏈接
-    static let indexUrl = "http://192.168.0.114:8081/"
+    static let indexUrl = "http://192.168.90.71:8081/"
     //公司代碼`
-    static let companyCode = "EPOT"
+    static let companyCode = "WineverHK"
     //APP類型細分編號
-    static let serial = "X97Gre352EED2E2"
+    static let serial = "84Ll45wGp7zRHz2"
     //推送APPKEY
     static let apnsKey = "3d3875c4f028cfac41294580"
     //公司代碼
@@ -328,7 +328,7 @@ open class ApiUtil{
     
     
     //webView統一跳轉控制器
-    static func webViewHandle(webCode: String, sender: UIViewController ) {
+    static func webViewHandleNativ(webCode: String, id: String, sender: UIViewController ) {
         
      
         //dump(webCode)
@@ -355,6 +355,7 @@ open class ApiUtil{
                             if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
                                 pageVC.url = datas.url
                                 pageVC.random = datas.random
+                                pageVC.id = id
                                 if let cardNo: String = avgs["cardNo"] as? String {
                                     pageVC.cardNo = cardNo
                                 }
@@ -410,7 +411,7 @@ open class ApiUtil{
             }
             signStr = data2.map{ "\($0)=\($1)" }.joined(separator: "&")
             
-            signStr.append("&key=\(sercet)")
+             signStr.append("&key=\(sercet)")
              return signStr.md5().uppercased()
         }else {
             checklogin(sender: sender)
@@ -459,6 +460,58 @@ open class ApiUtil{
         
         sender.present(menu, animated: true, completion: nil)
         
+    }
+    
+    
+    //調查問卷接口
+    static  func getPageList(sender: UIViewController, index: Int)  {
+        var avgs: [String: Any] = [:]
+        avgs.updateValue(ApiUtil.companyCode, forKey: "company")
+        avgs.updateValue("AC", forKey: "type")
+        avgs.updateValue("MINE", forKey: "page")
+
+        Just.post(ApiUtil.pageListApi ,  data: avgs) { (result) in
+            guard let json = result.json as? NSDictionary else{
+                return
+            }
+            print(json)
+            if result.ok {
+                if  DwPageListRootClass(fromDictionary: json).code == 1 {
+                    let datas = DwPageListRootClass(fromDictionary: json).data
+                    OperationQueue.main.addOperation {
+                        if let datas = datas {
+                            if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+                                pageVC.url = (datas.pageList[index].url)!
+                                pageVC.id = (datas.pageList[index].id)!
+                                pageVC.type = "OV"
+                                if let cardNo: String = avgs["cardNo"] as? String {
+                                    pageVC.cardNo = cardNo
+                                }
+                                sender.navigationController?.pushViewController(pageVC, animated: true)
+                            }
+                        }
+                    }
+                    
+                }else {
+                    //異常處理
+                    if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                        //  print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                        OperationQueue.main.addOperation {
+                            ApiUtil.openAlert(msg: error.msg, sender: sender)
+                        }
+                    }
+                }
+            }else{
+                //處理接口系統錯誤
+                if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
+                    // print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.message, sender: sender)
+                    }
+                }
+            }
+            
+        }
     }
     
     

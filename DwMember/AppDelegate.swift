@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             
             /// http://chatm-icon.oss-cn-beijing.aliyuncs.com/pic/pic_20170724152928869.gif
             
-            let adVC = ZLaunchAdVC.init(defaultDuration: 3, completion: { [weak self] in
+            let adVC = ZLaunchAdVC.init(defaultDuration: 5, completion: { [weak self] in
                 self?.window?.rootViewController = nav
             })
             
@@ -93,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
             ApiUtil.launchCache_New({ (imgUrl) in
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() , execute: {
                     
-                    let adDuartion = 3
+                    let adDuartion = 4
                           adVC.setAdParams(url: imgUrl, adDuartion: adDuartion, skipBtnType: .circle, adViewBottomDistance: 0, transitionType: .filpFromLeft, adImgViewClick: nil)
                     
                     
