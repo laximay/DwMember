@@ -50,7 +50,7 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
 
         let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 53, height: 53))
       
-        leftIconView.image = #imageLiteral(resourceName: "epotlogo")
+        leftIconView.image = #imageLiteral(resourceName: "ic_discovery_on40")
         av?.leftCalloutAccessoryView = leftIconView
         //av?.pinTintColor = UIColor.green
         return av

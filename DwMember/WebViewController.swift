@@ -115,7 +115,6 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
     }()
     //如果首頁隱藏了導航欄一定要加上這句
         override func viewWillAppear(_ animated: Bool) {
-            
             webview.evaluateJavaScript("window.refPage()") { (a, b) in
                 print(#function)
             }
