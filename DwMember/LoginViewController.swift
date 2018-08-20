@@ -56,6 +56,7 @@ class LoginViewController: UIViewController {
         
         avgs.updateValue(cardNo, forKey: "cardNo")
         avgs.updateValue(password.md5().md5(), forKey: "password")
+
         
         let key = "\(cardNo)#\(password.md5())"
         let defaults = UserDefaults.standard
@@ -63,10 +64,11 @@ class LoginViewController: UIViewController {
     
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
-       // dump(avgs)
+        avgs.updateValue(ApiUtil.companyCode, forKey: "company")
+//        dump(avgs)
         Just.post(ApiUtil.loginApi ,  data: avgs) { (result) in
             
-            print(result)
+//            print(result)
             guard let json = result.json as? NSDictionary else{
                 return
             }
