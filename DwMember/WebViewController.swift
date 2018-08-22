@@ -15,6 +15,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
      3.註冊 WKWebViewConfiguration
      */
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        ApiUtil.checklogin(sender: self)
         switch message.name {
         case "externalsite":
             if let prams = getDictionaryFromJSONString(jsonString: message.body as! String) as? NSDictionary{
@@ -140,9 +141,23 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         webview.autoresizingMask = [.flexibleHeight]
         webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         //webview.load(URLRequest.init(url: URL.init(string: "https://www.baidu.com/")!))
+//        let timeInterval =  Int(NSDate().timeIntervalSince1970*1000)
+        if cardNo == "" {
+            let defaults = UserDefaults.standard
+            if (defaults.string(forKey: "cardNo") != nil) {
+            cardNo = defaults.string(forKey: "cardNo")!
+            }
+        }
        
-        if type == "OV" || type == "index" {
+       
+        if  type == "index" {
             webview.load(URLRequest.init(url: URL.init(string: url)!))
+        }else if type == "OV" {
+            if let url = URL(string: "\(url)&imei=\(ApiUtil.idfv)&cardNo=\(cardNo)&company=\(ApiUtil.companyCode)&serial=\(ApiUtil.serial)"){
+                let request = URLRequest(url: url)
+                // webView.loadRequest(request)
+                webview.load(request) //使用更快，内存占用更小的的WKWEBVIEW 使用wkwebview需要注意在所在VIEW里面不勾选under top bars，要不然顶部会缩进去导航条里面
+            }
         }else {
             if let url = URL(string: "\(url)?imei=\(ApiUtil.idfv)&code=\(random)&cardNo=\(cardNo)&company=\(ApiUtil.companyCode)&id=\(id)&serial=\(ApiUtil.serial)"){
                 let request = URLRequest(url: url)
