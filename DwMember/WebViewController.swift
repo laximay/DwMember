@@ -92,7 +92,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         let config = WKWebViewConfiguration()
         config.userContentController.add(self, name: "externalsite")
         config.userContentController.add(self, name: "openQrCode")
-        config.userContentController.add(self, name: "clearCahe")
+        config.userContentController.add(self, name: "clearCache")
         config.userContentController.add(self, name: "loginOut")
         config.userContentController.add(self, name: "branchMap")
         config.userContentController.add(self, name: "scan")
