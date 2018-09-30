@@ -1,6 +1,7 @@
 use_frameworks!
 
 target 'DwMember' do
+platform :ios, '10.3'
 pod 'Just' ,'~> 0.7.1'
 pod 'pop'
 pod 'BubbleTransition', '~> 2.0.0'
