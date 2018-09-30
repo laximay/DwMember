@@ -9,12 +9,12 @@ import Foundation
 
 struct DwPageListRootClass{
 
-	var apiVerify : AnyObject!
+	var apiVerify : String!
 	var code : Int!
 	var data : DwPageListData!
 	var msg : String!
 	var result : String!
-	var sign : AnyObject!
+	var sign : String!
 	var singleLogin : Bool!
 
 
@@ -22,14 +22,14 @@ struct DwPageListRootClass{
 	 * 用字典来初始化一个实例并设置各个属性值
 	 */
 	init(fromDictionary dictionary: NSDictionary){
-		apiVerify = dictionary["apiVerify"] as? AnyObject
+		apiVerify = dictionary["apiVerify"] as? String
 		code = dictionary["code"] as? Int
 		if let dataData = dictionary["data"] as? NSDictionary{
 				data = DwPageListData(fromDictionary: dataData)
 			}
 		msg = dictionary["msg"] as? String
 		result = dictionary["result"] as? String
-		sign = dictionary["sign"] as? AnyObject
+		sign = dictionary["sign"] as? String
 		singleLogin = dictionary["singleLogin"] as? Bool
 	}
 
@@ -38,7 +38,7 @@ struct DwPageListRootClass{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+        let dictionary = NSMutableDictionary()
 		if apiVerify != nil{
 			dictionary["apiVerify"] = apiVerify
 		}

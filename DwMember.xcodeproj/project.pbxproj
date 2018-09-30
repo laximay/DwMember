@@ -7,40 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D03761A1F484895003173FD /* CouponDeatilsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0376191F484895003173FD /* CouponDeatilsViewController.swift */; };
-		3D11B3991F30587D0031DD5C /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B3981F30587D0031DD5C /* UIButton.swift */; };
 		3D11B39E1F306D020031DD5C /* MainActivitysTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D11B39D1F306D020031DD5C /* MainActivitysTableViewCell.swift */; };
-		3D1428F71F5B9564004116EB /* DwUpdataData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1428F51F5B9564004116EB /* DwUpdataData.swift */; };
-		3D1428F81F5B9564004116EB /* DwUpdataRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1428F61F5B9564004116EB /* DwUpdataRootClass.swift */; };
-		3D1428FC1F5BC8EE004116EB /* BranchDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1428FB1F5BC8EE004116EB /* BranchDetailTableViewController.swift */; };
-		3D1428FE1F5BCEDD004116EB /* BranchDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1428FD1F5BCEDD004116EB /* BranchDetailTableViewCell.swift */; };
 		3D1429001F5C10E8004116EB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1428FF1F5C10E8004116EB /* MapKit.framework */; };
-		3D1488971F3310C700E90270 /* CouponTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1488961F3310C700E90270 /* CouponTableViewController.swift */; };
-		3D1488991F3311A700E90270 /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1488981F3311A700E90270 /* MessageTableViewController.swift */; };
-		3D154EF21F31A63800A6E157 /* MyTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D154EF11F31A63800A6E157 /* MyTabBarViewController.swift */; };
-		3D1615671F2F700B00E33F3D /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1615661F2F700B00E33F3D /* MeTableViewController.swift */; };
 		3D16156B1F2F704100E33F3D /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D16156A1F2F704100E33F3D /* PayViewController.swift */; };
-		3D16156D1F2F709800E33F3D /* FindTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D16156C1F2F709800E33F3D /* FindTableViewController.swift */; };
-		3D16156F1F2F70F700E33F3D /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D16156E1F2F70F700E33F3D /* MainTableViewController.swift */; };
-		3D1615741F2F731200E33F3D /* IrregularityContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1615731F2F731200E33F3D /* IrregularityContentView.swift */; };
-		3D16157A1F2F765000E33F3D /* BouncesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1615781F2F765000E33F3D /* BouncesContentView.swift */; };
 		3D171BCD1F4095CC008BC06E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D171BCC1F4095CC008BC06E /* String.swift */; };
-		3D185BBD1F38B2CD00A89077 /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D185BBC1F38B2CD00A89077 /* CouponViewController.swift */; };
-		3D185BBF1F38B3DA00A89077 /* SegmentioBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D185BBE1F38B3DA00A89077 /* SegmentioBuilder.swift */; };
-		3D1986451F5CE1FC00385DAD /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1986441F5CE1FC00385DAD /* ArticleViewController.swift */; };
-		3D1986481F5CE9B000385DAD /* DwArticleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1986461F5CE9B000385DAD /* DwArticleData.swift */; };
-		3D1986491F5CE9B000385DAD /* DwArticleRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1986471F5CE9B000385DAD /* DwArticleRootClass.swift */; };
-		3D19865F1F6233B600385DAD /* ResDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D19865E1F6233B600385DAD /* ResDetailTableViewController.swift */; };
-		3D1986611F62367200385DAD /* ResDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1986601F62367200385DAD /* ResDetailTableViewCell.swift */; };
 		3D1F008E1F37F89D0080957F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F008D1F37F89D0080957F /* WebViewController.swift */; };
 		3D2569DE1F3D58A800E01816 /* DwEntitys.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569DC1F3D58A800E01816 /* DwEntitys.xcdatamodeld */; };
 		3D2569E31F3D7B9800E01816 /* UIImageView+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569E11F3D7B9800E01816 /* UIImageView+Gif.swift */; };
-		3D2569EB1F3DB28300E01816 /* DwHomeActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569E71F3DB28300E01816 /* DwHomeActivity.swift */; };
-		3D2569EC1F3DB28300E01816 /* DwHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569E81F3DB28300E01816 /* DwHomeData.swift */; };
-		3D2569ED1F3DB28300E01816 /* DwHomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569E91F3DB28300E01816 /* DwHomeFeature.swift */; };
-		3D2569EE1F3DB28300E01816 /* DwHomeRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2569EA1F3DB28300E01816 /* DwHomeRootClass.swift */; };
 		3D31C4531F322F2000988876 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D31C4521F322F2000988876 /* LoginViewController.swift */; };
-		3D3CBE0020045FF100659F37 /* RichTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3CBDFF20045FF100659F37 /* RichTextViewController.swift */; };
 		3D44C003201C83F40019E8F2 /* BranchsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D44C002201C83F40019E8F2 /* BranchsMapViewController.swift */; };
 		3D493F861F3C2BCF00CEAD4B /* GuiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493F851F3C2BCF00CEAD4B /* GuiderViewController.swift */; };
 		3D493F881F3C2C2C00CEAD4B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493F871F3C2C2C00CEAD4B /* ContentViewController.swift */; };
@@ -51,11 +25,7 @@
 		3D493FA71F3C51A800CEAD4B /* DwStartAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493FA11F3C51A800CEAD4B /* DwStartAd.swift */; };
 		3D493FA81F3C51A800CEAD4B /* DwStartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493FA21F3C51A800CEAD4B /* DwStartData.swift */; };
 		3D493FA91F3C51A800CEAD4B /* DwStartRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D493FA31F3C51A800CEAD4B /* DwStartRootClass.swift */; };
-		3D5182481F53F87B00361E3F /* DwBranchsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5182461F53F87B00361E3F /* DwBranchsData.swift */; };
-		3D5182491F53F87B00361E3F /* DwBranchsRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5182471F53F87B00361E3F /* DwBranchsRootClass.swift */; };
-		3D51824B1F53F9F700361E3F /* FindTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51824A1F53F9F700361E3F /* FindTableViewCell.swift */; };
 		3D51BEC01FCC0DE300C16DEF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D51BEBF1FCC0DD600C16DEF /* CoreLocation.framework */; };
-		3D51BEC21FCE526F00C16DEF /* DwReservationPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D51BEC11FCE526E00C16DEF /* DwReservationPerson.swift */; };
 		3D60224B201B5E510017CE18 /* DwPageListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D602248201B5E500017CE18 /* DwPageListData.swift */; };
 		3D60224C201B5E510017CE18 /* DwPageListPageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D602249201B5E510017CE18 /* DwPageListPageList.swift */; };
 		3D60224D201B5E510017CE18 /* DwPageListRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D60224A201B5E510017CE18 /* DwPageListRootClass.swift */; };
@@ -63,43 +33,13 @@
 		3D6458661F444D9C008220C3 /* DwWebViewBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */; };
 		3D6458671F444D9C008220C3 /* DwWebViewBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */; };
 		3D6458691F452623008220C3 /* DwErrorBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458681F452623008220C3 /* DwErrorBaseRootClass.swift */; };
-		3D6458A81F455D24008220C3 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458A71F455D24008220C3 /* MessageTableViewCell.swift */; };
-		3D6458AB1F455E0F008220C3 /* DwMsgListBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458A91F455E0F008220C3 /* DwMsgListBaseData.swift */; };
-		3D6458AC1F455E0F008220C3 /* DwMsgListBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458AA1F455E0F008220C3 /* DwMsgListBaseRootClass.swift */; };
-		3D6458AE1F4599F1008220C3 /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458AD1F4599F1008220C3 /* MessageDetailViewController.swift */; };
-		3D6458B71F45BEF6008220C3 /* CouponDetailsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458AF1F45BEF6008220C3 /* CouponDetailsData.swift */; };
-		3D6458B81F45BEF6008220C3 /* CouponDetailsRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B01F45BEF6008220C3 /* CouponDetailsRootClass.swift */; };
-		3D6458B91F45BEF6008220C3 /* CouponMallData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B11F45BEF6008220C3 /* CouponMallData.swift */; };
-		3D6458BA1F45BEF6008220C3 /* CouponMallDetailsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B21F45BEF6008220C3 /* CouponMallDetailsData.swift */; };
-		3D6458BB1F45BEF6008220C3 /* CouponMallDetailsRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B31F45BEF6008220C3 /* CouponMallDetailsRootClass.swift */; };
-		3D6458BC1F45BEF6008220C3 /* CouponMallRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B41F45BEF6008220C3 /* CouponMallRootClass.swift */; };
-		3D6458BD1F45BEF6008220C3 /* DwCouponBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B51F45BEF6008220C3 /* DwCouponBaseData.swift */; };
-		3D6458BE1F45BEF6008220C3 /* DwCouponBaseRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458B61F45BEF6008220C3 /* DwCouponBaseRootClass.swift */; };
-		3D6458C21F45CB61008220C3 /* CouponTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C11F45CB61008220C3 /* CouponTableViewCell.swift */; };
-		3D6458CC1F4A89C0008220C3 /* DwReservationBranch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C31F4A89C0008220C3 /* DwReservationBranch.swift */; };
-		3D6458CD1F4A89C0008220C3 /* DwReservationCustDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C41F4A89C0008220C3 /* DwReservationCustDetail.swift */; };
-		3D6458CE1F4A89C0008220C3 /* DwReservationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C51F4A89C0008220C3 /* DwReservationData.swift */; };
-		3D6458CF1F4A89C0008220C3 /* DwReservationMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C61F4A89C0008220C3 /* DwReservationMeal.swift */; };
-		3D6458D01F4A89C0008220C3 /* DwReservationMemPeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C71F4A89C0008220C3 /* DwReservationMemPeriod.swift */; };
-		3D6458D11F4A89C0008220C3 /* DwReservationReList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C81F4A89C0008220C3 /* DwReservationReList.swift */; };
-		3D6458D21F4A89C0008220C3 /* DwReservationRemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458C91F4A89C0008220C3 /* DwReservationRemark.swift */; };
-		3D6458D31F4A89C0008220C3 /* DwReservationReservationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458CA1F4A89C0008220C3 /* DwReservationReservationType.swift */; };
-		3D6458D41F4A89C0008220C3 /* DwReservationRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458CB1F4A89C0008220C3 /* DwReservationRootClass.swift */; };
-		3D6458D81F4A9586008220C3 /* ReservationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458D71F4A9586008220C3 /* ReservationTableViewController.swift */; };
-		3D6458DA1F4AA0AC008220C3 /* ResTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458D91F4AA0AC008220C3 /* ResTableViewCell.swift */; };
-		3D6458DC1F4AB34C008220C3 /* MemberInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6458DB1F4AB34C008220C3 /* MemberInfoTableViewController.swift */; };
 		3D8274F01F43DEC2009BB0C9 /* DwLoginCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274ED1F43DEC2009BB0C9 /* DwLoginCard.swift */; };
 		3D8274F11F43DEC2009BB0C9 /* DwLoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274EE1F43DEC2009BB0C9 /* DwLoginData.swift */; };
 		3D8274F21F43DEC2009BB0C9 /* DwLoginRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */; };
 		3D91761D1F486BD500E855F6 /* DwPayCodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91761B1F486BD500E855F6 /* DwPayCodeData.swift */; };
 		3D91761E1F486BD500E855F6 /* DwPayCodeRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */; };
-		3DB7B1FE1FD7EE910092FAC0 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1ED1FD7EE8F0092FAC0 /* Me.storyboard */; };
 		3DB7B1FF1FD7EE910092FAC0 /* Find.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1EF1FD7EE8F0092FAC0 /* Find.storyboard */; };
-		3DB7B2001FD7EE910092FAC0 /* Queue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1F11FD7EE8F0092FAC0 /* Queue.storyboard */; };
 		3DB7B2011FD7EE910092FAC0 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1F31FD7EE900092FAC0 /* Login.storyboard */; };
-		3DB7B2021FD7EE910092FAC0 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1F51FD7EE900092FAC0 /* Message.storyboard */; };
-		3DB7B2031FD7EE910092FAC0 /* Coupon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1F71FD7EE900092FAC0 /* Coupon.storyboard */; };
-		3DB7B2051FD7EE910092FAC0 /* Res.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B1FB1FD7EE910092FAC0 /* Res.storyboard */; };
 		3DB7B21F1FD7FAAA0092FAC0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7B2211FD7FAAA0092FAC0 /* InfoPlist.strings */; };
 		3DD3E24B1F2EC4C6001FC47E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD3E24A1F2EC4C6001FC47E /* AppDelegate.swift */; };
 		3DD3E2501F2EC4C6001FC47E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD3E24E1F2EC4C6001FC47E /* Main.storyboard */; };
@@ -110,44 +50,20 @@
 		3DEBCD2B1FC8753A00D9F30E /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEBCD2A1FC8753A00D9F30E /* TempViewController.swift */; };
 		71DA84E6DB0F8C1C269054B6 /* Pods_DwMember.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC4CD4F2448D444F046254A9 /* Pods_DwMember.framework */; };
 		9505FF452124236700BEAD31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9505FF442124236700BEAD31 /* Assets.xcassets */; };
+		952E75F421607ADC00599E4C /* DwBranchsRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E75F221607ADB00599E4C /* DwBranchsRootClass.swift */; };
+		952E75F521607ADC00599E4C /* DwBranchsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E75F321607ADC00599E4C /* DwBranchsData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3D0376191F484895003173FD /* CouponDeatilsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDeatilsViewController.swift; sourceTree = "<group>"; };
-		3D11B3981F30587D0031DD5C /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		3D11B39D1F306D020031DD5C /* MainActivitysTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainActivitysTableViewCell.swift; sourceTree = "<group>"; };
-		3D1428F51F5B9564004116EB /* DwUpdataData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwUpdataData.swift; sourceTree = "<group>"; };
-		3D1428F61F5B9564004116EB /* DwUpdataRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwUpdataRootClass.swift; sourceTree = "<group>"; };
-		3D1428FB1F5BC8EE004116EB /* BranchDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchDetailTableViewController.swift; sourceTree = "<group>"; };
-		3D1428FD1F5BCEDD004116EB /* BranchDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3D1428FF1F5C10E8004116EB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		3D1488961F3310C700E90270 /* CouponTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponTableViewController.swift; sourceTree = "<group>"; };
-		3D1488981F3311A700E90270 /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
-		3D154EF11F31A63800A6E157 /* MyTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarViewController.swift; sourceTree = "<group>"; };
-		3D1615661F2F700B00E33F3D /* MeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTableViewController.swift; sourceTree = "<group>"; };
 		3D16156A1F2F704100E33F3D /* PayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
-		3D16156C1F2F709800E33F3D /* FindTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewController.swift; sourceTree = "<group>"; };
-		3D16156E1F2F70F700E33F3D /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
-		3D1615731F2F731200E33F3D /* IrregularityContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IrregularityContentView.swift; sourceTree = "<group>"; };
-		3D1615781F2F765000E33F3D /* BouncesContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncesContentView.swift; sourceTree = "<group>"; };
 		3D1640BD1F39F969008F0819 /* DwMember.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DwMember.entitlements; sourceTree = "<group>"; };
 		3D171BCC1F4095CC008BC06E /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		3D185BBC1F38B2CD00A89077 /* CouponViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
-		3D185BBE1F38B3DA00A89077 /* SegmentioBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentioBuilder.swift; sourceTree = "<group>"; };
-		3D1986441F5CE1FC00385DAD /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
-		3D1986461F5CE9B000385DAD /* DwArticleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwArticleData.swift; sourceTree = "<group>"; };
-		3D1986471F5CE9B000385DAD /* DwArticleRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwArticleRootClass.swift; sourceTree = "<group>"; };
-		3D19865E1F6233B600385DAD /* ResDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResDetailTableViewController.swift; sourceTree = "<group>"; };
-		3D1986601F62367200385DAD /* ResDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResDetailTableViewCell.swift; sourceTree = "<group>"; };
 		3D1F008D1F37F89D0080957F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3D2569DD1F3D58A800E01816 /* DwEntitys.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DwEntitys.xcdatamodel; sourceTree = "<group>"; };
 		3D2569E11F3D7B9800E01816 /* UIImageView+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Gif.swift"; sourceTree = "<group>"; };
-		3D2569E71F3DB28300E01816 /* DwHomeActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwHomeActivity.swift; sourceTree = "<group>"; };
-		3D2569E81F3DB28300E01816 /* DwHomeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwHomeData.swift; sourceTree = "<group>"; };
-		3D2569E91F3DB28300E01816 /* DwHomeFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwHomeFeature.swift; sourceTree = "<group>"; };
-		3D2569EA1F3DB28300E01816 /* DwHomeRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwHomeRootClass.swift; sourceTree = "<group>"; };
 		3D31C4521F322F2000988876 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3D3CBDFF20045FF100659F37 /* RichTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichTextViewController.swift; sourceTree = "<group>"; };
 		3D44C002201C83F40019E8F2 /* BranchsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BranchsMapViewController.swift; sourceTree = "<group>"; };
 		3D493F851F3C2BCF00CEAD4B /* GuiderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuiderViewController.swift; sourceTree = "<group>"; };
 		3D493F871F3C2C2C00CEAD4B /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
@@ -158,19 +74,10 @@
 		3D493FA11F3C51A800CEAD4B /* DwStartAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwStartAd.swift; sourceTree = "<group>"; };
 		3D493FA21F3C51A800CEAD4B /* DwStartData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwStartData.swift; sourceTree = "<group>"; };
 		3D493FA31F3C51A800CEAD4B /* DwStartRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwStartRootClass.swift; sourceTree = "<group>"; };
-		3D5182461F53F87B00361E3F /* DwBranchsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwBranchsData.swift; sourceTree = "<group>"; };
-		3D5182471F53F87B00361E3F /* DwBranchsRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwBranchsRootClass.swift; sourceTree = "<group>"; };
-		3D51824A1F53F9F700361E3F /* FindTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTableViewCell.swift; sourceTree = "<group>"; };
 		3D51BEBF1FCC0DD600C16DEF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		3D51BEC11FCE526E00C16DEF /* DwReservationPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationPerson.swift; sourceTree = "<group>"; };
 		3D5B656620181BAB00649B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3D5B656720181BAC00649B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Find.strings; sourceTree = "<group>"; };
 		3D5B656820181BAC00649B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Login.strings; sourceTree = "<group>"; };
-		3D5B656920181BAC00649B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Message.strings; sourceTree = "<group>"; };
-		3D5B656A20181BAC00649B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Coupon.strings; sourceTree = "<group>"; };
-		3D5B656B20181BAC00649B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Me.strings; sourceTree = "<group>"; };
-		3D5B656C20181BAC00649B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Queue.strings; sourceTree = "<group>"; };
-		3D5B656D20181BAC00649B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Res.strings; sourceTree = "<group>"; };
 		3D5B656E20181BAC00649B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		3D5B656F20181BAC00649B24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3D602248201B5E500017CE18 /* DwPageListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPageListData.swift; sourceTree = "<group>"; };
@@ -178,54 +85,19 @@
 		3D60224A201B5E510017CE18 /* DwPageListRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPageListRootClass.swift; sourceTree = "<group>"; };
 		3D60224E201B62B40017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Find.strings"; sourceTree = "<group>"; };
 		3D60224F201B62B40017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Login.strings"; sourceTree = "<group>"; };
-		3D602250201B62B40017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Message.strings"; sourceTree = "<group>"; };
-		3D602251201B62B40017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Coupon.strings"; sourceTree = "<group>"; };
-		3D602252201B62B50017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Me.strings"; sourceTree = "<group>"; };
-		3D602253201B62B50017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Queue.strings"; sourceTree = "<group>"; };
-		3D602254201B62B50017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Res.strings"; sourceTree = "<group>"; };
 		3D602255201B62B50017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		3D602256201B62B50017CE18 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3D6458621F442A72008220C3 /* DwCountBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwCountBaseRootClass.swift; sourceTree = "<group>"; };
 		3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwWebViewBaseData.swift; sourceTree = "<group>"; };
 		3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwWebViewBaseRootClass.swift; sourceTree = "<group>"; };
 		3D6458681F452623008220C3 /* DwErrorBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwErrorBaseRootClass.swift; sourceTree = "<group>"; };
-		3D6458A71F455D24008220C3 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
-		3D6458A91F455E0F008220C3 /* DwMsgListBaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwMsgListBaseData.swift; sourceTree = "<group>"; };
-		3D6458AA1F455E0F008220C3 /* DwMsgListBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwMsgListBaseRootClass.swift; sourceTree = "<group>"; };
-		3D6458AD1F4599F1008220C3 /* MessageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
-		3D6458AF1F45BEF6008220C3 /* CouponDetailsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDetailsData.swift; sourceTree = "<group>"; };
-		3D6458B01F45BEF6008220C3 /* CouponDetailsRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponDetailsRootClass.swift; sourceTree = "<group>"; };
-		3D6458B11F45BEF6008220C3 /* CouponMallData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponMallData.swift; sourceTree = "<group>"; };
-		3D6458B21F45BEF6008220C3 /* CouponMallDetailsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponMallDetailsData.swift; sourceTree = "<group>"; };
-		3D6458B31F45BEF6008220C3 /* CouponMallDetailsRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponMallDetailsRootClass.swift; sourceTree = "<group>"; };
-		3D6458B41F45BEF6008220C3 /* CouponMallRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponMallRootClass.swift; sourceTree = "<group>"; };
-		3D6458B51F45BEF6008220C3 /* DwCouponBaseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwCouponBaseData.swift; sourceTree = "<group>"; };
-		3D6458B61F45BEF6008220C3 /* DwCouponBaseRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwCouponBaseRootClass.swift; sourceTree = "<group>"; };
-		3D6458C11F45CB61008220C3 /* CouponTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponTableViewCell.swift; sourceTree = "<group>"; };
-		3D6458C31F4A89C0008220C3 /* DwReservationBranch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationBranch.swift; sourceTree = "<group>"; };
-		3D6458C41F4A89C0008220C3 /* DwReservationCustDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationCustDetail.swift; sourceTree = "<group>"; };
-		3D6458C51F4A89C0008220C3 /* DwReservationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationData.swift; sourceTree = "<group>"; };
-		3D6458C61F4A89C0008220C3 /* DwReservationMeal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationMeal.swift; sourceTree = "<group>"; };
-		3D6458C71F4A89C0008220C3 /* DwReservationMemPeriod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationMemPeriod.swift; sourceTree = "<group>"; };
-		3D6458C81F4A89C0008220C3 /* DwReservationReList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationReList.swift; sourceTree = "<group>"; };
-		3D6458C91F4A89C0008220C3 /* DwReservationRemark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationRemark.swift; sourceTree = "<group>"; };
-		3D6458CA1F4A89C0008220C3 /* DwReservationReservationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationReservationType.swift; sourceTree = "<group>"; };
-		3D6458CB1F4A89C0008220C3 /* DwReservationRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwReservationRootClass.swift; sourceTree = "<group>"; };
-		3D6458D71F4A9586008220C3 /* ReservationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationTableViewController.swift; sourceTree = "<group>"; };
-		3D6458D91F4AA0AC008220C3 /* ResTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResTableViewCell.swift; sourceTree = "<group>"; };
-		3D6458DB1F4AB34C008220C3 /* MemberInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberInfoTableViewController.swift; sourceTree = "<group>"; };
 		3D8274ED1F43DEC2009BB0C9 /* DwLoginCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginCard.swift; sourceTree = "<group>"; };
 		3D8274EE1F43DEC2009BB0C9 /* DwLoginData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginData.swift; sourceTree = "<group>"; };
 		3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwLoginRootClass.swift; sourceTree = "<group>"; };
 		3D91761B1F486BD500E855F6 /* DwPayCodeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPayCodeData.swift; sourceTree = "<group>"; };
 		3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPayCodeRootClass.swift; sourceTree = "<group>"; };
-		3DB7B1EE1FD7EE8F0092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Me.storyboard; sourceTree = "<group>"; };
 		3DB7B1F01FD7EE8F0092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Find.storyboard; sourceTree = "<group>"; };
-		3DB7B1F21FD7EE8F0092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Queue.storyboard; sourceTree = "<group>"; };
 		3DB7B1F41FD7EE900092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
-		3DB7B1F61FD7EE900092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Message.storyboard; sourceTree = "<group>"; };
-		3DB7B1F81FD7EE900092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Coupon.storyboard; sourceTree = "<group>"; };
-		3DB7B1FC1FD7EE910092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Res.storyboard; sourceTree = "<group>"; };
 		3DD3E2471F2EC4C6001FC47E /* 築地日本料理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "築地日本料理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD3E24A1F2EC4C6001FC47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DD3E24F1F2EC4C6001FC47E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -238,6 +110,8 @@
 		3DEBCD2A1FC8753A00D9F30E /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		43F163E528729B10AFD69FD6 /* Pods-DwMember.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwMember.release.xcconfig"; path = "Pods/Target Support Files/Pods-DwMember/Pods-DwMember.release.xcconfig"; sourceTree = "<group>"; };
 		9505FF442124236700BEAD31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		952E75F221607ADB00599E4C /* DwBranchsRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwBranchsRootClass.swift; sourceTree = "<group>"; };
+		952E75F321607ADC00599E4C /* DwBranchsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwBranchsData.swift; sourceTree = "<group>"; };
 		AC4CD4F2448D444F046254A9 /* Pods_DwMember.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DwMember.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AC6189F94F154D3B69D4C9 /* Pods-DwMember.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwMember.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DwMember/Pods-DwMember.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,7 +143,6 @@
 		3D11B3971F30582D0031DD5C /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				3D11B3981F30587D0031DD5C /* UIButton.swift */,
 				3D171BCC1F4095CC008BC06E /* String.swift */,
 			);
 			name = extension;
@@ -278,34 +151,14 @@
 		3D1615651F2F6FE400E33F3D /* controll */ = {
 			isa = PBXGroup;
 			children = (
-				3D1615661F2F700B00E33F3D /* MeTableViewController.swift */,
 				3D16156A1F2F704100E33F3D /* PayViewController.swift */,
-				3D16156C1F2F709800E33F3D /* FindTableViewController.swift */,
-				3D16156E1F2F70F700E33F3D /* MainTableViewController.swift */,
 				3D11B39D1F306D020031DD5C /* MainActivitysTableViewCell.swift */,
 				3D1F008D1F37F89D0080957F /* WebViewController.swift */,
 				3D31C4521F322F2000988876 /* LoginViewController.swift */,
 				3D493F851F3C2BCF00CEAD4B /* GuiderViewController.swift */,
 				3D493F871F3C2C2C00CEAD4B /* ContentViewController.swift */,
-				3D1488981F3311A700E90270 /* MessageTableViewController.swift */,
-				3D6458A71F455D24008220C3 /* MessageTableViewCell.swift */,
-				3D6458AD1F4599F1008220C3 /* MessageDetailViewController.swift */,
-				3D185BBC1F38B2CD00A89077 /* CouponViewController.swift */,
-				3D1488961F3310C700E90270 /* CouponTableViewController.swift */,
-				3D6458C11F45CB61008220C3 /* CouponTableViewCell.swift */,
-				3D0376191F484895003173FD /* CouponDeatilsViewController.swift */,
-				3D6458D71F4A9586008220C3 /* ReservationTableViewController.swift */,
-				3D6458D91F4AA0AC008220C3 /* ResTableViewCell.swift */,
-				3D6458DB1F4AB34C008220C3 /* MemberInfoTableViewController.swift */,
-				3D51824A1F53F9F700361E3F /* FindTableViewCell.swift */,
-				3D1428FB1F5BC8EE004116EB /* BranchDetailTableViewController.swift */,
-				3D1428FD1F5BCEDD004116EB /* BranchDetailTableViewCell.swift */,
-				3D1986441F5CE1FC00385DAD /* ArticleViewController.swift */,
-				3D19865E1F6233B600385DAD /* ResDetailTableViewController.swift */,
-				3D1986601F62367200385DAD /* ResDetailTableViewCell.swift */,
 				3DE9AEC41FA440E900492E09 /* ScanViewController.swift */,
 				3DEBCD2A1FC8753A00D9F30E /* TempViewController.swift */,
-				3D3CBDFF20045FF100659F37 /* RichTextViewController.swift */,
 				3D44C002201C83F40019E8F2 /* BranchsMapViewController.swift */,
 			);
 			name = controll;
@@ -314,9 +167,6 @@
 		3D1615701F2F727B00E33F3D /* content */ = {
 			isa = PBXGroup;
 			children = (
-				3D1615781F2F765000E33F3D /* BouncesContentView.swift */,
-				3D1615731F2F731200E33F3D /* IrregularityContentView.swift */,
-				3D185BBE1F38B3DA00A89077 /* SegmentioBuilder.swift */,
 				3D493F9A1F3C41F100CEAD4B /* ApiUtil.swift */,
 			);
 			name = content;
@@ -334,37 +184,13 @@
 		3D493F8B1F3C3DB800CEAD4B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				952E75F321607ADC00599E4C /* DwBranchsData.swift */,
+				952E75F221607ADB00599E4C /* DwBranchsRootClass.swift */,
 				3D602248201B5E500017CE18 /* DwPageListData.swift */,
 				3D602249201B5E510017CE18 /* DwPageListPageList.swift */,
 				3D60224A201B5E510017CE18 /* DwPageListRootClass.swift */,
-				3D51BEC11FCE526E00C16DEF /* DwReservationPerson.swift */,
-				3D1986461F5CE9B000385DAD /* DwArticleData.swift */,
-				3D1986471F5CE9B000385DAD /* DwArticleRootClass.swift */,
-				3D1428F51F5B9564004116EB /* DwUpdataData.swift */,
-				3D1428F61F5B9564004116EB /* DwUpdataRootClass.swift */,
-				3D5182461F53F87B00361E3F /* DwBranchsData.swift */,
-				3D5182471F53F87B00361E3F /* DwBranchsRootClass.swift */,
-				3D6458C31F4A89C0008220C3 /* DwReservationBranch.swift */,
-				3D6458C41F4A89C0008220C3 /* DwReservationCustDetail.swift */,
-				3D6458C51F4A89C0008220C3 /* DwReservationData.swift */,
-				3D6458C61F4A89C0008220C3 /* DwReservationMeal.swift */,
-				3D6458C71F4A89C0008220C3 /* DwReservationMemPeriod.swift */,
-				3D6458C81F4A89C0008220C3 /* DwReservationReList.swift */,
-				3D6458C91F4A89C0008220C3 /* DwReservationRemark.swift */,
-				3D6458CA1F4A89C0008220C3 /* DwReservationReservationType.swift */,
-				3D6458CB1F4A89C0008220C3 /* DwReservationRootClass.swift */,
 				3D91761B1F486BD500E855F6 /* DwPayCodeData.swift */,
 				3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */,
-				3D6458AF1F45BEF6008220C3 /* CouponDetailsData.swift */,
-				3D6458B01F45BEF6008220C3 /* CouponDetailsRootClass.swift */,
-				3D6458B11F45BEF6008220C3 /* CouponMallData.swift */,
-				3D6458B21F45BEF6008220C3 /* CouponMallDetailsData.swift */,
-				3D6458B31F45BEF6008220C3 /* CouponMallDetailsRootClass.swift */,
-				3D6458B41F45BEF6008220C3 /* CouponMallRootClass.swift */,
-				3D6458B51F45BEF6008220C3 /* DwCouponBaseData.swift */,
-				3D6458B61F45BEF6008220C3 /* DwCouponBaseRootClass.swift */,
-				3D6458A91F455E0F008220C3 /* DwMsgListBaseData.swift */,
-				3D6458AA1F455E0F008220C3 /* DwMsgListBaseRootClass.swift */,
 				3D6458681F452623008220C3 /* DwErrorBaseRootClass.swift */,
 				3D6458641F444D9C008220C3 /* DwWebViewBaseData.swift */,
 				3D6458651F444D9C008220C3 /* DwWebViewBaseRootClass.swift */,
@@ -372,10 +198,6 @@
 				3D8274ED1F43DEC2009BB0C9 /* DwLoginCard.swift */,
 				3D8274EE1F43DEC2009BB0C9 /* DwLoginData.swift */,
 				3D8274EF1F43DEC2009BB0C9 /* DwLoginRootClass.swift */,
-				3D2569E71F3DB28300E01816 /* DwHomeActivity.swift */,
-				3D2569E81F3DB28300E01816 /* DwHomeData.swift */,
-				3D2569E91F3DB28300E01816 /* DwHomeFeature.swift */,
-				3D2569EA1F3DB28300E01816 /* DwHomeRootClass.swift */,
 				3D493F9E1F3C51A800CEAD4B /* DwGuideAd.swift */,
 				3D493F9F1F3C51A800CEAD4B /* DwGuideData.swift */,
 				3D493FA01F3C51A800CEAD4B /* DwGuideRootClass.swift */,
@@ -391,11 +213,6 @@
 			children = (
 				3DB7B1EF1FD7EE8F0092FAC0 /* Find.storyboard */,
 				3DB7B1F31FD7EE900092FAC0 /* Login.storyboard */,
-				3DB7B1F51FD7EE900092FAC0 /* Message.storyboard */,
-				3DB7B1F71FD7EE900092FAC0 /* Coupon.storyboard */,
-				3DB7B1ED1FD7EE8F0092FAC0 /* Me.storyboard */,
-				3DB7B1F11FD7EE8F0092FAC0 /* Queue.storyboard */,
-				3DB7B1FB1FD7EE910092FAC0 /* Res.storyboard */,
 				3DD3E24E1F2EC4C6001FC47E /* Main.storyboard */,
 				3DD3E2561F2EC4C7001FC47E /* LaunchScreen.storyboard */,
 			);
@@ -433,21 +250,12 @@
 				3D11B3971F30582D0031DD5C /* extension */,
 				3D1615701F2F727B00E33F3D /* content */,
 				3D1615651F2F6FE400E33F3D /* controll */,
-				3DD3E26C1F2F184B001FC47E /* tabBar */,
 				3DD3E24A1F2EC4C6001FC47E /* AppDelegate.swift */,
 				3DB7B2061FD7EEE00092FAC0 /* storyboard */,
 				3DD3E2591F2EC4C7001FC47E /* Info.plist */,
 				3D2569DC1F3D58A800E01816 /* DwEntitys.xcdatamodeld */,
 			);
 			path = DwMember;
-			sourceTree = "<group>";
-		};
-		3DD3E26C1F2F184B001FC47E /* tabBar */ = {
-			isa = PBXGroup;
-			children = (
-				3D154EF11F31A63800A6E157 /* MyTabBarViewController.swift */,
-			);
-			name = tabBar;
 			sourceTree = "<group>";
 		};
 		65BE6AB76CF786B600A0B93E /* Pods */ = {
@@ -489,7 +297,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Wen Jing";
 				TargetAttributes = {
 					3DD3E2461F2EC4C6001FC47E = {
@@ -537,13 +345,8 @@
 				3DD3E2581F2EC4C7001FC47E /* LaunchScreen.storyboard in Resources */,
 				3DD3E2501F2EC4C6001FC47E /* Main.storyboard in Resources */,
 				3DB7B1FF1FD7EE910092FAC0 /* Find.storyboard in Resources */,
-				3DB7B2031FD7EE910092FAC0 /* Coupon.storyboard in Resources */,
 				3DD885B21F2F3323007A1CE1 /* PodFile in Resources */,
-				3DB7B2001FD7EE910092FAC0 /* Queue.storyboard in Resources */,
-				3DB7B2021FD7EE910092FAC0 /* Message.storyboard in Resources */,
-				3DB7B1FE1FD7EE910092FAC0 /* Me.storyboard in Resources */,
 				9505FF452124236700BEAD31 /* Assets.xcassets in Resources */,
-				3DB7B2051FD7EE910092FAC0 /* Res.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,22 +376,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DwMember/Pods-DwMember-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BubbleTransition/BubbleTransition.framework",
-				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Just/Just.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/LLCycleScrollView/LLCycleScrollView.framework",
-				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 				"${BUILT_PRODUCTS_DIR}/swiftScan/swiftScan.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BubbleTransition.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Just.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LLCycleScrollView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/swiftScan.framework",
 			);
@@ -623,92 +418,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D60224C201B5E510017CE18 /* DwPageListPageList.swift in Sources */,
-				3D1615671F2F700B00E33F3D /* MeTableViewController.swift in Sources */,
 				3D16156B1F2F704100E33F3D /* PayViewController.swift in Sources */,
-				3D6458BE1F45BEF6008220C3 /* DwCouponBaseRootClass.swift in Sources */,
-				3D185BBF1F38B3DA00A89077 /* SegmentioBuilder.swift in Sources */,
+				952E75F521607ADC00599E4C /* DwBranchsData.swift in Sources */,
 				3D6458691F452623008220C3 /* DwErrorBaseRootClass.swift in Sources */,
-				3D19865F1F6233B600385DAD /* ResDetailTableViewController.swift in Sources */,
-				3D1488991F3311A700E90270 /* MessageTableViewController.swift in Sources */,
 				3DE9AEC51FA440E900492E09 /* ScanViewController.swift in Sources */,
-				3D51BEC21FCE526F00C16DEF /* DwReservationPerson.swift in Sources */,
-				3D3CBE0020045FF100659F37 /* RichTextViewController.swift in Sources */,
-				3D16157A1F2F765000E33F3D /* BouncesContentView.swift in Sources */,
 				3D2569E31F3D7B9800E01816 /* UIImageView+Gif.swift in Sources */,
-				3D1428FC1F5BC8EE004116EB /* BranchDetailTableViewController.swift in Sources */,
-				3D03761A1F484895003173FD /* CouponDeatilsViewController.swift in Sources */,
+				952E75F421607ADC00599E4C /* DwBranchsRootClass.swift in Sources */,
 				3D8274F01F43DEC2009BB0C9 /* DwLoginCard.swift in Sources */,
 				3D493FA41F3C51A800CEAD4B /* DwGuideAd.swift in Sources */,
-				3D6458BD1F45BEF6008220C3 /* DwCouponBaseData.swift in Sources */,
-				3D6458B91F45BEF6008220C3 /* CouponMallData.swift in Sources */,
-				3D1488971F3310C700E90270 /* CouponTableViewController.swift in Sources */,
-				3D6458CE1F4A89C0008220C3 /* DwReservationData.swift in Sources */,
-				3D1986451F5CE1FC00385DAD /* ArticleViewController.swift in Sources */,
 				3D493FA51F3C51A800CEAD4B /* DwGuideData.swift in Sources */,
-				3D2569EC1F3DB28300E01816 /* DwHomeData.swift in Sources */,
 				3D6458661F444D9C008220C3 /* DwWebViewBaseData.swift in Sources */,
 				3D493F9B1F3C41F100CEAD4B /* ApiUtil.swift in Sources */,
 				3DEBCD2B1FC8753A00D9F30E /* TempViewController.swift in Sources */,
-				3D1986491F5CE9B000385DAD /* DwArticleRootClass.swift in Sources */,
 				3D493F861F3C2BCF00CEAD4B /* GuiderViewController.swift in Sources */,
-				3D6458D21F4A89C0008220C3 /* DwReservationRemark.swift in Sources */,
-				3D6458D31F4A89C0008220C3 /* DwReservationReservationType.swift in Sources */,
 				3D44C003201C83F40019E8F2 /* BranchsMapViewController.swift in Sources */,
-				3D6458DA1F4AA0AC008220C3 /* ResTableViewCell.swift in Sources */,
-				3D1428F71F5B9564004116EB /* DwUpdataData.swift in Sources */,
-				3D2569ED1F3DB28300E01816 /* DwHomeFeature.swift in Sources */,
 				3D6458671F444D9C008220C3 /* DwWebViewBaseRootClass.swift in Sources */,
-				3D1615741F2F731200E33F3D /* IrregularityContentView.swift in Sources */,
-				3D6458D01F4A89C0008220C3 /* DwReservationMemPeriod.swift in Sources */,
 				3DD3E24B1F2EC4C6001FC47E /* AppDelegate.swift in Sources */,
-				3D6458B71F45BEF6008220C3 /* CouponDetailsData.swift in Sources */,
 				3D11B39E1F306D020031DD5C /* MainActivitysTableViewCell.swift in Sources */,
-				3D6458CC1F4A89C0008220C3 /* DwReservationBranch.swift in Sources */,
-				3D16156F1F2F70F700E33F3D /* MainTableViewController.swift in Sources */,
-				3D6458BA1F45BEF6008220C3 /* CouponMallDetailsData.swift in Sources */,
 				3D2569DE1F3D58A800E01816 /* DwEntitys.xcdatamodeld in Sources */,
-				3D16156D1F2F709800E33F3D /* FindTableViewController.swift in Sources */,
 				3D60224D201B5E510017CE18 /* DwPageListRootClass.swift in Sources */,
-				3D1428FE1F5BCEDD004116EB /* BranchDetailTableViewCell.swift in Sources */,
-				3D6458B81F45BEF6008220C3 /* CouponDetailsRootClass.swift in Sources */,
-				3D51824B1F53F9F700361E3F /* FindTableViewCell.swift in Sources */,
-				3D6458C21F45CB61008220C3 /* CouponTableViewCell.swift in Sources */,
 				3D493FA81F3C51A800CEAD4B /* DwStartData.swift in Sources */,
 				3D1F008E1F37F89D0080957F /* WebViewController.swift in Sources */,
-				3D6458CD1F4A89C0008220C3 /* DwReservationCustDetail.swift in Sources */,
-				3D5182491F53F87B00361E3F /* DwBranchsRootClass.swift in Sources */,
-				3D6458DC1F4AB34C008220C3 /* MemberInfoTableViewController.swift in Sources */,
 				3D6458631F442A72008220C3 /* DwCountBaseRootClass.swift in Sources */,
-				3D185BBD1F38B2CD00A89077 /* CouponViewController.swift in Sources */,
 				3D493FA91F3C51A800CEAD4B /* DwStartRootClass.swift in Sources */,
-				3D6458BB1F45BEF6008220C3 /* CouponMallDetailsRootClass.swift in Sources */,
 				3D493F881F3C2C2C00CEAD4B /* ContentViewController.swift in Sources */,
-				3D1428F81F5B9564004116EB /* DwUpdataRootClass.swift in Sources */,
-				3D2569EE1F3DB28300E01816 /* DwHomeRootClass.swift in Sources */,
 				3D171BCD1F4095CC008BC06E /* String.swift in Sources */,
 				3DEBCD291FC8615B00D9F30E /* ZLaunchAdVC.swift in Sources */,
-				3D6458D11F4A89C0008220C3 /* DwReservationReList.swift in Sources */,
 				3D493FA71F3C51A800CEAD4B /* DwStartAd.swift in Sources */,
 				3D91761D1F486BD500E855F6 /* DwPayCodeData.swift in Sources */,
-				3D6458BC1F45BEF6008220C3 /* CouponMallRootClass.swift in Sources */,
 				3D31C4531F322F2000988876 /* LoginViewController.swift in Sources */,
-				3D6458AC1F455E0F008220C3 /* DwMsgListBaseRootClass.swift in Sources */,
-				3D6458D41F4A89C0008220C3 /* DwReservationRootClass.swift in Sources */,
-				3D6458D81F4A9586008220C3 /* ReservationTableViewController.swift in Sources */,
-				3D2569EB1F3DB28300E01816 /* DwHomeActivity.swift in Sources */,
 				3D493FA61F3C51A800CEAD4B /* DwGuideRootClass.swift in Sources */,
-				3D6458A81F455D24008220C3 /* MessageTableViewCell.swift in Sources */,
-				3D11B3991F30587D0031DD5C /* UIButton.swift in Sources */,
-				3D1986611F62367200385DAD /* ResDetailTableViewCell.swift in Sources */,
-				3D6458AE1F4599F1008220C3 /* MessageDetailViewController.swift in Sources */,
 				3D60224B201B5E510017CE18 /* DwPageListData.swift in Sources */,
 				3D91761E1F486BD500E855F6 /* DwPayCodeRootClass.swift in Sources */,
-				3D154EF21F31A63800A6E157 /* MyTabBarViewController.swift in Sources */,
-				3D6458AB1F455E0F008220C3 /* DwMsgListBaseData.swift in Sources */,
 				3D8274F11F43DEC2009BB0C9 /* DwLoginData.swift in Sources */,
-				3D5182481F53F87B00361E3F /* DwBranchsData.swift in Sources */,
-				3D1986481F5CE9B000385DAD /* DwArticleData.swift in Sources */,
-				3D6458CF1F4A89C0008220C3 /* DwReservationMeal.swift in Sources */,
 				3D8274F21F43DEC2009BB0C9 /* DwLoginRootClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -716,16 +458,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3DB7B1ED1FD7EE8F0092FAC0 /* Me.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3DB7B1EE1FD7EE8F0092FAC0 /* Base */,
-				3D5B656B20181BAC00649B24 /* en */,
-				3D602252201B62B50017CE18 /* zh-Hant */,
-			);
-			name = Me.storyboard;
-			sourceTree = "<group>";
-		};
 		3DB7B1EF1FD7EE8F0092FAC0 /* Find.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -736,16 +468,6 @@
 			name = Find.storyboard;
 			sourceTree = "<group>";
 		};
-		3DB7B1F11FD7EE8F0092FAC0 /* Queue.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3DB7B1F21FD7EE8F0092FAC0 /* Base */,
-				3D5B656C20181BAC00649B24 /* en */,
-				3D602253201B62B50017CE18 /* zh-Hant */,
-			);
-			name = Queue.storyboard;
-			sourceTree = "<group>";
-		};
 		3DB7B1F31FD7EE900092FAC0 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -754,36 +476,6 @@
 				3D60224F201B62B40017CE18 /* zh-Hant */,
 			);
 			name = Login.storyboard;
-			sourceTree = "<group>";
-		};
-		3DB7B1F51FD7EE900092FAC0 /* Message.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3DB7B1F61FD7EE900092FAC0 /* Base */,
-				3D5B656920181BAC00649B24 /* en */,
-				3D602250201B62B40017CE18 /* zh-Hant */,
-			);
-			name = Message.storyboard;
-			sourceTree = "<group>";
-		};
-		3DB7B1F71FD7EE900092FAC0 /* Coupon.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3DB7B1F81FD7EE900092FAC0 /* Base */,
-				3D5B656A20181BAC00649B24 /* en */,
-				3D602251201B62B40017CE18 /* zh-Hant */,
-			);
-			name = Coupon.storyboard;
-			sourceTree = "<group>";
-		};
-		3DB7B1FB1FD7EE910092FAC0 /* Res.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3DB7B1FC1FD7EE910092FAC0 /* Base */,
-				3D5B656D20181BAC00649B24 /* en */,
-				3D602254201B62B50017CE18 /* zh-Hant */,
-			);
-			name = Res.storyboard;
 			sourceTree = "<group>";
 		};
 		3DB7B2211FD7FAAA0092FAC0 /* InfoPlist.strings */ = {
@@ -832,6 +524,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -839,6 +532,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -890,6 +584,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -897,6 +592,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -943,7 +639,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DwMember-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -963,7 +659,7 @@
 				PRODUCT_NAME = "築地日本料理";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DwMember-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

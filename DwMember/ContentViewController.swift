@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 class ContentViewController: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
@@ -25,7 +24,7 @@ class ContentViewController: UIViewController {
         super.viewDidLoad()
         lableHeading.text = heading
         lableFooter.text = footer
-        imageView.kf.setImage(with: URL(string: imageName))
+        imageView.setImage(with: imageName, completion: nil)
         pageControl.currentPage = index
         btnDone.isHidden = (index != 2)
         // Do any additional setup after loading the view.

@@ -64,13 +64,6 @@ class ScanViewController: LBXScanViewController {
     
     override func handleCodeResult(arrayResult: [LBXScanResult]) {
         
-        for result:LBXScanResult in arrayResult
-        {
-            if let str = result.strScanned {
-                print(str)
-            }
-        }
-        
         let result:LBXScanResult = arrayResult[0]
         if let pageVC = mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
             pageVC.url = result.strScanned!
@@ -91,15 +84,15 @@ class ScanViewController: LBXScanViewController {
         self.btnFlash = UIButton()
         btnFlash.bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         btnFlash.center = CGPoint(x: self.view.frame.width/2, y: yMax-100)
-        btnFlash.setImage(UIImage(named: "qrcode_scan_btn_flash_nor"), for:UIControlState.normal)
-        btnFlash.addTarget(self, action: #selector(ScanViewController.openOrCloseFlash), for: UIControlEvents.touchUpInside)
+        btnFlash.setImage(UIImage(named: "qrcode_scan_btn_flash_nor"), for:UIControl.State.normal)
+        btnFlash.addTarget(self, action: #selector(ScanViewController.openOrCloseFlash), for: UIControl.Event.touchUpInside)
     
         self.view.addSubview(btnFlash)
         
     }
     
     //开关闪光灯
-    func openOrCloseFlash()
+    @objc func openOrCloseFlash()
     {
         scanObj?.changeTorch();
         
@@ -107,11 +100,11 @@ class ScanViewController: LBXScanViewController {
         
         if isOpenedFlash
         {
-            btnFlash.setImage(UIImage(named: "qrcode_scan_btn_scan_off"), for:UIControlState.normal)
+            btnFlash.setImage(UIImage(named: "qrcode_scan_btn_scan_off"), for:UIControl.State.normal)
         }
         else
         {
-            btnFlash.setImage(UIImage(named: "qrcode_scan_btn_flash_nor"), for:UIControlState.normal)
+            btnFlash.setImage(UIImage(named: "qrcode_scan_btn_flash_nor"), for:UIControl.State.normal)
         }
     }
     

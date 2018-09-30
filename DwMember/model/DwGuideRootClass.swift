@@ -9,26 +9,26 @@ import Foundation
 
 struct DwGuideRootClass{
 
-	var apiVerify : AnyObject!
+	var apiVerify : String!
 	var code : Int!
 	var data : DwGuideData!
 	var msg : String!
 	var result : String!
-	var singleLogin : AnyObject!
+	var singleLogin : String!
 
 
 	/**
 	 * 用字典来初始化一个实例并设置各个属性值
 	 */
 	init(fromDictionary dictionary: NSDictionary){
-		apiVerify = dictionary["apiVerify"] as? AnyObject
+		apiVerify = dictionary["apiVerify"] as? String
 		code = dictionary["code"] as? Int
 		if let dataData = dictionary["data"] as? NSDictionary{
 				data = DwGuideData(fromDictionary: dataData)
 			}
 		msg = dictionary["msg"] as? String
 		result = dictionary["result"] as? String
-		singleLogin = dictionary["singleLogin"] as? AnyObject
+		singleLogin = dictionary["singleLogin"] as? String
 	}
 
 	/**

@@ -57,7 +57,7 @@ extension UIImageView {
                     
                     gifDuration += frameDuration.doubleValue
                     // 获取帧的img
-                    let image = UIImage.init(cgImage: imageRef, scale: UIScreen.main.scale, orientation: UIImageOrientation.up)
+                    let image = UIImage.init(cgImage: imageRef, scale: UIScreen.main.scale, orientation: UIImage.Orientation.up)
                     
                     images.append(image)
                 }

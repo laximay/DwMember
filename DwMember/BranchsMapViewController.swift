@@ -13,6 +13,7 @@ import CoreLocation
 class BranchsMapViewController: UIViewController,MKMapViewDelegate {
 
      var mapView: MKMapView!
+    let id = "myid"
     override func viewDidLoad() {
         navigationController?.setNavigationBarHidden(false, animated: true)
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
         mapView.showsUserLocation = true //显示用户位置
         mapView.showsBuildings = true //显示建筑物
         mapView.mapType = MKMapType.standard
+        
         getOutletList()
         // Do any additional setup after loading the view.
     }
@@ -36,30 +38,25 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
     }
     
     
-    //自定义标注的方法
-     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation is MKUserLocation{
-            return nil
-        }
-        let id = "myid"
-        var av = mapView.dequeueReusableAnnotationView(withIdentifier: id) as? MKPinAnnotationView
-        if av == nil{
-            av = MKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
-            av?.canShowCallout = true
-        }
-
-        let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 53, height: 53))
-      
-        leftIconView.image = #imageLiteral(resourceName: "ic_discovery_on40")
-        av?.leftCalloutAccessoryView = leftIconView
-        //av?.pinTintColor = UIColor.green
-        return av
-    }
+//    //自定义标注的方法
+//     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        if annotation is MKUserLocation{
+//            return nil
+//        }
+//
+//        var av = mapView.dequeueReusableAnnotationView(withIdentifier: id) as? MKPinAnnotationView
+//        if av == nil{
+//            av = MKPinAnnotationView(annotation: annotation, reuseIdentifier: id)
+//            av?.canShowCallout = true
+//        }
+//        let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 53, height: 53))
+//        leftIconView.image = #imageLiteral(resourceName: "zdlogo-r")
+//        av?.leftCalloutAccessoryView = leftIconView
+//        //av?.pinTintColor = UIColor.green
+//        return av
+//    }
     
     func initMap(title: String, address: String, latitude: Double, longitude: Double)  {
-        
-
-        
         
         //创建一个大头针对象
         let objectAnnotation = MKPointAnnotation()
@@ -70,13 +67,21 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
         objectAnnotation.title = title
         //设置点击大头针之后显示的描述
         objectAnnotation.subtitle = address
+        let latDelta = 0.1
+        let longDelta = 0.1
+        let currentLocationSpan:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: longDelta)
+       let currentRegion:MKCoordinateRegion = MKCoordinateRegion(center: objectAnnotation.coordinate, span: currentLocationSpan)
         
+        self.mapView.setRegion(currentRegion, animated: true)
         //添加大头针
       //  self.mapView.addAnnotation(objectAnnotation)
         self.mapView.showAnnotations([objectAnnotation], animated: true)
         self.mapView.selectAnnotation(objectAnnotation, animated: true)
-        
-        
+
+      
+            
+      
+    
     }
     
     
@@ -86,6 +91,7 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
         avgs.updateValue(ApiUtil.companyCode, forKey: "company")
+        avgs.updateValue(ApiUtil.serial, forKey: "serial")
         avgs.updateValue(0.00, forKey: "latitude")
         avgs.updateValue(0.00, forKey: "longitude")
         
@@ -94,7 +100,7 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            //print(json)
+//            print(json)
             if result.ok {
                 if  DwBranchsRootClass(fromDictionary: json).code == 1 {
                     DwBranchsRootClass(fromDictionary: json).data.forEach({ (outlet) in
@@ -106,18 +112,20 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
                 
                 }else {
                     //異常處理
-                    if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                        // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json) 
                         OperationQueue.main.addOperation {
                             ApiUtil.openAlert(msg: error.msg, sender: self)
                         }
-                    }
+                    
                 }
-            }else{
+            }
+            else{
                 //處理接口系統錯誤
-                if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                    print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                OperationQueue.main.addOperation {
+                    ApiUtil.openAlert(msg: error.message, sender: self)
                 }
+                
             }
             
         }

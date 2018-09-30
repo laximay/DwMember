@@ -13,24 +13,20 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     
     var window: UIWindow?
-    var couponView = CouponViewController()
-
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UINavigationBar.appearance().barTintColor =  ApiUtil.fontColor2 //设置前景色
         UINavigationBar.appearance().tintColor = ApiUtil.iconColor
-        let couponSB = UIStoryboard(name: "Coupon", bundle: nil)
-        self.couponView = couponSB.instantiateViewController(withIdentifier: "CouponViewController") as! CouponViewController
-
+    
         //ApiUtil.launchCache()
    
     
         //导航栏设置字体
         if let barFont = UIFont(name: "Avenir-Light", size: 24){
             UINavigationBar.appearance().titleTextAttributes = [
-                NSFontAttributeName: barFont,
-                NSForegroundColorAttributeName:ApiUtil.iconColor,
+                NSAttributedString.Key.font: barFont,
+                NSAttributedString.Key.foregroundColor:ApiUtil.iconColor,
                 
             ]
         }

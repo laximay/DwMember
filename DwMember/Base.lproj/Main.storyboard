@@ -1,133 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4eS-xY-7cL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MD1-0L-T3E">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--homeNav-->
-        <scene sceneID="ils-p4-bWO">
-            <objects>
-                <navigationController storyboardIdentifier="homeNav" title="homeNav" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YLJ-9X-KbK" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WiM-gt-IBw">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="MKw-fv-3zb">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="uko-IV-HjM" kind="relationship" relationship="rootViewController" id="KzP-0E-9Xt"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6OB-eM-xtm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-94" y="-74"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="dmX-k5-ZJ0">
-            <objects>
-                <tableViewController storyboardIdentifier="MainTableViewController" title="Main" id="uko-IV-HjM" customClass="MainTableViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="peh-NZ-7PW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="s7L-1J-Vpr">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nJI-NS-oD7">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ESI-JK-sBN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="275"/>
-                                        </view>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Pq-2g-qRH">
-                                            <rect key="frame" x="0.0" y="280" width="414" height="70"/>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </stackView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="ESI-JK-sBN" secondAttribute="bottom" constant="75" id="1UG-Hb-NmD"/>
-                                        <constraint firstItem="ESI-JK-sBN" firstAttribute="centerX" secondItem="nJI-NS-oD7" secondAttribute="centerX" id="SZq-Q5-2rL"/>
-                                    </constraints>
-                                </stackView>
-                            </subviews>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="nJI-NS-oD7" secondAttribute="bottom" id="5D8-Zp-miC"/>
-                                <constraint firstItem="nJI-NS-oD7" firstAttribute="leading" secondItem="s7L-1J-Vpr" secondAttribute="leading" id="9QP-QV-kAO"/>
-                                <constraint firstItem="nJI-NS-oD7" firstAttribute="centerX" secondItem="s7L-1J-Vpr" secondAttribute="centerX" id="Wuu-in-Ljg"/>
-                                <constraint firstItem="nJI-NS-oD7" firstAttribute="top" secondItem="s7L-1J-Vpr" secondAttribute="top" id="dY6-cF-JwJ"/>
-                                <constraint firstItem="nJI-NS-oD7" firstAttribute="centerX" secondItem="s7L-1J-Vpr" secondAttribute="centerX" id="wP0-qO-DIn"/>
-                            </constraints>
-                        </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityCell" rowHeight="200" id="F8j-RX-XNL" customClass="MainActivitysTableViewCell" customModule="一鍋堂" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="378" width="414" height="200"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F8j-RX-XNL" id="cXt-QH-sxc">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="199.66666666666666"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cci-RO-SoK">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="cci-RO-SoK" secondAttribute="trailing" id="S3b-4d-VAj"/>
-                                        <constraint firstItem="cci-RO-SoK" firstAttribute="leading" secondItem="cXt-QH-sxc" secondAttribute="leading" id="ars-Rf-gUC"/>
-                                        <constraint firstItem="cci-RO-SoK" firstAttribute="top" secondItem="cXt-QH-sxc" secondAttribute="top" id="i8g-XT-3ng"/>
-                                        <constraint firstItem="cci-RO-SoK" firstAttribute="centerY" secondItem="cXt-QH-sxc" secondAttribute="centerY" id="ts4-Ch-sRG"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="thumbImage" destination="cci-RO-SoK" id="xUu-X3-JMp"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="uko-IV-HjM" id="O13-vi-rsO"/>
-                            <outlet property="delegate" destination="uko-IV-HjM" id="puA-Ss-TQ9"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="一鍋堂" id="xOO-vH-eYg">
-                        <barButtonItem key="leftBarButtonItem" image="ico_message" landscapeImage="ico_message" id="uYV-EV-HyR">
-                            <connections>
-                                <segue destination="Dm0-ne-9sU" kind="show" identifier="hometoMegSegue" id="VEw-kk-9pd"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ico_scan" landscapeImage="ico_scan" id="syf-Lx-2ng">
-                            <connections>
-                                <segue destination="V5t-V2-bFk" kind="show" identifier="scanSegue" id="fA3-2H-hkl"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="indexImageView" destination="ESI-JK-sBN" id="bPm-o8-yND"/>
-                        <outlet property="menuView" destination="6Pq-2g-qRH" id="vEt-0W-KdL"/>
-                        <outlet property="topView" destination="s7L-1J-Vpr" id="eqE-wi-OC5"/>
-                        <segue destination="2DH-Yo-miL" kind="show" identifier="couponMallSegue" id="SfT-GK-cdd"/>
-                        <segue destination="eel-d0-HJd" kind="show" identifier="homeToWebSegue" id="bW7-Ef-9Fg"/>
-                        <segue destination="arO-Kb-KLR" kind="unwind" identifier="hometoCouponListSegue" unwindAction="closeWithSegue:" id="QYb-n8-gP4"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hku-g8-s4E" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="795.6521739130435" y="-75"/>
-        </scene>
         <!--Scan View Controller-->
         <scene sceneID="R0n-n3-c8X">
             <objects>
-                <viewController storyboardIdentifier="ScanViewController" id="V5t-V2-bFk" customClass="ScanViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScanViewController" id="V5t-V2-bFk" customClass="ScanViewController" customModule="築地日本料理" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="emW-C3-yTw"/>
                         <viewControllerLayoutGuide type="bottom" id="hfh-Nm-EJI"/>
@@ -145,25 +30,10 @@
         <!--Guider View Controller-->
         <scene sceneID="oCW-XJ-NxX">
             <objects>
-                <pageViewController storyboardIdentifier="GuideConntroller" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Rap-V0-gY0" customClass="GuiderViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="GuideConntroller" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Rap-V0-gY0" customClass="GuiderViewController" customModule="築地日本料理" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKy-PV-KQu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3127" y="618"/>
-        </scene>
-        <!--My Tab Bar View Controller-->
-        <scene sceneID="YPA-eh-M8B">
-            <objects>
-                <tabBarController storyboardIdentifier="MyTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="4eS-xY-7cL" customClass="MyTabBarViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="ENz-OA-Qmt">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1LZ-lf-YtM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1050" y="618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gBJ-si-DCB">
@@ -184,7 +54,7 @@
         <!--Pay View Controller-->
         <scene sceneID="ATL-tY-RPt">
             <objects>
-                <viewController storyboardIdentifier="PayViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tIg-DY-gSR" customClass="PayViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PayViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tIg-DY-gSR" customClass="PayViewController" customModule="築地日本料理" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z89-qq-dKI"/>
                         <viewControllerLayoutGuide type="bottom" id="hpd-Tp-zb0"/>
@@ -299,7 +169,7 @@
         <!--Web View Controller-->
         <scene sceneID="g7u-uO-rRp">
             <objects>
-                <viewController storyboardIdentifier="WebViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eel-d0-HJd" customClass="WebViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eel-d0-HJd" customClass="WebViewController" customModule="築地日本料理" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KgS-SJ-QiW"/>
                         <viewControllerLayoutGuide type="bottom" id="mPq-0o-MuW"/>
@@ -313,14 +183,13 @@
                     <navigationItem key="navigationItem" id="MfZ-QD-r1o"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPv-xy-6oz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="arO-Kb-KLR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3359" y="-74"/>
         </scene>
         <!--Content View Controller-->
         <scene sceneID="HYY-x1-u1H">
             <objects>
-                <viewController storyboardIdentifier="ContentControll" id="i2j-tf-ABw" customClass="ContentViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentControll" id="i2j-tf-ABw" customClass="ContentViewController" customModule="築地日本料理" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W49-iM-PdT"/>
                         <viewControllerLayoutGuide type="bottom" id="qhr-tV-NP2"/>
@@ -385,64 +254,8 @@
             </objects>
             <point key="canvasLocation" x="-2207" y="618"/>
         </scene>
-        <!--CouponViewController-->
-        <scene sceneID="5p5-j9-mge">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CouponViewController" storyboardName="Coupon" referencedIdentifier="CouponViewController" id="2DH-Yo-miL" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jBR-7Q-ymE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="594" y="822"/>
-        </scene>
-        <!--Message-->
-        <scene sceneID="VNa-bF-Zwj">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Message" id="Dm0-ne-9sU" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ffa-TP-HMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1195" y="822"/>
-        </scene>
-        <!--Rich Text View Controller-->
-        <scene sceneID="s5n-di-DYI">
-            <objects>
-                <viewController storyboardIdentifier="RichTextViewController" id="MZO-eI-IDY" customClass="RichTextViewController" customModule="一鍋堂" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Jyp-0s-Ue1"/>
-                        <viewControllerLayoutGuide type="bottom" id="Q43-4p-g0O"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oeO-03-vCP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w11-xb-EqY">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="w11-xb-EqY" firstAttribute="width" secondItem="oeO-03-vCP" secondAttribute="width" id="HeV-fA-50e"/>
-                            <constraint firstItem="w11-xb-EqY" firstAttribute="centerY" secondItem="oeO-03-vCP" secondAttribute="centerY" id="IAX-iZ-WaO"/>
-                            <constraint firstItem="w11-xb-EqY" firstAttribute="height" secondItem="oeO-03-vCP" secondAttribute="height" id="O26-Sx-Kkl"/>
-                            <constraint firstItem="w11-xb-EqY" firstAttribute="centerX" secondItem="oeO-03-vCP" secondAttribute="centerX" id="VUE-JC-OrE"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="richTextLab" destination="w11-xb-EqY" id="jmh-6o-HKL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="elb-hB-h9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2255" y="760"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="ico_message" width="22" height="20"/>
-        <image name="ico_scan" width="20" height="20"/>
         <image name="logout" width="64" height="64"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="qdd-mE-sIh"/>
-    </inferredMetricsTieBreakers>
 </document>

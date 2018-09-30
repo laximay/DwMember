@@ -18,11 +18,11 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         ApiUtil.checklogin(sender: self)
         switch message.name {
         case "externalsite":
-            if let prams = getDictionaryFromJSONString(jsonString: message.body as! String) as? NSDictionary{
+             let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
               let url = prams["url"] as! String
               let id =  prams["id"] as! String
               ApiUtil.webViewHandleNativ(webCode: url , id: id , sender: self)
-            }
+            
             
             
         case "openQrCode":
@@ -49,11 +49,14 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
             //H5請求如需加密,則需調用此方法進行簽名
             var avgs = ApiUtil.frontFunc()
           
-            if let prams = getDictionaryFromJSONString(jsonString: message.body as! String) as? NSDictionary{
+             let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
                 for (key, value) in prams{
-                    avgs.updateValue(value as! String, forKey: key as! String)
+                    let valueStr = value as! String
+                    if(!valueStr.isEmpty ){
+                    avgs.updateValue(valueStr, forKey: key as! String)
+                    }
                 }
-            }
+            
             let sign = ApiUtil.sign(data: avgs, sender: self)
             avgs.updateValue(sign, forKey: "sign")
             let data : NSData! = try! JSONSerialization.data(withJSONObject: avgs, options: []) as NSData?
@@ -68,10 +71,10 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
                 print(#function)
             }
         case "pagelist":
-            if let prams = getDictionaryFromJSONString(jsonString: message.body as! String) as? NSDictionary{
+             let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
                 let index = prams["index"] as! String
                 ApiUtil.getPageList(sender: self, index: Int(index)!)
-            }
+            
         default: break
             
         }
@@ -136,6 +139,11 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         
         super.viewDidLoad()
         setStatusBarBackgroundColor(color: UIColor(red: 51/255.0, green: 18/255.0, blue: 3/255.0, alpha: 1))
+        
+        //註冊推送
+        JPUSHService.setAlias(ApiUtil.idfv, completion: nil, seq: 1)
+        JPUSHService.setTags([ApiUtil.companyCode+ApiUtil.serial], completion: nil, seq: 2)
+        
         view.addSubview(webview)
         view.addSubview(progressView)
         webview.autoresizingMask = [.flexibleHeight]
@@ -154,6 +162,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
             webview.load(URLRequest.init(url: URL.init(string: url)!))
         }else if type == "OV" {
             if let url = URL(string: "\(url)&imei=\(ApiUtil.idfv)&cardNo=\(cardNo)&company=\(ApiUtil.companyCode)&serial=\(ApiUtil.serial)"){
+              print(url.absoluteString)
                 let request = URLRequest(url: url)
                 // webView.loadRequest(request)
                 webview.load(request) //使用更快，内存占用更小的的WKWEBVIEW 使用wkwebview需要注意在所在VIEW里面不勾选under top bars，要不然顶部会缩进去导航条里面
@@ -246,12 +255,12 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         
         //提示框
         let message = self.cacheSize
-        let alert = UIAlertController(title: "清除缓存", message: message, preferredStyle:UIAlertControllerStyle.alert)
-        let alertConfirm = UIAlertAction(title: "确定", style:UIAlertActionStyle.default) { (alertConfirm) ->Void in
+        let alert = UIAlertController(title: "清除缓存", message: message, preferredStyle:UIAlertController.Style.alert)
+        let alertConfirm = UIAlertAction(title: "确定", style:UIAlertAction.Style.default) { (alertConfirm) ->Void in
             self.clearCache()
         }
         alert.addAction(alertConfirm)
-        let cancle = UIAlertAction(title: "取消", style:UIAlertActionStyle.cancel) { (cancle) ->Void in
+        let cancle = UIAlertAction(title: "取消", style:UIAlertAction.Style.cancel) { (cancle) ->Void in
         }
         alert.addAction(cancle)
         //提示框弹出

@@ -30,7 +30,7 @@ struct DwPageListData{
 	 */
 	func toDictionary() -> NSDictionary
 	{
-		var dictionary = NSMutableDictionary()
+        let dictionary = NSMutableDictionary()
 		if pageList != nil{
 			var dictionaryElements = [NSDictionary]()
 			for pageListElement in pageList {

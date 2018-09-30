@@ -94,18 +94,20 @@ class PayViewController: UIViewController {
                         }
                     }else {
                         //異常處理
-                        if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
+                         let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
                            // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
                             OperationQueue.main.addOperation {
                                 ApiUtil.openAlert(msg: error.msg, sender: self)
                             }
-                        }
+                        
                     }
                 }else{
                     //處理接口系統錯誤
-                    if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                        print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                     let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                        OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.message, sender: self)
                     }
+                    
                 }
                 
             }
@@ -114,7 +116,6 @@ class PayViewController: UIViewController {
     
     private var remainingSeconds: Int = 0 {
         willSet {
-           // print("\(newValue)")
             countTimeLab.text = "\(newValue)"
             
         }

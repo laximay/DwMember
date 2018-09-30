@@ -1,40 +1,27 @@
 PODS:
   - BubbleTransition (2.0.2)
-  - ESTabBarController-swift (2.5)
-  - JCore (1.1.6)
-  - JPush (3.0.7):
-    - JCore (~> 1.1.6)
-  - Just (0.6.0)
-  - Kingfisher (4.6.1)
-  - LLCycleScrollView (1.3.4):
-    - Kingfisher
+  - JCore (1.2.2)
+  - JPush (3.1.0):
+    - JCore (~> 1.2.0)
+  - Just (0.7.1)
   - pop (1.0.10)
-  - Segmentio (2.1.2)
-  - swiftScan (1.1.2)
+  - swiftScan (1.1.5)
 
 DEPENDENCIES:
   - BubbleTransition (~> 2.0.0)
-  - ESTabBarController-swift
   - JPush
-  - Just
-  - Kingfisher (~> 4.6.1)
-  - LLCycleScrollView (~> 1.3.4)
+  - Just (~> 0.7.1)
   - pop
-  - Segmentio (~> 2.1)
-  - swiftScan (~> 1.1.1)
+  - swiftScan (~> 1.1.5)
 
 SPEC CHECKSUMS:
   BubbleTransition: 7d98ed7d56f0940e83f350a98103ad473491c769
-  ESTabBarController-swift: 8daa432f2a9be8ebd25101dc46c84472fd760512
-  JCore: 18fc8725124f26e55625eaf224659b3a999dcf63
-  JPush: 111b79b8a0169ab8fd4c486dac3ed166ed69293e
-  Just: 0b60164cc2b516fbddd8948ef7841c70896f1e4d
-  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
-  LLCycleScrollView: 1801c8e0b6e6c0b6a538ac49311d18d63ed5c2bf
+  JCore: f14c0549968a63c22e246a4875aa9d428446f373
+  JPush: 5921e25ad13e0386351079217b009f2039084eac
+  Just: 60c0995e04718eb621a07abef45ce6883c562f2b
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
-  Segmentio: f85114993e305bd9c522952eef8c2c4db732fd17
-  swiftScan: 5bb808704805fc734fc63058143d8468dd11452e
+  swiftScan: bc6dbf74e6a579c45a861691afc44628d8d9f6ab
 
-PODFILE CHECKSUM: efc01316e735684d58f53ebeb86efae9b6fd1240
+PODFILE CHECKSUM: 30f06d2e00bdd37e6eca3308d073c2a71de07c21
 
-COCOAPODS: 1.4.0.beta.2
+COCOAPODS: 1.4.0

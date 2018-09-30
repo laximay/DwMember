@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/WebViewController.swift"
-            timestampString = "556513968.615853"
+            timestampString = "559989328.888756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/WebViewController.swift"
-            timestampString = "556513968.616313"
+            timestampString = "559989328.888845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/WebViewController.swift"
-            timestampString = "556513968.616643"
+            timestampString = "559989328.888918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "559895581.196227"
+            timestampString = "559989328.889096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "webViewHandle(withIdentifier:id:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "559895581.197313"
+            timestampString = "559989328.8896641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "454"
-            endingLineNumber = "454"
+            startingLineNumber = "397"
+            endingLineNumber = "397"
             landmarkName = "openAlert(msg:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "559895581.198041"
+            timestampString = "559989328.8900909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
+            startingLineNumber = "371"
+            endingLineNumber = "371"
             landmarkName = "checklogin(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "559895581.198898"
+            timestampString = "559989328.89051"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "432"
-            endingLineNumber = "432"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
             landmarkName = "checklogin(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,13 +138,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/WebViewController.swift"
-            timestampString = "556513968.617204"
+            timestampString = "559989328.890923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "userContentController(_:didReceive:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -154,13 +154,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/WebViewController.swift"
-            timestampString = "556513968.617485"
+            timestampString = "559989328.890993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "userContentController(_:didReceive:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -170,13 +170,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/WebViewController.swift"
-            timestampString = "556513968.617764"
+            timestampString = "559989328.891062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "userContentController(_:didReceive:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "559895581.199823"
+            timestampString = "559989328.891131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "406"
-            endingLineNumber = "406"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
             landmarkName = "sign(data:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "559895581.200379"
+            timestampString = "559989328.891539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "407"
-            endingLineNumber = "407"
+            startingLineNumber = "350"
+            endingLineNumber = "350"
             landmarkName = "sign(data:sender:)"
             landmarkType = "7">
             <Locations>
@@ -282,13 +282,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/WebViewController.swift"
-            timestampString = "556513968.618161"
+            timestampString = "559989328.891948"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
             endingLineNumber = "50"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "userContentController(_:didReceive:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -298,7 +298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/LoginViewController.swift"
-            timestampString = "556436068.603502"
+            timestampString = "559989328.89202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -310,11 +310,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/LoginViewController.swift"
-            timestampString = "556436068.603565"
+            timestampString = "559989328.892085"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -330,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/LoginViewController.swift"
-            timestampString = "556436068.603624"
+            timestampString = "559989328.8921469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -346,28 +346,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/WebViewController.swift"
-            timestampString = "556513968.618488"
+            timestampString = "559989328.8922091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
             endingLineNumber = "52"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DwMember/ApiUtil.swift"
-            timestampString = "559895581.201092"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
-            landmarkName = "webViewHandleNativ(webCode:id:sender:)"
+            landmarkName = "userContentController(_:didReceive:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -378,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "559895581.201645"
+            timestampString = "559989328.892278"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "346"
-            endingLineNumber = "346"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "webViewHandleNativ(webCode:id:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,13 +378,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/WebViewController.swift"
-            timestampString = "556513968.618881"
+            timestampString = "559989328.892695"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
             endingLineNumber = "21"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "userContentController(_:didReceive:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -410,11 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "559895581.202356"
+            timestampString = "559989328.892765"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "webViewHandle(withIdentifier:id:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -426,13 +410,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/WebViewController.swift"
-            timestampString = "556513968.619215"
+            timestampString = "559989328.893181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "userContentController(_:didReceive:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -442,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/ApiUtil.swift"
-            timestampString = "559895581.203077"
+            timestampString = "559989328.893249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "477"
-            endingLineNumber = "477"
+            startingLineNumber = "419"
+            endingLineNumber = "419"
             landmarkName = "getPageList(sender:index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -458,13 +442,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/WebViewController.swift"
-            timestampString = "556513968.6195509"
+            timestampString = "559989328.893658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -474,23 +458,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/WebViewController.swift"
-            timestampString = "556513968.619838"
+            timestampString = "559989328.8937269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/LoginViewController.swift"
-            timestampString = "556436068.604943"
+            timestampString = "559989328.893796"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -506,13 +490,285 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DwMember/WebViewController.swift"
-            timestampString = "556513968.620133"
+            timestampString = "559989328.893858"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DwMember/LoginViewController.swift"
+            timestampString = "559989328.893925"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "login(cardNo:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;.LoginViewController.login(cardNo: Swift.String, password: Swift.String) -&gt; ()"
+                  moduleName = "&#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laximay/swiftProject/DwMember/DwMember/LoginViewController.swift"
+                  timestampString = "559967349.092806"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "1958">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Just.HTTPResult) -&gt; () in &#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;.LoginViewController.login(cardNo: Swift.String, password: Swift.String) -&gt; ()"
+                  moduleName = "&#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laximay/swiftProject/DwMember/DwMember/LoginViewController.swift"
+                  timestampString = "559967349.096211"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "82">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DwMember/ApiUtil.swift"
+            timestampString = "559989328.893989"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "launchCache_New(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static &#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;.ApiUtil.launchCache_New((Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "&#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laximay/swiftProject/DwMember/DwMember/ApiUtil.swift"
+                  timestampString = "559900426.237249"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
+                  offsetFromSymbolStart = "858">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Just.HTTPResult) -&gt; () in static &#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;.ApiUtil.launchCache_New((Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "&#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laximay/swiftProject/DwMember/DwMember/ApiUtil.swift"
+                  timestampString = "559900426.240651"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "182"
+                  endingLineNumber = "182"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DwMember/ApiUtil.swift"
+            timestampString = "559989328.894399"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "launchCache_New(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DwMember/ApiUtil.swift"
+            timestampString = "559989328.894853"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "launchCache()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/Just/Sources/Just/Just.swift"
+            timestampString = "559987037.434451"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "404"
+            endingLineNumber = "404"
+            landmarkName = "request(_:url:params:data:json:headers:files:auth:cookies:redirects:timeout:urlQuery:requestBody:asyncProgressHandler:asyncCompletionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DwMember/AppDelegate.swift"
+            timestampString = "559989328.895416"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DwMember/AppDelegate.swift"
+            timestampString = "559989328.895509"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
+                  moduleName = "&#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laximay/swiftProject/DwMember/DwMember/AppDelegate.swift"
+                  timestampString = "559967349.108778"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "3633">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.String) -&gt; () in &#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
+                  moduleName = "&#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laximay/swiftProject/DwMember/DwMember/AppDelegate.swift"
+                  timestampString = "559967349.111544"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DwMember/AppDelegate.swift"
+            timestampString = "559989328.895581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.String) -&gt; () in &#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
+                  moduleName = "&#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laximay/swiftProject/DwMember/DwMember/AppDelegate.swift"
+                  timestampString = "559967423.77205"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #2 (Swift.String) -&gt; () in &#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;.AppDelegate.application(_: __C.UIApplication, didFinishLaunchingWithOptions: Swift.Optional&lt;Swift.Dictionary&lt;__C.UIApplicationLaunchOptionsKey, Any&gt;&gt;) -&gt; Swift.Bool"
+                  moduleName = "&#x7bc9;&#x5730;&#x65e5;&#x672c;&#x6599;&#x7406;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laximay/swiftProject/DwMember/DwMember/AppDelegate.swift"
+                  timestampString = "559967423.7748491"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DwMember/WebViewController.swift"
+            timestampString = "559989328.89565"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -1,13 +1,9 @@
 use_frameworks!
 
 target 'DwMember' do
-pod 'Just'
-pod 'Kingfisher' ,'~> 4.6.1'
-pod 'ESTabBarController-swift'
+pod 'Just' ,'~> 0.7.1'
 pod 'pop'
 pod 'BubbleTransition', '~> 2.0.0'
-pod 'LLCycleScrollView', '~> 1.3.4'
-pod 'Segmentio', '~> 2.1'
 pod 'JPush'
-pod 'swiftScan', '~> 1.1.1'
+pod 'swiftScan', '~> 1.1.5'
 end

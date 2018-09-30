@@ -24,7 +24,7 @@ struct DwCountBaseRootClass{
 	init(fromDictionary dictionary: NSDictionary){
 		apiVerify = dictionary["apiVerify"] as? Bool
 		code = dictionary["code"] as? Int
-		data = dictionary["data"] as? Any
+		data = dictionary["data"]
 		msg = dictionary["msg"] as? String
 		result = dictionary["result"] as? String
 		sign = dictionary["sign"] as? String

@@ -117,7 +117,6 @@ class TempViewController: UIViewController  , WKUIDelegate, WKNavigationDelegate
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            // print(json)
             if result.ok {
                 if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
                     let datas = DwWebViewBaseRootClass(fromDictionary: json).data
@@ -133,7 +132,7 @@ class TempViewController: UIViewController  , WKUIDelegate, WKNavigationDelegate
 //                            }
                             //将 String类型转为Optional String类型为 封包 let cardNo: String! = avgs["cardNo"] as! String
                             //将Optional String 类型强制转换为String类型 成为强制拆包 使用時候 cardNo！
-                            let cardNo: String! = avgs["cardNo"] as! String
+                            let cardNo: String! = avgs["cardNo"] as? String
                             let url: String! = datas.url
                             let random: String! = datas.random
                           
@@ -147,19 +146,21 @@ class TempViewController: UIViewController  , WKUIDelegate, WKNavigationDelegate
                     
                 }else {
                     //異常處理
-                    if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                      //  print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
+                    
                         OperationQueue.main.addOperation {
                             ApiUtil.openAlert(msg: error.msg, sender: self)
                         }
-                    }
+                    
                     
                 }
             }else{
                 //處理接口系統錯誤
-                if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                    print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
-                }
+                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.message, sender: self)
+                    }
+                
             }
             
         }

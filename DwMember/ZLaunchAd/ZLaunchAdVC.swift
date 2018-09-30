@@ -174,21 +174,21 @@ class ZLaunchAdVC: UIViewController {
         switch transitionType {
             
         case .rippleEffect:
-            trans.type = "rippleEffect"
+            trans.type = CATransitionType(rawValue: "rippleEffect")
         case .filpFromLeft:
-            trans.type = "oglFlip"
-            trans.subtype = kCATransitionFromLeft
+            trans.type = CATransitionType(rawValue: "oglFlip")
+            trans.subtype = CATransitionSubtype.fromLeft
         case .filpFromRight:
-            trans.type = "oglFlip"
-            trans.subtype = kCATransitionFromRight
+            trans.type = CATransitionType(rawValue: "oglFlip")
+            trans.subtype = CATransitionSubtype.fromRight
         case .flipFromTop:
-            trans.type = "oglFlip"
-            trans.subtype = kCATransitionFromTop
+            trans.type = CATransitionType(rawValue: "oglFlip")
+            trans.subtype = CATransitionSubtype.fromTop
         case .filpFromBottom:
-            trans.type = "oglFlip"
-            trans.subtype = kCATransitionFromBottom
+            trans.type = CATransitionType(rawValue: "oglFlip")
+            trans.subtype = CATransitionSubtype.fromBottom
         default:
-            trans.type = "fade"
+            trans.type = CATransitionType(rawValue: "fade")
         }
         UIApplication.shared.keyWindow?.layer.add(trans, forKey: nil)
         
@@ -326,7 +326,7 @@ extension ZLaunchAdVC {
         
         originalTimer = DispatchSource.makeTimerSource(flags: [], queue:DispatchQueue.global())
         
-        originalTimer?.scheduleRepeating(deadline: DispatchTime.now(), interval: DispatchTimeInterval.seconds(1), leeway: DispatchTimeInterval.milliseconds(defaultTime))
+        originalTimer?.schedule(deadline: DispatchTime.now(), repeating: DispatchTimeInterval.seconds(1), leeway: DispatchTimeInterval.milliseconds(defaultTime))
         
         originalTimer?.setEventHandler(handler: {
             
@@ -354,7 +354,7 @@ extension ZLaunchAdVC {
         
         dataTimer = DispatchSource.makeTimerSource(flags: [], queue:DispatchQueue.global())
         
-        dataTimer?.scheduleRepeating(deadline: DispatchTime.now(), interval: DispatchTimeInterval.seconds(1), leeway: DispatchTimeInterval.milliseconds(adDuration))
+        dataTimer?.schedule(deadline: DispatchTime.now(), repeating: DispatchTimeInterval.seconds(1), leeway: DispatchTimeInterval.milliseconds(adDuration))
         
         dataTimer?.setEventHandler(handler: {
             
@@ -414,7 +414,7 @@ extension ZLaunchAdVC {
         
         for dict in launchImages {
             
-            let imageSize = CGSizeFromString(dict["UILaunchImageSize"] as! String)
+            let imageSize = NSCoder.cgSize(for: dict["UILaunchImageSize"] as! String)
             
             if __CGSizeEqualToSize(imageSize, size) && orientation == (dict["UILaunchImageOrientation"] as! String) {
                 

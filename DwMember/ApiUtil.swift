@@ -81,10 +81,12 @@ open class ApiUtil{
        static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-    static let serverUrl = "https://cloud.ablegenius.com/a"
-//    static var serverUrl = "http://39.108.222.121:8080/a"
+   static let serverUrl = "https://cloud.ablegenius.com/a"
+//    static let serverUrl = "http://192.168.90.54:8080/a"
     //首頁鏈接
-    static let indexUrl = "http://192.168.90.71:8081"
+//    static let indexUrl = "http://192.168.90.71:8081"
+    static let indexUrl = "https://cloud.ablegenius.com/m/winever/zhudi/index.html"
+
     //公司代碼`
     static let companyCode = "WineverHK"
     //APP類型細分編號
@@ -175,12 +177,12 @@ open class ApiUtil{
     }
     
     static func launchCache_New(_ completion: @escaping (String)->()) -> Void {
-        Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode, "serial": serial]) { (result) in
+    
+        Just.post(ApiUtil.launchApi ,  data: ["company": companyCode, "serial": serial]) { (result) in
             if result.ok {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
-               // print(json)
                 let datas = DwStartRootClass(fromDictionary: json).data!
                 if let ads = datas.ads{
                    // let idx = Int(arc4random()) % ads.count
@@ -200,64 +202,6 @@ open class ApiUtil{
     
     
     
-    
-    
-    //檢測更新
-    static func checkUpdata(sender: UIViewController)   {
-        Just.post(ApiUtil.updataApi ,  data: ["company": ApiUtil.companyCode, "channel" : ApiUtil.channel, "serial": serial]) { (result) in
-            if result.ok {
-                guard let json = result.json as? NSDictionary else{
-                    return
-                }
-                //print(json)
-                if let datas = DwUpdataRootClass(fromDictionary: json).data {
-                    let cluodVersion = datas.versions
-                    let defaults = UserDefaults.standard
-                    if let localVersion = defaults.string(forKey: "localVersion"){
-                        if localVersion != cluodVersion {
-                            OperationQueue.main.addOperation {
-                                
-                                let menu = UIAlertController(title: nil, message: "please updata your apps", preferredStyle: .alert)
-                                let optionOK = UIAlertAction(title: "Ok", style: .default, handler: { (_) in
-                                    
-                                    if let url = URL(string: datas.downloadUrl) {
-                                        //根据iOS系统版本，分别处理
-                                        if #available(iOS 10, *) {
-                                            UIApplication.shared.open(url, options: [:],
-                                                                      completionHandler: {
-                                                                        (success) in
-                                            })
-                                        } else {
-                                            UIApplication.shared.openURL(url)
-                                        }
-                                    }
-                                    
-                                })
-                                if !datas.isMust {
-                                    let optionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                                    menu.addAction(optionCancel)
-                                    
-                                }
-                                
-                                menu.addAction(optionOK)
-                                sender.present(menu, animated: true, completion: nil)
-                                
-                            }
-                        }
-                    }else {
-                        defaults.set(cluodVersion, forKey: "localVersion")
-                    }
-                    //如果点击了则把点过的动作标志保存到存储空间，以便启动时候检查
-                    
-                    
-                }
-                
-                
-                
-            }
-            
-        }
-    }
     
     //webView統一跳轉控制器
     static func webViewHandle(withIdentifier: String, id: String, sender: UIViewController ) {
@@ -285,7 +229,7 @@ open class ApiUtil{
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            // print(json)
+           
             if result.ok {
                 if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
                     let datas = DwWebViewBaseRootClass(fromDictionary: json).data
@@ -305,22 +249,22 @@ open class ApiUtil{
                     
                 }else {
                     //異常處理
-                    if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                      //  print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
+                    
                         OperationQueue.main.addOperation {
                             ApiUtil.openAlert(msg: error.msg, sender: sender)
                         }
-                    }
+                    
                     
                 }
             }else{
                 //處理接口系統錯誤
-                if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                   // print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+              
                     OperationQueue.main.addOperation {
                         ApiUtil.openAlert(msg: error.message, sender: sender)
                     }
-                }
+                
             }
             
         }
@@ -346,7 +290,6 @@ open class ApiUtil{
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            // print(json)
             if result.ok {
                 if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
                     let datas = DwWebViewBaseRootClass(fromDictionary: json).data
@@ -366,22 +309,22 @@ open class ApiUtil{
                     
                 }else {
                     //異常處理
-                    if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                        //  print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
+                    
                         OperationQueue.main.addOperation {
                             ApiUtil.openAlert(msg: error.msg, sender: sender)
                         }
-                    }
+                    
                     
                 }
             }else{
                 //處理接口系統錯誤
-                if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                    // print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                
                     OperationQueue.main.addOperation {
                         ApiUtil.openAlert(msg: error.message, sender: sender)
                     }
-                }
+                
             }
             
         }
@@ -474,7 +417,6 @@ open class ApiUtil{
             guard let json = result.json as? NSDictionary else{
                 return
             }
-            print(json)
             if result.ok {
                 if  DwPageListRootClass(fromDictionary: json).code == 1 {
                     let datas = DwPageListRootClass(fromDictionary: json).data
@@ -494,21 +436,21 @@ open class ApiUtil{
                     
                 }else {
                     //異常處理
-                    if let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json){
-                        //  print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
+                    
                         OperationQueue.main.addOperation {
                             ApiUtil.openAlert(msg: error.msg, sender: sender)
                         }
-                    }
+                    
                 }
             }else{
                 //處理接口系統錯誤
-                if let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json){
-                    // print("錯誤代碼:\(error.status);信息:\(error.message)原因:\(error.exception)")
+                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                
                     OperationQueue.main.addOperation {
                         ApiUtil.openAlert(msg: error.message, sender: sender)
                     }
-                }
+                
             }
             
         }
