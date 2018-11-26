@@ -81,11 +81,11 @@ open class ApiUtil{
        static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-   static let serverUrl = "https://cloud.ablegenius.com/a"
+   static let serverUrl = "http://cloud.aidankorean.com/a"
 //    static let serverUrl = "http://192.168.90.54:8080/a"
     //首頁鏈接
 //    static let indexUrl = "http://192.168.90.71:8081"
-    static let indexUrl = "https://cloud.ablegenius.com/m/winever/zhudi/index.html"
+    static let indexUrl = "http://cloud.aidankorean.com/m/winever/zhudi/index.html"
 
     //公司代碼`
     static let companyCode = "WineverHK"
