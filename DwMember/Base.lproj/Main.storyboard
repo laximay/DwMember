@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MD1-0L-T3E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MD1-0L-T3E">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +25,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MMb-sk-KrM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1970" y="-578"/>
+            <point key="canvasLocation" x="1033" y="-111"/>
         </scene>
         <!--Guider View Controller-->
         <scene sceneID="oCW-XJ-NxX">
@@ -49,7 +49,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ohh-d7-QRS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3358" y="-970"/>
+            <point key="canvasLocation" x="1065" y="618"/>
         </scene>
         <!--Pay View Controller-->
         <scene sceneID="ATL-tY-RPt">
@@ -141,7 +141,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.65818554162979126" green="0.054485879838466644" blue="0.16733917593955994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.97890609502792358" green="0.69661033153533936" blue="0.078495360910892487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lii-mC-x0C" firstAttribute="leading" secondItem="OIF-Df-2x0" secondAttribute="leadingMargin" id="6eH-YX-Nj9"/>
                             <constraint firstAttribute="bottom" secondItem="m6M-Bc-X8G" secondAttribute="bottom" constant="20" symbolic="YES" id="Cin-75-2WU"/>
@@ -184,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPv-xy-6oz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3359" y="-74"/>
+            <point key="canvasLocation" x="2057" y="618"/>
         </scene>
         <!--Content View Controller-->
         <scene sceneID="HYY-x1-u1H">

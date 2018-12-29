@@ -73,7 +73,7 @@ open class ApiUtil{
     }
     //系統顏色圖標顏色
     static let fontColor: UIColor = UIColor.white
-    static let fontColor2: UIColor = UIColor(red: 51/255.0, green: 18/255.0, blue: 3/255.0, alpha: 1)
+    static let fontColor2: UIColor = UIColor(red: 249/255.0, green: 178/255.0, blue: 21/255.0, alpha: 1)
     static let bgColor: UIColor = UIColor.white
     
 //    static let iconColor: UIColor =  UIColor(red: 178/255.0, green: 126/255.0, blue: 86/255.0, alpha: 1)
@@ -81,18 +81,18 @@ open class ApiUtil{
        static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-   static let serverUrl = "http://cloud.aidankorean.com/a"
+   static let serverUrl = "http://sk.genieidea.com/a"
 //    static let serverUrl = "http://192.168.90.54:8080/a"
     //首頁鏈接
 //    static let indexUrl = "http://192.168.90.71:8081"
-    static let indexUrl = "http://cloud.aidankorean.com/m/winever/zhudi/index.html"
+    static let indexUrl = "http://sk.genieidea.com/m/satay/index.html"
 
     //公司代碼`
-    static let companyCode = "WineverHK"
+    static let companyCode = "SatayKing"
     //APP類型細分編號
-    static let serial = "84Ll45wGp7zRHz2"
+    static let serial = "8Dq9BE43pT21fK6"
     //推送APPKEY
-    static let apnsKey = "247aef555a20e8836d1ac361"
+    static let apnsKey = "bd285e9627b0e3ee02dcb98b"
     //公司代碼
     static let channel = "IOS"
     //啟動頁Api

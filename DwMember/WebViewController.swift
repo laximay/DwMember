@@ -138,7 +138,8 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setStatusBarBackgroundColor(color: UIColor(red: 51/255.0, green: 18/255.0, blue: 3/255.0, alpha: 1))
+        //設置頂部欄顏色
+        setStatusBarBackgroundColor(color: UIColor(red: 249/255.0, green: 178/255.0, blue: 21/255.0, alpha: 1))
         
         //註冊推送
         JPUSHService.setAlias(ApiUtil.idfv, completion: nil, seq: 1)
