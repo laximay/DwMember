@@ -29,7 +29,7 @@
         <!--LoginViewController-->
         <scene sceneID="Zug-mP-nbj">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" id="vHg-nZ-9Ls" customClass="LoginViewController" customModule="築地日本料理" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" id="vHg-nZ-9Ls" customClass="LoginViewController" customModule="小火焰" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eRm-DH-GVQ"/>
                         <viewControllerLayoutGuide type="bottom" id="WGq-JH-omd"/>
@@ -85,7 +85,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kX4-rt-AEP">
                                                 <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
                                                 <state key="normal" title="忘記密碼?">
-                                                    <color key="titleColor" red="0.8023107647895813" green="0.60004431009292603" blue="0.045506812632083893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="0.76319378614425659" green="0.12978154420852661" blue="0.0051388298161327839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="forgetTap:" destination="vHg-nZ-9Ls" eventType="touchUpInside" id="TnV-Mf-6Y1"/>
@@ -94,7 +94,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9df-47-sxk">
                                                 <rect key="frame" x="226" y="0.0" width="77" height="30"/>
                                                 <state key="normal" title="註冊成會員">
-                                                    <color key="titleColor" red="0.8023107647895813" green="0.60004431009292603" blue="0.045506812632083893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="0.76319378614425659" green="0.12978154420852661" blue="0.0051388298161327839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="registerTap:" destination="vHg-nZ-9Ls" eventType="touchUpInside" id="F7N-ld-Rpd"/>
@@ -104,7 +104,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="303" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqs-j1-U9f">
                                         <rect key="frame" x="0.0" y="300" width="303" height="50"/>
-                                        <color key="backgroundColor" red="0.9754757285118103" green="0.73286449909210205" blue="0.067017816007137299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.76319378614425659" green="0.12978154420852661" blue="0.0051388298161327839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Zf2-T0-hlF"/>
                                         </constraints>
@@ -152,6 +152,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo-n" width="960" height="960"/>
+        <image name="logo-n" width="1000" height="999"/>
     </resources>
 </document>

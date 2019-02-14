@@ -83,7 +83,7 @@ class ScanViewController: LBXScanViewController {
         
         self.btnFlash = UIButton()
         btnFlash.bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        btnFlash.center = CGPoint(x: self.view.frame.width/2, y: yMax-100)
+        btnFlash.center = CGPoint(x: self.view.frame.width/2, y: yMax-150)
         btnFlash.setImage(UIImage(named: "qrcode_scan_btn_flash_nor"), for:UIControl.State.normal)
         btnFlash.addTarget(self, action: #selector(ScanViewController.openOrCloseFlash), for: UIControl.Event.touchUpInside)
     
