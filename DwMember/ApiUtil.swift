@@ -84,8 +84,8 @@ open class ApiUtil{
    static let serverUrl = "http://cloud.aidankorean.com/a"
 //    static let serverUrl = "http://192.168.90.54:8080/a"
     //首頁鏈接
-    static let indexUrl = "http://192.168.90.73:8080"
-//    static let indexUrl = "http://cloud.aidankorean.com/m/winever/aidan/index.html"
+//    static let indexUrl = "http://172.20.10.2:8080/"
+    static let indexUrl = "http://cloud.aidankorean.com/m/winever/aidan/index.html"
 
     //公司代碼`
     static let companyCode = "WineverHK"
