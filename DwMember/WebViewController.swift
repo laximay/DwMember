@@ -219,7 +219,13 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        decisionHandler(.allow);
+       
+        if navigationAction.request.url?.scheme == "tel" {
+            UIApplication.shared.open(navigationAction.request.url!, options: [:], completionHandler: nil)
+            decisionHandler(.cancel)
+        }else{
+             decisionHandler(.allow);
+        }
     }
     
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
