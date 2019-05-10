@@ -81,18 +81,18 @@ open class ApiUtil{
        static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-   static let serverUrl = "http://cloud.aidankorean.com/a"
+   static let serverUrl = "https://cloud.ablegenius.com/a"
 //    static let serverUrl = "http://192.168.90.54:8080/a"
     //首頁鏈接
-//    static let indexUrl = "http://192.168.90.73:8080/"
-    static let indexUrl = "http://cloud.aidankorean.com/m/winever/aidan/index.html"
+    static let indexUrl = "http://192.168.90.73:8081/"
+//    static let indexUrl = "http://cloud.aidankorean.com/m/winever/aidan/index.html"
 
     //公司代碼`
-    static let companyCode = "WineverHK"
+    static let companyCode = "EPOT"
     //APP類型細分編號
-    static let serial = "0Ykox0l1n0G865d"
+    static let serial = "X97Gre352EED2E2"
     //推送APPKEY
-    static let apnsKey = "b938bd968306f6b972ef7586"
+    static let apnsKey = "3d3875c4f028cfac41294580"
     //公司代碼
     static let channel = "IOS"
     //啟動頁Api
