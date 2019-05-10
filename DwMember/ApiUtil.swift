@@ -73,7 +73,7 @@ open class ApiUtil{
     }
     //系統顏色圖標顏色
     static let fontColor: UIColor = UIColor.white
-    static let fontColor2: UIColor = UIColor(red: 195/255.0, green: 33/255.0, blue: 1/255.0, alpha: 1)
+    static let fontColor2: UIColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
     static let bgColor: UIColor = UIColor.white
     
 //    static let iconColor: UIColor =  UIColor(red: 178/255.0, green: 126/255.0, blue: 86/255.0, alpha: 1)
