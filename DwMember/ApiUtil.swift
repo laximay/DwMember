@@ -61,9 +61,9 @@ let inrwebView: [String: webViewConfig] = ["BIND": webViewConfig(code : "BIND", 
                                            "FPWD": webViewConfig(code: "FPWD", verif: true),
                                            "HDXQ": webViewConfig(code: "HDXQ", verif: true),
                                            "JFCX": webViewConfig(code: "JFCX", verif: true),
-                                            "HYDC": webViewConfig(code: "HYDC", verif: true),
-                            "HYJH": webViewConfig(code: "HYJH", verif: true),
-                            "WJDC": webViewConfig(code: "WJDC", verif: false)]
+                                           "HYDC": webViewConfig(code: "HYDC", verif: true),
+                                           "HYJH": webViewConfig(code: "HYJH", verif: true),
+                                           "WJDC": webViewConfig(code: "WJDC", verif: false)]
 
 open class ApiUtil{
     
@@ -76,17 +76,17 @@ open class ApiUtil{
     static let fontColor2: UIColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
     static let bgColor: UIColor = UIColor.white
     
-//    static let iconColor: UIColor =  UIColor(red: 178/255.0, green: 126/255.0, blue: 86/255.0, alpha: 1)
+    //    static let iconColor: UIColor =  UIColor(red: 178/255.0, green: 126/255.0, blue: 86/255.0, alpha: 1)
     
-       static let iconColor: UIColor = UIColor.white
+    static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-   static let serverUrl = "https://cloud.ablegenius.com/a"
-//    static let serverUrl = "http://192.168.90.54:8080/a"
+    static let serverUrl = "https://cloud.ablegenius.com/a"
+    //    static let serverUrl = "http://192.168.90.54:8080/a"
     //首頁鏈接
     static let indexUrl = "http://192.168.90.73:8081/"
-//    static let indexUrl = "http://cloud.aidankorean.com/m/winever/aidan/index.html"
-
+    //    static let indexUrl = "http://cloud.aidankorean.com/m/winever/aidan/index.html"
+    
     //公司代碼`
     static let companyCode = "EPOT"
     //APP類型細分編號
@@ -177,7 +177,7 @@ open class ApiUtil{
     }
     
     static func launchCache_New(_ completion: @escaping (String)->()) -> Void {
-    
+        
         Just.post(ApiUtil.launchApi ,  data: ["company": companyCode, "serial": serial]) { (result) in
             if result.ok {
                 guard let json = result.json as? NSDictionary else{
@@ -185,10 +185,10 @@ open class ApiUtil{
                 }
                 let datas = DwStartRootClass(fromDictionary: json).data!
                 if let ads = datas.ads{
-                   // let idx = Int(arc4random()) % ads.count
-                     let launchUrl = ads.image
+                    // let idx = Int(arc4random()) % ads.count
+                    let launchUrl = ads.image
                     completion(launchUrl!)
-                        
+                    
                     
                 }
                 
@@ -224,12 +224,12 @@ open class ApiUtil{
             url = ApiUtil.webviewApi
         }
         
-
+        
         Just.post(url ,  data: avgs) { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
             }
-           
+            
             if result.ok {
                 if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
                     let datas = DwWebViewBaseRootClass(fromDictionary: json).data
@@ -249,21 +249,21 @@ open class ApiUtil{
                     
                 }else {
                     //異常處理
-                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
+                    let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
                     
-                        OperationQueue.main.addOperation {
-                            ApiUtil.openAlert(msg: error.msg, sender: sender)
-                        }
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.msg, sender: sender)
+                    }
                     
                     
                 }
             }else{
                 //處理接口系統錯誤
-                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
-              
-                    OperationQueue.main.addOperation {
-                        ApiUtil.openAlert(msg: error.message, sender: sender)
-                    }
+                let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                
+                OperationQueue.main.addOperation {
+                    ApiUtil.openAlert(msg: error.message, sender: sender)
+                }
                 
             }
             
@@ -274,7 +274,7 @@ open class ApiUtil{
     //webView統一跳轉控制器
     static func webViewHandleNativ(webCode: String, id: String, sender: UIViewController ) {
         
-     
+        
         //dump(webCode)
         var avgs: [String: Any] = [:]
         var url = ""
@@ -309,21 +309,21 @@ open class ApiUtil{
                     
                 }else {
                     //異常處理
-                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
+                    let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
                     
-                        OperationQueue.main.addOperation {
-                            ApiUtil.openAlert(msg: error.msg, sender: sender)
-                        }
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.msg, sender: sender)
+                    }
                     
                     
                 }
             }else{
                 //處理接口系統錯誤
-                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
                 
-                    OperationQueue.main.addOperation {
-                        ApiUtil.openAlert(msg: error.message, sender: sender)
-                    }
+                OperationQueue.main.addOperation {
+                    ApiUtil.openAlert(msg: error.message, sender: sender)
+                }
                 
             }
             
@@ -354,8 +354,8 @@ open class ApiUtil{
             }
             signStr = data2.map{ "\($0)=\($1)" }.joined(separator: "&")
             
-             signStr.append("&key=\(sercet)")
-             return signStr.md5().uppercased()
+            signStr.append("&key=\(sercet)")
+            return signStr.md5().uppercased()
         }else {
             checklogin(sender: sender)
             return ""
@@ -363,7 +363,7 @@ open class ApiUtil{
         
         
         
-       
+        
         
     }
     
@@ -377,7 +377,7 @@ open class ApiUtil{
                 if let pageVC = ApiUtil.loginSB.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
                     
                     sender.self.navigationController?.pushViewController(pageVC, animated: true)
-//                    sender.present(pageVC, animated: true, completion: nil)
+                    //                    sender.present(pageVC, animated: true, completion: nil)
                 }
             })
             let optionCancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
@@ -391,7 +391,7 @@ open class ApiUtil{
         
     }
     
-
+    
     
     
     static func openAlert(msg: String ,sender: UIViewController){
@@ -412,7 +412,7 @@ open class ApiUtil{
         avgs.updateValue(ApiUtil.companyCode, forKey: "company")
         avgs.updateValue("AC", forKey: "type")
         avgs.updateValue("MINE", forKey: "page")
-
+        
         Just.post(ApiUtil.pageListApi ,  data: avgs) { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
@@ -436,20 +436,20 @@ open class ApiUtil{
                     
                 }else {
                     //異常處理
-                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
+                    let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
                     
-                        OperationQueue.main.addOperation {
-                            ApiUtil.openAlert(msg: error.msg, sender: sender)
-                        }
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.msg, sender: sender)
+                    }
                     
                 }
             }else{
                 //處理接口系統錯誤
-                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
                 
-                    OperationQueue.main.addOperation {
-                        ApiUtil.openAlert(msg: error.message, sender: sender)
-                    }
+                OperationQueue.main.addOperation {
+                    ApiUtil.openAlert(msg: error.message, sender: sender)
+                }
                 
             }
             
