@@ -60,14 +60,14 @@ class LoginViewController: UIViewController {
     
         let sign = ApiUtil.sign(data: avgs, sender: self)
         avgs.updateValue(sign, forKey: "sign")
-       // dump(avgs)
+        dump(avgs)
         Just.post(ApiUtil.loginApi ,  data: avgs) { (result) in
             
             
             guard let json = result.json as? NSDictionary else{
                 return
             }
-           // print(json)
+            //dump(json)
             if result.ok {
                 if   DwLoginRootClass(fromDictionary: json).code == 1 {
                     //print("登錄成功")
