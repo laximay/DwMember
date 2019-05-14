@@ -332,7 +332,7 @@ open class ApiUtil{
     
     //前置參數
     static func frontFunc()->[String: Any]{
-        let timeInterval =  Int(NSDate().timeIntervalSince1970*1000)
+        let timeInterval =  String(Int(NSDate().timeIntervalSince1970*1000))
         let defaults = UserDefaults.standard
         
         
