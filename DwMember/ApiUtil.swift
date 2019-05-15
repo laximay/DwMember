@@ -82,10 +82,9 @@ open class ApiUtil{
     
     //服務鏈接
     static let serverUrl = "https://cloud.ablegenius.com/a"
-    //    static let serverUrl = "http://192.168.90.54:8080/a"
     //首頁鏈接
-    static let indexUrl = "http://192.168.90.73:8081/"
-    //    static let indexUrl = "http://cloud.aidankorean.com/m/winever/aidan/index.html"
+//    static let indexUrl = "http://192.168.90.73:8080/"
+ static let indexUrl = "https://cloud.ablegenius.com/m/epot/index.html"
     
     //公司代碼`
     static let companyCode = "EPOT"
