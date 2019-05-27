@@ -463,8 +463,11 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 3DD3E23E1F2EC4C6001FC47E;
 			productRefGroup = 3DD3E2481F2EC4C6001FC47E /* Products */;
