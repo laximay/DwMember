@@ -14,6 +14,11 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
 
      var mapView: MKMapView!
     let id = "myid"
+    var name = ""
+    var telphone = ""
+    var address = ""
+    var latitude = 0.00
+    var longitude = 0.00
     override func viewDidLoad() {
         navigationController?.setNavigationBarHidden(false, animated: true)
         super.viewDidLoad()
@@ -27,8 +32,11 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
         mapView.showsUserLocation = true //显示用户位置
         mapView.showsBuildings = true //显示建筑物
         mapView.mapType = MKMapType.standard
-        
-        getOutletList()
+        if( name != ""){
+            initMap(title: "\(name),電話:\(telphone)", address: address, latitude: latitude, longitude: longitude)
+        }else{
+            getOutletList()
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -100,11 +108,12 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
             guard let json = result.json as? NSDictionary else{
                 return
             }
-//            print(json)
+//          print(json)
             if result.ok {
                 if  DwBranchsRootClass(fromDictionary: json).code == 1 {
                     DwBranchsRootClass(fromDictionary: json).data.forEach({ (outlet) in
                         OperationQueue.main.addOperation {
+                            print(outlet.name1)
                             self.initMap(title: "\(outlet.name1!),電話:\(outlet.telphone!)", address: outlet.address, latitude: Double(outlet.latitude)!, longitude: Double(outlet.longitude)!)
                         }
                     })

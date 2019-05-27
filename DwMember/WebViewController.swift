@@ -41,6 +41,24 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
             if let pageVC = barnchsSB.instantiateViewController(withIdentifier: "BranchsMapViewController")   as? BranchsMapViewController{
                 self.navigationController?.pushViewController(pageVC, animated: true)
             }
+        case "branchSingleMap":
+             let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
+             let name =  prams["name1"] as! String
+             let telphone =  prams["telphone"] as! String
+             let address = prams["address"] as! String
+             let latitude = prams["latitude"] as! String
+             let longitude = prams["longitude"] as! String
+             
+             
+             
+            if let pageVC = barnchsSB.instantiateViewController(withIdentifier: "BranchsMapViewController")   as? BranchsMapViewController{
+                pageVC.name = name
+                pageVC.telphone = telphone
+                pageVC.address = address
+                pageVC.latitude = Double(latitude)!
+                pageVC.longitude = Double(longitude)!
+                self.navigationController?.pushViewController(pageVC, animated: true)
+            }
         case "scan":
             if let scanVC = mainSB.instantiateViewController(withIdentifier: "ScanViewController")   as? ScanViewController{
                 self.navigationController?.pushViewController(scanVC, animated: true)
@@ -98,6 +116,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         config.userContentController.add(self, name: "clearCache")
         config.userContentController.add(self, name: "loginOut")
         config.userContentController.add(self, name: "branchMap")
+         config.userContentController.add(self, name: "branchSingleMap")
         config.userContentController.add(self, name: "scan")
         config.userContentController.add(self, name: "encrypt")
         config.userContentController.add(self, name: "currentVersion")
