@@ -73,7 +73,7 @@ open class ApiUtil{
     }
     //系統顏色圖標顏色
     static let fontColor: UIColor = UIColor.white
-    static let fontColor2: UIColor = UIColor(red: 249/255.0, green: 178/255.0, blue: 21/255.0, alpha: 1)
+    static let fontColor2: UIColor = UIColor(red: 118/255.0, green: 187/255.0, blue: 169/255.0, alpha: 1)
     static let bgColor: UIColor = UIColor.white
     
 //    static let iconColor: UIColor =  UIColor(red: 178/255.0, green: 126/255.0, blue: 86/255.0, alpha: 1)
@@ -81,16 +81,16 @@ open class ApiUtil{
        static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-   static let serverUrl = "https://c.aghk.app/a"
+   static let serverUrl = "http://mytaoheung.com/PrepayCard"
 //    static let serverUrl = "http://192.168.90.54:8080/a"
     //首頁鏈接
 //    static let indexUrl = "http://192.168.90.71:8081"
-    static let indexUrl = "https://c.aghk.app/m/satay/index.html"
+    static let indexUrl = "http://mytaoheung.com/m/taoheung/tc/index.html"
 
     //公司代碼`
-    static let companyCode = "SatayKing"
+    static let companyCode = "TaoHeung"
     //APP類型細分編號
-    static let serial = "8Dq9BE43pT21fK6"
+    static let serial = "48vOU7C2F4s7Spt"
     //推送APPKEY
     static let apnsKey = "bd285e9627b0e3ee02dcb98b"
     //公司代碼
