@@ -92,7 +92,7 @@ open class ApiUtil{
     //APP類型細分編號
     static let serial = "48vOU7C2F4s7Spt"
     //推送APPKEY
-    static let apnsKey = "bd285e9627b0e3ee02dcb98b"
+    static let apnsKey = "39fb045adbc4f88a4fbdc301"
     //公司代碼
     static let channel = "IOS"
     //啟動頁Api
