@@ -81,11 +81,11 @@ open class ApiUtil{
        static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-//   static let serverUrl = "http://mytaoheung.com/PrepayCard"
-    static let serverUrl = "http://192.168.90.57:8081/PrepayCard"
+   static let serverUrl = "http://mytaoheung.com/PrepayCard"
+//    static let serverUrl = "http://192.168.90.57:8081/PrepayCard"
     //首頁鏈接
-    static let indexUrl = "http://192.168.90.57:8082"
-//    static let indexUrl = "http://mytaoheung.com/m/taoheung/tc/index.html"
+//    static let indexUrl = "http://192.168.90.57:8082"
+    static let indexUrl = "http://mytaoheung.com/m/taoheung/tc/index.html"
 
     //公司代碼`
     static let companyCode = "TaoHeung"
