@@ -20,6 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         UINavigationBar.appearance().tintColor = ApiUtil.iconColor
     
         //ApiUtil.launchCache()
+        
+        if #available(iOS 13.0, *) {
+            #if swift(>=5.1)
+            if let statusBarManager = UIApplication.shared.keyWindow?.windowScene?.statusBarManager,
+                let localStatusBar = statusBarManager.perform(Selector(("createLocalStatusBar")))?.takeRetainedValue()
+                    as? UIView,
+                let statusBar = localStatusBar.perform(Selector(("statusBar")))?.takeRetainedValue() as? UIView,
+                let _statusBar = statusBar.value(forKey: "_statusBar") as? UIView {
+                print(localStatusBar, statusBar, _statusBar)
+            }
+            #endif
+        } else {
+            // Fallback on earlier versions
+            if let statusBarWindow = UIApplication.shared.value(forKey: "statusBarWindow") as? UIWindow {
+                statusBarWindow.alpha = 1 - statusBarWindow.alpha
+            }
+        }
    
     
         //导航栏设置字体
@@ -58,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         
         //啟動頁面
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        window?.backgroundColor = UIColor.white
+//        window?.backgroundColor = UIColor.white
 //        let homeVC = MyTabBarViewController()
        
         
