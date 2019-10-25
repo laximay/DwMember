@@ -84,8 +84,8 @@ open class ApiUtil{
    static let serverUrl = "https://c.aghk.app/a"
 //    static let serverUrl = "http://192.168.90.54:8080/a"
     //首頁鏈接
-//    static let indexUrl = "http://192.168.90.71:8081"
-    static let indexUrl = "https://c.aghk.app/m/satay/index.html"
+    static let indexUrl = "http://192.168.90.54:8081"
+//    static let indexUrl = "https://c.aghk.app/m/satay/index.html"
 
     //公司代碼`
     static let companyCode = "SatayKing"
