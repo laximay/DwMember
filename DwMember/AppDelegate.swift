@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         
         //啟動頁面
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        window?.backgroundColor = UIColor.white
+//        window?.backgroundColor = UIColor.white
 //        let homeVC = MyTabBarViewController()
        
         

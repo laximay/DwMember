@@ -131,17 +131,38 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
             navigationController?.navigationBar.isTranslucent = false;
         }
 
-    override var prefersStatusBarHidden: Bool{
-        return true
-    }
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
-    }
+ 
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        
+        
+        if #available(iOS 13.0, *) {
+            let app = UIApplication.shared
+            let statusBarHeight: CGFloat = app.statusBarFrame.size.height
+            
+            let statusbarView = UIView()
+            statusbarView.backgroundColor = UIColor.red
+            view.addSubview(statusbarView)
+          
+            statusbarView.translatesAutoresizingMaskIntoConstraints = false
+            statusbarView.heightAnchor
+                .constraint(equalToConstant: statusBarHeight).isActive = true
+            statusbarView.widthAnchor
+                .constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
+            statusbarView.topAnchor
+                .constraint(equalTo: view.topAnchor).isActive = true
+            statusbarView.centerXAnchor
+                .constraint(equalTo: view.centerXAnchor).isActive = true
+          
+        } else {
+            let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
+            statusBar?.backgroundColor = UIColor.red
+        }
+        
         //設置頂部欄顏色
-        setStatusBarBackgroundColor(color: UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1))
+//        setStatusBarBackgroundColor(color: UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1))
         
         //註冊推送
         JPUSHService.setAlias(ApiUtil.idfv, completion: nil, seq: 1)
