@@ -12,7 +12,28 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.present(MainTableViewController(), animated: true, completion: nil)
+      if #available(iOS 13.0, *) {
+                 let app = UIApplication.shared
+                 let statusBarHeight: CGFloat = app.statusBarFrame.size.height
+                 
+                 let statusbarView = UIView()
+        statusbarView.backgroundColor = UIColor.red
+                 view.addSubview(statusbarView)
+               
+                 statusbarView.translatesAutoresizingMaskIntoConstraints = false
+                 statusbarView.heightAnchor
+                     .constraint(equalToConstant: statusBarHeight).isActive = true
+                 statusbarView.widthAnchor
+                     .constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
+                 statusbarView.topAnchor
+                     .constraint(equalTo: view.topAnchor).isActive = true
+                 statusbarView.centerXAnchor
+                     .constraint(equalTo: view.centerXAnchor).isActive = true
+               
+             } else {
+                 let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
+        statusBar?.backgroundColor = UIColor.green
+             }
 
         // Do any additional setup after loading the view.
     }

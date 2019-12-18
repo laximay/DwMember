@@ -84,10 +84,10 @@ open class ApiUtil{
     static let serverUrl = "https://cloud.ablegenius.com/a"
     //首頁鏈接
 //    static let indexUrl = "http://192.168.223.100:8080/"
- static let indexUrl = "http://192.168.90.56:8082"
+ static let indexUrl = "http://www.epot.hk/"
     
     //公司代碼`
-    static let companyCode = "EPOT"
+    static let companyCode = "juyouhui"
     //APP類型細分編號
     static let serial = "B3KNAi9MfQ4B3A2"
     //推送APPKEY
