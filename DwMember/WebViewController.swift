@@ -145,10 +145,10 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
                  // Reference - https://stackoverflow.com/a/57899013/7316675
                  let statusBar = UIView(frame: window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
-                 statusBar.backgroundColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
+                 statusBar.backgroundColor = UIColor(red: 172/255.0, green: 126/255.0, blue: 72/255.0, alpha: 1)
                  window?.addSubview(statusBar)
        } else {
-            setStatusBarBackgroundColor(color: UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1))
+            setStatusBarBackgroundColor(color: UIColor(red: 172/255.0, green: 126/255.0, blue: 72/255.0, alpha: 1))
        }
         
         //設置頂部欄顏色

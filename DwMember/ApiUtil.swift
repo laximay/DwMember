@@ -84,7 +84,7 @@ open class ApiUtil{
     static let serverUrl = "https://cloud.ablegenius.com/a"
     //首頁鏈接
 //    static let indexUrl = "http://192.168.223.100:8080/"
- static let indexUrl = "http://www.epot.hk/"
+ static let indexUrl = "https://cloud.ablegenius.com/m/juyouhui/index.html"
     
     //公司代碼`
     static let companyCode = "juyouhui"
