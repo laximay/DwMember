@@ -73,7 +73,7 @@ open class ApiUtil{
     }
     //系統顏色圖標顏色
     static let fontColor: UIColor = UIColor.white
-    static let fontColor2: UIColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
+    static let fontColor2: UIColor = UIColor(red: 172/255.0, green: 126/255.0, blue: 72/255.0, alpha: 1)
     static let bgColor: UIColor = UIColor.white
     
     //    static let iconColor: UIColor =  UIColor(red: 178/255.0, green: 126/255.0, blue: 86/255.0, alpha: 1)
@@ -91,7 +91,7 @@ open class ApiUtil{
     //APP類型細分編號
     static let serial = "B3KNAi9MfQ4B3A2"
     //推送APPKEY
-    static let apnsKey = "3d3875c4f028cfac41294580"
+    static let apnsKey = "f7a624302c63b47b9c28c353"
     //公司代碼
     static let channel = "IOS"
     //啟動頁Api
