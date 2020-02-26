@@ -84,7 +84,7 @@ open class ApiUtil{
     static let serverUrl = "http://47.56.114.127:8082/a"
     //首頁鏈接
 //    static let indexUrl = "http://192.168.223.100:8080/"
- static let indexUrl = "http://47.56.114.127:8082/m/takeaway/index.html"
+ static let indexUrl = "http://47.56.114.127:8082/m/epot/index.html"
     
     //公司代碼`
     static let companyCode = "EPOT"
