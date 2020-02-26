@@ -141,7 +141,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         
         super.viewDidLoad()
         //設置頂部欄顏色
-        setStatusBarBackgroundColor(color: UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1))
+//        setStatusBarBackgroundColor(color: UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1))
         
         //註冊推送
         JPUSHService.setAlias(ApiUtil.idfv, completion: nil, seq: 1)
