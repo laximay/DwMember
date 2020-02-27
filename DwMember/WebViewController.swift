@@ -92,7 +92,13 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
              let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
                 let index = prams["index"] as! String
                 ApiUtil.getPageList(sender: self, index: Int(index)!)
-            
+        case "setWindowBrightness":
+            let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
+            let screenBrightness = prams["screenBrightness"] as! Int
+            //TODO 調節亮度
+            let rval:Float = Float(screenBrightness)/255
+            UIScreen.main.brightness = CGFloat(rval)
+
         default: break
             
         }
@@ -121,6 +127,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         config.userContentController.add(self, name: "encrypt")
         config.userContentController.add(self, name: "currentVersion")
         config.userContentController.add(self, name: "pagelist")
+        config.userContentController.add(self, name: "setWindowBrightness")
        //注入JS到H5
        // let script = WKUserScript(source: self.script, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
        //config.userContentController.addUserScript(script)
@@ -150,13 +157,26 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
             navigationController?.navigationBar.isTranslucent = false;
         }
 
-
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+         return .lightContent
+      }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         //設置頂部欄顏色
         //setStatusBarBackgroundColor(color: UIColor(red: 249/255.0, green: 178/255.0, blue: 21/255.0, alpha: 1))
+        
+        //IOS 13需要使用statusBarManager進行控制
+             if #available(iOS 13.0, *) {
+              let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+                      
+                       let statusBar = UIView(frame: window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
+                       statusBar.backgroundColor = UIColor(red: 247/255.0, green: 187/255.0, blue: 43/255.0, alpha: 1)
+                       window?.addSubview(statusBar)
+             } else {
+                 setStatusBarBackgroundColor(color: UIColor(red: 247/255.0, green: 187/255.0, blue: 43/255.0, alpha: 1))
+             }
         
         //註冊推送
         JPUSHService.setAlias(ApiUtil.idfv, completion: nil, seq: 1)
@@ -362,6 +382,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
             statusBar.backgroundColor = color
         }
+        
     }
     
     func getDictionaryFromJSONString(jsonString:String) ->NSDictionary{
