@@ -16,35 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
     
      func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UINavigationBar.appearance().barTintColor =  ApiUtil.fontColor2 //设置前景色
-        UINavigationBar.appearance().tintColor = ApiUtil.iconColor
+        UINavigationBar.appearance().barTintColor =  ApiUtil.fontColorMain //设置前景色
+//        UINavigationBar.appearance().tintColor = ApiUtil.iconColor //設置導航欄按鈕顏色
     
         //ApiUtil.launchCache()
-        
-        if #available(iOS 13.0, *) {
-            #if swift(>=5.1)
-            if let statusBarManager = UIApplication.shared.keyWindow?.windowScene?.statusBarManager,
-                let localStatusBar = statusBarManager.perform(Selector(("createLocalStatusBar")))?.takeRetainedValue()
-                    as? UIView,
-                let statusBar = localStatusBar.perform(Selector(("statusBar")))?.takeRetainedValue() as? UIView,
-                let _statusBar = statusBar.value(forKey: "_statusBar") as? UIView {
-                print(localStatusBar, statusBar, _statusBar)
-            }
-            #endif
-        } else {
-            // Fallback on earlier versions
-            if let statusBarWindow = UIApplication.shared.value(forKey: "statusBarWindow") as? UIWindow {
-                statusBarWindow.alpha = 1 - statusBarWindow.alpha
-            }
-        }
-   
+    
     
         //导航栏设置字体
         if let barFont = UIFont(name: "Avenir-Light", size: 24){
             UINavigationBar.appearance().titleTextAttributes = [
                 NSAttributedString.Key.font: barFont,
                 NSAttributedString.Key.foregroundColor:ApiUtil.iconColor,
-                
+
             ]
         }
         

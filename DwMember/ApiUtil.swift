@@ -73,7 +73,8 @@ open class ApiUtil{
     }
     //系統顏色圖標顏色
     static let fontColor: UIColor = UIColor.white
-    static let fontColor2: UIColor = UIColor(red: 249/255.0, green: 178/255.0, blue: 21/255.0, alpha: 1)
+    static let fontColorMain: UIColor = getMainColor()
+
     static let bgColor: UIColor = UIColor.white
     
 //    static let iconColor: UIColor =  UIColor(red: 178/255.0, green: 126/255.0, blue: 86/255.0, alpha: 1)
@@ -84,8 +85,8 @@ open class ApiUtil{
    static let serverUrl = "http://47.56.114.127:8080/a"
 //    static let serverUrl = "http://192.168.90.54:8080/a"
     //首頁鏈接
-    static let indexUrl = "http://47.56.114.127:8080/m/satay/index.html"
 //    static let indexUrl = "http://47.56.114.127:8080/m/satay/index.html"
+    static let indexUrl = "http://192.168.90.54:8084"
 
     //公司代碼`
     static let companyCode = "SatayKing"
@@ -457,6 +458,34 @@ open class ApiUtil{
     }
     
     
+
+  static   func getMainColor() -> UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor { (collection) -> UIColor in
+                if (collection.userInterfaceStyle == .dark) {
+                    return UIColor.black
+                }
+                return UIColor(red: 246/255.0, green: 186/255.0, blue: 62/255.0, alpha: 1)
+            }
+        } else {
+            // Fallback on earlier versions
+            return UIColor(red: 246/255.0, green: 186/255.0, blue: 62/255.0, alpha: 1)
+        }
+    }
+    
+    static   func getBtnColor() -> UIColor {
+          if #available(iOS 13.0, *) {
+              return UIColor { (collection) -> UIColor in
+                  if (collection.userInterfaceStyle == .dark) {
+                      return UIColor.systemGray
+                  }
+                  return UIColor(red: 246/255.0, green: 186/255.0, blue: 62/255.0, alpha: 1)
+              }
+          } else {
+              // Fallback on earlier versions
+              return UIColor(red: 246/255.0, green: 186/255.0, blue: 62/255.0, alpha: 1)
+          }
+      }
     
     
     

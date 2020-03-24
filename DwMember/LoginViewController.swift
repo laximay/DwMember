@@ -13,9 +13,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var imageLoginLogo: UIImageView!
     @IBOutlet weak var cardNoLab: UITextField!
     @IBOutlet weak var passwordLab: UITextField!
+    @IBOutlet weak var loginBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-         navigationController?.setNavigationBarHidden(false, animated: true)
+//         navigationController?.setNavigationBarHidden(false, animated: true)
         //每次打開這個頁面都要清空
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "dwsercet")
@@ -23,9 +24,7 @@ class LoginViewController: UIViewController {
         
         cardNoLab.inputAccessoryView = AddToolBar()
         passwordLab.inputAccessoryView = AddToolBar()
-        
-        
-        
+        loginBtn.backgroundColor = ApiUtil.getBtnColor()
     }
     
     
@@ -85,7 +84,12 @@ class LoginViewController: UIViewController {
                      defaults.set(key, forKey: "dwsercet")
                     
                     OperationQueue.main.addOperation {
-                        self.navigationController!.popViewController(animated: true)
+                          let mainSB = UIStoryboard(name: "Main", bundle: Bundle.main)
+                        if let homeVC = mainSB.instantiateViewController(withIdentifier: "WebViewController")  as? WebViewController{
+                            homeVC.url = ApiUtil.indexUrl
+                                       homeVC.type = "index"
+                               self.navigationController?.pushViewController(homeVC, animated: true)
+                               }
                     }
                     
                 }else {

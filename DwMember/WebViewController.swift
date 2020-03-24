@@ -144,7 +144,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         return self.progressView
     }()
     //如果首頁隱藏了導航欄一定要加上這句
-        override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
             webview.evaluateJavaScript("window.refPage()") { (a, b) in
                 print(#function)
             }
@@ -155,27 +155,42 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
             navigationController?.setNavigationBarHidden(false, animated: true)
             }
             navigationController?.navigationBar.isTranslucent = false;
+            
+        let leftBtn:UIBarButtonItem=UIBarButtonItem(title: "關閉", style: UIBarButtonItem.Style.plain, target: self, action: #selector(actionBack))
+
+               leftBtn.title="關閉";
+
+        leftBtn.tintColor=UIColor.white;
+        navigationItem.leftBarButtonItem = leftBtn;
+        //禁用滑動返回
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false;
+        
+        //        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default);
+        //        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        
         }
 
     override var preferredStatusBarStyle: UIStatusBarStyle{
-         return .lightContent
+         return .default
       }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+
         //設置頂部欄顏色
         //setStatusBarBackgroundColor(color: UIColor(red: 249/255.0, green: 178/255.0, blue: 21/255.0, alpha: 1))
         
-        //IOS 13需要使用statusBarManager進行控制
+      //  IOS 13需要使用statusBarManager進行控制
              if #available(iOS 13.0, *) {
               let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-                      
-                       let statusBar = UIView(frame: window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
-                       statusBar.backgroundColor = UIColor(red: 247/255.0, green: 187/255.0, blue: 43/255.0, alpha: 1)
+
+              let statusBar = UIView(frame: window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
+                statusBar.backgroundColor = ApiUtil.fontColorMain
                        window?.addSubview(statusBar)
              } else {
-                 setStatusBarBackgroundColor(color: UIColor(red: 247/255.0, green: 187/255.0, blue: 43/255.0, alpha: 1))
+                 setStatusBarBackgroundColor(color: ApiUtil.fontColorMain)
              }
         
         //註冊推送
@@ -197,7 +212,13 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
        
        
         if  type == "index" {
-            webview.load(URLRequest.init(url: URL.init(string: url)!))
+            var isDark = false;
+            if #available(iOS 12.0, *) {
+             isDark = (self.traitCollection.userInterfaceStyle == .dark);
+            }
+            let urlIndex =  "\(url)?isDark=\(isDark)"
+            dump(urlIndex)
+            webview.load(URLRequest.init(url: URL.init(string: urlIndex)!))
         }else if type == "OV" {
             if let url = URL(string: "\(url)&imei=\(ApiUtil.idfv)&cardNo=\(cardNo)&company=\(ApiUtil.companyCode)&serial=\(ApiUtil.serial)"){
               print(url.absoluteString)
@@ -217,6 +238,25 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
     
     
     
+    @objc func actionBack(){
+   
+        let isOrderLink  = self.url.contains("order");
+        if(isOrderLink){
+        let alert = UIAlertController(title: "關閉將返回首頁,是否關閉?", message: nil, preferredStyle:UIAlertController.Style.alert)
+               let alertConfirm = UIAlertAction(title: "确定", style:UIAlertAction.Style.default) { (alertConfirm) ->Void in
+                self.navigationController?.popToRootViewController(animated: true);
+        }
+               alert.addAction(alertConfirm)
+               let cancle = UIAlertAction(title: "取消", style:UIAlertAction.Style.cancel) { (cancle) ->Void in
+               }
+               alert.addAction(cancle)
+               //提示框弹出
+               self.present(alert, animated: true, completion: nil)
+        }else{
+            self.navigationController?.popToRootViewController(animated: true);
+        }
+
+      }
  
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
