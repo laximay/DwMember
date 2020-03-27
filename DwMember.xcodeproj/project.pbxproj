@@ -635,6 +635,7 @@
 				INFOPLIST_FILE = DwMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1.03;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ablegenius.satay;
 				PRODUCT_NAME = "沙嗲王";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -656,6 +657,7 @@
 				INFOPLIST_FILE = DwMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1.03;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ablegenius.satay;
 				PRODUCT_NAME = "沙嗲王";
 				PROVISIONING_PROFILE_SPECIFIER = "";

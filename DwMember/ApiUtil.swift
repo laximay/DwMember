@@ -85,8 +85,8 @@ open class ApiUtil{
    static let serverUrl = "http://47.56.114.127:8080/a"
 //    static let serverUrl = "http://192.168.90.54:8080/a"
     //首頁鏈接
-//    static let indexUrl = "http://47.56.114.127:8080/m/satay/index.html"
-    static let indexUrl = "http://192.168.90.54:8084"
+    static let indexUrl = "http://47.56.114.127:8080/m/satay/index.html"
+//    static let indexUrl = "http://192.168.90.54:8083"
 
     //公司代碼`
     static let companyCode = "SatayKing"
@@ -488,7 +488,18 @@ open class ApiUtil{
       }
     
     
-    
+    static   func getViewBgColor() -> UIColor {
+          if #available(iOS 13.0, *) {
+              return UIColor { (collection) -> UIColor in
+                  if (collection.userInterfaceStyle == .dark) {
+                      return UIColor.systemGray3                  }
+                return UIColor.white
+              }
+          } else {
+              // Fallback on earlier versions
+              return UIColor.white
+          }
+      }
     
     
     

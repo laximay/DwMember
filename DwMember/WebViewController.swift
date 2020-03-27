@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Social
 class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
     /*H5頁面調用原生代碼
      1.繼承:WKScriptMessageHandler
@@ -98,7 +99,10 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
             //TODO 調節亮度
             let rval:Float = Float(screenBrightness)/255
             UIScreen.main.brightness = CGFloat(rval)
-
+            case "share":
+                let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
+                           let shareText = prams["shareText"] as! String
+                share(shareText: shareText)
         default: break
             
         }
@@ -128,6 +132,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         config.userContentController.add(self, name: "currentVersion")
         config.userContentController.add(self, name: "pagelist")
         config.userContentController.add(self, name: "setWindowBrightness")
+        config.userContentController.add(self, name: "share")
        //注入JS到H5
        // let script = WKUserScript(source: self.script, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
        //config.userContentController.addUserScript(script)
@@ -436,5 +441,12 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         return NSDictionary()
         
         
+    }
+    func share(shareText:String){
+ 
+        let activityItems = [ shareText] as [Any]
+        let avc = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+
+        self.present(avc, animated: true, completion: nil)
     }
 }

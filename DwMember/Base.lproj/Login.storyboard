@@ -137,9 +137,11 @@
                     <navigationItem key="navigationItem" title="登入" id="K7X-UQ-xNq"/>
                     <connections>
                         <outlet property="cardNoLab" destination="ZcI-Ri-crw" id="O70-Po-guf"/>
+                        <outlet property="forgotPwLab" destination="kX4-rt-AEP" id="ltj-hm-uN7"/>
                         <outlet property="imageLoginLogo" destination="vCc-bu-xly" id="dDQ-84-rxK"/>
                         <outlet property="loginBtn" destination="rqs-j1-U9f" id="6c6-a7-4p4"/>
                         <outlet property="passwordLab" destination="iDf-D3-ch6" id="6e4-Hf-62j"/>
+                        <outlet property="regLab" destination="9df-47-sxk" id="1vb-Nc-MPZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOg-kQ-Ojx" userLabel="First Responder" sceneMemberID="firstResponder"/>

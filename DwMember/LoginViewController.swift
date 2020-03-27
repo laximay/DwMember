@@ -14,6 +14,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var cardNoLab: UITextField!
     @IBOutlet weak var passwordLab: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
+    
+    @IBOutlet weak var regLab: UIButton!
+    @IBOutlet weak var forgotPwLab: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 //         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -25,6 +28,14 @@ class LoginViewController: UIViewController {
         cardNoLab.inputAccessoryView = AddToolBar()
         passwordLab.inputAccessoryView = AddToolBar()
         loginBtn.backgroundColor = ApiUtil.getBtnColor()
+        
+        regLab.setTitleColor(ApiUtil.getBtnColor(), for: .normal)
+          forgotPwLab.setTitleColor(ApiUtil.getBtnColor(), for: .normal)
+        
+        
+        cardNoLab.backgroundColor  =  ApiUtil.getViewBgColor()
+        passwordLab.backgroundColor  =  ApiUtil.getViewBgColor()
+//        self.view.backgroundColor = ApiUtil.getViewBgColor()
     }
     
     
