@@ -113,7 +113,7 @@ class TempViewController: UIViewController  , WKUIDelegate, WKNavigationDelegate
         
         //dump(avgs)
         
-        Just.post(url ,  data: avgs) { (result) in
+        Just.post(url ,  data: avgs, asyncCompletionHandler:  { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
             }
@@ -122,20 +122,20 @@ class TempViewController: UIViewController  , WKUIDelegate, WKNavigationDelegate
                     let datas = DwWebViewBaseRootClass(fromDictionary: json).data
                     OperationQueue.main.addOperation {
                         if let datas = datas {
-//                            if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
-//                                pageVC.url = datas.url
-//                                pageVC.random = datas.random
-//                                if let cardNo: String = avgs["cardNo"] as? String {
-//                                    pageVC.cardNo = cardNo
-//                                }
-//                                sender.navigationController?.pushViewController(pageVC, animated: true)
-//                            }
+                            //                            if let pageVC = ApiUtil.mainSB.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController {
+                            //                                pageVC.url = datas.url
+                            //                                pageVC.random = datas.random
+                            //                                if let cardNo: String = avgs["cardNo"] as? String {
+                            //                                    pageVC.cardNo = cardNo
+                            //                                }
+                            //                                sender.navigationController?.pushViewController(pageVC, animated: true)
+                            //                            }
                             //将 String类型转为Optional String类型为 封包 let cardNo: String! = avgs["cardNo"] as! String
                             //将Optional String 类型强制转换为String类型 成为强制拆包 使用時候 cardNo！
                             let cardNo: String! = avgs["cardNo"] as? String
                             let url: String! = datas.url
                             let random: String! = datas.random
-                          
+                            
                             if let url = URL(string: "\(url!)?imei=\(ApiUtil.idfv)&code=\(random!)&cardNo=\(cardNo!)&company=\(ApiUtil.companyCode)"){
                                 let request = URLRequest(url: url)
                                 // webView.loadRequest(request)
@@ -146,24 +146,24 @@ class TempViewController: UIViewController  , WKUIDelegate, WKNavigationDelegate
                     
                 }else {
                     //異常處理
-                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
+                    let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
                     
-                        OperationQueue.main.addOperation {
-                            ApiUtil.openAlert(msg: error.msg, sender: self)
-                        }
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.msg, sender: self)
+                    }
                     
                     
                 }
             }else{
                 //處理接口系統錯誤
-                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
-                    OperationQueue.main.addOperation {
-                        ApiUtil.openAlert(msg: error.message, sender: self)
-                    }
+                let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                OperationQueue.main.addOperation {
+                    ApiUtil.openAlert(msg: error.message, sender: self)
+                }
                 
             }
             
-        }
+        })
     }
 
 }

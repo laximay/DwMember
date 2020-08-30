@@ -41,11 +41,25 @@ class ScanViewController: LBXScanViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.tintColor = ApiUtil.fontColor
         //需要识别后的图像
         setNeedCodeImage(needCodeImg: true)
         
         //框向上移动10个像素
         scanStyle?.centerUpOffset += 10
+        
+        scanStyle?.centerUpOffset = 44
+        scanStyle?.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle.Inner
+        scanStyle?.photoframeLineW = 2
+        scanStyle?.photoframeAngleW = 18
+        scanStyle?.photoframeAngleH = 18
+        scanStyle?.isNeedShowRetangle = false
+
+        scanStyle?.anmiationStyle = LBXScanViewAnimationStyle.LineMove
+
+        scanStyle?.colorAngle = ApiUtil.fontColorMain
+
+        scanStyle?.animationImage = UIImage(named: "CodeScan.bundle/qrcode_Scan_weixin_Line")
         
         
         // Do any additional setup after loading the view.

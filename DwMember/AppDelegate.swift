@@ -11,6 +11,10 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
+    func jpushNotificationAuthorization(_ status: JPAuthorizationStatus, withInfo info: [AnyHashable : Any]!) {
+        //nil
+    }
+    
     
     var window: UIWindow?
     
@@ -58,10 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         
         //啟動頁面
         window = UIWindow.init(frame: UIScreen.main.bounds)
-//        window?.backgroundColor = UIColor.white
-//        let homeVC = MyTabBarViewController()
-       
-        
+
          let homeVC = WebViewController()
             homeVC.url = ApiUtil.indexUrl
             homeVC.type = "index"
@@ -228,6 +229,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         completionHandler()
     }
     
+    func jpushNotificationCenter(_ center: UNUserNotificationCenter!, openSettingsFor notification: UNNotification!) {
+       
+        let userInfo =  notification.request.content.userInfo
+        if (notification.request.trigger?.isKind(of: UNPushNotificationTrigger.self))!{
+            JPUSHService.handleRemoteNotification(userInfo)
+        }
+    
+    }
     
     
     

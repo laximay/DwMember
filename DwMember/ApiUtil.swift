@@ -82,11 +82,11 @@ open class ApiUtil{
        static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-   static let serverUrl = "http://47.56.114.127:8080/a"
-//    static let serverUrl = "https://c.aghk.app/a"
+//   static let serverUrl = "http://47.56.114.127:8080/a"
+    static let serverUrl = "https://c.aghk.app/a"
     //首頁鏈接
-//    static let indexUrl = "https://c.aghk.app/m/satay/index.html"
-    static let indexUrl = "http://192.168.90.54:8083"
+    static let indexUrl = "https://c.aghk.app/m/satay/index.html"
+//    static let indexUrl = "http://192.168.90.54:8083"
 
     //公司代碼`
     static let companyCode = "SatayKing"
@@ -162,7 +162,7 @@ open class ApiUtil{
     
     //加載引導頁的遠程資源-下次緩存
     static func launchCache()   {
-        Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode, "serial": serial]) { (result) in
+        Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode, "serial": serial], asyncCompletionHandler:  { (result) in
             if result.ok {
                 guard let json = result.json as? NSDictionary else{
                     return
@@ -174,22 +174,22 @@ open class ApiUtil{
                 defaults.set(datas.ads.image, forKey: "launchImageUrl")
             }
             
-        }
+        })
     }
     
     static func launchCache_New(_ completion: @escaping (String)->()) -> Void {
     
-        Just.post(ApiUtil.launchApi ,  data: ["company": companyCode, "serial": serial]) { (result) in
+        Just.post(ApiUtil.launchApi ,  data: ["company": companyCode, "serial": serial], asyncCompletionHandler:  { (result) in
             if result.ok {
                 guard let json = result.json as? NSDictionary else{
                     return
                 }
                 let datas = DwStartRootClass(fromDictionary: json).data!
                 if let ads = datas.ads{
-                   // let idx = Int(arc4random()) % ads.count
-                     let launchUrl = ads.image
+                    // let idx = Int(arc4random()) % ads.count
+                    let launchUrl = ads.image
                     completion(launchUrl!)
-                        
+                    
                     
                 }
                 
@@ -198,7 +198,7 @@ open class ApiUtil{
                 
             }
             
-        }
+        })
     }
     
     
@@ -226,11 +226,11 @@ open class ApiUtil{
         }
         
 
-        Just.post(url ,  data: avgs) { (result) in
+        Just.post(url ,  data: avgs, asyncCompletionHandler:  { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
             }
-           
+            
             if result.ok {
                 if  DwCountBaseRootClass(fromDictionary: json).code == 1 {
                     let datas = DwWebViewBaseRootClass(fromDictionary: json).data
@@ -250,25 +250,25 @@ open class ApiUtil{
                     
                 }else {
                     //異常處理
-                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
+                    let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
                     
-                        OperationQueue.main.addOperation {
-                            ApiUtil.openAlert(msg: error.msg, sender: sender)
-                        }
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.msg, sender: sender)
+                    }
                     
                     
                 }
             }else{
                 //處理接口系統錯誤
-                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
-              
-                    OperationQueue.main.addOperation {
-                        ApiUtil.openAlert(msg: error.message, sender: sender)
-                    }
+                let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                
+                OperationQueue.main.addOperation {
+                    ApiUtil.openAlert(msg: error.message, sender: sender)
+                }
                 
             }
             
-        }
+        })
     }
     
     
@@ -287,7 +287,7 @@ open class ApiUtil{
         url = ApiUtil.webviewverifApi
         
         
-        Just.post(url ,  data: avgs) { (result) in
+        Just.post(url ,  data: avgs, asyncCompletionHandler:  { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
             }
@@ -310,25 +310,25 @@ open class ApiUtil{
                     
                 }else {
                     //異常處理
-                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
+                    let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
                     
-                        OperationQueue.main.addOperation {
-                            ApiUtil.openAlert(msg: error.msg, sender: sender)
-                        }
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.msg, sender: sender)
+                    }
                     
                     
                 }
             }else{
                 //處理接口系統錯誤
-                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
                 
-                    OperationQueue.main.addOperation {
-                        ApiUtil.openAlert(msg: error.message, sender: sender)
-                    }
+                OperationQueue.main.addOperation {
+                    ApiUtil.openAlert(msg: error.message, sender: sender)
+                }
                 
             }
             
-        }
+        })
     }
     
     //前置參數
@@ -414,7 +414,7 @@ open class ApiUtil{
         avgs.updateValue("AC", forKey: "type")
         avgs.updateValue("MINE", forKey: "page")
 
-        Just.post(ApiUtil.pageListApi ,  data: avgs) { (result) in
+        Just.post(ApiUtil.pageListApi ,  data: avgs, asyncCompletionHandler:  { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
             }
@@ -437,24 +437,24 @@ open class ApiUtil{
                     
                 }else {
                     //異常處理
-                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
+                    let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
                     
-                        OperationQueue.main.addOperation {
-                            ApiUtil.openAlert(msg: error.msg, sender: sender)
-                        }
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.msg, sender: sender)
+                    }
                     
                 }
             }else{
                 //處理接口系統錯誤
-                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
                 
-                    OperationQueue.main.addOperation {
-                        ApiUtil.openAlert(msg: error.message, sender: sender)
-                    }
+                OperationQueue.main.addOperation {
+                    ApiUtil.openAlert(msg: error.message, sender: sender)
+                }
                 
             }
             
-        }
+        })
     }
     
     

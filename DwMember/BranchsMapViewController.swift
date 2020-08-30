@@ -104,40 +104,39 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
         avgs.updateValue(0.00, forKey: "longitude")
         
         //dump(avgs)
-        Just.post(ApiUtil.outletApi ,  data: avgs) { (result) in
+        Just.post(ApiUtil.outletApi ,  data: avgs, asyncCompletionHandler:  { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
             }
-//          print(json)
+            //          print(json)
             if result.ok {
                 if  DwBranchsRootClass(fromDictionary: json).code == 1 {
                     DwBranchsRootClass(fromDictionary: json).data.forEach({ (outlet) in
                         OperationQueue.main.addOperation {
-                            print(outlet.name1)
                             self.initMap(title: "\(outlet.name1!),電話:\(outlet.telphone!)", address: outlet.address, latitude: Double(outlet.latitude)!, longitude: Double(outlet.longitude)!)
                         }
                     })
                     
-                
+                    
                 }else {
                     //異常處理
-                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json) 
-                        OperationQueue.main.addOperation {
-                            ApiUtil.openAlert(msg: error.msg, sender: self)
-                        }
+                    let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.msg, sender: self)
+                    }
                     
                 }
             }
             else{
                 //處理接口系統錯誤
-                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
                 OperationQueue.main.addOperation {
                     ApiUtil.openAlert(msg: error.message, sender: self)
                 }
                 
             }
             
-        }
+        })
     }
     
 
