@@ -66,13 +66,13 @@ class LoginViewController: UIViewController {
         avgs.updateValue(sign, forKey: "sign")
         avgs.updateValue(ApiUtil.companyCode, forKey: "company")
 //        dump(avgs)
-        Just.post(ApiUtil.loginApi ,  data: avgs) { (result) in
+        Just.post(ApiUtil.loginApi ,  data: avgs, asyncCompletionHandler:  { (result) in
             
-//            print(result)
+            //            print(result)
             guard let json = result.json as? NSDictionary else{
                 return
             }
-          
+            
             if result.ok {
                 if   DwLoginRootClass(fromDictionary: json).code == 1 {
                     //print("登錄成功")
@@ -80,9 +80,9 @@ class LoginViewController: UIViewController {
                     let realcardNo: String  = DwLoginRootClass(fromDictionary: json).data.card.cardno
                     //保存KEY，保存操作只在登錄的時候做一次，如果成功則會沿用，重新調用登錄方法會覆蓋
                     let key = "\(realcardNo)#\(password.md5())"
-                  
-                     defaults.set(realcardNo, forKey: "cardNo")
-                     defaults.set(key, forKey: "dwsercet")
+                    
+                    defaults.set(realcardNo, forKey: "cardNo")
+                    defaults.set(key, forKey: "dwsercet")
                     
                     OperationQueue.main.addOperation {
                         self.navigationController!.popViewController(animated: true)
@@ -91,8 +91,8 @@ class LoginViewController: UIViewController {
                 }else {
                     
                     OperationQueue.main.addOperation {
-                         ApiUtil.openAlert(msg: "賬號或密碼錯誤!", sender: self)
-
+                        ApiUtil.openAlert(msg: "賬號或密碼錯誤!", sender: self)
+                        
                     }
                     
                     
@@ -103,16 +103,16 @@ class LoginViewController: UIViewController {
                 
             }else{
                 //處理接口系統錯誤
-                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
-                    //print("錯誤代碼\(error.status);信息:\(error.message)原因:\(error.exception)")
-                    OperationQueue.main.addOperation {
-                             ApiUtil.openAlert(msg: error.message, sender: self)
-                    }
+                let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                //print("錯誤代碼\(error.status);信息:\(error.message)原因:\(error.exception)")
+                OperationQueue.main.addOperation {
+                    ApiUtil.openAlert(msg: error.message, sender: self)
+                }
                 
             }
             
             
-        }
+        })
     }
     
     

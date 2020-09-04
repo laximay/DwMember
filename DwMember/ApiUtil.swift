@@ -81,10 +81,10 @@ open class ApiUtil{
     static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-    static let serverUrl = "http://47.56.114.127:8082/a"
+    static let serverUrl = "https://cloud.ablegenius.com/a"
     //首頁鏈接
 //    static let indexUrl = "http://192.168.223.100:8080/"
- static let indexUrl = "http://47.56.114.127:8082/m/epot/index.html"
+ static let indexUrl = "https://cloud.ablegenius.com/m/epot/index.html"
     
     //公司代碼`
     static let companyCode = "EPOT"
@@ -160,7 +160,7 @@ open class ApiUtil{
     
     //加載引導頁的遠程資源-下次緩存
     static func launchCache()   {
-        Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode, "serial": serial]) { (result) in
+        Just.post(ApiUtil.launchApi ,  data: ["company": ApiUtil.companyCode, "serial": serial], asyncCompletionHandler:  { (result) in
             if result.ok {
                 guard let json = result.json as? NSDictionary else{
                     return
@@ -172,7 +172,7 @@ open class ApiUtil{
                 defaults.set(datas.ads.image, forKey: "launchImageUrl")
             }
             
-        }
+        })
     }
     
     static func launchCache_New(_ completion: @escaping (String)->()) -> Void {

@@ -228,6 +228,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         completionHandler()
     }
     
+    func jpushNotificationCenter(_ center: UNUserNotificationCenter!, openSettingsFor notification: UNNotification!) {
+           
+            let userInfo =  notification.request.content.userInfo
+            if (notification.request.trigger?.isKind(of: UNPushNotificationTrigger.self))!{
+                JPUSHService.handleRemoteNotification(userInfo)
+            }
+        
+        }
+    
+    func jpushNotificationAuthorization(_ status: JPAuthorizationStatus, withInfo info: [AnyHashable : Any]!) {
+        //nil
+    }
+    
     
     
     

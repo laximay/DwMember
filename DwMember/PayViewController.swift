@@ -55,62 +55,62 @@ class PayViewController: UIViewController {
             avgs.updateValue(sign, forKey: "sign")
 //            dump(avgs)
         
-            Just.post(ApiUtil.paycodeApi ,  data: avgs) { (result) in
-                guard let json = result.json as? NSDictionary else{
-                    return
-                }
-//                print("详情：",json)
-                if result.ok {
-                    if  DwPayCodeRootClass(fromDictionary: json).code == 1 {
-                        let payData: DwPayCodeData = DwPayCodeRootClass(fromDictionary: json).data
-                      
-                        let resignData :[String: Any] = ["cardNo": payData.cardNo! , "code": payData.code!, "timestamp": payData.timestamp! ]
-                        
-                        let resign = ApiUtil.sign(data: resignData, sender: self)
-                        if DwPayCodeRootClass(fromDictionary: json).sign != resign {
-                            OperationQueue.main.addOperation {
+        Just.post(ApiUtil.paycodeApi ,  data: avgs, asyncCompletionHandler:  { (result) in
+            guard let json = result.json as? NSDictionary else{
+                return
+            }
+            //                print("详情：",json)
+            if result.ok {
+                if  DwPayCodeRootClass(fromDictionary: json).code == 1 {
+                    let payData: DwPayCodeData = DwPayCodeRootClass(fromDictionary: json).data
+                    
+                    let resignData :[String: Any] = ["cardNo": payData.cardNo! , "code": payData.code!, "timestamp": payData.timestamp! ]
+                    
+                    let resign = ApiUtil.sign(data: resignData, sender: self)
+                    if DwPayCodeRootClass(fromDictionary: json).sign != resign {
+                        OperationQueue.main.addOperation {
                             self.msgLab.text = "安全验证失败！"
                             self.msgLab.isHidden = false
-                            }
-                            return
-                        }else{
-                            
-                          
-                            
-                            OperationQueue.main.addOperation {
-                                //生成二维码
-                                let qrImg: UIImage = LBXScanWrapper.createCode(codeType: "CIQRCodeGenerator",codeString:payData.code, size: self.qrcodeImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white
-                                    )!
-                                let barImg: UIImage = LBXScanWrapper.createCode128(codeString: payData.code, size: self.barcodeImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white)!
-                                
-                                self.qrcodeImg.image = qrImg
-                                
-                                
-                                //生成条码
-            
-                                
-                                self.barcodeImg.image = barImg
-                            }
                         }
-                    }else {
-                        //異常處理
-                         let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
-                           // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
-                            OperationQueue.main.addOperation {
-                                ApiUtil.openAlert(msg: error.msg, sender: self)
-                            }
+                        return
+                    }else{
                         
-                    }
-                }else{
-                    //處理接口系統錯誤
-                     let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                        
+                        
                         OperationQueue.main.addOperation {
-                        ApiUtil.openAlert(msg: error.message, sender: self)
+                            //生成二维码
+                            let qrImg: UIImage = LBXScanWrapper.createCode(codeType: "CIQRCodeGenerator",codeString:payData.code, size: self.qrcodeImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white
+                            )!
+                            let barImg: UIImage = LBXScanWrapper.createCode128(codeString: payData.code, size: self.barcodeImg.bounds.size, qrColor: UIColor.black, bkColor: UIColor.white)!
+                            
+                            self.qrcodeImg.image = qrImg
+                            
+                            
+                            //生成条码
+                            
+                            
+                            self.barcodeImg.image = barImg
+                        }
+                    }
+                }else {
+                    //異常處理
+                    let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json)
+                    // print("錯誤代碼:\(error.code as Int);信息:\(error.msg)原因:\(error.result)")
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.msg, sender: self)
                     }
                     
                 }
+            }else{
+                //處理接口系統錯誤
+                let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                OperationQueue.main.addOperation {
+                    ApiUtil.openAlert(msg: error.message, sender: self)
+                }
                 
             }
+            
+        })
     }
     
     

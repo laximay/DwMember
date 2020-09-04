@@ -96,11 +96,11 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
         avgs.updateValue(0.00, forKey: "longitude")
         
         //dump(avgs)
-        Just.post(ApiUtil.outletApi ,  data: avgs) { (result) in
+        Just.post(ApiUtil.outletApi ,  data: avgs, asyncCompletionHandler:  { (result) in
             guard let json = result.json as? NSDictionary else{
                 return
             }
-//            print(json)
+            //            print(json)
             if result.ok {
                 if  DwBranchsRootClass(fromDictionary: json).code == 1 {
                     DwBranchsRootClass(fromDictionary: json).data.forEach({ (outlet) in
@@ -109,26 +109,26 @@ class BranchsMapViewController: UIViewController,MKMapViewDelegate {
                         }
                     })
                     
-                
+                    
                 }else {
                     //異常處理
-                     let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json) 
-                        OperationQueue.main.addOperation {
-                            ApiUtil.openAlert(msg: error.msg, sender: self)
-                        }
+                    let error: DwCountBaseRootClass = DwCountBaseRootClass(fromDictionary: json) 
+                    OperationQueue.main.addOperation {
+                        ApiUtil.openAlert(msg: error.msg, sender: self)
+                    }
                     
                 }
             }
             else{
                 //處理接口系統錯誤
-                 let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
+                let error: DwErrorBaseRootClass = DwErrorBaseRootClass(fromDictionary: json)
                 OperationQueue.main.addOperation {
                     ApiUtil.openAlert(msg: error.message, sender: self)
                 }
                 
             }
             
-        }
+        })
     }
     
 

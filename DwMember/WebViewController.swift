@@ -5,81 +5,12 @@
 //  Created by Wen Jing on 2017/8/7.
 //  Copyright © 2017年 Wen Jing. All rights reserved.
 //
-
 import UIKit
 import WebKit
-class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
-    /*H5頁面調用原生代碼
-     1.繼承:WKScriptMessageHandler
-     2.實現 userContentController方法
-     3.註冊 WKWebViewConfiguration
-     */
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        ApiUtil.checklogin(sender: self)
-        switch message.name {
-        case "externalsite":
-             let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
-              let url = prams["url"] as! String
-              let id =  prams["id"] as! String
-              ApiUtil.webViewHandleNativ(webCode: url , id: id , sender: self)
-            
-            
-            
-        case "openQrCode":
-            if let payVC = mainSB.instantiateViewController(withIdentifier: "PayViewController") as? PayViewController{
-//            self.navigationController?.pushViewController(payVC, animated: true)
-              self.present(payVC, animated: true, completion: nil)
-            }
-         case "clearCache":
-            clearCacheBtnClick();
-        case "loginOut":
-            if let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginViewController")  as? LoginViewController{
-            self.navigationController?.pushViewController(loginVC, animated: true)
-            }
-//            self.present(loginVC, animated: true, completion: nil)
-        case "branchMap":
-            if let pageVC = barnchsSB.instantiateViewController(withIdentifier: "BranchsMapViewController")   as? BranchsMapViewController{
-                self.navigationController?.pushViewController(pageVC, animated: true)
-            }
-        case "scan":
-            if let scanVC = mainSB.instantiateViewController(withIdentifier: "ScanViewController")   as? ScanViewController{
-                self.navigationController?.pushViewController(scanVC, animated: true)
-            }
-        case "encrypt":
-            //H5請求如需加密,則需調用此方法進行簽名
-            var avgs = ApiUtil.frontFunc()
-          
-             let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
-                for (key, value) in prams{
-                    let valueStr = value as! String
-                    if(!valueStr.isEmpty ){
-                    avgs.updateValue(valueStr, forKey: key as! String)
-                    }
-                }
-            
-            let sign = ApiUtil.sign(data: avgs, sender: self)
-            avgs.updateValue(sign, forKey: "sign")
-            let data : NSData! = try! JSONSerialization.data(withJSONObject: avgs, options: []) as NSData?
-                let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
-                webview.evaluateJavaScript("window.nativeCallBack('\(JSONString!)')") { (a, b) in
-                    print(#function)
-                }
-        case "currentVersion":
-            let data : NSData! = try! JSONSerialization.data(withJSONObject: ["currentVersion": currentVersion], options: []) as NSData?
-            let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
-            webview.evaluateJavaScript("window.nativeCallBack('\(JSONString!)')") { (a, b) in
-                print(#function)
-            }
-        case "pagelist":
-             let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
-                let index = prams["index"] as! String
-                ApiUtil.getPageList(sender: self, index: Int(index)!)
-            
-        default: break
-            
-        }
-        
-    }
+import Social
+class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler {
+    
+    
     let barnchsSB = UIStoryboard(name: "Find", bundle: Bundle.main)
     let mainSB = UIStoryboard(name: "Main", bundle: Bundle.main)
     let loginSB = UIStoryboard(name: "Login", bundle: Bundle.main)
@@ -90,35 +21,16 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
     var id = ""
     let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
 
-    lazy private var webview: WKWebView = {
-        //註冊H5調用原生 WKWebViewConfiguration
-        let config = WKWebViewConfiguration()
-        config.userContentController.add(self, name: "externalsite")
-        config.userContentController.add(self, name: "openQrCode")
-        config.userContentController.add(self, name: "clearCache")
-        config.userContentController.add(self, name: "loginOut")
-        config.userContentController.add(self, name: "branchMap")
-        config.userContentController.add(self, name: "scan")
-        config.userContentController.add(self, name: "encrypt")
-        config.userContentController.add(self, name: "currentVersion")
-        config.userContentController.add(self, name: "pagelist")
-       //注入JS到H5
-       // let script = WKUserScript(source: self.script, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-       //config.userContentController.addUserScript(script)
-        self.webview = WKWebView.init(frame: self.view.bounds, configuration: config)
-        self.webview.uiDelegate = self
-        self.webview.navigationDelegate = self
-        return self.webview
-    }()
+    var webview: WKWebView!
     
     lazy private var progressView: UIProgressView = {
-        self.progressView = UIProgressView.init(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: UIScreen.main.bounds.width, height: 3))
+        self.progressView = UIProgressView.init(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: UIScreen.main.bounds.width, height: 2))
         self.progressView.tintColor = UIColor.green      // 进度条颜色
         self.progressView.trackTintColor = UIColor.white // 进度条背景色
         return self.progressView
     }()
     //如果首頁隱藏了導航欄一定要加上這句
-        override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
             webview.evaluateJavaScript("window.refPage()") { (a, b) in
                 print(#function)
             }
@@ -129,30 +41,64 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
             navigationController?.setNavigationBarHidden(false, animated: true)
             }
             navigationController?.navigationBar.isTranslucent = false;
+            
+        let leftBtn:UIBarButtonItem=UIBarButtonItem(title: "關閉", style: UIBarButtonItem.Style.plain, target: self, action: #selector(actionBack))
+
+               leftBtn.title="關閉";
+
+        leftBtn.tintColor=UIColor.white;
+        navigationItem.leftBarButtonItem = leftBtn;
+        //禁用滑動返回
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false;
         }
 
-    override var prefersStatusBarHidden: Bool{
-        return true
-    }
     override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
-    }
+         return .lightContent
+      }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+
         //設置頂部欄顏色
-//        setStatusBarBackgroundColor(color: UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1))
+      //  IOS 13需要使用statusBarManager進行控制
+             if #available(iOS 13.0, *) {
+              let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+
+              let statusBar = UIView(frame: window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
+                statusBar.backgroundColor = ApiUtil.fontColorMain
+                       window?.addSubview(statusBar)
+             } else {
+                 setStatusBarBackgroundColor(color: ApiUtil.fontColorMain)
+             }
         
         //註冊推送
         JPUSHService.setAlias(ApiUtil.idfv, completion: nil, seq: 1)
         JPUSHService.setTags([ApiUtil.companyCode+ApiUtil.serial], completion: nil, seq: 2)
         
+        //註冊H5調用原生 WKWebViewConfiguration
+        let config = WKWebViewConfiguration()
+        config.userContentController.add(self, name: "externalsite")
+        config.userContentController.add(self, name: "openQrCode")
+        config.userContentController.add(self, name: "clearCache")
+        config.userContentController.add(self, name: "loginOut")
+        config.userContentController.add(self, name: "branchMap")
+         config.userContentController.add(self, name: "branchSingleMap")
+        config.userContentController.add(self, name: "scan")
+        config.userContentController.add(self, name: "encrypt")
+        config.userContentController.add(self, name: "currentVersion")
+        config.userContentController.add(self, name: "pagelist")
+        config.userContentController.add(self, name: "setWindowBrightness")
+        config.userContentController.add(self, name: "share")
+       //注入JS到H5
+        webview = WKWebView.init(frame: UIScreen.main.bounds, configuration: config)
+        webview.navigationDelegate = self
+        
         view.addSubview(webview)
         view.addSubview(progressView)
         webview.autoresizingMask = [.flexibleHeight]
         webview.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
-        //webview.load(URLRequest.init(url: URL.init(string: "https://www.baidu.com/")!))
-//        let timeInterval =  Int(NSDate().timeIntervalSince1970*1000)
+
         if cardNo == "" {
             let defaults = UserDefaults.standard
             if (defaults.string(forKey: "cardNo") != nil) {
@@ -162,7 +108,13 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
        
        
         if  type == "index" {
-            webview.load(URLRequest.init(url: URL.init(string: url)!))
+            var isDark = false;
+            if #available(iOS 12.0, *) {
+             isDark = (self.traitCollection.userInterfaceStyle == .dark);
+            }
+            let urlIndex =  "\(url)?isDark=\(isDark)"
+            dump(urlIndex)
+            webview.load(URLRequest.init(url: URL.init(string: urlIndex)!))
         }else if type == "OV" {
             if let url = URL(string: "\(url)&imei=\(ApiUtil.idfv)&cardNo=\(cardNo)&company=\(ApiUtil.companyCode)&serial=\(ApiUtil.serial)"){
               print(url.absoluteString)
@@ -182,6 +134,25 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
     
     
     
+    @objc func actionBack(){
+   
+        let isOrderLink  = self.url.contains("order");
+        if(isOrderLink){
+        let alert = UIAlertController(title: "關閉將返回首頁,是否關閉?", message: nil, preferredStyle:UIAlertController.Style.alert)
+               let alertConfirm = UIAlertAction(title: "确定", style:UIAlertAction.Style.default) { (alertConfirm) ->Void in
+                self.navigationController?.popToRootViewController(animated: true);
+        }
+               alert.addAction(alertConfirm)
+               let cancle = UIAlertAction(title: "取消", style:UIAlertAction.Style.cancel) { (cancle) ->Void in
+               }
+               alert.addAction(cancle)
+               //提示框弹出
+               self.present(alert, animated: true, completion: nil)
+        }else{
+            self.navigationController?.popToRootViewController(animated: true);
+        }
+
+      }
  
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -218,13 +189,14 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         ApiUtil.openAlert(msg: "加载失败", sender: self)
     }
     
+
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-       
+        
         if navigationAction.request.url?.scheme == "tel" {
             UIApplication.shared.open(navigationAction.request.url!, options: [:], completionHandler: nil)
             decisionHandler(.cancel)
         }else{
-             decisionHandler(.allow);
+            decisionHandler(.allow);
         }
     }
     
@@ -253,11 +225,11 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         super.didReceiveMemoryWarning()
     }
     
-    deinit {
-        webview.removeObserver(self, forKeyPath: "estimatedProgress")
-        webview.uiDelegate = nil
-        webview.navigationDelegate = nil
-    }
+//    deinit {
+//        webview.removeObserver(self, forKeyPath: "estimatedProgress")
+//        webview.uiDelegate = nil
+//        webview.navigationDelegate = nil
+//    }
     
     //開始清除緩存
     func clearCacheBtnClick(){
@@ -313,7 +285,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
     ///
     /// - returns: 是否清理成功
     func clearCache()  {
-        var result = true
+//        var result = true
         // 取出cache文件夹目录 缓存文件都在这个目录下
         let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
         // 取出文件夹下所有文件数组
@@ -328,7 +300,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
                     try FileManager.default.removeItem(atPath: path!)
                 } catch {
                     // 删除失败
-                    result = false
+//                    result = false
                 }
             }
         }
@@ -346,6 +318,7 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
             statusBar.backgroundColor = color
         }
+        
     }
     
     func getDictionaryFromJSONString(jsonString:String) ->NSDictionary{
@@ -358,6 +331,112 @@ class WebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate, W
         }
         return NSDictionary()
         
+        
+    }
+    func share(shareText:String){
+ 
+        let activityItems = [ shareText] as [Any]
+        let avc = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+
+        self.present(avc, animated: true, completion: nil)
+    }
+    
+    /*H5頁面調用原生代碼
+     1.繼承:WKScriptMessageHandler
+     2.實現 userContentController方法
+     3.註冊 WKWebViewConfiguration
+     */
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+//        ApiUtil.checklogin(sender: self)
+        switch message.name {
+        case "externalsite":
+             let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
+              let url = prams["url"] as! String
+              let id =  prams["id"] as! String
+              ApiUtil.webViewHandleNativ(webCode: url , id: id , sender: self)
+            
+            
+            
+        case "openQrCode":
+            if let payVC = mainSB.instantiateViewController(withIdentifier: "PayViewController") as? PayViewController{
+//            self.navigationController?.pushViewController(payVC, animated: true)
+              self.present(payVC, animated: true, completion: nil)
+            }
+         case "clearCache":
+            clearCacheBtnClick();
+        case "loginOut":
+            if let loginVC = loginSB.instantiateViewController(withIdentifier: "LoginViewController")  as? LoginViewController{
+            self.navigationController?.pushViewController(loginVC, animated: true)
+            }
+//            self.present(loginVC, animated: true, completion: nil)
+        case "branchMap":
+            if let pageVC = barnchsSB.instantiateViewController(withIdentifier: "BranchsMapViewController")   as? BranchsMapViewController{
+                self.navigationController?.pushViewController(pageVC, animated: true)
+            }
+        case "branchSingleMap":
+             let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
+             let name =  prams["name1"] as! String
+             let telphone =  prams["telphone"] as! String
+             let address = prams["address"] as! String
+             let latitude = prams["latitude"] as! String
+             let longitude = prams["longitude"] as! String
+             
+             
+             
+            if let pageVC = barnchsSB.instantiateViewController(withIdentifier: "BranchsMapViewController")   as? BranchsMapViewController{
+                pageVC.name = name
+                pageVC.telphone = telphone
+                pageVC.address = address
+                pageVC.latitude = Double(latitude)!
+                pageVC.longitude = Double(longitude)!
+                self.navigationController?.pushViewController(pageVC, animated: true)
+            }
+        case "scan":
+            if let scanVC = mainSB.instantiateViewController(withIdentifier: "ScanViewController")   as? ScanViewController{
+                self.navigationController?.pushViewController(scanVC, animated: true)
+            }
+        case "encrypt":
+            //H5請求如需加密,則需調用此方法進行簽名
+            var avgs = ApiUtil.frontFunc()
+          
+             let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
+                for (key, value) in prams{
+                    let valueStr = value as! String
+                    if(!valueStr.isEmpty ){
+                    avgs.updateValue(valueStr, forKey: key as! String)
+                    }
+                }
+            
+            let sign = ApiUtil.sign(data: avgs, sender: self)
+            avgs.updateValue(sign, forKey: "sign")
+            let data : NSData! = try! JSONSerialization.data(withJSONObject: avgs, options: []) as NSData?
+                let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
+                webview.evaluateJavaScript("window.nativeCallBack('\(JSONString!)')") { (a, b) in
+                    print(#function)
+                }
+        case "currentVersion":
+            let data : NSData! = try! JSONSerialization.data(withJSONObject: ["currentVersion": currentVersion], options: []) as NSData?
+            let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
+            webview.evaluateJavaScript("window.nativeCallBack('\(JSONString!)')") { (a, b) in
+                print(#function)
+            }
+        case "pagelist":
+             let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
+                let index = prams["index"] as! String
+                ApiUtil.getPageList(sender: self, index: Int(index)!)
+        case "setWindowBrightness":
+            let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
+            let screenBrightness = prams["screenBrightness"] as! Int
+            //TODO 調節亮度
+            let rval:Float = Float(screenBrightness)/255
+            UIScreen.main.brightness = CGFloat(rval)
+            case "share":
+                let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
+                           let shareText = prams["shareText"] as! String
+                share(shareText: shareText)
+        default: break
+            
+        }
         
     }
 }
