@@ -1,26 +1,20 @@
 PODS:
-  - BubbleTransition (4.0.0)
   - JCore (2.3.4)
   - JPush (3.3.6):
     - JCore (< 3.0.0, >= 2.0.0)
   - Just (0.8.0)
-  - pop (1.0.12)
   - swiftScan (1.2.0)
 
 DEPENDENCIES:
-  - BubbleTransition
   - JPush
   - Just
-  - pop
   - swiftScan (from `https://github.com/MxABC/swiftScan.git`)
 
 SPEC REPOS:
   trunk:
-    - BubbleTransition
     - JCore
     - JPush
     - Just
-    - pop
 
 EXTERNAL SOURCES:
   swiftScan:
@@ -32,13 +26,11 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MxABC/swiftScan.git
 
 SPEC CHECKSUMS:
-  BubbleTransition: 9d96f31375e0db46684e2060d3a601fa47d9f9c1
   JCore: 8aa29dc57ba3730dd9fe7544ce1a4e1cbe221135
   JPush: a401b946dcc76b37335422487201bc1ecc8dd296
   Just: aef5105fb2c7069b65aa6f21aec8f429057f9c19
-  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   swiftScan: d7f91607b1a47cc04e6eb654c2c01e2e940e337d
 
-PODFILE CHECKSUM: 5fe81f8994ef454e2810b4d0f88bfc44bef6b34e
+PODFILE CHECKSUM: 6bbb460d6fdeab2f4b97003e5ab0480ae4b640b3
 
 COCOAPODS: 1.9.3

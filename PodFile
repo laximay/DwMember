@@ -3,8 +3,6 @@ use_frameworks!
 target 'DwMember' do
 platform :ios, '12.0'
 pod 'Just'
-pod 'pop'
-pod 'BubbleTransition'
 pod 'JPush'
 pod 'swiftScan', :git => 'https://github.com/MxABC/swiftScan.git'
 end
