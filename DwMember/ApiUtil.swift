@@ -82,15 +82,15 @@ open class ApiUtil{
        static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-    static let serverUrl = "https://cloud.ablegenius.com/a"
+    static let serverUrl = "http://mytaoheung.com/PrepayCard"
     //首頁鏈接
-    static let indexUrl = "https://cloud.ablegenius.com/m/epot/index.html"
+    static let indexUrl = "http://mytaoheung.com/m/taoheung/tc/index.html"
     //公司代碼`
-    static let companyCode = "EPOT"
+    static let companyCode = "TaoHeung"
     //APP類型細分編號
-    static let serial = "X97Gre352EED2E2"
+    static let serial = "48vOU7C2F4s7Spt"
     //推送APPKEY
-    static let apnsKey = "3d3875c4f028cfac41294580"
+    static let apnsKey = "39fb045adbc4f88a4fbdc301"
     //公司代碼
     static let channel = "IOS"
     //啟動頁Api
@@ -462,11 +462,11 @@ open class ApiUtil{
                 if (collection.userInterfaceStyle == .dark) {
                     return UIColor.black
                 }
-                return UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
+                return UIColor(red: 118/255.0, green: 187/255.0, blue: 169/255.0, alpha: 1)
             }
         } else {
             // Fallback on earlier versions
-            return UIColor.black
+            return UIColor(red: 118/255.0, green: 187/255.0, blue: 169/255.0, alpha: 1)
         }
     }
     
@@ -476,11 +476,11 @@ open class ApiUtil{
                   if (collection.userInterfaceStyle == .dark) {
                     return UIColor.black
                   }
-                return UIColor(red: 188/255.0, green: 27/255.0, blue: 2/255.0, alpha: 1)
+                return UIColor(red: 118/255.0, green: 187/255.0, blue: 169/255.0, alpha: 1)
               }
           } else {
               // Fallback on earlier versions
-            return UIColor(red: 188/255.0, green: 27/255.0, blue: 2/255.0, alpha: 1)
+            return UIColor(red: 118/255.0, green: 187/255.0, blue: 169/255.0, alpha: 1)
           }
       }
     
