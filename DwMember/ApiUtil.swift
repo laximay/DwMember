@@ -82,18 +82,15 @@ open class ApiUtil{
        static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-//   static let serverUrl = "http://47.56.114.127:8080/a"
-    static let serverUrl = "https://c.aghk.app/a"
+    static let serverUrl = "https://cloud.ablegenius.com/a"
     //首頁鏈接
-    static let indexUrl = "https://c.aghk.app/m/satay/index.html"
-//    static let indexUrl = "http://192.168.90.54:8083"
-
+    static let indexUrl = "https://cloud.ablegenius.com/m/epot/index.html"
     //公司代碼`
-    static let companyCode = "SatayKing"
+    static let companyCode = "EPOT"
     //APP類型細分編號
-    static let serial = "8Dq9BE43pT21fK6"
+    static let serial = "X97Gre352EED2E2"
     //推送APPKEY
-    static let apnsKey = "bd285e9627b0e3ee02dcb98b"
+    static let apnsKey = "3d3875c4f028cfac41294580"
     //公司代碼
     static let channel = "IOS"
     //啟動頁Api
@@ -465,11 +462,11 @@ open class ApiUtil{
                 if (collection.userInterfaceStyle == .dark) {
                     return UIColor.black
                 }
-                return UIColor(red: 246/255.0, green: 186/255.0, blue: 62/255.0, alpha: 1)
+                return UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1)
             }
         } else {
             // Fallback on earlier versions
-            return UIColor(red: 246/255.0, green: 186/255.0, blue: 62/255.0, alpha: 1)
+            return UIColor.black
         }
     }
     
@@ -477,13 +474,13 @@ open class ApiUtil{
           if #available(iOS 13.0, *) {
               return UIColor { (collection) -> UIColor in
                   if (collection.userInterfaceStyle == .dark) {
-                      return UIColor.systemGray
+                    return UIColor.black
                   }
-                  return UIColor(red: 246/255.0, green: 186/255.0, blue: 62/255.0, alpha: 1)
+                return UIColor(red: 188/255.0, green: 27/255.0, blue: 2/255.0, alpha: 1)
               }
           } else {
               // Fallback on earlier versions
-              return UIColor(red: 246/255.0, green: 186/255.0, blue: 62/255.0, alpha: 1)
+            return UIColor(red: 188/255.0, green: 27/255.0, blue: 2/255.0, alpha: 1)
           }
       }
     

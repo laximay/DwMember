@@ -98,7 +98,7 @@
 		3D91761C1F486BD500E855F6 /* DwPayCodeRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DwPayCodeRootClass.swift; sourceTree = "<group>"; };
 		3DB7B1F01FD7EE8F0092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Find.storyboard; sourceTree = "<group>"; };
 		3DB7B1F41FD7EE900092FAC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
-		3DD3E2471F2EC4C6001FC47E /* 沙嗲王.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "沙嗲王.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DD3E2471F2EC4C6001FC47E /* 一鍋堂會員.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "一鍋堂會員.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD3E24A1F2EC4C6001FC47E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DD3E24F1F2EC4C6001FC47E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DD3E2571F2EC4C7001FC47E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 		3DD3E2481F2EC4C6001FC47E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3DD3E2471F2EC4C6001FC47E /* 沙嗲王.app */,
+				3DD3E2471F2EC4C6001FC47E /* 一鍋堂會員.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,7 +286,7 @@
 			);
 			name = DwMember;
 			productName = DwMember;
-			productReference = 3DD3E2471F2EC4C6001FC47E /* 沙嗲王.app */;
+			productReference = 3DD3E2471F2EC4C6001FC47E /* 一鍋堂會員.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -621,9 +621,9 @@
 				INFOPLIST_FILE = DwMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1.05;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ablegenius.satay;
-				PRODUCT_NAME = "沙嗲王";
+				MARKETING_VERSION = 1.1.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ablegenius.epot;
+				PRODUCT_NAME = "一鍋堂會員";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DwMember-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -643,9 +643,9 @@
 				INFOPLIST_FILE = DwMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1.05;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ablegenius.satay;
-				PRODUCT_NAME = "沙嗲王";
+				MARKETING_VERSION = 1.1.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ablegenius.epot;
+				PRODUCT_NAME = "一鍋堂會員";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "DwMember-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
