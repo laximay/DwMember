@@ -61,6 +61,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessage
         super.viewDidLoad()
 
         //設置頂部欄顏色
+<<<<<<< HEAD
       //  IOS 13需要使用statusBarManager進行控制
              if #available(iOS 13.0, *) {
               let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
@@ -71,6 +72,9 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessage
              } else {
                  setStatusBarBackgroundColor(color: ApiUtil.fontColorMain)
              }
+=======
+        setStatusBarBackgroundColor(color: UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1))
+>>>>>>> parent of 91ec683... xx
         
         //註冊推送
         JPUSHService.setAlias(ApiUtil.idfv, completion: nil, seq: 1)
