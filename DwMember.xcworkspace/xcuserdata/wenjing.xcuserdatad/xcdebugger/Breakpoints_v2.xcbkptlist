@@ -38,7 +38,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "38B025A9-EF95-4FB9-933E-720CBA970D41 - 80fbd75d22da4fcb"
+                  uuid = "38B025A9-EF95-4FB9-933E-720CBA970D41 - a1e8f1d7ce816a4b"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -54,7 +54,7 @@
                   offsetFromSymbolStart = "1947">
                </Location>
                <Location
-                  uuid = "38B025A9-EF95-4FB9-933E-720CBA970D41 - 2a7342dcdcf011a2"
+                  uuid = "38B025A9-EF95-4FB9-933E-720CBA970D41 - b60645630ab344f"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -140,7 +140,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "ED2EB7D0-A366-442C-961A-F2D709FF69C9 - 98e27f8bd7b0beba"
+                  uuid = "ED2EB7D0-A366-442C-961A-F2D709FF69C9 - 23de25061bf51cb1"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -156,7 +156,7 @@
                   offsetFromSymbolStart = "382">
                </Location>
                <Location
-                  uuid = "ED2EB7D0-A366-442C-961A-F2D709FF69C9 - 98c53942c25ba08"
+                  uuid = "ED2EB7D0-A366-442C-961A-F2D709FF69C9 - b2b00919e0601845"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -259,7 +259,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "ECC6526A-7CDC-47C7-BCF4-DF57ED75DF3C - 117c253c020bb269"
+                  uuid = "ECC6526A-7CDC-47C7-BCF4-DF57ED75DF3C - 569201d52dd6752e"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -275,7 +275,7 @@
                   offsetFromSymbolStart = "784">
                </Location>
                <Location
-                  uuid = "ECC6526A-7CDC-47C7-BCF4-DF57ED75DF3C - 6f072b629419d6bb"
+                  uuid = "ECC6526A-7CDC-47C7-BCF4-DF57ED75DF3C - 28e90f8bbbc4111f"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -829,8 +829,8 @@
             filePath = "Pods/swiftScan/Source/LBXScanWrapper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "captureOutput(_:didOutputMetadataObjects:from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -845,8 +845,8 @@
             filePath = "Pods/swiftScan/Source/LBXScanWrapper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "captureOutput(_:didOutputMetadataObjects:from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -861,8 +861,8 @@
             filePath = "Pods/swiftScan/Source/LBXScanWrapper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "captureImage()"
             landmarkType = "7">
          </BreakpointContent>

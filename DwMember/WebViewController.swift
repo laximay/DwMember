@@ -114,11 +114,11 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessage
              isDark = (self.traitCollection.userInterfaceStyle == .dark);
             }
             let urlIndex =  "\(url)?isDark=\(isDark)"
-            dump(urlIndex)
+            //dump(urlIndex)
             webview.load(URLRequest.init(url: URL.init(string: urlIndex)!))
         }else if type == "OV" {
             if let url = URL(string: "\(url)&imei=\(ApiUtil.idfv)&cardNo=\(cardNo)&company=\(ApiUtil.companyCode)&serial=\(ApiUtil.serial)"){
-              print(url.absoluteString)
+             // print(url.absoluteString)
                 let request = URLRequest(url: url)
                 // webView.loadRequest(request)
                 webview.load(request) //使用更快，内存占用更小的的WKWEBVIEW 使用wkwebview需要注意在所在VIEW里面不勾选under top bars，要不然顶部会缩进去导航条里面
