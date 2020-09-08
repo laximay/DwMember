@@ -84,13 +84,13 @@ open class ApiUtil{
     //服務鏈接
     static let serverUrl = "http://cloud.aidankorean.com/a"
     //首頁鏈接
-    static let indexUrl = "http://cloud.aidankorean.com/m/winever/aidan/index.html"
+    static let indexUrl = "http://cloud.aidankorean.com/m/winever/zhudi/index.html"
     //公司代碼`
     static let companyCode = "WineverHK"
     //APP類型細分編號
-    static let serial = "0Ykox0l1n0G865d"
+    static let serial = "84Ll45wGp7zRHz2"
     //推送APPKEY
-    static let apnsKey = "b938bd968306f6b972ef7586"
+    static let apnsKey = "247aef555a20e8836d1ac361"
     //公司代碼
     static let channel = "IOS"
     //啟動頁Api
@@ -462,11 +462,11 @@ open class ApiUtil{
                 if (collection.userInterfaceStyle == .dark) {
                     return UIColor.black
                 }
-                return UIColor(red: 195/255.0, green: 33/255.0, blue: 1/255.0, alpha: 1)
+                return UIColor(red: 51/255.0, green: 18/255.0, blue: 3/255.0, alpha: 1)
             }
         } else {
             // Fallback on earlier versions
-            return UIColor(red: 195/255.0, green: 33/255.0, blue: 1/255.0, alpha: 1)
+            return UIColor(red: 51/255.0, green: 18/255.0, blue: 3/255.0, alpha: 1)
         }
     }
     
@@ -476,11 +476,11 @@ open class ApiUtil{
                   if (collection.userInterfaceStyle == .dark) {
                     return UIColor.black
                   }
-                return UIColor(red: 195/255.0, green: 33/255.0, blue: 1/255.0, alpha: 1)
+                return UIColor(red: 51/255.0, green: 18/255.0, blue: 3/255.0, alpha: 1)
               }
           } else {
               // Fallback on earlier versions
-            return UIColor(red: 195/255.0, green: 33/255.0, blue: 1/255.0, alpha: 1)
+            return UIColor(red: 51/255.0, green: 18/255.0, blue: 3/255.0, alpha: 1)
           }
       }
     
