@@ -82,15 +82,15 @@ open class ApiUtil{
        static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-    static let serverUrl = "http://mytaoheung.com/PrepayCard"
+    static let serverUrl = "https://cloud.ablegenius.com/a"
     //首頁鏈接
-    static let indexUrl = "http://mytaoheung.com/m/taoheung/tc/index.html"
+    static let indexUrl = "https://cloud.ablegenius.com/m/juyouhui/index.html"
     //公司代碼`
-    static let companyCode = "TaoHeung"
+    static let companyCode = "juyouhui"
     //APP類型細分編號
-    static let serial = "48vOU7C2F4s7Spt"
+    static let serial = "B3KNAi9MfQ4B3A2"
     //推送APPKEY
-    static let apnsKey = "39fb045adbc4f88a4fbdc301"
+    static let apnsKey = "f7a624302c63b47b9c28c353"
     //公司代碼
     static let channel = "IOS"
     //啟動頁Api
@@ -462,11 +462,11 @@ open class ApiUtil{
                 if (collection.userInterfaceStyle == .dark) {
                     return UIColor.black
                 }
-                return UIColor(red: 118/255.0, green: 187/255.0, blue: 169/255.0, alpha: 1)
+                return UIColor(red: 172/255.0, green: 126/255.0, blue: 72/255.0, alpha: 1)
             }
         } else {
             // Fallback on earlier versions
-            return UIColor(red: 118/255.0, green: 187/255.0, blue: 169/255.0, alpha: 1)
+            return UIColor(red: 172/255.0, green: 126/255.0, blue: 72/255.0, alpha: 1)
         }
     }
     
@@ -476,11 +476,11 @@ open class ApiUtil{
                   if (collection.userInterfaceStyle == .dark) {
                     return UIColor.black
                   }
-                return UIColor(red: 118/255.0, green: 187/255.0, blue: 169/255.0, alpha: 1)
+                return UIColor(red: 172/255.0, green: 126/255.0, blue: 72/255.0, alpha: 1)
               }
           } else {
               // Fallback on earlier versions
-            return UIColor(red: 118/255.0, green: 187/255.0, blue: 169/255.0, alpha: 1)
+            return UIColor(red: 172/255.0, green: 126/255.0, blue: 126/255.0, alpha: 1)
           }
       }
     
