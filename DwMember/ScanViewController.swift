@@ -41,7 +41,8 @@ class ScanViewController: LBXScanViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.navigationBar.tintColor = ApiUtil.fontColor
+        navigationController?.navigationBar.tintColor = ApiUtil.bgColor
+        navigationController?.navigationBar.backItem?.title = "關閉"
         //需要识别后的图像
         setNeedCodeImage(needCodeImg: true)
         

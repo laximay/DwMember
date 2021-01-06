@@ -32,12 +32,12 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessage
     }()
     //如果首頁隱藏了導航欄一定要加上這句
     override func viewWillAppear(_ animated: Bool) {
-            webview.evaluateJavaScript("window.refPage()") { (a, b) in
-                print(#function)
-            }
-            
+        
+        webview.evaluateJavaScript("window.refPage()") { (a, b) in
+            print(#function)
+        }
             if type == "index" {
-            navigationController?.setNavigationBarHidden(true, animated: true)
+                navigationController?.setNavigationBarHidden(true, animated: true)
             }else {
             navigationController?.setNavigationBarHidden(false, animated: true)
             }
@@ -47,31 +47,36 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessage
 
                leftBtn.title="關閉";
 
-        leftBtn.tintColor=UIColor.white;
+        leftBtn.tintColor = ApiUtil.bgColor;
         navigationItem.leftBarButtonItem = leftBtn;
         //禁用滑動返回
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false;
         }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-         return .lightContent
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            // Fallback on earlier versions
+            return .default
+        }
       }
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
         //設置頂部欄顏色
       //  IOS 13需要使用statusBarManager進行控制
-             if #available(iOS 13.0, *) {
-              let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-
-              let statusBar = UIView(frame: window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
-                statusBar.backgroundColor = ApiUtil.fontColorMain
-                       window?.addSubview(statusBar)
-             } else {
-                 setStatusBarBackgroundColor(color: ApiUtil.fontColorMain)
-             }
+//             if #available(iOS 13.0, *) {
+//              let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+//
+//              let statusBar = UIView(frame: window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
+//                statusBar.tintColor = ApiUtil.fontColorMain
+//                       window?.addSubview(statusBar)
+//             }
+//             else {
+//                 setStatusBarBackgroundColor(color: ApiUtil.fontColorMain)
+//             }
         
         //註冊推送
         JPUSHService.setAlias(ApiUtil.idfv, completion: nil, seq: 1)
@@ -84,7 +89,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessage
         config.userContentController.add(self, name: "clearCache")
         config.userContentController.add(self, name: "loginOut")
         config.userContentController.add(self, name: "branchMap")
-         config.userContentController.add(self, name: "branchSingleMap")
+        config.userContentController.add(self, name: "branchSingleMap")
         config.userContentController.add(self, name: "scan")
         config.userContentController.add(self, name: "encrypt")
         config.userContentController.add(self, name: "currentVersion")
@@ -318,6 +323,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessage
          }*/
         if statusBar.responds(to:#selector(setter: UIView.backgroundColor)) {
             statusBar.backgroundColor = color
+            statusBar.tintColor = color
         }
         
     }
@@ -399,6 +405,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessage
         case "encrypt":
             //H5請求如需加密,則需調用此方法進行簽名
             var avgs = ApiUtil.frontFunc()
+            dump(avgs)
           
              let prams = getDictionaryFromJSONString(jsonString: message.body as! String)
                 for (key, value) in prams{
@@ -412,6 +419,7 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessage
             avgs.updateValue(sign, forKey: "sign")
             let data : NSData! = try! JSONSerialization.data(withJSONObject: avgs, options: []) as NSData?
                 let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
+            dump(JSONString)
                 webview.evaluateJavaScript("window.nativeCallBack('\(JSONString!)')") { (a, b) in
                     print(#function)
                 }

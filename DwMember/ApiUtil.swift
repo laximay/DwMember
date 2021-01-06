@@ -75,25 +75,25 @@ open class ApiUtil{
     static let fontColor: UIColor = UIColor.white
     static let fontColorMain: UIColor = getMainColor()
 
-    static let bgColor: UIColor = UIColor.white
+    static let bgColor: UIColor = getNavTextColor()
     
 //    static let iconColor: UIColor =  UIColor(red: 178/255.0, green: 126/255.0, blue: 86/255.0, alpha: 1)
     
-       static let iconColor: UIColor = UIColor.white
+    static let iconColor: UIColor = getBtnColor()
     
     //服務鏈接
 //   static let serverUrl = "http://47.56.114.127:8080/a"
-    static let serverUrl = "https://c.aghk.app/a"
+    static let serverUrl = "https://tangs.ag-pos.com/a"
     //首頁鏈接
-//    static let indexUrl = "https://c.aghk.app/m/satay/index.html"
-    static let indexUrl = "http://192.168.90.104:8083/"
+//    static let indexUrl = "http://192.168.90.104:8083/"
+    static let indexUrl = "https://tangs.ag-pos.com/m/eastocean/index.html"
 
     //公司代碼`
-    static let companyCode = "SatayKing"
+    static let companyCode = "eastocean"
     //APP類型細分編號
-    static let serial = "8Dq9BE43pT21fK6"
+    static let serial = "YZNJ3F0359vv9N6"
     //推送APPKEY
-    static let apnsKey = "bd285e9627b0e3ee02dcb98b"
+    static let apnsKey = "512a9587e4efe884919d931d"
     //公司代碼
     static let channel = "IOS"
     //啟動頁Api
@@ -465,11 +465,11 @@ open class ApiUtil{
                 if (collection.userInterfaceStyle == .dark) {
                     return UIColor.black
                 }
-                return UIColor(red: 246/255.0, green: 186/255.0, blue: 62/255.0, alpha: 1)
+                return UIColor(red: 54/255.0, green: 81/255.0, blue: 115/255.0, alpha: 1)
             }
         } else {
             // Fallback on earlier versions
-            return UIColor(red: 246/255.0, green: 186/255.0, blue: 62/255.0, alpha: 1)
+            return UIColor(red: 54/255.0, green: 81/255.0, blue: 115/255.0, alpha: 1)
         }
     }
     
@@ -479,11 +479,11 @@ open class ApiUtil{
                   if (collection.userInterfaceStyle == .dark) {
                       return UIColor.systemGray
                   }
-                  return UIColor(red: 246/255.0, green: 186/255.0, blue: 62/255.0, alpha: 1)
+                  return UIColor(red: 54/255.0, green: 81/255.0, blue: 115/255.0, alpha: 1)
               }
           } else {
               // Fallback on earlier versions
-              return UIColor(red: 246/255.0, green: 186/255.0, blue: 62/255.0, alpha: 1)
+              return UIColor(red: 54/255.0, green: 81/255.0, blue: 115/255.0, alpha: 1)
           }
       }
     
@@ -500,6 +500,21 @@ open class ApiUtil{
               return UIColor.white
           }
       }
+    
+    static   func getNavTextColor() -> UIColor {
+          if #available(iOS 13.0, *) {
+              return UIColor { (collection) -> UIColor in
+                  if (collection.userInterfaceStyle == .dark) {
+                      return UIColor.systemGray
+                  }
+                return UIColor.black
+              }
+          } else {
+              // Fallback on earlier versions
+              return UIColor.black
+          }
+      }
+    
     
     
     

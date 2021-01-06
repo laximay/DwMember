@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
      func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UINavigationBar.appearance().barTintColor =  ApiUtil.fontColorMain //设置前景色
-//        UINavigationBar.appearance().tintColor = ApiUtil.iconColor //設置導航欄按鈕顏色
+//        UINavigationBar.appearance().tintColor = ApiUtil.fontColor //設置導航欄按鈕顏色
     
         //ApiUtil.launchCache()
     
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, JPUSHRegisterDelegate {
         if let barFont = UIFont(name: "Avenir-Light", size: 24){
             UINavigationBar.appearance().titleTextAttributes = [
                 NSAttributedString.Key.font: barFont,
-                NSAttributedString.Key.foregroundColor:ApiUtil.iconColor,
+                NSAttributedString.Key.foregroundColor:ApiUtil.bgColor,
 
             ]
         }

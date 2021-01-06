@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var forgotPwLab: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-//         navigationController?.setNavigationBarHidden(false, animated: true)
+         navigationController?.setNavigationBarHidden(true, animated: true)
         //每次打開這個頁面都要清空
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "dwsercet")
