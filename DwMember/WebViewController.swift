@@ -192,11 +192,15 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKScriptMessage
     
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
+        let urlStr:String =  navigationAction.request.url!.absoluteString;
         if navigationAction.request.url?.scheme == "tel" {
             UIApplication.shared.open(navigationAction.request.url!, options: [:], completionHandler: nil)
             decisionHandler(.cancel)
-        }else{
+        }else if (urlStr.hasPrefix("alipays://") || urlStr.hasPrefix("alipay://") || urlStr.hasPrefix("weixin://")){
+            //打開微信/支付寶app
+            UIApplication.shared.open(navigationAction.request.url!, options: [:], completionHandler: nil)
+            decisionHandler(.allow);
+        } else{
             decisionHandler(.allow);
         }
     }
