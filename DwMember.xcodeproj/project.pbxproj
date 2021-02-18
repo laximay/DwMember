@@ -620,7 +620,7 @@
 				INFOPLIST_FILE = DwMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1.01;
+				MARKETING_VERSION = 1.1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ablegenius.tangs;
 				PRODUCT_NAME = "TCG Rewards";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -642,7 +642,7 @@
 				INFOPLIST_FILE = DwMember/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1.01;
+				MARKETING_VERSION = 1.1.02;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ablegenius.tangs;
 				PRODUCT_NAME = "TCG Rewards";
 				PROVISIONING_PROFILE_SPECIFIER = "";
