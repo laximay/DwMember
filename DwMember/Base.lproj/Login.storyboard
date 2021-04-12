@@ -40,10 +40,10 @@
                                 <rect key="frame" x="36" y="94" width="303" height="350"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="120" image="logo-r" translatesAutoresizingMaskIntoConstraints="NO" id="vCc-bu-xly">
-                                        <rect key="frame" x="1.5" y="0.0" width="300" height="100"/>
+                                        <rect key="frame" x="11.5" y="0.0" width="280" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="JCS-71-kWV"/>
-                                            <constraint firstAttribute="width" constant="300" id="N5M-s3-6jx"/>
+                                            <constraint firstAttribute="width" constant="280" id="N5M-s3-6jx"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -54,7 +54,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="m7P-16-nlV">
                                         <rect key="frame" x="0.0" y="120" width="303" height="110"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="卡號或電話號碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcI-Ri-crw">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="電話或會員號碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcI-Ri-crw">
                                                 <rect key="frame" x="0.0" y="0.0" width="303" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="3Lt-IF-smt"/>
