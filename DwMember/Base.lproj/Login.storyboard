@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -54,7 +54,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="m7P-16-nlV">
                                         <rect key="frame" x="0.0" y="120" width="303" height="110"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="卡號或電話號碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcI-Ri-crw">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="電話或會員號碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZcI-Ri-crw">
                                                 <rect key="frame" x="0.0" y="0.0" width="303" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="3Lt-IF-smt"/>
@@ -78,7 +78,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="303" placeholderIntrinsicHeight="30" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="FbX-CV-NJU">
                                         <rect key="frame" x="0.0" y="250" width="303" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kX4-rt-AEP">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kX4-rt-AEP">
                                                 <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
                                                 <state key="normal" title="忘記密碼?">
                                                     <color key="titleColor" red="0.8023107647895813" green="0.60004431009292603" blue="0.045506812632083893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -87,7 +87,7 @@
                                                     <action selector="forgetTap:" destination="vHg-nZ-9Ls" eventType="touchUpInside" id="TnV-Mf-6Y1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9df-47-sxk">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9df-47-sxk">
                                                 <rect key="frame" x="226" y="0.0" width="77" height="30"/>
                                                 <state key="normal" title="註冊成會員">
                                                     <color key="titleColor" red="0.8023107647895813" green="0.60004431009292603" blue="0.045506812632083893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -98,7 +98,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="303" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqs-j1-U9f">
+                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="303" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqs-j1-U9f">
                                         <rect key="frame" x="0.0" y="300" width="303" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Zf2-T0-hlF"/>
