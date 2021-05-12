@@ -82,9 +82,9 @@ open class ApiUtil{
        static let iconColor: UIColor = UIColor.white
     
     //服務鏈接
-    static let serverUrl = "https://cloud.ablegenius.com/a"
+    static let serverUrl = "http://192.168.90.142:8081/a"
     //首頁鏈接
-    static let indexUrl = "https://cloud.ablegenius.com/m/epot/index.html"
+    static let indexUrl = "http://192.168.90.142:8082/"
     //公司代碼`
     static let companyCode = "EPOT"
     //APP類型細分編號
