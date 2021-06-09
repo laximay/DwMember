@@ -82,11 +82,11 @@ open class ApiUtil{
     static let iconColor: UIColor = getBtnColor()
     
     //服務鏈接
-//   static let serverUrl = "http://47.56.114.127:8080/a"
-    static let serverUrl = "https://tangs.ag-pos.com/a"
+   static let serverUrl = "http://47.242.45.209:8083/a"
+//    static let serverUrl = "https://tangs.ag-pos.com/a"
     //首頁鏈接
-//    static let indexUrl = "http://192.168.90.104:8082/"
-    static let indexUrl = "https://tangs.ag-pos.com/m/eastocean/index.html"
+    static let indexUrl = "http://192.168.90.154:8083/"
+//    static let indexUrl = "https://tangs.ag-pos.com/m/eastocean/index.html"
 
     //公司代碼`
     static let companyCode = "eastocean"
